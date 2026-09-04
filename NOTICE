@@ -1,0 +1,36 @@
+NOTICE — what each license covers
+
+This repository is licensed in two parts, deliberately.
+
+SOFTWARE — MIT License (see LICENSE)
+
+  The site code, the build and fetch automation, the test suites, and the AAO
+  decision indexer.
+
+DATA AND WRITTEN CONTENT — CC BY 4.0 (see LICENSE-DATA)
+
+  The derived datasets (niw-decisions.json, vb_history.json, perm_history.json,
+  eb_inventory.json, rulebook.json) and the explanatory prose in the HTML pages.
+
+  Attribution is the one condition. Use it commercially if you want, just
+  credit it. Suggested citation is in LICENSE-DATA.
+
+UNDERLYING GOVERNMENT WORKS — public domain, not claimed here
+
+  The federal works these datasets are derived FROM are in the public domain as
+  edicts of government and no rights are asserted over them: the Department of
+  State Visa Bulletin, DOL PERM disclosure files, USCIS Administrative Appeals
+  Office decisions, USCIS inventory data, the Federal Register, and the eCFR.
+
+  What is licensed here is the parsing, structuring, and presentation of that
+  material, not the source documents.
+
+  Because every parsed field records the span of source text it came from, any
+  row can be audited against the original government PDF. If you find a
+  discrepancy, the source document governs, not this dataset.
+
+NOT LEGAL ADVICE
+
+  This material is educational. It is not legal advice and not official
+  guidance. Check with your employer's immigration counsel or a licensed
+  immigration attorney before making any decisions.

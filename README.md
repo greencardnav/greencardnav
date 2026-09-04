@@ -98,6 +98,7 @@ Two licenses, on purpose:
   Use it freely, including commercially; just credit it.
 
 Underlying federal government works are public domain and not claimed here.
+[`NOTICE`](NOTICE) spells out exactly which files fall under which license.
 
 If you use the decision dataset in research or writing, a citation is in
 `LICENSE-DATA`, and I would genuinely like to hear about it.
