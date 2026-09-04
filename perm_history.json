@@ -1,0 +1,146 @@
+[
+  {
+    "quarter": "FY2023Q1",
+    "certified": 22848,
+    "denied": 1502,
+    "withdrawn": 1557,
+    "median_days": 259,
+    "certified_with_dates": 22848,
+    "median_days_india": 257,
+    "median_days_china": 258,
+    "median_days_row": 263
+  },
+  {
+    "quarter": "FY2023Q2",
+    "certified": 25991,
+    "denied": 1962,
+    "withdrawn": 2778,
+    "median_days": 268,
+    "certified_with_dates": 25991,
+    "median_days_india": 265,
+    "median_days_china": 270,
+    "median_days_row": 272
+  },
+  {
+    "quarter": "FY2023Q3",
+    "certified": 25455,
+    "denied": 1452,
+    "withdrawn": 2557,
+    "median_days": 289,
+    "certified_with_dates": 25455,
+    "median_days_india": 287,
+    "median_days_china": 290,
+    "median_days_row": 291
+  },
+  {
+    "quarter": "FY2023Q4",
+    "certified": 27992,
+    "denied": 1448,
+    "withdrawn": 885,
+    "median_days": 320,
+    "certified_with_dates": 27992,
+    "median_days_india": 319,
+    "median_days_china": 320,
+    "median_days_row": 322
+  },
+  {
+    "quarter": "FY2024Q1",
+    "certified": 23103,
+    "denied": 1252,
+    "withdrawn": 482,
+    "median_days": 348,
+    "certified_with_dates": 23103,
+    "median_days_india": 346,
+    "median_days_china": 345,
+    "median_days_row": 350
+  },
+  {
+    "quarter": "FY2024Q2",
+    "certified": 25682,
+    "denied": 978,
+    "withdrawn": 401,
+    "median_days": 397,
+    "certified_with_dates": 25682,
+    "median_days_india": 396,
+    "median_days_china": 397,
+    "median_days_row": 397
+  },
+  {
+    "quarter": "FY2024Q3",
+    "certified": 35471,
+    "denied": 1691,
+    "withdrawn": 150,
+    "median_days": 383,
+    "certified_with_dates": 35471,
+    "median_days_india": 383,
+    "median_days_china": 383,
+    "median_days_row": 383
+  },
+  {
+    "quarter": "FY2024Q4",
+    "certified": 2063,
+    "denied": 971,
+    "withdrawn": 14,
+    "median_days": 441,
+    "certified_with_dates": 2063,
+    "median_days_india": 420,
+    "median_days_china": 441,
+    "median_days_row": 658
+  },
+  {
+    "quarter": "FY2025Q1",
+    "certified": 22421,
+    "denied": 296,
+    "withdrawn": 1647,
+    "median_days": 455,
+    "certified_with_dates": 22421
+  },
+  {
+    "quarter": "FY2025Q2",
+    "certified": 32286,
+    "denied": 402,
+    "withdrawn": 1507,
+    "median_days": 493,
+    "certified_with_dates": 32286
+  },
+  {
+    "quarter": "FY2025Q3",
+    "certified": 40139,
+    "denied": 637,
+    "withdrawn": 1669,
+    "median_days": 495,
+    "certified_with_dates": 40139
+  },
+  {
+    "quarter": "FY2025Q4",
+    "certified": 42907,
+    "denied": 1280,
+    "withdrawn": 1865,
+    "median_days": 468,
+    "certified_with_dates": 42907
+  },
+  {
+    "quarter": "FY2026Q1",
+    "certified": 16199,
+    "denied": 533,
+    "withdrawn": 1377,
+    "median_days": 498,
+    "certified_with_dates": 16199
+  },
+  {
+    "quarter": "FY2026Q2",
+    "certified": 39019,
+    "denied": 1392,
+    "withdrawn": 1576,
+    "median_days": 503,
+    "certified_with_dates": 39019
+  },
+  {
+    "quarter": "FY2026Q3",
+    "certified": 48811,
+    "denied": 2100,
+    "withdrawn": 1690,
+    "median_days": 440,
+    "certified_with_dates": 48811
+  }
+]

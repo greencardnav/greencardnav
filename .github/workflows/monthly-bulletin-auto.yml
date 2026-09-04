@@ -1,0 +1,201 @@
+# monthly-bulletin-auto.yml — the NO-LLM, no-Cloudflare-bypass Visa Bulletin
+# refresh. Fetches the official bulletin PDF from the Internet Archive (Wayback
+# Machine — archive.org keeps its own capture of the Cloudflare-walled
+# travel.state.gov PDF and serves it over a plain API), parses it
+# deterministically, diffs it against the rulebook, and:
+#
+#   * NO hard-flag changes  -> AUTO-APPLY + deploy (zero human).
+#       (covers no-cutoff-movement months and new_coverage cell fills)
+#   * ANY hard-flag          -> commit the proposal + Slack "review needed", and
+#       do NOT touch the rulebook. Per diff_proposal.py, a movement of any
+#       verified cutoff cell IS a hard flag, so real cutoff changes are always
+#       held for a human. (Owner's chosen policy, 2026-08-26.)
+#
+# HONEST BOUNDARY: no LLM anywhere; travel.state.gov / uscis.gov are never
+# fetched or bypassed — the source is archive.org's public capture. See
+# EMAIL_SETUP.md / RUNBOOK.md / wayback_fetch.py for the full rationale.
+#
+# Needs poppler-utils (pdftotext) — installed below. Personal-learning project.
+# NOT legal advice, NOT official guidance.
+
+name: monthly-bulletin-auto
+
+on:
+  schedule:
+    # Daily at 15:00 UTC on the 10th–20th. The bulletin for month N publishes
+    # ~the 9th of N-1 and is usually archived by the Wayback Machine within days;
+    # the daily window catches it, and the job early-exits once the month is done.
+    - cron: '0 15 10-20 * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-bulletin-auto
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pdftotext (poppler-utils)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      # Resolve which bulletin to fetch: try next month, then this month
+      # (newest-first). Check the Wayback Machine for a capture. Early-exit if
+      # the rulebook already reflects that month (so we don't re-commit daily).
+      - name: Resolve target bulletin from Wayback
+        id: resolve
+        run: |
+          python3 - <<'PY'
+          import os, sys, json, datetime
+          sys.path.insert(0, "automation")
+          import wayback_fetch
+          MONTHS = ["", "January","February","March","April","May","June","July",
+                    "August","September","October","November","December"]
+          # UTC "today" is passed in explicitly (no implicit wall clock in helpers).
+          now = datetime.datetime.utcnow()
+          def add_month(y, m, n):
+              i = (y*12 + (m-1)) + n
+              return i//12, i%12 + 1
+          cands = []
+          for n in (1, 0):  # next month first, then current month
+              y, m = add_month(now.year, now.month, n)
+              url = "https://travel.state.gov/content/dam/visas/Bulletins/visabulletin_%s%d.pdf" % (MONTHS[m], y)
+              cands.append(("%04d-%02d" % (y, m), url))
+          rb = json.load(open("rulebook.json"))
+          as_of = rb.get("bulletin", {}).get("as_of", "")
+          chosen_month = chosen_url = ""
+          for ym, url in cands:
+              snap = wayback_fetch.latest_snapshot(url)
+              print("candidate %s -> %s" % (ym, "ARCHIVED" if snap else "not archived"))
+              if snap:
+                  chosen_month, chosen_url = ym, url
+                  break
+          out = open(os.environ["GITHUB_OUTPUT"], "a")
+          out.write("chosen_month=%s\n" % chosen_month)
+          out.write("chosen_url=%s\n" % chosen_url)
+          out.write("as_of=%s\n" % as_of)
+          out.write("available=%s\n" % ("true" if chosen_url else "false"))
+          out.write("already_current=%s\n" % ("true" if (chosen_month and chosen_month == as_of) else "false"))
+          out.close()
+          print("chosen:", chosen_month or "(none archived yet)", "| rulebook as_of:", as_of)
+          PY
+
+      - name: Nothing to do?
+        if: steps.resolve.outputs.available != 'true' || steps.resolve.outputs.already_current == 'true'
+        run: |
+          if [ "${{ steps.resolve.outputs.available }}" != "true" ]; then
+            echo "No Wayback capture for the target bulletin yet — will retry tomorrow."
+          else
+            echo "Rulebook already reflects ${{ steps.resolve.outputs.chosen_month }} — nothing to do."
+          fi
+
+      - name: Fetch archived PDF
+        id: fetch
+        if: steps.resolve.outputs.available == 'true' && steps.resolve.outputs.already_current != 'true'
+        run: |
+          set -euo pipefail
+          python3 automation/wayback_fetch.py --save "${{ steps.resolve.outputs.chosen_url }}" --out _bulletin.pdf
+          file _bulletin.pdf
+
+      - name: Parse + build fetch_results + diff
+        id: diff
+        if: steps.resolve.outputs.available == 'true' && steps.resolve.outputs.already_current != 'true'
+        run: |
+          set -euo pipefail
+          TODAY="$(date -u +%Y-%m-%d)"
+          MONTH="${{ steps.resolve.outputs.chosen_month }}"
+          python3 automation/pdf_to_fetch_results.py --pdf _bulletin.pdf --bulletin-month "$MONTH" --run-date "$TODAY" --out "fetch_results_${TODAY}.json"
+          # Parse-completeness guard: the 3x5x2 grid yields ~28-30 findings. Far
+          # fewer means a bad parse -> treat as anomaly (hold), never auto-apply.
+          NF=$(python3 -c "import json;print(len(json.load(open('fetch_results_${TODAY}.json'))['findings']))")
+          echo "findings=$NF"
+          python3 automation/diff_proposal.py --fetch-results "fetch_results_${TODAY}.json" --date "$TODAY" | tee /tmp/diff.txt
+          HARD=$(grep -E "unexpected_change:" /tmp/diff.txt | grep -oE "[0-9]+" | head -n1)
+          echo "hardflags=$HARD"
+          {
+            echo "today=$TODAY"
+            echo "proposal=freshness_proposals/${TODAY}.md"
+            echo "findings=$NF"
+            echo "hardflags=$HARD"
+            # clean == no hard-flags AND a complete parse (>=28 findings)
+            if [ "$HARD" = "0" ] && [ "$NF" -ge 28 ]; then echo "clean=true"; else echo "clean=false"; fi
+          } >> "$GITHUB_OUTPUT"
+
+      # AUTO path: no hard-flags + complete parse -> apply cutoffs/version, refresh
+      # month metadata, commit + push (Amplify auto-deploys).
+      - name: Auto-apply (clean month)
+        id: apply
+        if: steps.diff.outputs.clean == 'true'
+        run: |
+          set -euo pipefail
+          python3 automation/apply_proposal.py --proposal "${{ steps.diff.outputs.proposal }}" --commit
+          python3 automation/refresh_bulletin_meta.py --pdf _bulletin.pdf --bulletin-month "${{ steps.resolve.outputs.chosen_month }}" --commit
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rulebook.json rulebook.js "${{ steps.diff.outputs.proposal }}"
+          if git diff --cached --quiet; then
+            echo "no changes to commit"
+          else
+            git commit -m "auto-refresh ${{ steps.resolve.outputs.chosen_month }} Visa Bulletin (no cutoff movement)" && git push
+          fi
+
+      # HOLD path: hard-flags or a bad parse -> commit the proposal for the record,
+      # never touch the rulebook.
+      - name: Commit proposal for review (flagged month)
+        if: steps.diff.outputs.clean == 'false'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${{ steps.diff.outputs.proposal }}" || true
+          if git diff --cached --quiet; then
+            echo "no proposal to commit"
+          else
+            git commit -m "freshness proposal ${{ steps.diff.outputs.today }} (review: ${{ steps.diff.outputs.hardflags }} flag(s), ${{ steps.diff.outputs.findings }} findings)" && git push || echo "push skipped"
+          fi
+
+      - name: Slack notify
+        if: steps.resolve.outputs.available == 'true' && steps.resolve.outputs.already_current != 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          set -euo pipefail
+          REPO="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}"
+          MONTH="${{ steps.resolve.outputs.chosen_month }}"
+          OUT="/tmp/bulletin_slack.txt"
+          if [ "${{ steps.diff.outputs.clean }}" = "true" ]; then
+            {
+              echo "Green Card Navigator - ${MONTH} Visa Bulletin AUTO-APPLIED and deployed (no cutoff movement)."
+              echo ""
+              echo "Source: official DoS PDF via the Internet Archive (no LLM, no scraping). ${{ steps.diff.outputs.findings }} cells parsed, 0 hard-flags."
+              echo "The 'which chart' determination was carried forward from the prior month (not re-verified); confirm at uscis.gov/visabulletininfo if a chart flip is suspected."
+            } > "$OUT"
+          else
+            {
+              echo "Green Card Navigator - ${MONTH} Visa Bulletin needs REVIEW (${{ steps.diff.outputs.hardflags }} flagged change(s); ${{ steps.diff.outputs.findings }} cells parsed)."
+              echo ""
+              echo "Nothing was applied. Proposal: ${REPO}/blob/main/${{ steps.diff.outputs.proposal }}"
+              echo "Review it, then run: python3 automation/apply_proposal.py --proposal ${{ steps.diff.outputs.proposal }} --commit  (then push)."
+            } > "$OUT"
+          fi
+          echo "---- slack payload ----"; cat "$OUT"
+          if [ -z "${SLACK_WEBHOOK_URL:-}" ]; then
+            echo "SLACK_WEBHOOK_URL not set; printed instead of posting."
+          else
+            python3 automation/post_slack.py --payload "$OUT"
+          fi
+
+      - name: Clean up working files
+        if: always()
+        run: rm -f _bulletin.pdf fetch_results_*.json

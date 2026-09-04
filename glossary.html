@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<title>Glossary — Green Card Navigator</title>
+<meta name="description" content="Plain-English definitions of green card jargon: EB categories, PERM, priority date, Visa Bulletin, AC21, and more.">
+<link rel="canonical" href="https://www.greencardnav.com/glossary.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Green Card Navigator">
+<meta property="og:title" content="Green Card Glossary — Green Card Navigator">
+<meta property="og:description" content="Plain-English definitions of green card jargon: EB categories, PERM, priority date, Visa Bulletin, AC21, and more.">
+<meta property="og:url" content="https://www.greencardnav.com/glossary.html">
+<meta property="og:image" content="https://www.greencardnav.com/og.png?v=3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Green Card Glossary — Green Card Navigator">
+<meta name="twitter:description" content="Plain-English definitions of green card jargon: EB categories, PERM, priority date, Visa Bulletin, AC21, and more.">
+<meta name="twitter:image" content="https://www.greencardnav.com/og.png?v=3">
+<script>
+  // Apply the saved theme BEFORE first paint to avoid a flash of the wrong theme.
+  // Stores only the theme preference ('light' | 'dark' | 'system') under 'gc_theme';
+  // no case data is ever persisted. 'system' resolves to the OS setting here.
+  (function () {
+    try {
+      var pref = localStorage.getItem('gc_theme') || 'system';
+      var effective = pref === 'system'
+        ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : pref;
+      document.documentElement.setAttribute('data-theme', effective);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Glossary layout — uses the site's CSS variables so it reads in light + dark. */
+  .gloss-jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
+  .gloss-jump a { font-size: 12.5px; padding: 5px 11px; border: 1px solid var(--border);
+    border-radius: var(--radius-badge, 999px); color: var(--primary-700);
+    text-decoration: none; background: var(--neutral-150); }
+  .gloss-jump a:hover { border-color: var(--primary-600); }
+  .gloss-group { margin-top: 30px; }
+  .gloss-group > h3 { font-size: 17px; color: var(--primary-700); margin: 0 0 2px; scroll-margin-top: 120px; }
+  .gloss-group > .gloss-note { font-size: 13px; color: var(--muted); margin: 0 0 4px; }
+  dl.gloss { margin: 0; }
+  dl.gloss dt { font-weight: 700; color: var(--text); font-size: 15px; margin-top: 18px; }
+  dl.gloss dt code { font-size: 14px; }
+  dl.gloss dd { margin: 4px 0 0; color: var(--text-soft); font-size: 14px; line-height: 1.62; }
+  .gloss-src { display: inline-block; margin: 6px 12px 0 0; font-size: 12.5px;
+    color: var(--primary-600); text-decoration: none; }
+  .gloss-src:hover { text-decoration: underline; }
+  .gloss-src::before { content: "\2197  "; opacity: .65; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<div class="topbar" role="banner">
+  <nav class="hubnav" aria-label="Section navigation">
+    <a class="brand" href="index.html" aria-label="Green Card Navigator — home">Green Card <span class="brand-dot">Navigator</span></a>
+    <div class="hubnav-links" id="hubnav-links">
+      <a href="status.html" data-nav="check">Check My Status</a>
+      <a href="eb1a.html" data-nav="paths">EB Paths</a>
+      <a href="tools.html" data-nav="tools">Tools</a>
+      <a href="faq.html" data-nav="faq">FAQ</a>
+      <a href="glossary.html" data-nav="glossary" class="active" aria-current="page">Glossary</a>
+      <a href="niw-guide.html" data-nav="guide">NIW Guide</a>
+      <a href="niw-appeals.html" data-nav="appeals">NIW Appeals</a>
+      <a href="niw-decisions.html" data-nav="decisions">Browse Decisions</a>
+      <a href="resources.html" data-nav="resources">Resources</a>
+    </div>
+    <div class="hubnav-actions">
+      <button class="egg-btn" id="eggBtn" type="button" aria-label="A little celebration" title="Fingers crossed 🤞">🛂</button>
+      <div class="theme-toggle" role="group" aria-label="Color theme">
+        <button type="button" data-theme-pref="light" aria-pressed="false" title="Light theme" aria-label="Light theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+          <span class="tt-label">Light</span>
+        </button>
+        <button type="button" data-theme-pref="dark" aria-pressed="false" title="Dark theme" aria-label="Dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <span class="tt-label">Dark</span>
+        </button>
+        <button type="button" data-theme-pref="system" aria-pressed="false" title="Match system setting" aria-label="System theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span class="tt-label">System</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="disclaimer-banner" role="note" aria-label="Personal learning disclaimer">
+    <span class="icon" aria-hidden="true">i</span>
+    <span><strong>Personal learning tool.</strong> Not legal advice and not official guidance. Your answers are never sent anywhere. The Status questionnaire isn't saved; optional tools like the H-1B checklist save only on your device. <a href="privacy.html">Read the full privacy and disclosure note.</a></span>
+  </div>
+</div>
+
+<div class="container" id="maincontent" role="main" tabindex="-1">
+
+  <!-- ============ GLOSSARY (always visible) ============ -->
+  <section id="glossary" class="hub-section" aria-labelledby="glossary-title">
+    <span class="hub-eyebrow">Reference</span>
+    <h2 class="hub-title" id="glossary-title">Glossary</h2>
+    <p class="hub-sub">Every acronym on this site, in plain English. Each term links to the official source, or a solid explainer, if you want to dig deeper.</p>
+
+    <div class="gloss-jump">
+      <a href="#gc-eb">Employment-based categories</a>
+      <a href="#gc-family">Family categories</a>
+      <a href="#gc-work">Work visas</a>
+      <a href="#gc-process">Process &amp; Visa Bulletin</a>
+    </div>
+
+    <!-- Employment-based -->
+    <div class="gloss-group" id="gc-eb">
+      <h3>Employment-based green card categories</h3>
+      <p class="gloss-note">The green card categories for people sponsored through a job. There are five, EB-1 through EB-5.</p>
+      <dl class="gloss">
+        <dt><code>EB</code>: Employment-Based</dt>
+        <dd>The family of green card categories for people sponsored through work. Five of them, numbered by "preference", each with its own eligibility bar and its own place in line.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>EB-1</code>: First Preference</dt>
+        <dd>For people at the very top of their field. No PERM labor certification, and usually the shortest wait. Three sub-types: <code>EB-1A</code> extraordinary ability (you can self-petition, no employer needed), <code>EB-1B</code> outstanding professor or researcher (employer-sponsored), and <code>EB-1C</code> multinational manager or executive (employer-sponsored, common after an L-1A transfer).
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>EB-2</code>: Second Preference</dt>
+        <dd>For jobs that require an advanced degree (master's or higher) or people of exceptional ability. Requires PERM unless you use the National Interest Waiver. This is where many tech professionals land, and for those born in India it currently has one of the longest waits.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>EB-2 NIW</code>: National Interest Waiver</dt>
+        <dd>A route to an EB-2 green card without an employer or PERM, by showing your work is in the national interest. You file the I-140 yourself. The same EB-2 queue still applies, so it does not skip the backlog, but the petition belongs to you and survives a job change.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>EB-3</code>: Third Preference</dt>
+        <dd>For skilled workers, professionals with a bachelor's degree, and certain other workers. Requires PERM. Depending on the month and country it can move faster or slower than EB-2, which is why some people "downgrade" from EB-2 to EB-3.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>EB-4</code>: Fourth Preference</dt>
+        <dd>For narrowly defined "special immigrants", such as certain religious workers and a handful of other groups. Not a typical employment path.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>EB-5</code>: Fifth Preference</dt>
+        <dd>For investors who put a qualifying amount of capital into a U.S. business that creates jobs. The Visa Bulletin lists several EB-5 rows (an "Unreserved" row plus set-asides for rural, high-unemployment, and infrastructure projects).
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+      </dl>
+    </div>
+
+    <!-- Family -->
+    <div class="gloss-group" id="gc-family">
+      <h3>Family-sponsored categories</h3>
+      <p class="gloss-note">Heads up: <code>F1</code> to <code>F4</code> below are <strong>family</strong> green card categories. They are a different thing from the <code>F-1</code> student visa (a work/study visa, listed under Work visas). Same letter, unrelated.</p>
+      <dl class="gloss">
+        <dt><code>F1</code>: Family First Preference</dt>
+        <dd>Unmarried adult sons and daughters (21 or older) of U.S. citizens.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt><code>F2A</code>: Family Second Preference (A)</dt>
+        <dd>Spouses and minor children (under 21) of lawful permanent residents (green card holders).
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt><code>F2B</code>: Family Second Preference (B)</dt>
+        <dd>Unmarried adult sons and daughters (21 or older) of lawful permanent residents.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt><code>F3</code>: Family Third Preference</dt>
+        <dd>Married sons and daughters of U.S. citizens.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt><code>F4</code>: Family Fourth Preference</dt>
+        <dd>Brothers and sisters of adult U.S. citizens. Typically the longest family wait of all.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+      </dl>
+    </div>
+
+    <!-- Work visas -->
+    <div class="gloss-group" id="gc-work">
+      <h3>Work (nonimmigrant) visas</h3>
+      <p class="gloss-note">Temporary work or study statuses. They are not green cards and are not in the Visa Bulletin; most people hold one of these while a green card is in progress.</p>
+      <dl class="gloss">
+        <dt><code>H-1B</code>: Specialty Occupation</dt>
+        <dd>Employer-sponsored work visa for roles that need a specialized degree. Granted in up to 3-year blocks, 6 years maximum on the base status. Cap-subject roles go through the annual lottery (register each March, roughly a 30% chance in recent years); universities, non-profits, and government research orgs are cap-exempt. Allows "dual intent", so you can pursue a green card without jeopardizing it.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/section-214.2#p-214.2(h)" target="_blank" rel="noopener noreferrer">8 CFR 214.2(h)</a>
+          <a class="gloss-src" href="https://www.boundless.com" target="_blank" rel="noopener noreferrer">Boundless explainer</a></dd>
+
+        <dt><code>L-1</code>: Intracompany Transfer</dt>
+        <dd>For employees transferring to a U.S. office of the same company, after at least one year working for it abroad in the prior three years. <code>L-1A</code> is for managers and executives (7-year maximum); <code>L-1B</code> is for specialized-knowledge staff (5-year maximum). No lottery and no annual cap. L-1A pairs naturally with the EB-1C green card.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>O-1</code>: Extraordinary Ability</dt>
+        <dd>For people with demonstrated extraordinary ability in the sciences, arts, business, education, or athletics. Initial grant of up to 3 years, then 1-year extensions with no fixed maximum. No lottery, no cap. Pairs naturally with the EB-1A green card.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>F-1</code> / <code>OPT</code> / <code>STEM OPT</code>: Student and Work Authorization</dt>
+        <dd>The <code>F-1</code> student visa (again, not the family <code>F1</code> category). <code>OPT</code> (Optional Practical Training) gives 12 months of work authorization after graduation; a STEM degree adds a 24-month <code>STEM OPT</code> extension, for 36 months total. OPT is the usual bridge to an H-1B or, with strong credentials, straight to a green card via EB-1A or EB-2 NIW.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a>
+          <a class="gloss-src" href="https://www.immihelp.com" target="_blank" rel="noopener noreferrer">Immihelp guide</a></dd>
+
+        <dt><code>TN</code>: USMCA Professional (Canada / Mexico)</dt>
+        <dd>For Canadian and Mexican citizens in qualifying professions under USMCA (formerly NAFTA). Granted in up to 3-year increments, renewable indefinitely, with no cap or lottery. It is not a dual-intent visa, so actively pursuing a green card can complicate TN renewals and re-entry.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>H-1B1</code>: Chile and Singapore Professionals</dt>
+        <dd>A separate specialty-occupation status for nationals of Chile and Singapore, created by trade agreement. It sits outside the regular H-1B lottery and has its own annual numbers, capped by statute at no more than 1,400 for Chile and 5,400 for Singapore. Admission is for 1 year at a time, extendable in 1-year increments, but after every second extension the next one requires a fresh Department of Labor certification.
+          <a class="gloss-src" href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1184&amp;num=0&amp;edition=prelim" target="_blank" rel="noopener noreferrer">8 U.S.C. 1184(g)(8)</a></dd>
+
+        <dt><code>H-4</code>: Dependent of an H-1B Holder</dt>
+        <dd>Status for the spouse and children of an H-1B worker. On its own it carries <strong>no</strong> permission to work. An H-4 spouse can become eligible for a work permit only once the H-1B principal has an approved I-140 or holds H-1B time granted under AC21, and even then must file Form I-765 and wait for the card to arrive.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-8/section-214.2" target="_blank" rel="noopener noreferrer">8 CFR 214.2(h)(9)(iv)</a></dd>
+
+        <dt><code>L-2</code>: Dependent of an L-1 Holder</dt>
+        <dd>Status for the spouse and children of an L-1 transferee. Unlike H-4, the L-2 <em>spouse</em> is authorized to work by statute, with no application and no card required: an I-94 annotated <code>L-2S</code> is itself evidence of work authorization. L-2 children are not work authorized this way.
+          <a class="gloss-src" href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1184&amp;num=0&amp;edition=prelim" target="_blank" rel="noopener noreferrer">8 U.S.C. 1184(c)(2)(E)</a></dd>
+
+        <dt>Duration of Status (<code>D/S</code>)</dt>
+        <dd>Being admitted for as long as you keep doing the thing you were admitted for, rather than until a fixed date. F, J, and I holders were historically admitted this way, which is why their I-94 said <code>D/S</code> instead of a date. A final rule replaces this with a fixed admission date capped at four years, effective September 15, 2026, and that rule is being challenged in court.
+          <a class="gloss-src" href="https://www.federalregister.gov/documents/2026/07/17/2026-14439/establishing-a-fixed-time-period-of-admission-and-an-extension-of-stay-procedure-for-nonimmigrant" target="_blank" rel="noopener noreferrer">91 FR 44976</a></dd>
+
+        <dt>Max-Out Date</dt>
+        <dd>The last date your current nonimmigrant status can be extended to. H-1B tops out at six years of total stay, granted in blocks of up to three; L-1B at five years and L-1A at seven. Once the total is reached no further extension may be granted, so the two things that can move the date are an <code>AC21</code> extension and recaptured time.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-8/section-214.2" target="_blank" rel="noopener noreferrer">8 CFR 214.2(h)(15), (l)(15)</a></dd>
+
+        <dt>Recapture</dt>
+        <dd>Putting time you spent outside the U.S. back onto your H-1B six-year limit. Any stretch abroad longer than 24 hours while an approved H-1B petition was valid does not count toward the total, whatever the reason for the trip, and a later petition can claim it back. The employer has to request it and prove it, with passport stamps, <code>I-94</code> records or airline tickets, and USCIS can grant all, part, or none of what is asked for.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-8/section-214.2" target="_blank" rel="noopener noreferrer">8 CFR 214.2(h)(13)(iii)(C)</a></dd>
+
+        <dt><code>I-20</code> and <code>DS-2019</code>: Certificates of Eligibility</dt>
+        <dd>The Form I-20 is issued by your school and is what makes F-1 status possible; the Form DS-2019 is the equivalent issued by a program sponsor for J-1. You need a current, properly endorsed one to re-enter the U.S., and for students it does the work an endorsed I-94 does for other categories.
+          <a class="gloss-src" href="https://studyinthestates.dhs.gov" target="_blank" rel="noopener noreferrer">Study in the States</a></dd>
+      </dl>
+    </div>
+
+    <!-- Process + bulletin -->
+    <div class="gloss-group" id="gc-process">
+      <h3>The process and the Visa Bulletin</h3>
+      <p class="gloss-note">The steps of an employment green card and the monthly chart that governs the wait.</p>
+      <dl class="gloss">
+        <dt><code>PERM</code> (Form <code>ETA 9089</code>)</dt>
+        <dd>The labor-certification step for EB-2 and EB-3. The employer tests the U.S. job market and files Form <code>ETA 9089</code> with the Department of Labor to certify that no qualified U.S. worker is available for the role. The day DOL receives it sets your priority date.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-20/chapter-V/part-656" target="_blank" rel="noopener noreferrer">20 CFR 656</a>
+          <a class="gloss-src" href="https://flag.dol.gov/" target="_blank" rel="noopener noreferrer">DOL PERM (flag.dol.gov)</a></dd>
+
+        <dt><code>PWD</code>: Prevailing Wage Determination</dt>
+        <dd>The first PERM step. DOL sets the minimum wage the job must pay for that role and location before recruitment can begin.
+          <a class="gloss-src" href="https://flag.dol.gov/" target="_blank" rel="noopener noreferrer">DOL PERM (flag.dol.gov)</a></dd>
+
+        <dt>Prevailing Wage Request vs. Determination</dt>
+        <dd>Two different things with nearly the same name. The employer <em>requests</em> a wage from a DOL National Processing Center; what comes back is the <em>determination</em>, and it expires: never sooner than 90 days and never later than one year from the determination date. The <code>PERM</code> must be filed, or the recruitment must begin, inside that window.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-20/section-656.40" target="_blank" rel="noopener noreferrer">20 CFR 656.40</a></dd>
+
+        <dt>Labor Market Test</dt>
+        <dd>The recruitment round the employer has to run before filing the <code>PERM</code>: a 30-day job order with the State Workforce Agency, ads on two different Sundays in a newspaper of general circulation, and for professional roles three more steps chosen from a set list. It is a real test, not a formality. DOL decides the case partly on whether there is a U.S. worker who is able, willing, qualified, and available for the job, so a strong applicant can sink it.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-20/section-656.17" target="_blank" rel="noopener noreferrer">20 CFR 656.17(e)</a>
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-20/section-656.24" target="_blank" rel="noopener noreferrer">20 CFR 656.24(b)</a></dd>
+
+        <dt>Quiet Period</dt>
+        <dd>The gap the rules force between recruiting and filing. The mandatory recruitment steps must be conducted at least 30 days, and no more than 180 days, before the <code>PERM</code> is filed, so there is a stretch where nothing appears to happen and a late applicant can still turn up. "Quiet period" is the shorthand people use; the regulation itself just states the 30-day and 180-day bounds.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-20/section-656.17" target="_blank" rel="noopener noreferrer">20 CFR 656.17(e)</a></dd>
+
+        <dt>Recruitment Report</dt>
+        <dd>The employer's signed written account of the recruitment: which steps were run, what came of them, how many people were hired, and how many U.S. applicants were rejected, sorted by the lawful job-related reason for each rejection. "Could have been trained up during a reasonable period of on-the-job training" is expressly <em>not</em> a lawful reason. DOL can then ask to see the resumes behind it.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-20/section-656.17" target="_blank" rel="noopener noreferrer">20 CFR 656.17(g)</a></dd>
+
+        <dt><code>BALCA</code>: Board of Alien Labor Certification Appeals</dt>
+        <dd>The Department of Labor body that reviews a denied or revoked labor certification. The part people get wrong: <strong>the employer appeals, not you.</strong> The regulation gives the request for review to the employer (or a debarred person or entity), and it must be sent within 30 days of the determination; the worker is not on that list.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-20/section-656.26" target="_blank" rel="noopener noreferrer">20 CFR 656.26(a)</a></dd>
+
+        <dt>Priority Date</dt>
+        <dd>Your place in line. For EB-2 and EB-3 it is the day DOL receives your <code>ETA 9089</code>; for EB-1 and EB-2 NIW it is the day USCIS receives your I-140. Your green card cannot be finalized until this date becomes "current" in the Visa Bulletin.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a>
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-20/chapter-V/part-656" target="_blank" rel="noopener noreferrer">20 CFR 656</a></dd>
+
+        <dt><code>I-140</code>: Immigrant Petition for Alien Worker</dt>
+        <dd>The petition (usually filed by the employer) that establishes you qualify for the EB category. Approval locks your priority date to you and unlocks AC21 benefits.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a>
+          <a class="gloss-src" href="https://egov.uscis.gov/processing-times/" target="_blank" rel="noopener noreferrer">USCIS Processing Times</a></dd>
+
+        <dt><code>I-485</code>: Adjustment of Status</dt>
+        <dd>The application to become a permanent resident from inside the U.S. You can only file it once your priority date is current under whichever chart USCIS honors that month.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt>Consular Processing</dt>
+        <dd>The alternative to I-485 for people finishing the green card from outside the U.S. The case goes through the National Visa Center and ends with an interview at a U.S. embassy or consulate.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt>Visa Bulletin</dt>
+        <dd>The chart the State Department publishes every month showing, by category and country, which priority dates can move forward. It has two charts: Final Action Dates and Dates for Filing.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt>Final Action Date (<code>FAD</code>)</dt>
+        <dd>The cutoff for a green card to actually be approved and issued that month. If your priority date falls before the FAD for your category and country, your case can be finalized.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt>Date for Filing (<code>DFF</code>)</dt>
+        <dd>The usually-earlier cutoff for submitting your application. Each month USCIS announces whether you use the Final Action chart or the Dates for Filing chart to file your I-485.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt>"Current" (<code>C</code>)</dt>
+        <dd>Means no backlog. A priority date in that cell can move forward immediately, with no wait for a number.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt>"Unavailable" (<code>U</code>)</dt>
+        <dd>Means no green cards are available in that category and country for the month, usually because the annual limit has been used up. It is a valid, if frustrating, state.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt>Retrogression</dt>
+        <dd>When a cutoff date moves backward instead of forward, pushing waits out. It happens when demand for a category exceeds the annual supply of numbers.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a></dd>
+
+        <dt>Country of Chargeability</dt>
+        <dd>Which country's queue you are counted against, normally your country of birth (not your citizenship). It matters because per-country limits make some queues far longer than others.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt>Cross-Chargeability</dt>
+        <dd>A rule that lets a married applicant use a spouse's country of birth if it has a shorter queue. It can meaningfully cut the wait when the two spouses were born in different countries.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+        <dt>EB-3 Downgrade</dt>
+        <dd>Filing a second I-140 under EB-3 (using your existing priority date) when the EB-3 cutoff is ahead of EB-2 for your country, so the case can move faster. The salary must still meet the PERM's prevailing wage, and it only helps when EB-3 is genuinely ahead.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+        <dt>Maintaining Status</dt>
+        <dd>Keeping a valid nonimmigrant status (for example H-1B, extended under AC21) while you wait in the green-card queue. A PERM delay or pause affects the green-card timeline, not necessarily your work status. Letting status lapse, or leaving the U.S. at the wrong time, can forfeit progress, so plan any change with an attorney.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>AC21</code>: American Competitiveness in the 21st Century Act</dt>
+        <dd>The law that lets green card applicants stay in status while stuck in the backlog. Its two most-used parts: <code>&sect;106(a)</code> extends H-1B in 1-year increments past the 6-year cap once your PERM has been pending 365+ days; <code>&sect;104(c)</code> extends it in 3-year increments and makes your priority date portable once your I-140 is approved.
+          <a class="gloss-src" href="https://www.congress.gov/bill/106th-congress/house-bill/2870" target="_blank" rel="noopener noreferrer">AC21 (congress.gov)</a></dd>
+
+        <dt><code>Supplement J</code>: Confirmation of Valid Job Offer or Request for Job Portability</dt>
+        <dd>A short form attached to the <code>I-485</code> that does one of two jobs: confirm the <code>I-140</code> job offer is still real and you still intend to take it (it replaces submitting a job-offer letter), or ask to port a pending I-485 to a new employer under <code>INA 204(j)</code>. For a port, the new role has to be in the same or a similar occupational classification as the one on the I-140.
+          <a class="gloss-src" href="https://www.uscis.gov/i-485supj" target="_blank" rel="noopener noreferrer">USCIS, Form I-485 Supplement J</a></dd>
+
+        <dt>Interfiling</dt>
+        <dd>Asking USCIS to move a pending <code>I-485</code> onto a different approved petition rather than starting over with a new application. The Policy Manual calls it a "transfer of underlying basis": your eligibility has to run unbroken up to the day the request is received, the replacement <code>I-140</code> generally has to be approved before you ask, and granting it is discretionary.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual/volume-7-part-a-chapter-8" target="_blank" rel="noopener noreferrer">USCIS Policy Manual, Vol. 7 Pt. A Ch. 8</a></dd>
+
+        <dt><code>NOIR</code>: Notice of Intent to Rescind</dt>
+        <dd>Notice that the government proposes to undo an adjustment of status it already granted, on the theory you were never eligible for it. Rescission is available within five years of the adjustment; the notice has to spell out the allegations, and you get 30 days to answer in writing under oath and to ask for a hearing before an immigration judge. Let those 30 days pass and the rescission is entered with no appeal.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-8/part-246/section-246.1" target="_blank" rel="noopener noreferrer">8 CFR 246.1</a>
+          <a class="gloss-src" href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1256&amp;num=0&amp;edition=prelim" target="_blank" rel="noopener noreferrer">INA 246(a)</a></dd>
+
+        <dt>Cap-Gap</dt>
+        <dd>A rule that automatically extends F-1 status and work authorization for students selected in the H-1B lottery, so they do not fall out of status between the end of OPT and the October 1 H-1B start date.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>MSA</code>: Metropolitan Statistical Area</dt>
+        <dd>The Census Bureau's definition of a metro area. It matters because a PERM is tied to a specific job location: moving to a different MSA is usually treated as a material location change and may require reassessment of the PERM, while moving within the same MSA usually does not raise a location issue on its own. "Same state" is not the test; the MSA is.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-20/chapter-V/part-656" target="_blank" rel="noopener noreferrer">20 CFR 656</a></dd>
+
+        <dt><code>EAD</code>: Employment Authorization Document</dt>
+        <dd>A work permit. A pending I-485 lets you (and often your spouse) apply for one, so you can work while the green card is finishing.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt>Advance Parole</dt>
+        <dd>A travel document that lets someone with a pending I-485 leave and re-enter the U.S. without abandoning the application.
+          <a class="gloss-src" href="https://www.uscis.gov/policy-manual" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a></dd>
+
+        <dt><code>NVC</code>: National Visa Center</dt>
+        <dd>The State Department office that handles fees, documents, and interview scheduling for consular (immigrant visa) cases before they go to an embassy or consulate.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">travel.state.gov</a></dd>
+
+        <dt><code>I-94</code>: Arrival / Departure Record</dt>
+        <dd>The record of your admission to the U.S., and the document that actually controls how long you may stay. The "Admit Until" date on it can be <em>shorter</em> than the end date on your visa or your approval notice, and it is the date USCIS and other agencies look at. Retrieve it at <a class="gloss-src" href="https://i94.cbp.dhs.gov" target="_blank" rel="noopener noreferrer">i94.cbp.dhs.gov</a>. Note that an I-94 issued by USCIS with an extension approval may not appear on that site.
+          <a class="gloss-src" href="https://www.cbp.gov/travel/international-visitors/i-94" target="_blank" rel="noopener noreferrer">CBP, Form I-94</a></dd>
+
+        <dt>Receipt Notice (<code>I-797C</code>)</dt>
+        <dd>Form I-797C, Notice of Action, is the letter confirming USCIS received a filing and took the fee. It is <strong>not</strong> an approval and it does not by itself grant status. Whether you may work while holding one depends entirely on your category: an H-1B worker on a timely-filed extension or a portability filing generally can, while an H-4 spouse waiting on a work permit generally cannot.
+          <a class="gloss-src" href="https://www.uscis.gov/forms/all-forms" target="_blank" rel="noopener noreferrer">USCIS forms</a></dd>
+
+        <dt><code>I-129</code>: Petition for a Nonimmigrant Worker</dt>
+        <dd>The petition an employer files to obtain or extend a work status such as H-1B, L-1, O-1, or TN. It is the employer's filing, not yours, and it is separate from the I-140 immigrant petition used for a green card.
+          <a class="gloss-src" href="https://www.uscis.gov/i-129" target="_blank" rel="noopener noreferrer">USCIS, Form I-129</a></dd>
+
+        <dt><code>I-765</code>: Application for Employment Authorization</dt>
+        <dd>The application for a work permit, the EAD card. Filing it is not the same as being authorized: for the categories that require it, work authorization begins when the application is <em>approved</em> and, practically, when the card arrives.
+          <a class="gloss-src" href="https://www.uscis.gov/i-765" target="_blank" rel="noopener noreferrer">USCIS, Form I-765</a></dd>
+
+        <dt><code>I-9</code>: Employment Eligibility Verification</dt>
+        <dd>The form your employer completes to verify your identity and your permission to work. Documents come from three lists. A List A document proves both identity and work authorization on its own. A List B document proves identity only and must be paired with a List C document, which proves work authorization only.
+          <a class="gloss-src" href="https://www.uscis.gov/i-9-central/form-i-9-acceptable-documents" target="_blank" rel="noopener noreferrer">USCIS, acceptable documents</a></dd>
+
+        <dt>Labor Condition Application (<code>LCA</code>, Form <code>ETA-9035</code>)</dt>
+        <dd>The employer's filing with the Department of Labor attesting to the wage and working conditions for an H-1B role. It is where the wage level (I through IV) is set, and that level comes from the requirements of the <em>job</em>, not from what you are paid. Distinct from the separate wage level used in the H-1B lottery, which is driven by the offered salary.
+          <a class="gloss-src" href="https://flag.dol.gov/programs/lca" target="_blank" rel="noopener noreferrer">DOL, LCA program</a></dd>
+
+        <dt>Wage Level</dt>
+        <dd>One of four pay tiers, I through IV, published for a given occupation in a given geographic area. Two different things carry this name. The LCA wage level is set by the job's requirements. The registration wage level, which now drives your H-1B lottery odds, is set by the salary being offered, and equity and contingent bonuses do not count toward it.
+          <a class="gloss-src" href="https://flag.dol.gov/wage-data/wage-search" target="_blank" rel="noopener noreferrer">OFLC wage search</a></dd>
+
+        <dt>Portability</dt>
+        <dd>Being allowed to start new employment as soon as a nonfrivolous petition is filed, rather than waiting for approval. It applies to someone who <em>already holds</em> H-1B status; a first-time cap winner who has never held H-1B status is not covered by it.
+          <a class="gloss-src" href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1184&amp;num=0&amp;edition=prelim" target="_blank" rel="noopener noreferrer">8 U.S.C. 1184(n)</a></dd>
+
+        <dt>Change of Status vs. Extension of Stay</dt>
+        <dd>A change of status moves you from one nonimmigrant category to another without leaving the country. An extension of stay keeps you in the category you already hold for longer. The distinction matters for travel: leaving the U.S. while a change of status is pending is treated as abandoning it, while a pending extension generally is not abandoned by departure.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-8/part-248/section-248.1" target="_blank" rel="noopener noreferrer">8 CFR 248.1</a></dd>
+
+        <dt>Automatic Revalidation</dt>
+        <dd>A narrow rule that can treat an expired visa as extended so you can re-enter after a short trip, generally up to 30 days solely in Canada or Mexico. All seven of its conditions must be met, and the one people trip over is that applying for a new visa while abroad disqualifies you.
+          <a class="gloss-src" href="https://www.ecfr.gov/current/title-22/section-41.112" target="_blank" rel="noopener noreferrer">22 CFR 41.112(d)</a></dd>
+
+        <dt><code>DS-160</code>: Online Visa Application</dt>
+        <dd>The form used to apply for a U.S. visa at a consulate abroad. Filing one while you are outside the country is what disqualifies you from automatic revalidation, even if you never attend the interview.
+          <a class="gloss-src" href="https://travel.state.gov/content/travel/en/us-visas.html" target="_blank" rel="noopener noreferrer">travel.state.gov</a></dd>
+      </dl>
+    </div>
+
+    <p class="hub-sub" style="margin-top:30px; font-size:13px;">This glossary is a plain-English learning aid, not legal advice. Definitions are simplified and the rules change; always verify against the official sources linked above and consult a licensed immigration attorney for your own case.</p>
+  </section>
+
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <nav class="foot-links" aria-label="Footer navigation">
+    <a href="index.html#overview">The Process</a>
+    <a href="status.html">Check My Status</a>
+    <a href="eb1a.html">EB Paths</a>
+    <a href="tools.html">Tools</a>
+    <a href="faq.html">FAQ</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="niw-appeals.html">NIW Appeals</a>
+      <a href="niw-decisions.html">Browse Decisions</a><a href="niw-guide.html">NIW Guide</a>
+    <a href="resources.html">Resources</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+  <p class="foot-fine">A personal learning project. Not legal advice. See the <a href="privacy.html">Privacy &amp; Disclosure</a> note.</p>
+</footer>
+
+<div class="print-only print-footer-block" aria-hidden="true">
+  Not legal advice &middot; not official guidance &middot; verify with official sources and a licensed immigration attorney.
+  Generated from a personal tool; nothing is saved or transmitted.
+</div>
+
+<script src="rulebook.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

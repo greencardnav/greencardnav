@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<title>Compare EB Green Card Paths Side by Side — Green Card Navigator</title>
+<meta name="description" content="Compare the six employment-based green card paths side by side: EB-1A, EB-1B, EB-1C, EB-2 with PERM, EB-2 NIW, and EB-3. Who petitions, PERM, eligibility, queue outlook, cost, and fit. Not legal advice.">
+<link rel="canonical" href="https://www.greencardnav.com/compare.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Green Card Navigator">
+<meta property="og:title" content="Compare EB Green Card Paths Side by Side — Green Card Navigator">
+<meta property="og:description" content="Pick two or more of the six employment-based green card paths and compare them across who petitions, PERM, eligibility, queue outlook, cost, and fit. Not legal advice.">
+<meta property="og:url" content="https://www.greencardnav.com/compare.html">
+<meta property="og:image" content="https://www.greencardnav.com/og.png?v=3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compare EB Green Card Paths Side by Side — Green Card Navigator">
+<meta name="twitter:description" content="Pick two or more of the six employment-based green card paths and compare them across who petitions, PERM, eligibility, queue outlook, cost, and fit. Not legal advice.">
+<meta name="twitter:image" content="https://www.greencardnav.com/og.png?v=3">
+<script>
+  // Apply the saved theme BEFORE first paint to avoid a flash of the wrong theme.
+  // Stores only the theme preference ('light' | 'dark' | 'system') under 'gc_theme';
+  // no case data is ever persisted. 'system' resolves to the OS setting here.
+  (function () {
+    try {
+      var pref = localStorage.getItem('gc_theme') || 'system';
+      var effective = pref === 'system'
+        ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : pref;
+      document.documentElement.setAttribute('data-theme', effective);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="paths-page">
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<div class="topbar" role="banner">
+  <nav class="hubnav" aria-label="Section navigation">
+    <a class="brand" href="index.html" aria-label="Green Card Navigator — home">Green Card <span class="brand-dot">Navigator</span></a>
+    <div class="hubnav-links" id="hubnav-links">
+      <a href="status.html" data-nav="check">Check My Status</a>
+      <a href="eb1a.html" data-nav="paths" class="active" aria-current="page">EB Paths</a>
+      <a href="tools.html" data-nav="tools">Tools</a>
+      <a href="faq.html" data-nav="faq">FAQ</a>
+      <a href="glossary.html" data-nav="glossary">Glossary</a>
+      <a href="niw-guide.html" data-nav="guide">NIW Guide</a>
+      <a href="niw-appeals.html" data-nav="appeals">NIW Appeals</a>
+      <a href="niw-decisions.html" data-nav="decisions">Browse Decisions</a>
+      <a href="resources.html" data-nav="resources">Resources</a>
+    </div>
+    <div class="hubnav-actions">
+      <button class="egg-btn" id="eggBtn" type="button" aria-label="A little celebration" title="Fingers crossed 🤞">🛂</button>
+      <div class="theme-toggle" role="group" aria-label="Color theme">
+        <button type="button" data-theme-pref="light" aria-pressed="false" title="Light theme" aria-label="Light theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+          <span class="tt-label">Light</span>
+        </button>
+        <button type="button" data-theme-pref="dark" aria-pressed="false" title="Dark theme" aria-label="Dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <span class="tt-label">Dark</span>
+        </button>
+        <button type="button" data-theme-pref="system" aria-pressed="false" title="Match system setting" aria-label="System theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span class="tt-label">System</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="disclaimer-banner" role="note" aria-label="Personal learning disclaimer">
+    <span class="icon" aria-hidden="true">i</span>
+    <span><strong>Personal learning tool.</strong> Not legal advice and not official guidance. Your answers are never sent anywhere. The Status questionnaire isn't saved; optional tools like the H-1B checklist save only on your device. <a href="privacy.html">Read the full privacy and disclosure note.</a></span>
+  </div>
+</div>
+
+<div class="container" id="maincontent" role="main" tabindex="-1">
+
+  <h1 class="sr-only">Compare Employment-Based Green Card Paths</h1>
+
+  <!-- ============ INTRO + PATH SWITCH ============ -->
+  <section class="hub-section" aria-labelledby="compare-title">
+    <nav class="path-switch" aria-label="Green card paths and appeal data">
+      <a href="eb1a.html">EB-1A</a>
+      <a href="eb1b.html">EB-1B</a>
+      <a href="eb1c.html">EB-1C</a>
+      <a href="eb2.html">EB-2</a>
+      <a href="paths.html">EB-2 NIW</a>
+      <a href="eb3.html">EB-3</a>
+      <a href="compare.html" class="active" aria-current="page">Compare</a>
+      <a href="niw-appeals.html">NIW Appeals</a>
+      <a href="niw-decisions.html">NIW Decisions</a><a href="niw-guide.html">NIW Guide</a>
+    </nav>
+    <span class="hub-eyebrow">Paths</span>
+    <h2 class="hub-title" id="compare-title">Compare the Paths Side by Side</h2>
+    <p class="hub-sub">Pick two or more of the six employment-based green card paths and see them lined up across the things that usually decide which one fits: who petitions, whether PERM is required, the eligibility bar, the queue outlook, government cost, what you get, and the trade-offs. Everything here runs in your browser. Nothing you select is saved or sent anywhere. This is educational, not legal advice.</p>
+  </section>
+
+  <!-- ============ COMPARATOR ============ -->
+  <section class="hub-section" id="compare-tool" aria-labelledby="compare-tool-title">
+    <h2 class="hub-title" id="compare-tool-title">Build your comparison</h2>
+    <p class="hub-sub">Choose the paths you want to look at, then hide any categories you do not care about. Two paths start selected so there is something to read right away.</p>
+
+    <div class="compare-controls">
+      <fieldset class="compare-control-group" id="compare-path-group">
+        <legend>Paths to compare <span class="compare-legend-note">(pick at least two)</span></legend>
+        <div class="compare-chips" id="compare-path-chips"></div>
+      </fieldset>
+
+      <fieldset class="compare-control-group" id="compare-row-group">
+        <legend>Categories to show</legend>
+        <div class="compare-chips compare-chips-rows" id="compare-row-chips"></div>
+      </fieldset>
+    </div>
+
+    <p class="compare-hint" id="compare-hint" role="status" aria-live="polite" hidden>Pick at least two paths to compare.</p>
+
+    <div class="compare-output" id="compare-output"></div>
+
+    <div class="compare-footnotes">
+      <p><strong>Government filing fees are the same across all six paths.</strong> They go to USCIS and are separate from any attorney fee. Form I-140 (the immigrant petition) is <span data-fee="i140Paper">$715</span> by mail or <span data-fee="i140Online">$665</span> online. A separate Asylum Program Fee is due <em>with</em> the I-140 and is not part of it: <span data-fee="asylumProgramFeeSelf">$300</span> for a self-petitioner, $600 if an employer files as a regular petitioner, $0 for a nonprofit. Form I-907 (optional premium processing of the I-140) is <span data-fee="i907Premium">$2,965</span>, paid on top of the I-140 fee. It buys a decision within the posted business-day window and does not shorten the visa-bulletin wait, so confirm the current amount on the official <a href="https://www.uscis.gov/i-907" target="_blank" rel="noopener noreferrer">I-907 page</a>. Form I-485 (adjustment of status inside the U.S.) is <span data-fee="i485Paper">$1,440</span> by mail or <span data-fee="i485Online">$1,390</span> online. What differs between paths is who usually pays, shown in the cost row.</p>
+      <p class="fees-note" data-fees-stamp></p>
+      <p><strong>Queue positions are directional, not predictions.</strong> Backlogs are charged to your country of birth and move month to month. To see the actual movement, use this site's <a href="tools.html#tools-history">History and Trends</a> for how each category's cutoff has moved over the years, <a href="tools.html#tools-perm">PERM Processing Time</a> for how long the labor-certification step has taken, and the <a href="tools.html#tools-projector">Queue Position and Timeline Scenarios</a> tool to explore a range from your own dates. For the official current figures, check the <a href="https://egov.uscis.gov/processing-times/" target="_blank" rel="noopener noreferrer">USCIS processing-times page</a> and the monthly <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a>.</p>
+      <p><strong>The fit notes are trade-offs, not a recommendation.</strong> None of this decides your case. Which path is realistic for you depends on the specific facts of your background and your employer, so confirm with a licensed immigration attorney. You can find one through the <a href="https://www.aila.org/" target="_blank" rel="noopener noreferrer">American Immigration Lawyers Association</a>.</p>
+      <p><strong>O-1 is not included here.</strong> It is a temporary work visa, not one of the six green card paths, so it is left out of this comparison. The <a href="paths.html#mod-line">EB-2 NIW page has a narrative table</a> that includes O-1 for context.</p>
+    </div>
+
+    <noscript>
+      <p class="compare-hint">This side-by-side comparison needs JavaScript. For a static comparison of EB-2 PERM, EB-2 NIW, EB-1A, and O-1, see the <a href="paths.html#mod-line">How the paths compare table on the EB-2 NIW page</a>, or read each guide from the tabs above.</p>
+    </noscript>
+
+    <p class="band-caveat">This page is educational, not legal advice, and does not create an attorney-client relationship. It is not official guidance. Verify against official USCIS and Department of State sources and consult a licensed immigration attorney.</p>
+  </section>
+
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <nav class="foot-links" aria-label="Footer navigation">
+    <a href="index.html#overview">The Process</a>
+    <a href="status.html">Check My Status</a>
+    <a href="eb1a.html">EB Paths</a>
+    <a href="tools.html">Tools</a>
+    <a href="faq.html">FAQ</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="niw-appeals.html">NIW Appeals</a><a href="niw-decisions.html">Browse Decisions</a><a href="niw-guide.html">NIW Guide</a>
+    <a href="resources.html">Resources</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+  <p class="foot-fine">A personal learning project. Not legal advice. See the <a href="privacy.html">Privacy &amp; Disclosure</a> note.</p>
+</footer>
+
+<div class="print-only print-footer-block" aria-hidden="true">
+  Not legal advice &middot; not official guidance &middot; verify with official sources and a licensed immigration attorney.
+  Generated from a personal tool; nothing is saved or transmitted.
+</div>
+
+<script>
+  // ---------------------------------------------------------------------------
+  // Compare EB paths — pure client-side comparator. No fetch, no storage.
+  // Data below is lifted verbatim from the six guide pages (see /tmp source grid).
+  // Nothing is invented; qualitative cells use the guides' own phrasing and
+  // "confirm on the official page" language where a number is not stated.
+  // ---------------------------------------------------------------------------
+  (function () {
+    var root = document.getElementById('compare-tool');
+    if (!root) return;
+
+    var PATHS = [
+      {
+        id: 'eb1a', label: 'EB-1A', href: 'eb1a.html', selfPetition: true,
+        portability: 'High. Also self-petitioned with no employer or PERM, so it carries the same job-independence as an NIW. The petition and priority date belong to you and survive employer changes.',
+        whoPetitions: 'You (self-petition)',
+        perm: 'No',
+        eligibility: 'Extraordinary ability: sustained national or international acclaim, at the very top of your field.',
+        processing: 'Self-petitioned, so you drive the first stage; I-140 premium processing is available. Sits in the EB-1 queue, a separate and often less-backlogged category. For India and China, EB-1 is often ahead of EB-2.',
+        whatYouGet: 'Green card (permanent residence)',
+        fit: 'A hard petition to win, but a self-petition in the faster EB-1 line. Tends to fit people at the top of their field who want independence from an employer.'
+      },
+      {
+        id: 'eb1b', label: 'EB-1B', href: 'eb1b.html', selfPetition: false,
+        portability: 'Lower. Employer-sponsored, tied to a qualifying employer and a permanent job offer, so changing employers can require a new petition. Not job-independent the way EB-1A and NIW are.',
+        whoPetitions: 'Your employer',
+        perm: 'No (but a permanent job offer and a qualifying employer are required)',
+        eligibility: 'Outstanding professor or researcher, internationally recognized in an academic field, plus a qualifying employer and a permanent job offer.',
+        processing: 'Employer files; I-140 premium processing is available. Same EB-1 queue as EB-1A, often ahead of EB-2 for India and China.',
+        whatYouGet: 'Green card (permanent residence)',
+        fit: 'A faster EB-1 line without needing EB-1A’s level of acclaim, but only if you have a qualifying academic or research employer and a permanent offer.'
+      },
+      {
+        id: 'eb1c', label: 'EB-1C', href: 'eb1c.html', selfPetition: false,
+        portability: 'Lower. Employer-sponsored and tied to a qualifying multinational corporate relationship, so it does not move with you between employers.',
+        whoPetitions: 'Your employer',
+        perm: 'No',
+        eligibility: 'Multinational manager or executive: a qualifying corporate relationship plus a genuine managerial or executive role.',
+        processing: 'Employer files; premium processing may be available, so confirm current eligibility. Sits in the EB-1 queue, often ahead of EB-2 for India and China.',
+        whatYouGet: 'Green card (permanent residence)',
+        fit: 'The EB-1 line for intracompany managers and executives with a multinational corporate structure behind them. Not available without that structure.'
+      },
+      {
+        id: 'eb2perm', label: 'EB-2 (PERM)', href: 'eb2.html', selfPetition: false,
+        portability: 'Lower. Employer-sponsored; the case is tied to the sponsoring job, and a change of employer, an out-of-area move, or a major change in duties can force a PERM restart, at least until the case is far enough along for portability.',
+        whoPetitions: 'Your employer',
+        perm: 'Yes (Department of Labor, Form ETA-9089)',
+        eligibility: 'Advanced degree (or bachelor’s plus 5 years of progressive experience) or exceptional ability, and the offered job must require it.',
+        processing: 'Employer-sponsored; PERM comes first and can add many months to well over a year before the petition is even filed. Sits in the EB-2 queue, with a multi-year backlog for India and China.',
+        whatYouGet: 'Green card (permanent residence)',
+        fit: 'The standard employer-sponsored route for skilled professionals. Cheaper and simpler for the applicant when the employer is committed, but PERM adds time.'
+      },
+      {
+        id: 'niw', label: 'EB-2 NIW', href: 'paths.html', selfPetition: true,
+        portability: 'High. You own the petition, so a change of role, location, or employer, or a layoff, needs no PERM amendment or restart on the green-card side, and your priority date moves with you. Keep advancing the same endeavor, and remember any H-1B has its own worksite-move rules.',
+        whoPetitions: 'You (self-petition)',
+        perm: 'No (waived)',
+        eligibility: 'Meet the EB-2 base, then pass the Dhanasar three-prong national-interest test.',
+        processing: 'Self-petitioned; skips PERM, saving the roughly one to two years PERM usually takes. Sits in the same EB-2 queue and priority date as PERM, so it does not jump the line. The NIW guide cites I-140 at roughly 6 to 12 months and I-485 at roughly 8 to 14 months; confirm current times on the official processing-times page.',
+        whatYouGet: 'Green card (permanent residence)',
+        fit: 'Control, portability, and skipping PERM. It is the same EB-2 line, so it tends to fit people who want independence from an employer rather than a faster queue.'
+      },
+      {
+        id: 'eb3', label: 'EB-3', href: 'eb3.html', selfPetition: false,
+        portability: 'Lower. Same PERM machinery as EB-2, so the same employer, location, and duties changes can force a restart before the case is far enough along to port.',
+        whoPetitions: 'Your employer',
+        perm: 'Yes (Department of Labor)',
+        eligibility: 'Meet the exact minimums listed on the labor certification (skilled, professional, or other/unskilled worker).',
+        processing: 'Employer-sponsored; PERM first. Sits in the EB-3 queue; the other-workers subgroup typically waits the longest.',
+        whatYouGet: 'Green card (permanent residence)',
+        fit: 'Fits when the job or your credentials meet a lower bar than EB-2. Same PERM machinery; the other-workers subgroup waits longest.'
+      }
+    ];
+
+    // Category rows, in display order. `cost` is derived from selfPetition.
+    var ROWS = [
+      { key: 'whoPetitions', label: 'Who petitions' },
+      { key: 'perm', label: 'PERM required' },
+      { key: 'eligibility', label: 'Eligibility bar' },
+      { key: 'processing', label: 'Processing / queue outlook' },
+      { key: 'portability', label: 'Portability / job & location changes' },
+      { key: 'cost', label: 'Government cost' },
+      { key: 'whatYouGet', label: 'What you get' },
+      { key: 'fit', label: 'Fit / why choose it' }
+    ];
+
+    function costCell(path) {
+      return path.selfPetition
+        ? 'Usually paid by you (self-petition). Fees are the same across all six paths; see the note below the comparison.'
+        : 'Usually paid by your employer. Fees are the same across all six paths; see the note below the comparison.';
+    }
+
+    function cellValue(path, key) {
+      if (key === 'cost') return costCell(path);
+      return path[key];
+    }
+
+    // Default state: two contrasting paths, all rows visible.
+    var selected = { eb1a: true, niw: true };
+    var visibleRows = {};
+    ROWS.forEach(function (r) { visibleRows[r.key] = true; });
+
+    var pathChipsEl = document.getElementById('compare-path-chips');
+    var rowChipsEl = document.getElementById('compare-row-chips');
+    var outputEl = document.getElementById('compare-output');
+    var hintEl = document.getElementById('compare-hint');
+
+    function selectedCount() {
+      return PATHS.filter(function (p) { return selected[p.id]; }).length;
+    }
+
+    function buildPathChips() {
+      PATHS.forEach(function (p) {
+        var label = document.createElement('label');
+        label.className = 'compare-chip';
+        var input = document.createElement('input');
+        input.type = 'checkbox';
+        input.value = p.id;
+        input.checked = !!selected[p.id];
+        input.setAttribute('aria-label', 'Compare ' + p.label);
+        var span = document.createElement('span');
+        span.textContent = p.label;
+        label.appendChild(input);
+        label.appendChild(span);
+        pathChipsEl.appendChild(label);
+
+        input.addEventListener('change', function () {
+          if (!input.checked && selectedCount() <= 2 && selected[p.id]) {
+            // Keep a minimum of two; revert and explain.
+            input.checked = true;
+            showHint('Keep at least two paths selected to compare.');
+            return;
+          }
+          selected[p.id] = input.checked;
+          syncChipStates();
+          render();
+        });
+      });
+    }
+
+    function buildRowChips() {
+      ROWS.forEach(function (r) {
+        var label = document.createElement('label');
+        label.className = 'compare-chip';
+        var input = document.createElement('input');
+        input.type = 'checkbox';
+        input.value = r.key;
+        input.checked = !!visibleRows[r.key];
+        input.setAttribute('aria-label', 'Show the ' + r.label + ' row');
+        var span = document.createElement('span');
+        span.textContent = r.label;
+        label.appendChild(input);
+        label.appendChild(span);
+        rowChipsEl.appendChild(label);
+
+        input.addEventListener('change', function () {
+          visibleRows[r.key] = input.checked;
+          syncChipStates();
+          render();
+        });
+      });
+    }
+
+    function syncChipStates() {
+      var pathInputs = pathChipsEl.querySelectorAll('input');
+      var i;
+      for (i = 0; i < pathInputs.length; i++) {
+        pathInputs[i].parentNode.classList.toggle('is-checked', pathInputs[i].checked);
+      }
+      var rowInputs = rowChipsEl.querySelectorAll('input');
+      for (i = 0; i < rowInputs.length; i++) {
+        rowInputs[i].parentNode.classList.toggle('is-checked', rowInputs[i].checked);
+      }
+    }
+
+    var hintTimer = null;
+    function showHint(msg) {
+      hintEl.textContent = msg;
+      hintEl.hidden = false;
+      if (hintTimer) clearTimeout(hintTimer);
+      hintTimer = setTimeout(function () { hintEl.hidden = true; }, 4000);
+    }
+
+    function pathLink(path) {
+      var a = document.createElement('a');
+      a.href = path.href;
+      a.textContent = path.label;
+      return a;
+    }
+
+    function activePaths() {
+      return PATHS.filter(function (p) { return selected[p.id]; });
+    }
+
+    function activeRows() {
+      return ROWS.filter(function (r) { return visibleRows[r.key]; });
+    }
+
+    function buildTableView(paths, rows) {
+      var wrap = document.createElement('div');
+      wrap.className = 'table-scroll compare-table-view';
+      var table = document.createElement('table');
+      table.className = 'paths-table compare-table';
+
+      var thead = document.createElement('thead');
+      var htr = document.createElement('tr');
+      var corner = document.createElement('th');
+      corner.scope = 'col';
+      corner.innerHTML = '<span class="sr-only">Category</span>';
+      htr.appendChild(corner);
+      paths.forEach(function (p) {
+        var th = document.createElement('th');
+        th.scope = 'col';
+        th.appendChild(pathLink(p));
+        htr.appendChild(th);
+      });
+      thead.appendChild(htr);
+      table.appendChild(thead);
+
+      var tbody = document.createElement('tbody');
+      rows.forEach(function (r) {
+        var tr = document.createElement('tr');
+        var rowHead = document.createElement('th');
+        rowHead.scope = 'row';
+        rowHead.textContent = r.label;
+        tr.appendChild(rowHead);
+        paths.forEach(function (p) {
+          var td = document.createElement('td');
+          td.textContent = cellValue(p, r.key);
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      return wrap;
+    }
+
+    function buildCardsView(paths, rows) {
+      var wrap = document.createElement('div');
+      wrap.className = 'compare-cards-view';
+      paths.forEach(function (p) {
+        var card = document.createElement('div');
+        card.className = 'compare-card';
+        var h = document.createElement('h3');
+        h.className = 'compare-card-title';
+        h.appendChild(pathLink(p));
+        card.appendChild(h);
+        rows.forEach(function (r) {
+          var row = document.createElement('div');
+          row.className = 'compare-card-row';
+          var dt = document.createElement('div');
+          dt.className = 'compare-card-label';
+          dt.textContent = r.label;
+          var dd = document.createElement('div');
+          dd.className = 'compare-card-value';
+          dd.textContent = cellValue(p, r.key);
+          row.appendChild(dt);
+          row.appendChild(dd);
+          card.appendChild(row);
+        });
+        wrap.appendChild(card);
+      });
+      return wrap;
+    }
+
+    function render() {
+      outputEl.innerHTML = '';
+      var paths = activePaths();
+      var rows = activeRows();
+
+      if (paths.length < 2) {
+        hintEl.textContent = 'Pick at least two paths to compare.';
+        hintEl.hidden = false;
+        return;
+      }
+      hintEl.hidden = true;
+
+      if (rows.length === 0) {
+        var empty = document.createElement('p');
+        empty.className = 'compare-hint';
+        empty.textContent = 'All categories are hidden. Turn at least one category back on to see the comparison.';
+        outputEl.appendChild(empty);
+        return;
+      }
+
+      // Render both structures; CSS shows the right one for the viewport.
+      outputEl.appendChild(buildTableView(paths, rows));
+      outputEl.appendChild(buildCardsView(paths, rows));
+    }
+
+    buildPathChips();
+    buildRowChips();
+    syncChipStates();
+    render();
+  })();
+</script>
+
+<script src="immigration-data.js"></script>
+<script src="rulebook.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

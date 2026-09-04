@@ -1,0 +1,93 @@
+# AWS Amplify build spec.
+#
+# WHY THIS FILE EXISTS
+#   Without it, Amplify deploys the ENTIRE repository as static files. Verified live before
+#   adding it: every tooling file was publicly readable and crawler-allowed, e.g.
+#     https://www.greencardnav.com/automation/RUNBOOK.md            -> 200
+#     https://www.greencardnav.com/automation/build_appeals_page.py -> 200
+#     https://www.greencardnav.com/automation/deploy.sh             -> 200
+#     https://www.greencardnav.com/aao-indexer/dashboard.py         -> 200
+#     https://www.greencardnav.com/smoke-test.mjs                   -> 200
+#   with robots.txt set to "Allow: /".
+#
+#   No secret was exposed - all 39 tracked automation files were scanned, the IMAP password
+#   and Slack webhook are read only from GC_IMAP_PASSWORD and SLACK_WEBHOOK_URL, and the
+#   ledgers hold opaque hex digests. So this is untidiness rather than a breach. But it also
+#   meant ANYTHING dropped into the repo went live, which is the assumption the private
+#   research documents depend on, and that is worth closing deliberately.
+#
+# WHY PRUNE RATHER THAN ALLOWLIST
+#   An allowlist of web assets fails CLOSED on exposure but risks silently 404-ing a file the
+#   site needs. Pruning a denylist fails OPEN on exposure but cannot break the site. Since the
+#   site is live, this prunes - and then ASSERTS that nothing on the known-bad list survived,
+#   so it fails closed on precisely the things that matter.
+#
+# THE TRAP THIS AVOIDS
+#   automation/ is NOT purely tooling. app.js does fetch("automation/dol_queue.json") for the
+#   DOL queue gauge, so deleting the whole directory would have broken that panel. Verified by
+#   grepping every fetch() target in app.js before writing this. That one file is kept.
+
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        # --- keep the one runtime file that lives under automation/ -------------
+        - mkdir -p .keep && cp automation/dol_queue.json .keep/dol_queue.json
+
+        # --- drop tooling, tests, docs and generated working notes --------------
+        - rm -rf automation aao-indexer .github freshness_proposals
+        - rm -f  *.mjs
+        - rm -f  *.md
+        - rm -f  persona-regression.js          # not referenced by any page
+        - rm -f  .gitignore
+
+        # --- restore the runtime file ------------------------------------------
+        - mkdir -p automation && mv .keep/dol_queue.json automation/dol_queue.json
+        - rm -rf .keep
+
+        # --- fail the build if anything on the known-bad list survived ----------
+        # Deliberately a hard failure. A silent regression here re-publishes the runbooks,
+        # and nothing downstream would notice.
+        #
+        # ./amplify.sh is excluded, and it is NOT ours: Amplify writes the commands in this
+        # very build phase out to that script and runs it, in the repo root. So the scan
+        # otherwise flags the thing executing the scan. It is excluded by exact path, not by
+        # name, so a stray shell script anywhere else still fails the build.
+        # Verified: `git ls-files | grep amplify.sh` is empty - it exists only at build time.
+        - |
+          bad=$(find . -path ./node_modules -prune -o \
+                  \( -name '*.py' -o -name '*.mjs' -o -name '*.md' -o -name '*.sh' \) \
+                  ! -path ./amplify.sh \
+                  -print 2>/dev/null | head -20)
+          if [ -n "$bad" ]; then
+            echo "DEPLOY BLOCKED: tooling files still present in the artifact:"; echo "$bad"
+            exit 1
+          fi
+          for p in automation/RUNBOOK.md aao-indexer/dashboard.py smoke-test.mjs; do
+            if [ -e "$p" ]; then echo "DEPLOY BLOCKED: $p survived the prune"; exit 1; fi
+          done
+          echo "prune verified: no tooling, tests or docs in the artifact"
+
+        # --- confirm the site's own runtime dependencies are all still here -----
+        # Every fetch() target in app.js plus every script/link the pages load. If the prune
+        # ever eats one of these the panel using it fails silently in the browser, so assert.
+        - |
+          for f in index.html status.html paths.html tools.html compare.html faq.html \
+                   glossary.html resources.html about.html privacy.html community.html \
+                   niw-appeals.html niw-decisions.html niw-guide.html \
+                   eb1a.html eb1b.html eb1c.html eb2.html eb3.html \
+                   app.js rulebook.js immigration-data.js styles.css \
+                   rulebook.json search-index.json vb_history.json perm_history.json \
+                   eb_inventory.json community.json sources.json \
+                   niw-decisions.json \
+                   automation/dol_queue.json robots.txt sitemap.xml favicon.ico og.png; do
+            if [ ! -e "$f" ]; then echo "DEPLOY BLOCKED: required asset missing: $f"; exit 1; fi
+          done
+          echo "all required web assets present"
+  artifacts:
+    baseDirectory: /
+    files:
+      - '**/*'
+  cache:
+    paths: []

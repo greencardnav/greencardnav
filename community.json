@@ -1,0 +1,421 @@
+{
+  "generated_at": "2026-09-03T14:12:17Z",
+  "schema": 2,
+  "taxonomy": [
+    {
+      "id": "general",
+      "label": "General & News",
+      "subs": [
+        "immigration",
+        "USCIS",
+        "AskImmigration"
+      ]
+    },
+    {
+      "id": "employment_gc",
+      "label": "Employment-Based Green Card",
+      "subs": [
+        "immigration",
+        "USCIS",
+        "greencard",
+        "immigrationlaw"
+      ]
+    },
+    {
+      "id": "family_gc",
+      "label": "Family-Based Green Card",
+      "subs": [
+        "immigration",
+        "USCIS",
+        "greencard"
+      ]
+    },
+    {
+      "id": "work_visas",
+      "label": "Work Visas & Status",
+      "subs": [
+        "h1b",
+        "immigration",
+        "f1visa"
+      ]
+    },
+    {
+      "id": "consular",
+      "label": "Consular & Stamping",
+      "subs": [
+        "AskDS",
+        "h1b",
+        "immigration",
+        "f1visa"
+      ]
+    },
+    {
+      "id": "students_opt",
+      "label": "Students & OPT",
+      "subs": [
+        "f1visa",
+        "immigration"
+      ]
+    },
+    {
+      "id": "country",
+      "label": "Country-Specific (India / China)",
+      "subs": [
+        "nri",
+        "ABCDesis",
+        "immigration",
+        "h1b"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "title": "Is marriage/green card then voluntarily surrendering it later a legitimate path to eventually getting a B2?",
+      "url": "https://old.reddit.com/r/USCIS/comments/1w2i7q7/is_marriagegreen_card_then_voluntarily/",
+      "source": "r/uscis",
+      "date": "2026-08-30",
+      "subreddit": "USCIS",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "title": "Green Card approved!",
+      "url": "https://old.reddit.com/r/USCIS/comments/1w2h3bn/green_card_approved/",
+      "source": "r/uscis",
+      "date": "2026-08-30",
+      "subreddit": "USCIS",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "title": "Sample of future research plan for EB2-NIW",
+      "url": "https://old.reddit.com/r/USCIS/comments/1w284yd/sample_of_future_research_plan_for_eb2niw/",
+      "source": "r/uscis",
+      "date": "2026-08-30",
+      "subreddit": "USCIS",
+      "categories": [
+        "general",
+        "employment_gc"
+      ]
+    },
+    {
+      "title": "Pending I-485 + accidentally returned on B-1 instead of AP, does leaving and re-entering help?",
+      "url": "https://old.reddit.com/r/USCIS/comments/1w27uhc/pending_i485_accidentally_returned_on_b1_instead/",
+      "source": "r/uscis",
+      "date": "2026-08-30",
+      "subreddit": "USCIS",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "title": "Question - Refugee I-485",
+      "url": "https://old.reddit.com/r/USCIS/comments/1w278y0/question_refugee_i485/",
+      "source": "r/uscis",
+      "date": "2026-08-30",
+      "subreddit": "USCIS",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "title": "Does this represents any risk for my money? How should I renounce my green card?",
+      "url": "https://old.reddit.com/r/USCIS/comments/1w26u6t/does_this_represents_any_risk_for_my_money_how/",
+      "source": "r/uscis",
+      "date": "2026-08-30",
+      "subreddit": "USCIS",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "title": "Marriage-based green card approval from the 39 countries",
+      "url": "https://old.reddit.com/r/USCIS/comments/1w25for/marriagebased_green_card_approval_from_the_39/",
+      "source": "r/uscis",
+      "date": "2026-08-30",
+      "subreddit": "USCIS",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "title": "H1B to F1 to B2 Change of Status - red flag?",
+      "url": "https://old.reddit.com/r/USCIS/comments/1w24m4i/h1b_to_f1_to_b2_change_of_status_red_flag/",
+      "source": "r/uscis",
+      "date": "2026-08-30",
+      "subreddit": "USCIS",
+      "categories": [
+        "general",
+        "work_visas",
+        "students_opt"
+      ]
+    },
+    {
+      "title": "Forgot to update an address with my DSO during F-1. Now on H-1B, travelling in January. Should I be worried?",
+      "url": "https://old.reddit.com/r/f1visa/comments/1vyidna/forgot_to_update_an_address_with_my_dso_during_f1/",
+      "source": "r/f1visa",
+      "date": "2026-08-26",
+      "subreddit": "f1visa",
+      "categories": [
+        "work_visas",
+        "students_opt"
+      ]
+    },
+    {
+      "title": "OPT Premium Processing Stuck — 30 Business Days Passed, No Decision. What else can I do?",
+      "url": "https://old.reddit.com/r/f1visa/comments/1vyeing/opt_premium_processing_stuck_30_business_days/",
+      "source": "r/f1visa",
+      "date": "2026-08-25",
+      "subreddit": "f1visa",
+      "categories": [
+        "work_visas",
+        "students_opt"
+      ],
+      "topic": "opt-stem"
+    },
+    {
+      "title": "H4 to F1 COS premium processing",
+      "url": "https://old.reddit.com/r/f1visa/comments/1vy50km/h4_to_f1_cos_premium_processing/",
+      "source": "r/f1visa",
+      "date": "2026-08-25",
+      "subreddit": "f1visa",
+      "categories": [
+        "work_visas",
+        "students_opt"
+      ]
+    },
+    {
+      "title": "Has anyone received a refund for premium processing fees? STEM OPT",
+      "url": "https://old.reddit.com/r/f1visa/comments/1vxwvgm/has_anyone_received_a_refund_for_premium/",
+      "source": "r/f1visa",
+      "date": "2026-08-25",
+      "subreddit": "f1visa",
+      "categories": [
+        "work_visas",
+        "students_opt"
+      ],
+      "topic": "opt-stem"
+    },
+    {
+      "title": "Travel outside US on Stem OPT (Final H1B attempt next year)",
+      "url": "https://old.reddit.com/r/f1visa/comments/1vwu4dk/travel_outside_us_on_stem_opt_final_h1b_attempt/",
+      "source": "r/f1visa",
+      "date": "2026-08-24",
+      "subreddit": "f1visa",
+      "categories": [
+        "work_visas",
+        "students_opt"
+      ],
+      "topic": "opt-stem"
+    },
+    {
+      "title": "F1 visa renewal on OPT — appointment this week, what should I expect?",
+      "url": "https://old.reddit.com/r/f1visa/comments/1vwpfw2/f1_visa_renewal_on_opt_appointment_this_week_what/",
+      "source": "r/f1visa",
+      "date": "2026-08-24",
+      "subreddit": "f1visa",
+      "categories": [
+        "consular",
+        "students_opt"
+      ],
+      "topic": "consular-stamping"
+    },
+    {
+      "title": "H-4 visa transitioning to F-1 visa because I'm a child of an H-1B who will turn 21 before I can upgrade to a green card.",
+      "url": "https://old.reddit.com/r/f1visa/comments/1vw3ij4/h4_visa_transitioning_to_f1_visa_because_im_a/",
+      "source": "r/f1visa",
+      "date": "2026-08-23",
+      "subreddit": "f1visa",
+      "categories": [
+        "work_visas",
+        "students_opt"
+      ]
+    },
+    {
+      "title": "Is it mandatory to pay the SEVIS fees in order to see visa slots on the Visa Scheduling Portal? F-1 Visa applicant here",
+      "url": "https://old.reddit.com/r/f1visa/comments/1vu1kfg/is_it_mandatory_to_pay_the_sevis_fees_in_order_to/",
+      "source": "r/f1visa",
+      "date": "2026-08-21",
+      "subreddit": "f1visa",
+      "categories": [
+        "students_opt"
+      ],
+      "topic": "opt-stem"
+    },
+    {
+      "title": "221g - Visa refusal?",
+      "url": "https://old.reddit.com/r/immigration/comments/1vsogpu/221g_visa_refusal/",
+      "source": "r/immigration",
+      "date": "2026-08-19",
+      "subreddit": "immigration",
+      "categories": [
+        "general",
+        "consular"
+      ],
+      "topic": "consular-stamping"
+    },
+    {
+      "title": "Applying to VAWA after having green card through marriage.",
+      "url": "https://old.reddit.com/r/immigration/comments/1vs93rp/applying_to_vawa_after_having_green_card_through/",
+      "source": "r/immigration",
+      "date": "2026-08-19",
+      "subreddit": "immigration",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "title": "Can I use end client letter to prove my skill for perm i140?",
+      "url": "https://old.reddit.com/r/immigration/comments/1vs6jh0/can_i_use_end_client_letter_to_prove_my_skill_for/",
+      "source": "r/immigration",
+      "date": "2026-08-19",
+      "subreddit": "immigration",
+      "categories": [
+        "general",
+        "employment_gc"
+      ]
+    },
+    {
+      "title": "H-1B Extension Premium Processing Pending Since June 15 - No Decision After 2 months. Anyone experienced this?",
+      "url": "https://old.reddit.com/r/h1b/comments/1vt0bu7/h1b_extension_premium_processing_pending_since/",
+      "source": "r/h1b",
+      "date": "2026-08-19",
+      "subreddit": "h1b",
+      "categories": [
+        "work_visas"
+      ]
+    },
+    {
+      "title": "H-1B cap-subject → cap-exempt employer → cap-subject employer: Do I need the lottery again?",
+      "url": "https://old.reddit.com/r/h1b/comments/1vswzk7/h1b_capsubject_capexempt_employer_capsubject/",
+      "source": "r/h1b",
+      "date": "2026-08-19",
+      "subreddit": "h1b",
+      "categories": [
+        "work_visas"
+      ],
+      "topic": "h1b-lottery"
+    },
+    {
+      "title": "Should I travel to India now for H1B stamping or wait?",
+      "url": "https://old.reddit.com/r/h1b/comments/1vsw2sp/should_i_travel_to_india_now_for_h1b_stamping_or/",
+      "source": "r/h1b",
+      "date": "2026-08-19",
+      "subreddit": "h1b",
+      "categories": [
+        "work_visas",
+        "consular",
+        "country"
+      ],
+      "topic": "consular-stamping"
+    },
+    {
+      "title": "H-1B PP approvals today? (8/19/2026)",
+      "url": "https://old.reddit.com/r/h1b/comments/1vsqn1w/h1b_pp_approvals_today_8192026/",
+      "source": "r/h1b",
+      "date": "2026-08-19",
+      "subreddit": "h1b",
+      "categories": [
+        "work_visas"
+      ]
+    },
+    {
+      "title": "Creating a group for July h1b premium processing delays",
+      "url": "https://old.reddit.com/r/h1b/comments/1vsp1mn/creating_a_group_for_july_h1b_premium_processing/",
+      "source": "r/h1b",
+      "date": "2026-08-19",
+      "subreddit": "h1b",
+      "categories": [
+        "work_visas"
+      ]
+    },
+    {
+      "title": "H1B RFE - Awaiting Decision",
+      "url": "https://old.reddit.com/r/h1b/comments/1vslkj8/h1b_rfe_awaiting_decision/",
+      "source": "r/h1b",
+      "date": "2026-08-19",
+      "subreddit": "h1b",
+      "categories": [
+        "work_visas"
+      ],
+      "topic": "rfe-trends"
+    },
+    {
+      "title": "H1b Interview Questions",
+      "url": "https://old.reddit.com/r/h1b/comments/1vse4jr/h1b_interview_questions/",
+      "source": "r/h1b",
+      "date": "2026-08-19",
+      "subreddit": "h1b",
+      "categories": [
+        "work_visas"
+      ]
+    },
+    {
+      "title": "H1B Pending since Aug 25, 2025",
+      "url": "https://old.reddit.com/r/h1b/comments/1vs9vz4/h1b_pending_since_aug_25_2025/",
+      "source": "r/h1b",
+      "date": "2026-08-19",
+      "subreddit": "h1b",
+      "categories": [
+        "work_visas"
+      ]
+    },
+    {
+      "title": "F2 visa slots query when will it open in India ?",
+      "url": "https://old.reddit.com/r/immigration/comments/1vrzrfs/f2_visa_slots_query_when_will_it_open_in_india/",
+      "source": "r/immigration",
+      "date": "2026-08-18",
+      "subreddit": "immigration",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "title": "Would you wait 14 years for an F4 Green Card?",
+      "url": "https://old.reddit.com/r/immigration/comments/1vry9nk/would_you_wait_14_years_for_an_f4_green_card/",
+      "source": "r/immigration",
+      "date": "2026-08-18",
+      "subreddit": "immigration",
+      "categories": [
+        "general",
+        "family_gc"
+      ]
+    },
+    {
+      "title": "Law firms for EB-2 NIW — recent experiences and advice?",
+      "url": "https://old.reddit.com/r/immigration/comments/1vrxdad/law_firms_for_eb2_niw_recent_experiences_and/",
+      "source": "r/immigration",
+      "date": "2026-08-18",
+      "subreddit": "immigration",
+      "categories": [
+        "general",
+        "employment_gc"
+      ]
+    },
+    {
+      "title": "Work Visa USA Question: L-1B with approved but unused H-1B (consular processing), approved I-140. Can I do H-1B COS + H-4 COS + H-4 EAD together in 2027?",
+      "url": "https://old.reddit.com/r/immigration/comments/1vrswwj/work_visa_usa_question_l1b_with_approved_but/",
+      "source": "r/immigration",
+      "date": "2026-08-18",
+      "subreddit": "immigration",
+      "categories": [
+        "general",
+        "employment_gc",
+        "work_visas"
+      ]
+    },
+    {
+      "title": "Green Card Holder: Planning to deliver baby in India and return under 8 CFR 211.1(b)(1) — Am I missing any pitfalls?",
+      "url": "https://old.reddit.com/r/immigration/comments/1vrg9rq/green_card_holder_planning_to_deliver_baby_in/",
+      "source": "r/immigration",
+      "date": "2026-08-18",
+      "subreddit": "immigration",
+      "categories": [
+        "general",
+        "country"
+      ]
+    }
+  ]
+}

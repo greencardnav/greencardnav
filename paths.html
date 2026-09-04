@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<title>Paths — Green Card Navigator</title>
+<meta name="description" content="Plain-language guides to employment-based green card paths, starting with the EB-2 National Interest Waiver (NIW): the test, the process, the fees, and how it compares to PERM and EB-1A. Not legal advice.">
+<link rel="canonical" href="https://www.greencardnav.com/paths.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Green Card Navigator">
+<meta property="og:title" content="Paths — Green Card Navigator">
+<meta property="og:description" content="Plain-language guides to employment-based green card paths, starting with the EB-2 National Interest Waiver (NIW). Not legal advice.">
+<meta property="og:url" content="https://www.greencardnav.com/paths.html">
+<meta property="og:image" content="https://www.greencardnav.com/og.png?v=3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paths — Green Card Navigator">
+<meta name="twitter:description" content="Plain-language guides to employment-based green card paths, starting with the EB-2 National Interest Waiver (NIW). Not legal advice.">
+<meta name="twitter:image" content="https://www.greencardnav.com/og.png?v=3">
+<script>
+  // Apply the saved theme BEFORE first paint to avoid a flash of the wrong theme.
+  // Stores only the theme preference ('light' | 'dark' | 'system') under 'gc_theme';
+  // no case data is ever persisted. 'system' resolves to the OS setting here.
+  (function () {
+    try {
+      var pref = localStorage.getItem('gc_theme') || 'system';
+      var effective = pref === 'system'
+        ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : pref;
+      document.documentElement.setAttribute('data-theme', effective);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="paths-page">
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<div class="topbar" role="banner">
+  <nav class="hubnav" aria-label="Section navigation">
+    <a class="brand" href="index.html" aria-label="Green Card Navigator — home">Green Card <span class="brand-dot">Navigator</span></a>
+    <div class="hubnav-links" id="hubnav-links">
+      <a href="status.html" data-nav="check">Check My Status</a>
+      <a href="eb1a.html" data-nav="paths" class="active" aria-current="page">EB Paths</a>
+      <a href="tools.html" data-nav="tools">Tools</a>
+      <a href="faq.html" data-nav="faq">FAQ</a>
+      <a href="glossary.html" data-nav="glossary">Glossary</a>
+      <a href="niw-guide.html" data-nav="guide">NIW Guide</a>
+      <a href="niw-appeals.html" data-nav="appeals">NIW Appeals</a>
+      <a href="niw-decisions.html" data-nav="decisions">Browse Decisions</a>
+      <a href="resources.html" data-nav="resources">Resources</a>
+    </div>
+    <div class="hubnav-actions">
+      <button class="egg-btn" id="eggBtn" type="button" aria-label="A little celebration" title="Fingers crossed 🤞">🛂</button>
+      <div class="theme-toggle" role="group" aria-label="Color theme">
+        <button type="button" data-theme-pref="light" aria-pressed="false" title="Light theme" aria-label="Light theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+          <span class="tt-label">Light</span>
+        </button>
+        <button type="button" data-theme-pref="dark" aria-pressed="false" title="Dark theme" aria-label="Dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <span class="tt-label">Dark</span>
+        </button>
+        <button type="button" data-theme-pref="system" aria-pressed="false" title="Match system setting" aria-label="System theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span class="tt-label">System</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="disclaimer-banner" role="note" aria-label="Personal learning disclaimer">
+    <span class="icon" aria-hidden="true">i</span>
+    <span><strong>Personal learning tool.</strong> Not legal advice and not official guidance. Your answers are never sent anywhere. The Status questionnaire isn't saved; optional tools like the H-1B checklist save only on your device. <a href="privacy.html">Read the full privacy and disclosure note.</a></span>
+  </div>
+</div>
+
+<div class="container" id="maincontent" role="main" tabindex="-1">
+<div class="paths-layout">
+    <details class="paths-toc" open>
+      <summary>On this page</summary>
+      <nav aria-label="On this page">
+        <a href="#mod-test">The NIW Test</a>
+        <a href="#mod-fit">Self-Assessment</a>
+        <a href="#mod-line">What Most People Miss</a>
+        <a href="#mod-changes">Job or Location Change</a>
+        <a href="#mod-process">Process and Timeline</a>
+        <a href="#mod-rfe">Requests for Evidence</a>
+        <a href="#mod-appeals">After a Denial</a>
+        <a href="#mod-firm">Choosing a Firm</a>
+      </nav>
+    </details>
+    <div class="paths-content">
+
+
+  <h1 class="sr-only">EB-2 National Interest Waiver (NIW)</h1>
+
+  <!-- ============ INTRO ============ -->
+  <section class="hub-section" aria-labelledby="paths-title">
+    <nav class="path-switch" aria-label="Green card paths and appeal data">
+      <a href="eb1a.html">EB-1A</a>
+      <a href="eb1b.html">EB-1B</a>
+      <a href="eb1c.html">EB-1C</a>
+      <a href="eb2.html">EB-2</a>
+      <a href="paths.html" class="active" aria-current="page">EB-2 NIW</a>
+      <a href="eb3.html">EB-3</a>
+      <a href="compare.html">Compare</a>
+      <a href="niw-appeals.html">NIW Appeals</a>
+      <a href="niw-decisions.html">NIW Decisions</a><a href="niw-guide.html">NIW Guide</a>
+    </nav>
+    <span class="hub-eyebrow">Paths</span>
+    <h2 class="hub-title" id="paths-title">Employment-Based Green Card Paths</h2>
+    <p class="hub-sub">Different routes to the same goal, explained in plain language. This page currently covers the EB-2 National Interest Waiver (NIW), the route that lets many people skip PERM and petition for themselves. Use the selector above to switch to another green card path.</p>
+
+    <div class="path-tldr" aria-label="EB-2 NIW in 30 seconds">
+      <span class="path-tldr-eyebrow">EB-2 NIW in 30 seconds</span>
+      <ul>
+        <li><strong>If it is denied:</strong> appeals almost never win &mdash; 3,633 of 4,196 decided on the merits were dismissed and only 135 were sustained, about one in 31. <a href="niw-appeals.html">See the appeal-outcome data</a>.</li>
+        <li><strong>What it is:</strong> a waiver inside the EB-2 category, not its own visa. It waives the job offer and the PERM labor certification, so you can file your own Form I-140.</li>
+        <li><strong>How you qualify:</strong> the three-prong Dhanasar test: your work has substantial merit and national importance, you are well positioned to advance it, and on balance it benefits the U.S. to waive the job offer and PERM.</li>
+        <li><strong>What it does <em>not</em> skip:</strong> the EB-2 Visa Bulletin wait. If you were born in India or China, the backlog is the same as any other EB-2 case. NIW speeds up the front of the process, not the queue.</li>
+        <li><strong>It's portable:</strong> it's your own petition, so a job, location, or employer change, or a layoff, generally needs no new PERM, and your priority date moves with you. You do still have to keep advancing the same endeavor, and separately maintain any nonimmigrant status such as H-1B. (<a href="#mod-changes">more below</a>.)</li>
+        <li><strong>Who it tends to fit:</strong> founders, researchers, and specialists whose work has national importance and who can document being well positioned to carry it forward.</li>
+      </ul>
+      <a class="path-tldr-more" href="#mod-fit">Could NIW be relevant to you? &rarr;</a>
+    </div>
+  </section>
+
+
+  <!-- ============ MODULE 1: THE NIW TEST ============ -->
+  <section class="hub-section" id="mod-test" aria-labelledby="niw-test-title">
+    <span class="hub-eyebrow">EB-2 NIW</span>
+    <h2 class="hub-title" id="niw-test-title">The NIW Test</h2>
+    <p class="hub-sub">Before the test, one grounding point. The National Interest Waiver is not its own visa. It is a waiver inside the EB-2 green card category. If USCIS grants it, you get to skip two things a normal EB-2 case requires: the PERM labor certification (the Department of Labor process that proves no qualified U.S. worker is available) and the job-offer requirement. That means you can file your own petition (<a href="https://www.uscis.gov/i-140" target="_blank" rel="noopener noreferrer">Form I-140</a>) without an employer sponsoring you.</p>
+    <p class="paths-p">To get that waiver, you have to pass a three-part test from a 2016 decision called <a href="https://www.justice.gov/eoir/page/file/920996/download" target="_blank" rel="noopener noreferrer">Matter of Dhanasar</a>. You need to satisfy all three parts. The standard is "preponderance of the evidence," which means "more likely than not." The exact legal wording lives in the <a href="https://www.uscis.gov/policy-manual/volume-6-part-f-chapter-5" target="_blank" rel="noopener noreferrer">USCIS Policy Manual</a>.</p>
+
+    <details class="collapsible">
+      <summary>Prong 1: Substantial Merit and National Importance</summary>
+      <div class="body">
+        <p>This prong is about your work, not about you. It asks two things about the "endeavor," which is the specific work you plan to keep doing. Substantial merit means the work has real value, and it can be in science, technology, business, education, health, culture, or the arts. It does not have to be about money. National importance asks whether the work matters beyond your own employer, your own city, or your own paycheck. USCIS looks at the broader impact, so work whose benefits reach past a single company or a single region tends to score better.</p>
+        <p>In one sentence: is what you plan to do genuinely worthwhile, and does it matter to the country as a whole?</p>
+        <p><strong>Kinds of evidence generally associated with this prong:</strong> a clear written description of the endeavor and a business or research plan, letters that explain why your field matters to the country, market or public-health or economic data showing the scale of the problem you work on, and national priorities or agency programs that your work supports.</p>
+      </div>
+    </details>
+
+    <details class="collapsible">
+      <summary>Prong 2: Well Positioned to Advance the Endeavor</summary>
+      <div class="body">
+        <p>This prong is about you. It asks whether you, specifically, are the kind of person who can carry this work forward. USCIS looks at your education, your skills, your knowledge, your track record, and whether you have a realistic plan to move the work ahead. It is reassuring to know this is not a guarantee-of-success test. You do not have to prove the work will definitely succeed. You have to show you are well positioned to push it forward.</p>
+        <p>In one sentence: are you, specifically, someone who can realistically carry this work forward?</p>
+        <p><strong>Kinds of evidence generally associated with this prong:</strong> degrees and credential evaluations, publications and a citation record, patents or products you have shipped, a record of past achievements, recommendation letters (independent experts who do not know you personally tend to carry more weight than close colleagues), evidence that others have adopted your work, funding or contracts, and media coverage.</p>
+      </div>
+    </details>
+
+    <details class="collapsible">
+      <summary>Prong 3: On Balance, Beneficial to Waive the Job Offer and PERM</summary>
+      <div class="body">
+        <p>This prong steps back and asks a bigger question. PERM and the job-offer rule exist to protect U.S. workers. So, given that your work has merit and national importance and that you are well positioned to do it, does it make sense for the country to let you skip the normal labor-market test rather than force you through it?</p>
+        <p>In one sentence: given the first two prongs, is it in the country's interest to just let you get on with the work instead of requiring the usual labor-market test?</p>
+        <p><strong>Kinds of evidence generally associated with this prong:</strong> an argument, backed by facts, that the endeavor does not fit neatly into one job or one employer, evidence that recruiting a U.S. worker for this specific endeavor would be impractical or beside the point, a national-benefit narrative that connects your work to the country's interest, and evidence of self-employment or entrepreneurship where relevant.</p>
+      </div>
+    </details>
+
+    <div class="ref-callout ref-callout-accent" role="note">
+      <p><strong>"My job is at a for-profit company. How is that nationally important?"</strong></p>
+      <p>This is the most common framing question, so let us take it head on. Yes, work at a private, for-profit company can support an NIW. Working for a business does not disqualify you. The test looks at your endeavor and its broader impact, not at your employer's tax status or your job title. The mindset shift that helps most people is this: do not describe your job, describe the problem you are helping solve and who benefits when it gets solved. Your day job is the vehicle. The endeavor is the destination.</p>
+      <p><strong>Framing moves that tend to help</strong> (these are framing ideas, not promises about outcomes, and a lawyer should shape the actual argument):</p>
+      <ul>
+        <li>Zoom out from the employer to the field. Instead of "I improve my company's fraud-detection system," try "I work on payment-fraud detection methods that protect consumers and financial institutions across the industry."</li>
+        <li>Tie the work to a recognized national priority, such as cybersecurity, critical infrastructure, semiconductors, clean energy, public health, or domestic manufacturing, and back it with sources.</li>
+        <li>Show reach beyond one company: open-source tools others adopt, published methods or standards, patents used by others, or techniques that became common practice.</li>
+        <li>Use scale and stakes. National importance is easier to see when the numbers are big. How many people are affected, and what breaks if the problem is not solved?</li>
+        <li>Separate your role from your endeavor. A title like "operations manager" does not describe an endeavor. Define the endeavor first, then show how your role advances it.</li>
+      </ul>
+      <p><strong>Two honest cautions.</strong> First, framing is not evidence. A strong story still needs proof through data, adoption, letters, or documented impact. Second, do not stretch past the truth. The endeavor has to match your actual background and your actual plan. Whether your specific role and evidence clear this bar is a fact-specific legal judgment, so bring it to a licensed immigration attorney.</p>
+    </div>
+  </section>
+
+  <!-- ============ MODULE 2: SELF-ASSESSMENT ============ -->
+  <section class="hub-section" id="mod-fit" aria-labelledby="niw-selfassess-title">
+    <span class="hub-eyebrow">EB-2 NIW</span>
+    <h2 class="hub-title" id="niw-selfassess-title">Self-Assessment</h2>
+    <p class="hub-sub">This is a self-assessment, not a decision. Its job is to help you see where you might stand and to give you clear, specific things to talk through with an immigration attorney. It does not tell you whether you qualify, and it never will. Only a licensed attorney, reviewing your full situation, can judge whether a specific person and a specific endeavor meet the legal test. Think of this as a way to organize your thinking and your evidence before that conversation.</p>
+
+    <details class="collapsible">
+      <summary>Part 1: The EB-2 Base Check</summary>
+      <div class="body">
+        <p>NIW lives inside <a href="https://www.uscis.gov/working-in-the-united-states/permanent-workers/employment-based-immigration-second-preference-eb-2" target="_blank" rel="noopener noreferrer">EB-2</a>, so the first question is always whether you can qualify for EB-2 at all. There are two doors in, and you only need one.</p>
+        <p><strong>Door A: Advanced Degree, or its equivalent.</strong> You may fit this door if you hold a master's degree or a PhD (or a foreign degree that is equivalent) and your field is a professional occupation, or if you hold a bachelor's degree plus at least five years of progressive, post-degree experience in your specialty, which is generally treated as the equivalent of a master's degree. "Progressive" means your responsibility and expertise grew over time. Keep degree certificates, transcripts, promotion letters, and a resume that shows the progression. For a degree from outside the U.S., a credential evaluation is commonly used to show equivalence.</p>
+        <p><strong>Door B: Exceptional Ability</strong> in the sciences, arts, or business, shown by meeting at least three of six criteria: an official academic record showing a degree or diploma in your field, at least ten years of documented full-time experience in your occupation, a license or certification to practice, a salary or other pay that reflects exceptional ability, membership in a professional association, and recognition for your achievements by peers, government, or professional organizations. Note that "exceptional ability" here is a lower bar than the "extraordinary ability" standard used for EB-1A. They are different tests.</p>
+        <p>Clearing the EB-2 base is only step one. It does not, by itself, get you the waiver. The waiver has its own separate test, which is Part 2.</p>
+      </div>
+    </details>
+
+    <details class="collapsible">
+      <summary>Part 2: The Three-Prong Self-Assessment</summary>
+      <div class="body">
+        <p>The waiver test comes from Matter of Dhanasar. To grant NIW, the adjudicator must be satisfied on all three prongs, judged by a "more likely than not" standard. Answering these questions honestly to yourself is a good way to spot where your case is strong and where it is thin. None of your answers are stored or scored.</p>
+        <p><strong>Prong 1 (merit and national importance).</strong> In one or two sentences, what is the specific endeavor you plan to continue in the U.S., and can you say it without naming your employer? Who benefits if this work goes well, and how far does that benefit reach? Does your endeavor connect to a recognized national priority?</p>
+        <p><strong>Prong 2 (well positioned).</strong> What have you already accomplished that shows you can do this work, thinking about results rather than responsibilities? Has anyone independent of you used, cited, funded, or adopted your work? Could you sketch a realistic plan and back each step with something concrete?</p>
+        <p><strong>Prong 3 (on balance beneficial to waive).</strong> Why would forcing a standard PERM job search not fit your situation well? Is there urgency or national benefit that outweighs the protective purpose of labor certification? Can you connect the dots from a strong endeavor and being well positioned to the conclusion that it serves the country to let you proceed?</p>
+      </div>
+    </details>
+
+    <details class="collapsible">
+      <summary>Part 3: The Evidence Checklist</summary>
+      <div class="body">
+        <p>Below is a menu of evidence types people commonly gather, with an honest note on the weight each generally carries. Two rules matter more than any single item. First, quality and independence beat quantity: three strong, independent, objective items are worth more than ten that all trace back to you and your close circle. Second, evidence has to connect to the prongs: an impressive but disconnected paper or patent does little. Use this as a discussion list with your attorney, not a scorecard.</p>
+        <div class="table-scroll">
+          <table class="paths-table">
+            <thead><tr><th>Evidence type</th><th>Generally carries</th><th>Honest note</th></tr></thead>
+            <tbody>
+              <tr><td>Publications in your field</td><td>Meaningful weight, especially with independent citations</td><td>Volume alone is not the point. Who cites you, and why, matters more than the count.</td></tr>
+              <tr><td>Citations of your work</td><td>Meaningful when independent</td><td>Self-citations and citations from co-authors count for less. A credible citation report helps.</td></tr>
+              <tr><td>Patents</td><td>Some weight, more if used or licensed</td><td>A granted patent no one has adopted shows capability but limited impact.</td></tr>
+              <tr><td>Awards and honors</td><td>Minor to strong</td><td>National or field-wide recognition is stronger than internal or student awards.</td></tr>
+              <tr><td>Media coverage</td><td>Modest to moderate</td><td>Independent, substantive coverage helps. Routine mentions or self-published pieces help little.</td></tr>
+              <tr><td>Grants and funding</td><td>Can be strong for prong 2</td><td>Competitive, external funding that backs your endeavor is persuasive.</td></tr>
+              <tr><td>Adoption or real-world impact</td><td>Often among the strongest</td><td>Evidence that others use or rely on your work speaks directly to being well positioned.</td></tr>
+              <tr><td>Expert recommendation letters</td><td>Important, weight depends on independence</td><td>Letters from independent experts who do not know you personally count most. Templated letters add little.</td></tr>
+              <tr><td>Professional memberships (for example IEEE Senior Member)</td><td>Modest on their own</td><td>A supporting item, not a centerpiece, especially if the membership is relatively easy to obtain.</td></tr>
+              <tr><td>Open-source projects</td><td>Depends on real adoption</td><td>Genuine, independent usage can show impact. Stars gathered from asking friends do not.</td></tr>
+              <tr><td>Peer review and reviewer activity</td><td>Modest, supporting</td><td>Reviewing for recognized venues can support prong 2. Document it even when platforms hide reviewer names.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <details class="collapsible">
+      <summary>Part 4: If You Are Not in a Research Role</summary>
+      <div class="body">
+        <p>A lot of people worry that NIW is only for professors and scientists with long publication lists. That is a misunderstanding. National importance is about the impact of the endeavor, not about your job title. Industry professionals, engineers, operations and product people, designers, and others in applied roles can pursue NIW when the endeavor is framed around its wider impact and backed by real evidence. The work still has to clear all three prongs, but the door is not closed because you build products instead of publishing papers. The practical task is usually the same for everyone: describe your endeavor in terms of who it helps beyond your employer, and gather objective evidence that your contributions have been adopted or have made a measurable difference. Whether the evidence actually supports it is exactly the kind of thing to work out with an attorney.</p>
+      </div>
+    </details>
+
+    <p class="band-caveat">This self-assessment can help you understand the pieces and organize your evidence. It cannot decide whether you qualify, draft your petition, or judge how strong your specific evidence is. Those are fact-specific legal judgments. Talk to a licensed immigration attorney about your situation, for example one you research through the <a href="https://www.aila.org/" target="_blank" rel="noopener noreferrer">American Immigration Lawyers Association (AILA)</a>.</p>
+  </section>
+
+  <!-- ============ MODULE 3: SKIPS PERM, NOT THE LINE ============ -->
+  <section class="hub-section" id="mod-line" aria-labelledby="niw-line-title">
+    <span class="hub-eyebrow">EB-2 NIW</span>
+    <h2 class="hub-title" id="niw-line-title">What Most People Miss</h2>
+    <p class="hub-sub">Here is the misunderstanding that costs people the most. Many applicants believe an EB-2 NIW is a faster green card. It can be, but not for the reason most people think, and not for everyone.</p>
+    <details class="collapsible">
+      <summary>The honest version, split by where you were born</summary>
+      <div class="body">
+        <p>NIW is a waiver inside the EB-2 category. What it waives is real and valuable: it removes the PERM labor certification and the need for an employer to sponsor you, so you can file your own petition. What it does not do is change which line you stand in afterward. An approved NIW is still an EB-2 approval. It uses the same EB-2 annual visa numbers, the same 7 percent per-country cap, and the same EB-2 priority date governed by the monthly <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a>.</p>
+        <p>Here is the honest version, split by where you were born, because green card backlogs are charged to your country of birth, not your citizenship. <strong>If you were born in India or China,</strong> NIW can save you the roughly one to two years that PERM usually takes, and it frees you from depending on an employer to start and hold your case. Those are real wins. But after your NIW is approved, you wait in the same multi-year EB-2 backlog as everyone else born in your country. NIW does not move you up that queue by a single day. Anyone who tells you NIW "skips the India backlog" is wrong. <strong>If you were born in a country with low EB-2 demand,</strong> EB-2 is often current, so NIW removes the slow part and there is no long line behind it, and it really can deliver a green card much faster.</p>
+        <p>One more useful point: an approved I-140 locks in your priority date. If you already have a priority date from an earlier employer's EB-2 or EB-3 case, you can generally keep the earlier date, which protects your place in line even though NIW itself does not shorten the line. The bottom line is to choose NIW for control, portability, and skipping PERM, and not to expect it to jump the visa queue.</p>
+      </div>
+    </details>
+
+    <div id="niw-bulletin-callout" class="niw-bulletin" role="note" data-fallback="1">
+      <strong>EB-1 versus EB-2 today.</strong> For people born in India or China, the EB-1 line has often been ahead of the EB-2 line, which is part of why EB-1A can mean a shorter overall wait even though its petition is harder to win. Check the current positions on the <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a>, and see the <a href="tools.html#tools-history">History and Trends charts</a> for how the two lines have moved over time. Do not assume it is always true.
+    </div>
+
+    <h3 class="paths-h3">How the paths compare</h3>
+    <p class="paths-p">Four paths come up most often. Three lead to a green card (<a href="https://www.uscis.gov/working-in-the-united-states/permanent-workers/employment-based-immigration-second-preference-eb-2" target="_blank" rel="noopener noreferrer">EB-2 with PERM</a>, EB-2 NIW, and <a href="https://www.uscis.gov/working-in-the-united-states/permanent-workers/employment-based-immigration-first-preference-eb-1" target="_blank" rel="noopener noreferrer">EB-1A</a>). One does not: <a href="https://www.uscis.gov/working-in-the-united-states/temporary-workers/o-1-visa-individuals-with-extraordinary-ability-or-achievement" target="_blank" rel="noopener noreferrer">O-1</a> is a temporary work visa, included here only for context.</p>
+    <div class="table-scroll">
+      <table class="paths-table">
+        <thead><tr><th scope="col"><span class="sr-only">Comparison factor</span></th><th scope="col">EB-2 with PERM</th><th scope="col">EB-2 NIW</th><th scope="col">EB-1A</th><th scope="col">O-1 (context only)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">What it is</th><td>Employer-sponsored green card</td><td>Self-petitioned green card</td><td>Self-petitioned green card</td><td>Temporary work visa, not a green card</td></tr>
+          <tr><th scope="row">Who files</th><td>Your employer</td><td>You</td><td>You</td><td>Employer or agent</td></tr>
+          <tr><th scope="row">PERM required?</th><td>Yes, filed with the Department of Labor</td><td>No, waived</td><td>No</td><td>Not applicable</td></tr>
+          <tr><th scope="row">Employer or job offer needed?</th><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+          <tr><th scope="row">The bar generally expected</th><td>Meet the EB-2 base, then the labor-market test</td><td>Meet the EB-2 base, then the Dhanasar three-prong test</td><td>Risen to the very top of your field: one major award, or three of ten criteria, plus a totality review</td><td>Sustained national or international acclaim</td></tr>
+          <tr><th scope="row">Visa category and queue</th><td>EB-2</td><td>EB-2, the same queue and priority date as PERM</td><td>EB-1, a separate category, often ahead of EB-2 for India and China (check the bulletin)</td><td>None</td></tr>
+          <tr><th scope="row">Green card at the end?</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="paths-p">The advantage of NIW over standard EB-2 is control and skipping PERM, not a faster priority date. EB-1A is a harder petition to win, but it sits in a different, often less-backlogged category, so for people born in India or China it can mean a shorter overall wait. Many strong applicants file EB-1A and EB-2 NIW at the same time.</p>
+    <p class="paths-p">Want the full picture? <a href="compare.html">Compare all six green card paths side by side</a>, where you can pick which paths and categories to show.</p>
+
+    <h3 class="paths-h3">Self-petition versus employer-sponsored</h3>
+    <p class="paths-p">If you qualify for both an employer-sponsored EB-2 and a self-petitioned NIW, the choice is often less about speed and more about control. This is education to help you ask better questions, not a recommendation for your case.</p>
+    <div class="table-scroll">
+      <table class="paths-table">
+        <thead><tr><th>Factor</th><th>Employer-sponsored (EB-2 PERM)</th><th>Self-petition (EB-2 NIW)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Who owns the petition</th><td>Your employer. If you leave, the case can stop, subject to portability rules once it is far enough along.</td><td>You. It belongs to you and moves with you between jobs.</td></tr>
+          <tr><th scope="row">Control over timing</th><td>The employer and its firm drive the timeline.</td><td>You drive it. You pick your attorney and set the pace.</td></tr>
+          <tr><th scope="row">Document access</th><td>Employer-provided firms often will not share the petition or decision documents.</td><td>You or your own attorney hold the full file.</td></tr>
+          <tr><th scope="row">Cost</th><td>Usually paid by the employer.</td><td>Usually paid by you, and it is attorney-time intensive.</td></tr>
+          <tr><th scope="row">Portability</th><td>Tied to the sponsoring job, at least early on.</td><td>Job-independent. A strong fit for founders and people who expect to change employers.</td></tr>
+          <tr><th scope="row">Dependence risk</th><td>A layoff, or a firm that declines to file, can stall you.</td><td>Removes that single point of failure.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="paths-p">Neither path is better in the abstract. Employer-sponsored is often cheaper and simpler when your employer is committed and your EB-2 line is short. Self-petition buys you independence and portability, which matters most when your case might otherwise depend on one employer. A licensed immigration attorney can tell you whether your specific profile and endeavor actually support an NIW.</p>
+  </section>
+
+  <!-- ============ MODULE: JOB / ROLE / LOCATION CHANGES ============ -->
+  <section class="hub-section" id="mod-changes" aria-labelledby="niw-changes-title">
+    <span class="hub-eyebrow">EB-2 NIW</span>
+    <h2 class="hub-title" id="niw-changes-title">Job or Location Change</h2>
+    <p class="hub-sub">Because an NIW is your own petition, with no PERM labor certification and no employer sponsor, a change of role, location, or employer, or even a layoff, does not force an amendment or a restart on the green-card side. There is no PERM to redo. Your approved I-140 and its priority date belong to you and move with you. Two honest cautions keep this from being oversold, and both are worth raising with an attorney.</p>
+
+    <details class="collapsible">
+      <summary>The green-card side: there is no PERM to amend</summary>
+      <div class="body">
+        <p>In an employer-sponsored EB-2, certain changes can invalidate the PERM labor certification and force a restart: a new prevailing-wage determination, a new labor-market test, and a new priority date. The usual triggers are a change of the sponsoring employer, a move to a worksite outside your metropolitan area, or a job that becomes substantially different in its duties.</p>
+        <p>An NIW has none of that machinery. You waived PERM to get here, so there is no labor certification to amend and nothing to restart when your role, team, location, or employer changes. If you are laid off, a self-petition removes the single point of failure an employer-sponsored case has, where a layoff or a firm that declines to file can stall you. Once your I-140 is approved, your priority date is locked to you and can travel with you, so it generally survives these changes (priority-date retention follows specific USCIS rules).</p>
+      </div>
+    </details>
+
+    <details class="collapsible">
+      <summary>Two honest caveats: continue in your field, and mind your H-1B</summary>
+      <div class="body">
+        <p><strong>Continue in your field.</strong> An NIW is granted for a specific endeavor with substantial merit and national importance, and the case rests on you continuing to advance that endeavor. Changing roles, employers, or locations while staying in the same field is a very different thing from pivoting into unrelated work. A pivot can weaken the basis of the petition, especially before it is approved. Whether a specific change stays within your endeavor is a fact-specific judgment for a licensed immigration attorney.</p>
+        <p><strong>Your H-1B is a separate layer.</strong> The NIW frees the green-card side from PERM amendments. It does not change the rules for your nonimmigrant status. If you hold an H-1B while your NIW green card is pending, a worksite move outside your metropolitan area can still require an amended H-1B petition filed before the move, even though your NIW needs no change. Keep the two layers separate in your planning.</p>
+        <p>One more protection worth knowing: once your I-485 has been pending at least 180 days, you may be able to change to a same or similar job under AC21 portability. That only helps if you were able to file the I-485, which depends on your priority date being current, so for heavily backlogged countries it may be out of reach for a long time.</p>
+      </div>
+    </details>
+
+    <p class="band-caveat">This explains potential immigration impact in general terms. It is not a prediction about your case and not legal advice. Whether a specific job, role, or location change affects your petition is a fact-specific legal judgment, so confirm it with a licensed immigration attorney.</p>
+  </section>
+
+  <!-- ============ MODULE 4: PROCESS AND TIMELINE ============ -->
+  <section class="hub-section" id="mod-process" aria-labelledby="niw-process-title">
+    <span class="hub-eyebrow">EB-2 NIW</span>
+    <h2 class="hub-title" id="niw-process-title">Process and Timeline</h2>
+    <p class="hub-sub">A standard EB-2 case runs through your employer, which first tests the labor market through PERM and then files the immigrant petition for you. A National Interest Waiver removes the employer from both steps: there is no job offer and no PERM labor-market test, and you file your own I-140. It does not remove the labor certification form itself. USCIS requires a national interest waiver petition to arrive with a completed Form ETA-9089 Appendix A and a signed Form ETA-9089 Final Determination, uncertified, filed straight to USCIS. Leaving them out is a documented way to lose an otherwise good petition. Everything after the I-140 works the same way it does for other employment-based green card cases.</p>
+
+    <details class="collapsible">
+      <summary>Step 1: File Form I-140 on your own behalf</summary>
+      <div class="body"><p>This petition carries the evidence for your EB-2 base, which is either an advanced degree or exceptional ability, and for the three-part Dhanasar test. If it is approved, it sets or preserves your priority date, which is your place in line. Approval by itself is not the green card. See <a href="https://www.uscis.gov/i-140" target="_blank" rel="noopener noreferrer">Form I-140</a>.</p></div>
+    </details>
+    <details class="collapsible">
+      <summary>Step 2: Consider premium processing (optional)</summary>
+      <div class="body"><p>Premium processing, requested on <a href="https://www.uscis.gov/i-907" target="_blank" rel="noopener noreferrer">Form I-907</a>, speeds up only the decision on your I-140, because USCIS commits to acting within a set number of business days. It does not move your place in the green card line and does not shorten the priority-date wait. If USCIS issues a Request for Evidence, the premium-processing clock pauses until you respond.</p></div>
+    </details>
+    <details class="collapsible">
+      <summary>Step 3: Wait for a visa number</summary>
+      <div class="body"><p>This is the step most people underestimate. An NIW is still an EB-2 petition, so it uses the same annual quota, the same per-country caps, and the same priority date on the monthly <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" target="_blank" rel="noopener noreferrer">Visa Bulletin</a>. If you were born in a low-demand country, EB-2 is often current and you can move on right away. If you were born in India or China, you still wait in the same multi-year EB-2 line as everyone else from your country of birth. The waiver gives you an independent, employer-free way into that line. It does not let you jump the queue.</p></div>
+    </details>
+    <details class="collapsible">
+      <summary>Step 4: Adjust status or go through consular processing</summary>
+      <div class="body"><p>Once a visa number is available for your country and category, you file <a href="https://www.uscis.gov/i-485" target="_blank" rel="noopener noreferrer">Form I-485</a> if you are in the United States, or you go through consular processing if you are abroad. When your category is current, you may be able to file the I-485 at the same time as the I-140. Your spouse and unmarried children under twenty-one can generally apply alongside you.</p></div>
+    </details>
+
+    <div class="note good"><h3>Doing this yourself?</h3><p>There is a step-by-step guide to self-petitioning this category: the two eligibility tests, how to write the endeavor, what evidence each of the three prongs needs, the forms and fees, and what to do after a request for evidence or a denial. <a href="niw-guide.html">Read the EB-2 NIW self-petition guide</a>.</p></div><h3 class="paths-h3">Fees at a glance</h3>
+    <p class="paths-p">Always confirm the current amount on the official page, because fees change. Government filing fees go to USCIS and are separate from any attorney fee.</p>
+    <div class="table-scroll">
+      <table class="paths-table">
+        <thead><tr><th>What you file</th><th>Form</th><th>Purpose</th><th>Fee</th></tr></thead>
+        <tbody>
+          <tr><td>Your petition</td><td><a href="https://www.uscis.gov/i-140" target="_blank" rel="noopener noreferrer">I-140</a></td><td>The self-petitioned immigrant petition</td><td><span data-fee="i140Paper">$715</span> by mail, or <span data-fee="i140Online">$665</span> online</td></tr>
+          <tr><td>Required additional fee</td><td><a href="https://www.uscis.gov/g-1055" target="_blank" rel="noopener noreferrer">G-1055</a></td><td>Asylum Program Fee, due with the I-140. Not part of the I-140 fee.</td><td><span data-fee="asylumProgramFeeSelf">$300</span> for a self-petitioner. $600 if an employer files as a regular petitioner, $0 for a nonprofit.</td></tr>
+          <tr><td>Optional speed-up</td><td><a href="https://www.uscis.gov/i-907" target="_blank" rel="noopener noreferrer">I-907</a></td><td>Premium processing of the I-140</td><td><span data-fee="i907Premium">$2,965</span>, on top of the I-140 fee.</td></tr>
+          <tr><td>Green card application, inside the U.S.</td><td><a href="https://www.uscis.gov/i-485" target="_blank" rel="noopener noreferrer">I-485</a></td><td>Adjustment of status</td><td>$1,440 by mail, or $1,390 online</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="paths-h3">How long it takes</h3>
+    <p class="paths-p">Always check the live <a href="https://egov.uscis.gov/processing-times/" target="_blank" rel="noopener noreferrer">USCIS processing-times page</a> for your form and service center, because these ranges change.</p>
+    <div class="table-scroll">
+      <table class="paths-table">
+        <thead><tr><th>Stage</th><th>Typical range</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>I-140, regular processing</td><td>Roughly six to twelve months, sometimes longer</td><td>Varies by service center</td></tr>
+          <tr><td>I-140, with premium processing</td><td>A decision within the posted business-day window</td><td>Does not shorten the priority-date wait</td></tr>
+          <tr><td>I-485</td><td>Roughly eight to fourteen months, sometimes longer</td><td>Only after a visa number is available</td></tr>
+          <tr><td>The priority-date wait</td><td>Separate, and can run to years for India and China</td><td>Driven by the Visa Bulletin, not USCIS speed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="paths-p">A few cross-visa points come up often, and they connect to the H-1B material on this site. Filing an immigrant petition while you are on F-1 or OPT can raise immigrant-intent questions. Under AC21, an H-1B can often be extended past the sixth year once an I-140 has been pending for at least 365 days. Both depend on your own dates and status, so confirm them with an attorney.</p>
+  </section>
+
+  <!-- ============ MODULE 5: IF YOU GET AN RFE ============ -->
+  <section class="hub-section" id="mod-rfe" aria-labelledby="niw-rfe-title">
+    <span class="hub-eyebrow">EB-2 NIW</span>
+    <h2 class="hub-title" id="niw-rfe-title">Requests for Evidence</h2>
+    <p class="hub-sub">First, breathe. A Request for Evidence is not a denial. It means USCIS is not yet convinced on one or more points and is giving you a chance to fill the gap. Many cases that get an RFE go on to be approved. This page helps you understand what is happening. Drafting the actual response is a job for your attorney.</p>
+    <details class="collapsible">
+      <summary>What an RFE usually asks, prong by prong, and how to respond</summary>
+      <div class="body">
+        <p><strong>What an RFE usually means, prong by prong.</strong> RFEs on NIW cases tend to line up with the three parts of the Dhanasar test. On the first prong, USCIS often signals that the endeavor looks too narrow or reads as benefiting mainly one employer or locality, and it wants a clearer endeavor statement and better proof of broad impact. On the second prong, which is one of the most common areas, USCIS wants stronger proof of your track record and plan, sometimes an additional statement about how you will advance the work, more evidence of impact, or stronger and more independent recommendation letters. On the third prong, USCIS wants a sharper argument connecting the first two prongs to why waiving the job offer and PERM benefits the country. A few recurring themes cut across all three: letters that read as generic or come only from close colleagues, evidence that does not clearly connect to the endeavor, and cases that lean on the applicant's own claims without independent proof.</p>
+        <p><strong>A few basics.</strong> An RFE comes with a firm deadline, and the single most reliable source for that deadline is the date printed on your own RFE notice, so read that first. In general you cannot add evidence dated after you filed, because the case is judged on eligibility as of the filing date, which is why building a strong case up front matters. If your case is in premium processing, an RFE generally pauses the premium-processing clock until you respond. Confirm all of these against your own notice and current USCIS guidance.</p>
+        <p><strong>What this page will not do.</strong> It will not help you draft an RFE response. Responding well means matching specific evidence to the exact concern USCIS raised, and getting it right is a legal task with real stakes. If you have an RFE, work with a licensed immigration attorney, and do it early enough to meet the deadline on your notice.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ MODULE: IF YOUR PETITION IS DENIED ============ -->
+    <section class="hub-section" id="mod-appeals" aria-labelledby="niw-appeals-title">
+      <span class="hub-eyebrow">EB-2 NIW</span>
+      <h2 class="hub-title" id="niw-appeals-title">After a Denial</h2>
+      <p class="hub-sub">An RFE is not a denial, but some petitions are denied. If that
+        happens you can appeal to the USCIS Administrative Appeals Office, and the honest
+        answer is that appeals almost never win. Of <strong>4,196</strong> EB-2 and NIW
+        appeals decided on the merits, <strong>3,633 were dismissed</strong> and
+        <strong>135 were sustained</strong> &mdash; about one in 31. Refiling a stronger
+        petition is often the better move.</p>
+      <p class="paths-p">A remand is the realistic good outcome and it is not a win: it
+        means the service center has to decide the case again properly, not that a visa
+        is granted. So the effort is far better spent getting the first filing right.</p>
+      <p class="paths-p"><a href="niw-appeals.html">See the full appeal-outcome data
+        &rarr;</a></p>
+      <p class="band-caveat">Counted from published USCIS Administrative Appeals Office
+        decisions. General information, not legal advice.</p>
+    </section>
+
+    <!-- ============ MODULE 6: CHOOSING A FIRM ============ -->
+  <section class="hub-section" id="mod-firm" aria-labelledby="niw-firm-title">
+    <span class="hub-eyebrow">EB-2 NIW</span>
+    <h2 class="hub-title" id="niw-firm-title">Choosing a Firm</h2>
+    <p class="hub-sub">This is a literacy guide for evaluating and working with immigration counsel. It does not endorse, rank, or recommend any specific law firm, and it does not describe any employer's internal immigration policy. Use it to ask better questions. Decisions about your case belong to you and a licensed immigration attorney.</p>
+
+    <details class="collapsible">
+      <summary>What to ask on an intro call</summary>
+      <div class="body">
+        <ul>
+          <li>Who will actually draft my petition, a partner, an associate, or a paralegal, and who reviews it before filing?</li>
+          <li>How many NIW cases has this attorney personally handled, and what have recent outcomes looked like?</li>
+          <li>How do you read my profile against the three prongs, and where do you see the weak spots?</li>
+          <li>What is your drafting process and timeline, and how many rounds of revision do I get?</li>
+          <li>How are recommendation letters handled, and how is an RFE handled if one comes?</li>
+          <li>What exactly is included in the fee, and what is billed separately?</li>
+          <li>Will I receive copies of everything filed on my behalf, including the full petition, receipts, any RFE, and the final decision?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="collapsible">
+      <summary>Fee norms, and what a "guarantee" really means</summary>
+      <div class="body">
+        <p>Immigration firms usually price a full NIW petition as a flat fee, sometimes split into milestone payments. Government filing fees for the I-140, premium processing, and the I-485 are almost always paid on top of the attorney fee, because those go to USCIS, not the firm. Credential evaluations and translations are commonly separate too. Ask whether RFE handling is included, and get the fee agreement in writing.</p>
+        <p>Some firms advertise a money-back or free re-file guarantee. Read the fine print. A refund usually means the attorney fee only, not the government fees. A re-file guarantee usually means no new attorney fee but you pay the government fees again. Guarantees almost always carry conditions, and a denial caused by weak underlying facts may not be covered. A guarantee is a commercial term, not a prediction of approval, and it does not change how USCIS adjudicates your case.</p>
+      </div>
+    </details>
+
+    <details class="collapsible">
+      <summary>Employer firm, personal attorney, or self-preparation</summary>
+      <div class="body">
+        <p>Many people can go through an employer-provided firm, hire their own attorney, or prepare the petition themselves. This guide does not cover any specific employer's rules about which cases their firm will take or fund, which are internal-policy questions to ask your employer directly.</p>
+        <div class="table-scroll">
+          <table class="paths-table">
+            <thead><tr><th>Consideration</th><th>Employer-provided firm</th><th>Personal attorney</th><th>Self-preparation</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Cost to you</th><td>Often lower or covered</td><td>You pay the full fee</td><td>Lowest, though you still pay government fees</td></tr>
+              <tr><th scope="row">Control over strategy</th><td>Lower</td><td>Higher, you direct the case</td><td>Highest, every choice is yours</td></tr>
+              <tr><th scope="row">Document access</th><td>Can vary, confirm you get full copies</td><td>You receive the full file</td><td>You hold everything</td></tr>
+              <tr><th scope="row">Portability</th><td>May be tied to the arrangement</td><td>Fully yours, moves with you</td><td>Fully yours</td></tr>
+              <tr><th scope="row">Effort from you</th><td>Lower</td><td>Moderate</td><td>Highest, you do all the drafting</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Two themes are worth remembering. Control and document access tend to track together, so the more directly you engage counsel, the more likely you are to hold the complete file. And a self-petitioned NIW is filed in your name, so whatever path you choose, make sure you end up with copies of everything, because the petition and its priority date follow you, not the firm.</p>
+      </div>
+    </details>
+
+    <details class="collapsible">
+      <summary>Getting your own USCIS file</summary>
+      <div class="body"><p>Sometimes a firm will not hand over your petition, your RFE, or your decision. You can get your own records directly from the government. If your case is linked to a <a href="https://my.uscis.gov/" target="_blank" rel="noopener noreferrer">USCIS online account</a>, you can see case status and many notices there. You can also file a <a href="https://www.uscis.gov/records/request-records-through-the-freedom-of-information-act-or-privacy-act" target="_blank" rel="noopener noreferrer">Freedom of Information Act request</a> to obtain your own immigration records, including your A-file, which typically contains the petition, evidence, notices, and decisions. Requesting your own records is your right and does not require the firm's permission. Keep your receipt notices and any tracking numbers, which make the request easier.</p></div>
+    </details>
+
+    <p class="band-caveat">This page will not tell you which firm to hire or describe any employer's internal immigration policy. Those are out of scope. For advice on your specific case, consult a licensed immigration attorney.</p>
+  </section>
+
+    </div><!-- /.paths-content -->
+  </div><!-- /.paths-layout -->
+
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <nav class="foot-links" aria-label="Footer navigation">
+    <a href="index.html#overview">The Process</a>
+    <a href="status.html">Check My Status</a>
+    <a href="eb1a.html">EB Paths</a>
+    <a href="tools.html">Tools</a>
+    <a href="faq.html">FAQ</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="niw-appeals.html">NIW Appeals</a><a href="niw-decisions.html">Browse Decisions</a><a href="niw-guide.html">NIW Guide</a>
+    <a href="resources.html">Resources</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+  <p class="foot-fine">A personal learning project. Not legal advice. See the <a href="privacy.html">Privacy &amp; Disclosure</a> note.</p>
+</footer>
+
+<div class="print-only print-footer-block" aria-hidden="true">
+  Not legal advice &middot; not official guidance &middot; verify with official sources and a licensed immigration attorney.
+  Generated from a personal tool; nothing is saved or transmitted.
+</div>
+
+<script src="rulebook.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

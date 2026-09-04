@@ -1,0 +1,516 @@
+{
+  "_readme": [
+    "Watchlist + recorded baselines for faq_staleness.py.",
+    "",
+    "This file is the ledger. faq_staleness.py NEVER writes it unless you pass",
+    "--update-baselines, so a drift report is always reproducible until you",
+    "deliberately accept the new state. Same propose-then-approve shape as",
+    "diff_proposal.py / apply_proposal.py.",
+    "",
+    "Every 'rin' below was confirmed against the live Federal Register API on",
+    "2026-08-31, not copied from prose. Query by RIN, NOT by agency: the EAD",
+    "rule (1615-AD05) is filed under the DHS parent agency and does NOT appear",
+    "in the u-s-citizenship-and-immigration-services agency feed at all.",
+    "",
+    "Four watch kinds:",
+    "  fr_rin               one rulemaking, by RIN.",
+    "  fr_cfr               every rule touching one CFR part since 'since'.",
+    "                       Catches rulemakings nobody listed. Set known_rins to",
+    "                       the RINs already watched individually, or they get",
+    "                       reported twice (1653-AA95 amends both 214 and 274a).",
+    "",
+    "                       Each new document is scored for relevance, so a wide",
+    "                       part-level sweep does not spray ACTIONs. Nothing is",
+    "                       ever dropped - low relevance becomes WATCH and is",
+    "                       still listed with the reason. ACTION needs BOTH a",
+    "                       paragraph the FAQ cites AND a matching subject,",
+    "                       because paragraph overlap alone is not enough:",
+    "                       8 CFR 214.2(h) houses H-2A and H-2B as well as H-1B,",
+    "                       and a maritime crewmen rule (1651-AB62) genuinely",
+    "                       amends 214.1(a) and (e), which the FAQ also cites.",
+    "                       Those are low-relevance hits, not false positives.",
+    "  fr_presidential     proclamations and executive orders matching a term.",
+    "                       CLOSES A STRUCTURAL BLIND SPOT: a proclamation has no",
+    "                       RIN and amends no CFR part, so fr_rin and fr_cfr are",
+    "                       blind to it by construction - yet an INA 212(f)",
+    "                       proclamation can restrict entry outright. Low volume,",
+    "                       so severity defaults to ACTION.",
+    "  courtlistener_docket one federal docket. Uses the /search/ endpoint only,",
+    "                       the only one that answers anonymously. The entries it",
+    "                       returns are a SUBSET of the docket, so treat this as",
+    "                       'the case moved', not a full filing history.",
+    "  wayback_digest       an origin page's content digest, read from",
+    "                       archive.org. uscis.gov is NEVER fetched directly",
+    "                       (Cloudflare-walled; see RUNBOOK.md). A digest change",
+    "                       includes cosmetic edits, so it is a 'go look' signal.",
+    "",
+    "To add a watch item: give it an id, a kind, the FAQ anchors it backs, and",
+    "a baseline. Run with --update-baselines once to record current state."
+  ],
+  "verified_stamp": {
+    "_comment": "The dated 'Last checked' stamp in the .faq-verified block.",
+    "pattern": "Last checked against primary sources on ([A-Z][a-z]+ [0-9]{1,2}, [0-9]{4})",
+    "max_age_days": 90
+  },
+  "litigation_stamp": {
+    "_comment": [
+      "The dated litigation line in the F/J/I section flag. Deliberately",
+      "separate from verified_stamp with a much shorter life: a docket can",
+      "move in a day while the rest of an answer stays accurate for months.",
+      "The generic passed-date scanner is the wrong tool here - it would",
+      "fire the morning after each check - so this ages the date instead.",
+      "Kept in ONE place on the page so two litigation dates can never",
+      "disagree; the change-of-status answer points at it rather than",
+      "repeating it."
+    ],
+    "pattern": "Litigation status, checked ([A-Z][a-z]+ [0-9]{1,2}, [0-9]{4})",
+    "max_age_days": 14,
+    "anchor": "mod-f1"
+  },
+  "date_scan": {
+    "_comment": [
+      "The script scans the WHOLE page for dates, not just .faq-flag blocks, and",
+      "reports any that passed or land inside horizon_days.",
+      "",
+      "Severity depends on WHERE the date sits. A date inside a flag is a promise",
+      "about a pending change, so a passed one means the answer is now wrong and",
+      "is reported as ACTION. A date in ordinary body prose is almost always a",
+      "historical citation ('the rule took effect April 1, 2024'), so passed ones",
+      "are skipped while report_past_in_body is false. Turning that true reports",
+      "them too, and then every citation on the page needs suppressing by hand.",
+      "Future dates are reported from both locations either way.",
+      "",
+      "'acknowledged_past' lists dates that are CORRECTLY written in the past",
+      "tense already, so they are not re-reported every run. Adding a date here",
+      "asserts the surrounding prose reads as history, not as a pending change.",
+      "Wrongly adding a FUTURE date silences it permanently.",
+      "",
+      "2026-09-15 is acknowledged because the seven passages that mention it were rewritten on 2026-09-01 to describe BOTH regimes ('before September 15, 2026 ... on or after September 15, 2026'), so they read correctly on either side of the date and never need the tense fixed. 2026-09-01 is the litigation-checked date, aged by litigation_stamp instead."
+    ],
+    "horizon_days": 45,
+    "report_past_in_body": false,
+    "acknowledged_past": [
+      "2026-09-01",
+      "2026-09-15",
+      "2026-08-18",
+      "2025-01-17",
+      "2025-08-15",
+      "2025-10-30",
+      "2025-12-01",
+      "2023-09-30",
+      "2021-11-01",
+      "2021-05-01",
+      "2026-03-01",
+      "2026-07-17",
+      "2026-08-28"
+    ]
+  },
+  "max_consecutive_failures": 3,
+  "watch": [
+    {
+      "id": "fji-fixed-admission",
+      "what": "Fixed time period of admission replaces duration of status for F, J, and I nonimmigrants",
+      "kind": "fr_rin",
+      "rin": "1653-AA95",
+      "docket": "DHS Docket No. ICEB-2025-0001",
+      "effective_date": "2026-09-15",
+      "litigation": "Presidents' Alliance on Higher Education and Immigration v. DHS, No. 1:26-cv-13799 (D. Mass.) - not ruled on as of 2026-08-28",
+      "faq_anchors": [
+        "q-my-visa-stamp-expired-can-i-drive-to-canada-for-the",
+        "q-my-visa-my-approval-notice-and-my-i-94-all-show-diff",
+        "q-i-have-a-trip-booked-and-my-change-of-status-is-stil",
+        "q-i-work-from-home-does-my-home-address-change-my-offi",
+        "q-my-opt-ends-before-my-h-1b-starts-how-long-does-cap"
+      ],
+      "why_it_matters": "Five answers describe this rule in the FUTURE tense. On the effective date every one of them is grammatically and factually wrong until rewritten. Cap-gap also renumbers from 8 CFR 214.2(f)(5)(vi) to (f)(5)(vii) that day.",
+      "baseline": {
+        "count": 2,
+        "latest_document_number": "2026-14439",
+        "latest_publication_date": "2026-07-17",
+        "latest_type": "Rule"
+      }
+    },
+    {
+      "id": "ead-auto-extension-removed",
+      "what": "Removal of the automatic extension of Employment Authorization Documents",
+      "kind": "fr_rin",
+      "rin": "1615-AD05",
+      "docket": null,
+      "effective_date": "2025-10-30",
+      "litigation": "One challenge filed April 2026, voluntarily dismissed June 2026 before any ruling. No court has blocked the rule.",
+      "faq_anchors": [
+        "q-i-filed-a-stem-opt-extension-did-the-end-of-automati",
+        "q-my-spouse-works-on-an-l-2-if-i-move-from-l-1-to-h-1b"
+      ],
+      "why_it_matters": "Still an INTERIM final rule; comments closed 2025-12-01 and no final rule has issued. If a final rule appears it could restore the 540-day automatic extension, which flips the core answer for H-4 and L-2 spouses. A new document under this RIN is the single highest-value signal on the whole site.",
+      "baseline": {
+        "count": 1,
+        "latest_document_number": "2025-19702",
+        "latest_publication_date": "2025-10-30",
+        "latest_type": "Rule"
+      }
+    },
+    {
+      "id": "h1b-weighted-selection",
+      "what": "Weighted selection process for cap-subject H-1B registrations",
+      "kind": "fr_rin",
+      "rin": "1615-AD01",
+      "docket": "DHS Docket No. USCIS-2025-0040",
+      "effective_date": null,
+      "litigation": null,
+      "faq_anchors": [
+        "q-my-offer-has-stock-and-bonuses-does-that-raise-my-wa"
+      ],
+      "why_it_matters": "The published percentages are the government's own projections, not observed results. FY 2027 caps are already reached, so the next plannable season is FY 2028. Watch for a corrective or amending document, and separately for USCIS publishing actual FY 2027 selection counts.",
+      "baseline": {
+        "count": 2,
+        "latest_document_number": "2025-23853",
+        "latest_publication_date": "2025-12-29",
+        "latest_type": "Rule"
+      }
+    },
+    {
+      "id": "h1b-supplemental-fee",
+      "what": "Fee for certain H-1B petitions (the $100,000 proclamation fee, inflation-adjusted)",
+      "kind": "fr_rin",
+      "rin": "1615-AD20",
+      "docket": "DHS Docket No. USCIS-2026-0298",
+      "effective_date": null,
+      "comments_close": "2026-09-24",
+      "litigation": null,
+      "faq_anchors": [],
+      "why_it_matters": "Proposed rule only. Comments close 2026-09-24. If it finalizes, the fee becomes a live planning number rather than a proposal, and any answer that calls it proposed goes stale. Currently not cited in any FAQ answer, so this watch is forward-looking.",
+      "baseline": {
+        "count": 1,
+        "latest_document_number": "2026-17324",
+        "latest_publication_date": "2026-08-25",
+        "latest_type": "Proposed Rule"
+      }
+    },
+    {
+      "id": "cfr-8-214-nonimmigrants",
+      "what": "Any rule amending 8 CFR 214 - nonimmigrant classes (H-1B, F-1, L-1, cap-gap, H-4)",
+      "kind": "fr_cfr",
+      "cfr_title": 8,
+      "cfr_part": 214,
+      "since": "2026-01-01",
+      "known_rins": [
+        "1653-AA95",
+        "1615-AD01",
+        "1615-AD20",
+        "1615-AD05"
+      ],
+      "faq_anchors": [
+        "mod-h1b-life",
+        "mod-f1"
+      ],
+      "why_it_matters": "This is the net for rulemakings nobody added to the watchlist. 8 CFR 214 is where H-1B, F-1, cap-gap, and H-4 rules live, so it backs most of the site. Documents whose RIN is already watched individually are skipped, so a hit here means something genuinely unwatched.",
+      "baseline": {
+        "count": 4,
+        "seen_documents": [
+          "2026-00830",
+          "2026-02131",
+          "2026-14439",
+          "2026-16319"
+        ]
+      }
+    },
+    {
+      "id": "cfr-8-204-immigrant-petitions",
+      "what": "Any rule amending 8 CFR 204 - immigrant petitions (EB-1A, EB-1B, EB-1C, EB-2, NIW, I-140 portability)",
+      "kind": "fr_cfr",
+      "cfr_title": 8,
+      "cfr_part": 204,
+      "since": "2026-01-01",
+      "known_rins": [],
+      "faq_anchors": [
+        "mod-eb"
+      ],
+      "why_it_matters": "Backs the whole EB-category section, including the 8 CFR 204.5(p) national-interest-waiver EAD route flagged as guidance-versus-rule.",
+      "baseline": {
+        "count": 1,
+        "seen_documents": [
+          "2026-13392"
+        ]
+      }
+    },
+    {
+      "id": "cfr-8-274a-employment-auth",
+      "what": "Any rule amending 8 CFR 274a - employment authorization and I-9 (EAD auto-extension, List A/B/C)",
+      "kind": "fr_cfr",
+      "cfr_title": 8,
+      "cfr_part": 274,
+      "since": "2026-01-01",
+      "known_rins": [
+        "1615-AD05",
+        "1653-AA95"
+      ],
+      "faq_anchors": [
+        "mod-family"
+      ],
+      "why_it_matters": "Where the EAD automatic-extension rule and the I-9 document lists live. The L-2 List C answer was reversed three times during authoring, so movement here is high-risk.",
+      "baseline": {
+        "count": 4,
+        "seen_documents": [
+          "2026-03595",
+          "2026-08333",
+          "2026-11285",
+          "2026-14439"
+        ]
+      }
+    },
+    {
+      "id": "cfr-8-106-fees",
+      "what": "Any rule amending 8 CFR 106 - immigration benefit request fees",
+      "kind": "fr_cfr",
+      "cfr_title": 8,
+      "cfr_part": 106,
+      "since": "2026-01-01",
+      "known_rins": [],
+      "faq_anchors": [
+        "mod-h1b-life"
+      ],
+      "why_it_matters": "The FAQ cites 8 CFR 106.2 and 106.4 for filing and biometric fees. Fee rules move often and change concrete numbers readers plan around.",
+      "baseline": {
+        "count": 8,
+        "seen_documents": [
+          "2026-00321",
+          "2026-08333",
+          "2026-11285",
+          "2026-12542",
+          "2026-16231",
+          "2026-16313",
+          "2026-17324",
+          "C1-2026-12542"
+        ]
+      }
+    },
+    {
+      "id": "cfr-8-248-change-of-status",
+      "what": "Any rule amending 8 CFR 248 - change of nonimmigrant status",
+      "kind": "fr_cfr",
+      "cfr_title": 8,
+      "cfr_part": 248,
+      "since": "2026-01-01",
+      "known_rins": [
+        "1653-AA95"
+      ],
+      "faq_anchors": [
+        "q-i-have-a-trip-booked-and-my-change-of-status-is-stil"
+      ],
+      "why_it_matters": "Backs the change-of-status and abandonment answers. The F/J/I rule added 8 CFR 248.1(f), so this part is actively moving.",
+      "baseline": {
+        "count": 1,
+        "seen_documents": [
+          "2026-14439"
+        ]
+      }
+    },
+    {
+      "id": "cfr-8-264-registration",
+      "what": "Any rule amending 8 CFR 264 - registration and fingerprinting",
+      "kind": "fr_cfr",
+      "cfr_title": 8,
+      "cfr_part": 264,
+      "since": "2026-01-01",
+      "known_rins": [],
+      "faq_anchors": [
+        "q-do-my-spouse-and-children-have-to-give-biometrics-fo"
+      ],
+      "why_it_matters": "Backs the biometrics answer, which already carries an unsettled flag because no primary source settles what happened after September 30, 2023.",
+      "baseline": {
+        "count": 1,
+        "seen_documents": [
+          "2026-13057"
+        ]
+      }
+    },
+    {
+      "id": "cfr-20-655-lca",
+      "what": "Any rule amending 20 CFR 655 - H-1B labor condition application and wage levels",
+      "kind": "fr_cfr",
+      "cfr_title": 20,
+      "cfr_part": 655,
+      "since": "2026-01-01",
+      "known_rins": [],
+      "faq_anchors": [
+        "q-my-offer-has-stock-and-bonuses-does-that-raise-my-wa"
+      ],
+      "why_it_matters": "The FAQ cites 20 CFR 655.715, 655.731(c), 655.734(a) and 655.735 for wage-level and LCA mechanics. This is DOL, not DHS, so no DHS RIN watch would ever catch it.",
+      "baseline": {
+        "count": 3,
+        "seen_documents": [
+          "2026-02131",
+          "2026-06017",
+          "2026-10456"
+        ]
+      }
+    },
+    {
+      "id": "cfr-20-656-perm",
+      "what": "Any rule amending 20 CFR 656 - PERM labor certification",
+      "kind": "fr_cfr",
+      "cfr_title": 20,
+      "cfr_part": 656,
+      "since": "2026-01-01",
+      "known_rins": [],
+      "faq_anchors": [
+        "mod-eb"
+      ],
+      "why_it_matters": "The FAQ cites 20 CFR 656.17(e) and 656.17(i) for PERM. PERM sets the priority date, which is the single number the whole site is organised around.",
+      "baseline": {
+        "count": 1,
+        "seen_documents": [
+          "2026-06017"
+        ]
+      }
+    },
+    {
+      "id": "cfr-22-41-visas",
+      "what": "Any rule amending 22 CFR 41 - nonimmigrant visas and automatic revalidation",
+      "kind": "fr_cfr",
+      "cfr_title": 22,
+      "cfr_part": 41,
+      "since": "2026-01-01",
+      "known_rins": [],
+      "faq_anchors": [
+        "q-my-visa-stamp-expired-can-i-drive-to-canada-for-the"
+      ],
+      "why_it_matters": "The FAQ cites 22 CFR 41.112(a),(b),(d) for automatic revalidation, the basis of the drive-to-Canada answer. This is State Department, invisible to any DHS watch.",
+      "baseline": {
+        "count": 1,
+        "seen_documents": [
+          "2026-15726"
+        ]
+      }
+    },
+    {
+      "id": "pres-nonimmigrant",
+      "what": "Presidential proclamations and executive orders mentioning nonimmigrant status or workers",
+      "kind": "fr_presidential",
+      "term": "nonimmigrant",
+      "since": "2025-01-01",
+      "faq_anchors": [
+        "mod-h1b-life",
+        "mod-f1"
+      ],
+      "why_it_matters": "Closes a structural blind spot. Proclamation 10973 'Restriction on Entry of Certain Nonimmigrant Workers' (2025-09-24) is exactly the instrument behind the H-1B fee content, and NO rin or CFR-part watch can see it: a proclamation has no RIN and amends no CFR part. Volume is single digits per year, so ACTION-by-default does not flood.",
+      "baseline": {
+        "count": 9,
+        "seen_documents": [
+          "2025-01466",
+          "2025-01951",
+          "2025-02612",
+          "2025-10668",
+          "2025-10669",
+          "2025-18601",
+          "2025-23570",
+          "2026-09173",
+          "2026-16404"
+        ]
+      }
+    },
+    {
+      "id": "pres-immigrant-visa",
+      "what": "Presidential documents mentioning immigrant visas or permanent residence",
+      "kind": "fr_presidential",
+      "term": "immigrant visa",
+      "since": "2025-01-01",
+      "faq_anchors": [
+        "mod-eb"
+      ],
+      "why_it_matters": "Entry restrictions and visa-issuance suspensions reach the immigrant-visa stage directly, and would otherwise be invisible to every other watch on this list.",
+      "baseline": {
+        "count": 6,
+        "seen_documents": [
+          "2025-01951",
+          "2025-02009",
+          "2025-10669",
+          "2025-18602",
+          "2025-23570",
+          "2026-02819"
+        ]
+      }
+    },
+    {
+      "id": "pres-entry-restriction",
+      "what": "Presidential documents restricting entry of foreign nationals",
+      "kind": "fr_presidential",
+      "term": "restricting the entry",
+      "since": "2025-01-01",
+      "faq_anchors": [
+        "q-my-visa-stamp-expired-can-i-drive-to-canada-for-the"
+      ],
+      "why_it_matters": "INA 212(f) entry restrictions bear on re-entry and automatic revalidation. Proclamations 10949 and 10998 both restricted entry within the observed window.",
+      "baseline": {
+        "count": 16,
+        "seen_documents": [
+          "2025-01948",
+          "2025-01951",
+          "2025-06063",
+          "2025-07060",
+          "2025-09798",
+          "2025-10668",
+          "2025-10669",
+          "2025-12775",
+          "2025-18601",
+          "2025-19752",
+          "2025-23570",
+          "2026-03824",
+          "2026-10598",
+          "2026-11595",
+          "2026-14991",
+          "2026-16400"
+        ]
+      }
+    },
+    {
+      "id": "litigation-presidents-alliance",
+      "what": "Presidents' Alliance on Higher Education and Immigration v. DHS - challenge to the F/J/I fixed-admission rule",
+      "kind": "courtlistener_docket",
+      "docket_number": "1:26-cv-13799",
+      "court_id": "mad",
+      "faq_anchors": [
+        "mod-f1",
+        "q-i-have-a-trip-booked-and-my-change-of-status-is-stil"
+      ],
+      "why_it_matters": "The Federal Register does NOT index injunctions, so this is the only automated way to learn the September 15 rule was blocked. Plaintiffs asked the court to postpone the effective date. Five answers depend on the outcome.",
+      "baseline": {
+        "date_terminated": null,
+        "max_document_number": 45,
+        "latest_entry_date": "2026-09-02",
+        "docket_id": 74661796
+      }
+    },
+    {
+      "id": "uscis-h1b-registration-page",
+      "what": "USCIS H-1B electronic registration process page - where FY selection counts are announced",
+      "kind": "wayback_digest",
+      "url": "uscis.gov/working-in-the-united-states/temporary-workers/h-1b-specialty-occupations/h-1b-electronic-registration-process",
+      "captures": 4,
+      "faq_anchors": [
+        "q-my-offer-has-stock-and-bonuses-does-that-raise-my-wa"
+      ],
+      "why_it_matters": "FY 2027 and FY 2028 registration counts are published here as a web page, never in the Federal Register. The lottery answer currently says the percentages are projections rather than observed results, and only this page can clear that.",
+      "baseline": {
+        "latest_digest": "BNBMGDNXJV3UXQMMYD44BRFQWZGFRV23",
+        "latest_capture": "20260823035123"
+      }
+    },
+    {
+      "id": "uscis-policy-manual-vol10-partb",
+      "what": "USCIS Policy Manual Volume 10 Part B Chapter 3 - EAD eligibility and the 204.5(p) condition",
+      "kind": "wayback_digest",
+      "url": "uscis.gov/policy-manual/volume-10-part-b-chapter-3",
+      "captures": 4,
+      "faq_anchors": [
+        "q-my-i-140-is-approved-can-i-work-now-and-does-it-give"
+      ],
+      "why_it_matters": "Agency guidance changes never appear in the Federal Register. The PA-2025-15 CSPA change was exactly this shape. One answer flags a condition that sits in this chapter but nowhere in 8 CFR 204.5(p), so a change here directly hits it.",
+      "baseline": {
+        "latest_digest": "5TUHUWB2V3XVWFLQRJNEZUKSNHVQ5AKV",
+        "latest_capture": "20260523013238"
+      }
+    }
+  ]
+}

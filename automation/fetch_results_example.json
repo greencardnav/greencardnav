@@ -1,0 +1,48 @@
+{
+  "run_date": "2026-09-10",
+  "bulletin_month_found": "2026-09",
+  "fetched_by": "example-template",
+  "fetch_notes": "Synthetic example / template. travel.state.gov 403-blocked as always; tier-2 aggregators used. Demonstrates one finding per category the harness handles. NOT a real bulletin read - replace with a real Claude fetch session's output.",
+  "findings": [
+    {
+      "field_path": "bulletin.categories.EB-2.India.date_for_filing",
+      "found_value": "2015-01-15",
+      "sources": ["murthy-visa-bulletin", "fragomen-visa-bulletin"],
+      "tier": 2,
+      "confidence": "medium",
+      "notes": "no_change case: matches current rulebook value. Two tier-2 aggregators agree; refresh last_verified only."
+    },
+    {
+      "field_path": "bulletin.categories.EB-2.China.date_for_filing",
+      "found_value": "2022-01-01",
+      "sources": ["murthy-visa-bulletin", "fragomen-visa-bulletin"],
+      "tier": 2,
+      "confidence": "medium",
+      "notes": "new_coverage high-confidence-enough case: rulebook has this cell as null. Two tier-2 sources agree so it clears the auto-merge bar. verified flag must stay false (tier 2, not tier 1)."
+    },
+    {
+      "field_path": "bulletin.categories.EB-3.China.date_for_filing",
+      "found_value": "2022-01-08",
+      "sources": ["visaverge-only-single-source"],
+      "tier": 2,
+      "confidence": "low",
+      "notes": "low-confidence case: single tier-2 source only. Must be REJECTED into could-not-verify, never auto-merged."
+    },
+    {
+      "field_path": "bulletin.categories.EB-3.India.final_action_date",
+      "found_value": "2014-06-01",
+      "sources": ["murthy-visa-bulletin", "fragomen-visa-bulletin"],
+      "tier": 2,
+      "confidence": "medium",
+      "notes": "verification_transition candidate that must NOT flip: EB-3 India is verified:false in rulebook, and this confirmation is only tier 2. The value moves (expected_change) but the verified flag MUST stay false because it is not a tier-1 confirmation."
+    },
+    {
+      "field_path": "i140.regular_processing_months",
+      "found_value": 9,
+      "sources": ["uscis-processing-times"],
+      "tier": 1,
+      "confidence": "medium",
+      "notes": "auto_fetchable:false case: uscis-processing-times sits behind a Cloudflare human-verification wall. This finding must be SKIPPED (link-out only), never applied - even though it is nominally tier 1."
+    }
+  ]
+}

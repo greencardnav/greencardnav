@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immigration News Digest — 2026-08-31</title>
+<style>    :root {
+      --neutral-950: #0f141a;
+      --neutral-900: #161d26;
+      --neutral-850: #232b37;
+      --neutral-650: #424650;
+      --neutral-600: #656871;
+      --neutral-500: #8c8c94;
+      --neutral-350: #c6c6cd;
+      --neutral-250: #ebebf0;
+      --neutral-150: #f6f6f9;
+      --neutral-100: #f2f3f3;
+      --white: #ffffff;
+      --primary-600: #006ce0;
+      --primary-700: #003c75;
+      --primary-50: #f0fbff;
+      --success-600: #00802f;
+      --success-50: #effff1;
+      --warning-900: #855900;
+      --warning-50: #fffef0;
+      --warning-border: #f7db8a;
+      --error-600: #db0000;
+      --error-50: #fff5f5;
+      --border: #e9ebed;
+      --shadow-sm: 0 0 1px 1px #e9ebed, 0 1px 8px 2px rgba(0,7,22,0.06);
+      --shadow-md: 0 0 1px 1px #e9ebed, 0 6px 24px 2px rgba(0,7,22,0.10);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-badge: 4px;
+      --radius-button: 20px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Helvetica Neue", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--neutral-100);
+      color: var(--neutral-950);
+      margin: 0; padding: 0;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container { max-width: 820px; margin: 0 auto; padding: 24px 20px 60px; }
+    header.hero {
+      background:
+        radial-gradient(120% 140% at 88% -10%, rgba(0,108,224,0.22) 0%, rgba(0,108,224,0) 55%),
+        linear-gradient(160deg, #16202b 0%, var(--neutral-950) 62%);
+      color: var(--neutral-250);
+      padding: 40px 34px 36px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero h1 {
+      margin: 0 0 10px; font-size: 30px; font-weight: 700;
+      letter-spacing: -0.4px; color: #ffffff; line-height: 1.18;
+    }
+    header.hero .subtitle {
+      color: #d9dde3; font-size: 15px; margin: 0; font-weight: 400;
+      line-height: 1.55;
+    }
+    .disclaimer {
+      font-style: italic; color: var(--neutral-600); font-size: 13px;
+      margin-bottom: 18px; padding: 0 4px;
+    }
+    .counts {
+      display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .count-badge {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-badge); padding: 8px 14px;
+      font-size: 13px; box-shadow: var(--shadow-sm);
+    }
+    .count-badge strong { font-size: 18px; display: block; color: var(--primary-600); }
+    .callout-warning {
+      background: var(--warning-50);
+      border: 1px solid var(--warning-border);
+      border-left: 4px solid var(--warning-900);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .callout-warning h2 {
+      margin: 0 0 10px; font-size: 16px; font-weight: 700;
+      color: var(--warning-900);
+    }
+    .callout-warning p { margin: 0 0 10px; font-size: 13px; color: #5d4503; }
+    .callout-warning ul { margin: 0; padding-left: 18px; }
+    .callout-warning li { margin-bottom: 8px; font-size: 14px; }
+    .callout-warning a { color: var(--warning-900); text-decoration: underline; }
+    .card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 20px 22px;
+      margin-bottom: 16px; box-shadow: var(--shadow-sm);
+    }
+    .card h2 {
+      margin: 0 0 14px; font-size: 18px; font-weight: 700;
+      color: var(--neutral-950); border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .item { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--neutral-100); }
+    .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .item-header { display: flex; align-items: baseline; gap: 6px; }
+    .item-num { flex-shrink: 0; font-weight: 700; color: var(--primary-600); font-size: 14px; min-width: 22px; }
+    .item-headline { flex: 1; }
+    .item-headline a {
+      color: var(--primary-600); font-weight: 600; font-size: 15px;
+      text-decoration: none; line-height: 1.4;
+    }
+    .item-headline a:hover { text-decoration: underline; }
+    .item-headline a::after {
+      content: " \2197"; font-size: 11px; opacity: 0.6;
+    }
+    .item-meta { font-size: 12px; color: var(--neutral-650); margin: 4px 0 0 28px; }
+    .item-why {
+      font-size: 13px; margin: 8px 0 0 28px; color: var(--neutral-850);
+      border-left: 3px solid var(--primary-600); padding-left: 10px;
+      font-style: italic; line-height: 1.45;
+    }
+    .item-summary { font-size: 14px; margin: 6px 0 0 28px; color: var(--neutral-950); }
+    .item-badges { margin: 8px 0 0 28px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .conf-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .conf-high { background: #dcfce7; color: #166534; }
+    .conf-medium { background: #fef3c7; color: #92400e; }
+    .conf-low { background: #f3f4f6; color: #6b7280; }
+    .affects-tag {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      background: var(--warning-50); color: var(--warning-900);
+      border: 1px solid var(--warning-border);
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .community-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      background: var(--neutral-150); color: var(--neutral-650);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .community-disclaimer {
+      font-size: 12px; color: var(--neutral-650); font-style: italic;
+      background: var(--neutral-150); border-left: 3px solid var(--neutral-350);
+      padding: 10px 12px; margin: 0 0 14px; border-radius: 4px; line-height: 1.5;
+    }
+    footer {
+      text-align: center; font-size: 12px; color: var(--neutral-600);
+      margin-top: 30px; padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .empty-msg { font-size: 14px; color: var(--neutral-650); padding: 12px 0; }
+    .archive-toggle {
+      background: none; border: 1px solid var(--border); border-radius: var(--radius-badge);
+      padding: 8px 16px; font-size: 13px; color: var(--primary-600); cursor: pointer;
+      font-weight: 600; margin-bottom: 12px;
+    }
+    .archive-toggle:hover { background: var(--primary-50); }
+    .archive-list { display: none; }
+    .archive-list.open { display: block; }
+    .archive-item {
+      display: flex; align-items: baseline; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid var(--neutral-150);
+      font-size: 13px;
+    }
+    .archive-item:last-child { border-bottom: none; }
+    .archive-date { flex-shrink: 0; color: var(--neutral-600); font-size: 12px; min-width: 80px; }
+    .archive-link { flex: 1; }
+    .archive-link a { color: var(--neutral-850); text-decoration: none; }
+    .archive-link a:hover { color: var(--primary-600); text-decoration: underline; }
+    .archive-source { flex-shrink: 0; font-size: 11px; color: var(--neutral-500); }
+    @media (max-width: 600px) {
+      header.hero { padding: 28px 20px 24px; }
+      header.hero h1 { font-size: 24px; }
+      .card { padding: 16px; }
+      .container { padding: 16px 12px 40px; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="hero">
+<h1>Immigration News Digest</h1>
+<p class="subtitle">2026-08-31</p>
+</header>
+<p class="disclaimer">Personal-learning project. NOT legal advice. NOT official guidance. Scope: EB-1, EB-2, EB-3, and H-1B only.</p>
+<div class="counts">
+<div class="count-badge"><strong>27</strong>new items</div>
+<div class="count-badge"><strong>103</strong>deduped</div>
+<div class="count-badge"><strong>0</strong>affects facts</div>
+</div>
+<div class="card">
+<h2>H-1B</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOM1hnSzlNQVRERlBHa21UNVdFSHBYWXhCTmwxWlU4SF9BVHk2QkdKM2tkamduTmstSGZuWUhieGw0MTNUWEs1emtmdGFFWkN2aHRkUlpXN2t4U25jTUJObmNfampJUHg4YXZvV0UyQ1FnSWhMSHZHNWxleE5iUk9XbVlQZ3Q?oc=5">I gave up on getting an H-1B visa because of the $100k fee. I’m optimistic about my future outside the US. - Yahoo</a></span>
+</div>
+<div class="item-meta">Yahoo | 2026-08-28</div>
+<div class="item-summary">I gave up on getting an H-1B visa because of the $100k fee. I’m optimistic about my future outside the US. - Yahoo (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPMFJDWHlXSmNLTU9tTzczSWtib2NKWkxDVEE2dlVnSjVUS1BTSjRkNUFDY2ptVFhsTlJxS2FBYmVIVENleDlhZHFxaXA0VGxXdWNFbFF5RVNTM2VLUXZzaW5Kam45YWZWdVA4cnhoaXNwUGJ0Y0xwakhGTDNEV0xYTzd4MWw3NGF2Tkp5ek15TVJqbU8tSGd4Y2Iwakp6SE1iTlRaclpxeUc4bDlNOUpSdA?oc=5">New $103,000 H-1B Fee Planned for Visa Workers Already in US (3) - Bloomberg Law News</a></span>
+</div>
+<div class="item-meta">Bloomberg Law News | 2026-08-24</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">3.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxPR0VWVFpKOTY0SHRCbDBNbXQybHEyUmJRRGdBT2gzVDdLUUdZLVdKeUozcXpPYUxBTm92WThORV82MER5S1lHXzhqN2x4WVZzNjJiYWhyemtfNkZ4alBTbjFDdngtRlgxM09BNnlYZTVuZlhHOTgzQnEzSm1kZHg2UG5zd05MQktIYVgtM2F5WnA5Zw?oc=5">I left New York and a six-figure job to move back to India. H-1B restrictions made it easier to walk away. - Business Insider</a></span>
+</div>
+<div class="item-meta">Business Insider | 2026-08-31</div>
+<div class="item-summary">I left New York and a six-figure job to move back to India. H-1B restrictions made it easier to walk away. - Business Insider (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">4.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxQNVJ4M09iYXc4SGFCaHk3QVVkaHpreHp1OVR5a1VxRndfSzdDVnh0M1VvbGtPamNkSklINGZEY0RLRFhRcWltSGs0NFpEODZsNEhWWWRJVnNHVUppZDNrek5YSXo3UTR2eTNQU2ZtQWJjOVFOMm9LUXFhM1NaZnB0WmxGRGlaS0xYRFVMQmxGVTYtbFBlTVA4ZDJ1clZmSzV2cU45YVpfSm16aGxJcG11QnFmMC1aeWlPSm5ITThBVXQxUmtlLXlKN2JSTlZld1JjaEZEN3BOUdIB3AFBVV95cUxPSjZ6ekNwbHpZUTVqSUREUEFUUEVXY3Mtd2RpbDVKMFphQ19CQzY2dW9nQzhCbXRNbmNXdENySTI3SV90T3JUU3d3M2t3bzhOZnFsQkJtVkk5TzlDZkF1UGgzUEtzZ2doUzNUcGZPcmg0NFJNRUtpUHZmVGptT0kwRU1WVll4ZllXcjVKOE9vOGRwVmpPdFNLR3ZqUExWX0RvWHNtWGY3ZFBsbW41UmZ1eEQ3VXNVOFdUdUNzWEd2NHJCMWdSSDVseW5JTFJTRDZEU1B2bnVQdHBiQzZv?oc=5">Indian woman in US fails to get H-1B for 4 years, moves to Canada: 'Not end of the world' - Moneycontrol.com</a></span>
+</div>
+<div class="item-meta">Moneycontrol.com | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">5.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxNOWZMVDNlVFUteVc4Y01Rd05OOVQzZUJPSHF5X3lTVklabEtIOTY2Slk3UjFQTVc1bEIxR3dudU9LMFpmQ082R2hxc1JBOXUza0d0RjJ5SzRFRl9KRVZtRTBURklJSzZLbk1ubGFQWXU5WF96MlNSd0RWTldNdHlZWnFCNnlNOXltS0MxZXdFYVRMbnJlVVY5WDlFRkdETDcyRmV6d241ZUh0NHBiYWVrWFc3NlBseExsYVB2UDQyakcwRjJiQmNxQlVpaWgtM3JTYzQzVkFwb2tYamllbERvN9IB5gFBVV95cUxNQVNwandEN2o5RGY1ck5BREJYbGZHTi1Oa2dkX3ViRnJMa0psTk9nYnpfTEpNa0RUdUJqZHhsNHB0WnoxVThTUjZua0hhbzVoVXMyOTJFQXh1SGhmMzAxeU4tQXJaQURoRVZzV3V0TWhTMXFtRUViVThUWnRiS0MtYWZESHVvcXhrWm5DbE8zbXlxclZwM20tdWswMmFYYThSN1V3QXIxX1Ztam9FVzZPX3Y5YWRJWDg1MWdYOVVObkd3b0dBUUs4My1fcHM1SlNIMEZ6TDRzYmw2ZmhyZWMzdDN0SHU2dw?oc=5">Gujarat families rush to secure EB-5 investor visas amid H-1B deadlock - The Times of India</a></span>
+</div>
+<div class="item-meta">The Times of India | 2026-08-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">6.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNRHlTbjcyYXA4MlZPTGNwLVpQczBjd0E5Q29kaXNQVFQwcXI2dm1zZ3ZVQ3Z5Rm1ZZVhRQV9fYUhYM0NsWTVYSzBZVnFjUGxVbXpjNjh2NzJ3OHF6S2haaE1tN29JN1drRVFkWjVpdmhPeVlhYnZyMThGU1FoOGNmRjZSLXMyMFRMZ2lDaHhWTUoyTDVhSHBheHhoYkY1OElxQkN3Mk1CMzEtMDVxSFlwNC1YNkpZdDRvMFFXb2pnd09kMFY5UlpDZjU0QWPSAdIBQVVfeXFMTkVSLXBwMjB0M1d3NzlRcENIVWRaaHVQZUYxTWF5bFJza2RDQzVhR0hybXVVS0NKeTJOSkRjOFYxdmZYRzd1RGhxUnA3OFRuQVg3SktlTDQtY1hGQXRuMjBXMWptenplWmt1RHQtdGp5X3RnNEYxVkxhT254dlRSSVBubi0yaTR5bkYwZ0pLTjJKWUd1ZjdXUlU0SEZKZlpOY3NKZE1RLVdmMWtKSTJZZmw2bHJfdWJQbWJxYTBpbHVvSnBURG1RMmpEQjdaT1pDeW53?oc=5">Why the US plan to scrap 60-day grace period for H-1B visas is yet another blow to Indians - Firstpost</a></span>
+</div>
+<div class="item-meta">Firstpost | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">7.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxOR0RqaDIwMWt0SGhxRnEwVDhZVGI3MUg3YlRhTXlRTnh4bThsTmZOaExrb1dtUVpsMmhoZGd4Tnp4RGE4RHVjLU5KU1p0a3djUWptSzY5LXZOZlg5R21ZTnNJS19xWTB3bUZDS0dfc3ZPV2xoS1B4UFpMVUYtWXJfR3BiNDBnNmNWVzVUN2todDhnWEhvdUtDSWxBNm9fOFZJTjRQTzJKa21jR0ZOUUE5MTdoZE5FTy1BbVMzbDdsMHF1Z2M4WHd0azBLTVFmbktEbWNMSDRIX0RXcmNudTBNOdIB5gFBVV95cUxNcDNZSTdZb3h5MHJIOW9FN1B3WXlBNHNybzNFeGFLWU0wUF9BNkdFMW5VZXoyRHlkdUh2SVdxdWRrT21ONE9tSGo5QUlhUVVpSExEaGJzbFNKU0hyd01Gc3ZXVHF3OVN1blRRQkZHSktlZGZWTWg4NDBxWFpZQndSb0hLMEJQZTFCdnBBak93MVh1cUFPNHFfMlZUeTQxRGlwZmVXQUpwNkUwcDU5Qnp6ZWNZdDRnOEk2VDktZmg2ZE5MOENQLW5pQUpRSzlvVEw4eXlfWDFkdVdjN0dKVHpmTnF6NHFWdw?oc=5">US plans to end H-4 EAD work permit. Here's how Indians with H-1B visas will be hit - India Today</a></span>
+</div>
+<div class="item-meta">India Today | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">8.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE45ejZKUnR6MFZZb0JJbFd4YWVWck9MM2pJSHRCeEwzeW5RNEJPbXhEc2N4ODJMS3kyY24tRmVwLWI1X0ZrVVBqYThsWlFqYVlMbHBLVDFqYnpuZ25tSGl2TkZoLV9aczlGNDhiT0picnc5c015cHI0X0MyQQ?oc=5">Will the US End the 60-Day H-1B Grace Period? What Indian Workers Need to Know - IndianEagle</a></span>
+</div>
+<div class="item-meta">IndianEagle | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">9.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQRW40TWV6cjNoS3J6SEtaOHJHRFJpcmgwWVJJVnA5c3FMX09OVUJsRGZkWkxQVGtFSmFjdnVOZVBUaFF6LW9sZFpvWW1ONWtkbndsenV6RGVaV0xqS1RIUXg1MDVXdElDSnl2ZlBGOUYybThpUlVtdDRVeURCeE5XZEZWSlJsRF9Hcm05WTZ3alJwSnpKVnZlcVBEM2U?oc=5">Texas State Faces H-1B Scrutiny Over PR Job Renewal - Dallas Express</a></span>
+</div>
+<div class="item-meta">Dallas Express | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">10.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxPbktDUW11TlJZSkVtRXh4N3lmU3FhMlEwaTJBZktFeHRobmN3Q0h2c3JvSXdEa3pEcTRTeEgteTBGeWtkcnR2ajlEUmZ2OEFuRTc3YWpBQkJCRW9sUWMteFNqNTFydEc1SUNxdlAwTUxvY3M5a2tvMnFHUXBVZFJCR21RUGZ1STVMSlNBc3ZFeUNSRm12VlBJdVBvS25jN2lKTWVEZFJ2RXMyRWNhWmxfWERkVUZoNDhTWElTcGxJcVlINGdnNC1kXzU1SUxyVm9DbGfSAdcBQVVfeXFMTW5id1Q5bEduLUxYcDR0TFlEX2RIUzdwcXJsUFFvQmVFSXdMWl9ucFJIR1NfaUNaYXNWMWpWTVZBekhWeEJLRndfTzkxQWFOWV9pSXdkWFdhb1NhTlh5aVpXRnpRNjNhUUlYX0lVY0l2Ujh0VnNDVkRoYUdJeFYyTkdGUTlkRHhBaTI2eVhWblFYdlhWUUJncjNzdEdLUmlDV1FtTGJqeTUtM0hTWDFMcm1nenJJNTU4Ny1NNW0tX19SZlV4c25uZUVvNnBEN3dSRlRwcGNVS1U?oc=5">H-1B shock? US may end 60-day job-loss grace period for foreign workers - Business Standard</a></span>
+</div>
+<div class="item-meta">Business Standard | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">11.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxNU01WcTBYTHZsYU9KYmtrREVBODhtVGIzQWJkTW95RnE1Z0ZkWDY2c3RWamlpM0FwQmVLd3VZaW1lbWdpUXVxa2M4VEx2VGtJdXpWbDdXMkk3LUN2U3UyLXZyQTlhWlFKRFFZREVnT0FfaDFVT1RyTlkzZlZSM0x4X1lBXy11TXhQRnNwZzVWRDRXZFQtWGlKRW50Q0ZYQVRLVVZPOV92YzN2ZV9HTmZfeDhWTTNCQm5EX0o2RlRrN21GQXdOOThwTlM3MVRBaVN2TXQ5VmdjQXdNWU95Nlk3UHdCUVc3NmZ6NUNGQ9IB8gFBVV95cUxOVHNEY3o1SzJEcVJJY3lXcGxIMVFoczZHWEh5SGtQcWpEWk05SzJlcjRGa0FSSzlmMWxNSmhxRVFtV3Y5aW5FeUc5MFBsR1pYTTBocjlIUlUyYlh3R0k5WHMweVZ0YzFYSDJCVGxKM2tkZTRUeHVmM0ZnSFMyYjNLRnRwUVNPRndXb1hxLVpEV2JQcU5LdUlaQ20wVnRfaDVUdUMwdzF4M0NJbUtOVmFNNzdIdnNYVDVKMmxqQ2MzUk1HcUFLTlVOa0ZIaThFai1xT3c5YzFra3U1UUVZN05ONmVkNndGaEpSUDFQbnJTNmgxdw?oc=5">Gujarat families rush to secure EB-5 visa for US permanent residency amid H-1B uncertainty - The Economic Times</a></span>
+</div>
+<div class="item-meta">The Economic Times | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">12.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMigwJBVV95cUxQV1c2Y00xUUdYTzhia050QU5IczZiSlNFeHRSVzB6M1pKbGp0dU12UnpsRC03dzRkcGNucFBPTUlLd3NiQmRVSnlCMDByQ3VMUG51X1hGNlZWN09PakdZeFh0SFc2eGxUM2R0T2JUT1dkamQtTUQwSXhnb0QweW5KUTJjcXB1Z0pxVnpjWk5BR2FKRy1EYnRvOGZBSElRMFhpSUZ1WDRVdVRONGpoUFBOWmZjSFZSYWJsVjk5eHFzRlFTbVNTb0ZUT0dGNy1XdUdyNFhoYlRvdU1YY294Q2RMY3hNRl9nYnd3RVA1dnhJcFh6ZTJ3TFpudy1veHFNVU1YNkpn0gGIAkFVX3lxTE03UFRFakFmOV9KemxuMnBfTWVVZjV1TjNZWDhfUDk5cndWYzQ3UjFkSEswczJQVmN6c1lpT1M5WDNkZWYxazBMNWV6MV8wMHhHLVNGc09pZFVILTdnRXlHVDZDRV9MREF1VElpTjhQMDA1RFhxZURBekIyR2F4MnhLdl9sOHVSTWMyTl9FVGZLWXRxQUJZUWxRak1QRzBfSWxIM20wNS0xRmVyVzIyUTlRZTJZa3pZUWxpeXVUenEyY1ZJdzg5RUw1SmZwOGhyZVA1T2pMTkxwYzZKOVQwM3g1SDhKNlNMMERXY2tsZU9BMV9lSVgtVjV2c1lPckJ2dlVNT1N1MWZKSA?oc=5">Another blow to Indians in US: Trump administration moves to end 60-day H-1B grace period. What happens... - Moneycontrol.com</a></span>
+</div>
+<div class="item-meta">Moneycontrol.com | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">13.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w3dy66/h1b_domestic_travel/">H-1B - Domestic Travel</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">14.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w317ye/teaching_a_maven_course_on_h1b/">Teaching a Maven course on H-1B</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">15.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w2yrq5/any_recent_h1b_interview_experiences_from_the/">Any recent H1b interview experiences from the people who are working as contractors to end clients??</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">16.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w2vkhb/h1b_extension_texas_centre/">H1B Extension - Texas centre</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">17.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w30oc6/h1b_transfer/">H1B transfer</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-31</div>
+<div class="item-summary">H1B transfer (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">18.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w32cel/has_anyone_recently_travelled_internationally_for/">Has anyone recently travelled internationally for vacation in your H1B status? Any recent immigration experiences?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">19.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w2p6vo/h1b_extension_texas_center/">H1B Extension Texas Center</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">20.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w31uyx/h1b_nonimmigration_intent_rumor/">H1B non-immigration intent rumor</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">21.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w21mce/for_those_who_were_on_h1b_before_the_60day_grace/">For those who were on H1B before the 60-day grace period existed, what did you do if you were laid off?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">22.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w2zryb/domestic_travel_on_h1b/">Domestic Travel on H1B</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">23.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w2m3l2/travel_to_mexico_with_expired_h1b_visa_stamp/">Travel to Mexico with expired H1b visa stamp</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">24.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w33f7o/i94_expired_and_laid_off_on_h1b_extension/">i94 expired and laid off on H1B extension petition pending</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">25.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w2oi7h/so_for_those_of_you_who_did_not_receive_your_h1b/">So, for those of you who did not receive your H-1B or TN extension approval on time in Texas and your extension was still pending for several months under regular processing, how did you handle your driver’s license renewal?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-08-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Cross-cutting</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPNGdEMW9yQW50YzdTNmR3cU1rTENvR0MyUGNVcWhXWHRFdG02bnJINE80MzRsRHlnVGZXaHkydDBldEY4OTk4cXN2d2ktOWJjXzJwdEpXQjNra1VlbG5iMERSUjBlbGJkc09CWWVtai1BbXZtSGdIa29URVlQN1c4dHcwMUlqakZhemNUR01YLXMzUkk2X1QyVEZORkpkM2Nq?oc=5">Green Card Update: Report Shows Applicants With Longest Wait Times - Newsweek</a></span>
+</div>
+<div class="item-meta">Newsweek | 2026-08-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxPeENFUFhIbU1adk5nZUZVZE95VTdFVXVTeklUWXVCaF91bHB4OUhMaDVYdHYtU0wtekE4dGE4U0ItMFlpVV84Y2FfTTgySkxvMk1GdEhFUUFGckZhRzJZZThyQmhQcDJrWDZydDdiendacndEcklzVjhtWXVBcnozYTZaVDU2eEFiVUhaQld1blBvM0hvZWRSZlFRZjRKdG96R013MEtrZkdnR3ZUV3R6b2l0T3ZLTjlyLVVVVlNYNVVWbGx1el9MSw?oc=5">US issues details of new Green Card rules coming into effect from September 18 - ANI News</a></span>
+</div>
+<div class="item-meta">ANI News | 2026-08-21</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Previously Reported (103 items)</h2>
+<button class="archive-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Hide archive' : 'Show archive'">Show archive</button>
+<div class="archive-list">
+<div class="archive-item">
+<span class="archive-date">2026-08-30</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOVnMzRk5tU0FoWmFvZkFZS25KYk9ib1RTR0twbndhRzVObm9MWTVCRFh0anVqV3BTMWN2MmxTbVRGYk84R05vb3ZxVXJ5Q2xmQjNQTEFReXQ2bkg4UDN5LVY1VlJfUUdLSG9kOUJBOE9vUTV4TnZxLTVaNEIyazN6VGROMWNySUp3bzZRNmdoSmVLYXIwS29iN1doR2wwTmlSTDFlRW01ZjBzZw?oc=5">What are H-1B visas for skilled workers and what changes loom? - Awani International</a></span>
+<span class="archive-source">Awani International</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-30</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOTl9uVkdfdzMzNnJVaEl0WmRURVBNLVhDekJoNWxpeW9lY251UkZZcnhLQzRCOFMxTHV3ZHI4dmJDRm81VnFVS3o1eG55NG1xQlFFUV9BNkJKQ09IVEJfSUJ5SHhNLTdOU2o2NHY0aWZZbkpMX0lBN0hLZkFIY0YyaUNrUlVfZWROTXkxYm1HNVFaQzFTcUxyUUh4SzU?oc=5">Some H-1B Spouses Could Lose Work Permits Under Trump Proposal - Newsweek</a></span>
+<span class="archive-source">Newsweek</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-30</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi_gFBVV95cUxNUW4tOERCRFUyd0tVRE1OZVZzVmNoZXhPZXZhZVhaR250N1BsTDRuOF9TVE5SMDNPZ3hiYm91Tkd5bENtaHNhOFU3RExwZHd1eGh3cnRrQ2EtLVUwdnBSbHRlaVppUnE3aHo3MGw5aU1rT1RKdHNlX1o1QVNGb00xQmxPWVFRT1d3cWNTVHZCQTE4ZklidHItSGlaMzhhTUEwNDlmYkRrRXlKck5zaWRubFFYXzZEb0xwYTdCbkxQV2lLY05JQ1psbndWSkhVZlpBRjIyaTh4VDdQbG04ZWYtV1ROSm5GUnNjSGpoQUtxZDVxTlhCMzRndmpZUURBQdIBgwJBVV95cUxOWFcwOHNVUzE1bmRNYkZjc3NYWjdpZHdjMF94VjZvNmJCYWlxeFI1OWxieGpINEtSd3g1dTRlM195M1RTTGxBaXVpajVJUG5qdFo0RVhUNjUzQ0xGenVxejJIZnR6alFuLVZXR2t4dDNoRkRyM0s3U2d4eVVORmZadDRlVEEtLWlaYnFYMzQ4ZndZaHhZS3Joc1lnSUlnVUIwY2JSMzk4WXRlTE1UT2o1RFhIYlFmZEI1SlpFR3Bzd3N4VHpEcXpIMzVSMjc4azBKV2dydGowTW1Bb0VmSlhfdnB0VW5nUmJYQzYyNUtEOVBwd1l2MENhbWxucWxra1FMbGVz?oc=5">H-1B dependent spouses may lose US work permits; how Trump’s latest move could affect family incomes | Hindustan Times - Hindustan Times</a></span>
+<span class="archive-source">Hindustan Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-30</span>
+<span class="archive-link"><a href="https://www.reddit.com/r/h1b/comments/1w2eh7e/what_is_the_current_timeline_for_doing_h4_h4_ead/">What is the current timeline for doing H4 + H4 EAD without premium processing?</a></span>
+<span class="archive-source">Reddit — r/immigration and r/h1b</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-29</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQTGx2dDVPSUlhNU9kbUVjdUsySTZRS1BjT09DMzNYbER6dkdGb0NZTkFWbllobnhXY3lWWHQzMXNNRDRXQnRxcTIyZW0zVGpBcjJ5Q0NiSWQ1THFRM3Nua1JDRXl2SzZORXRRbGxYQm04a3BVR3E5VElGV3k4M2J1WWNyUnZrNUE4Vk1Oc2xpM1VyaEE2U3hWUGxHb0Q5ampMSV9PMXRtdXpyb2Jlck1wUg?oc=5">H-1B Holders’ Spouses Would Lose Work Permits in New Trump Plan - Bloomberg Law News</a></span>
+<span class="archive-source">Bloomberg Law News</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-29</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNYTFtcGxsSlYwdTdRT3VCWHhEUWh3MnlLS1phc21Jckh6cG5zODZqUUxoWU1BeGl1aFdnNUpmQjFDcXA1NmlhbkhTMUgwNzMwQzQ4NzNvbVhIMlVPR1VrRFQ4WDA3czBtMHBJYXhLUnIxX0wydFR2OUxMbmNqUVludWotYldBd2l1TXhPSURRb01jMDdBcUdyUGw2QWNyYkZIc2oxbWIxUjR0OUZXY25TU190dm7SAbsBQVVfeXFMTlVwaXBNWFFtTUJqOXJybUhGaGpmZ1U0NlJMM2tXUUlIcTFoRkhuZ0lIZ0dnQnM2anJTU3ZZNl9fMHVCeVBaMGtlVXN6NTk4Um0tc1dURi1pNDBBX3FKZnduSjQ3UmpzN2RRZGdIeFRSVHlwVUl2LXVISVdHWlpldEF3WWo5bkFtUmFBZkJzM0dGZ1lFZG1sWVZidVZiX3FldG95alRTM2ZDRTBFU0pINjZpa2h3SjZpS3N5Zw?oc=5">Trump’s H-1B fee plan: Why $103,265 and who will pay? - The Indian Express</a></span>
+<span class="archive-source">The Indian Express</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-29</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQeTJOd0lTcUdQcy1HNHlnTENXM1pkcHlReWREYldvZ2hrWWhOTy1maGxUQ1VNVHZSM2lBNV9tODRRM180LWtEZFphbjlWY3VBR3dCM0NxWExVUGp4SmRoclZCa05oSXh1X2M2cmVOQXluRl94V3gtRkhpYmRZVDZjTw?oc=5">Thousands of H-1B Workers Could Face Rapid Deportation Under New Trump Plan - Newsweek</a></span>
+<span class="archive-source">Newsweek</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-29</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMinAJBVV95cUxNSklVbVYyeEdLMjVUMUlSOVRYa3RPNGI1Qm1ETXp2QVdDOE5waG90Rkc4cVFPQ2JZZFJadm1qTF9Edkt4am5HR1duNXJmUGd1UXVRbGZuV2Nqb185T0V0dU9uSUxfTDdWUzVCVU8xZ2JaR2lJSmFmRGhyYUpWZVZnM0w0bmZkU1ZjMy1DSVpwMEE1OWhXNG5iSVViU0JIUFdDZzNrQTdqeUdmQms2RExad3N6bnZhTWZWMzlKbmN1WEtXZU4tZFJGTzNqbkw0WTdCTWVUTlJ2MkprSEpfcVM2V1N4d1BDU190UnhndlEtbVduVllfNVB0RFRfV0xtOUZMQjBSd3dvZ1hYMDhDUXRPYzRqYUs4eFVKRzlqWNIBogJBVV95cUxQNlg0U0E3VVF3cTctZ2hibFplVm5obGdvUE1uNzcxaVdGbzFKd0FHbTlLbU9uajlkb1VDenF3N1c1YTlzVmYyRmVVYmlHWVBGejVqUVZEX1hWSzAxWGZ3UDdnWGZPaWVMR2dQTVhmb19nVHdjTmcxMEZoV2RCSE9DanRZZjlFcWNjWFNYcFc0YXgxemNVQzJDeENNQzR1NUE1NGdhYkdSY25PdXlwdnlzM3drWENoUmY3UlYtWlo5MHAwR3dvVTlKUmtrVEZacW9HR3J0TXJYTFFSN3JsVEIxT1RsT1doS05QVkExYzA5WTVNVFFOX0VJVkpaSGV0WXV1amhGbDlabVI5T01heHdNMXF2Qk9XQXRseGRmdG1JRmhOUQ?oc=5">New plan to end employment authorization for some spouses of H-1B visa holders: '600,000+ jobs will open - The Times of India</a></span>
+<span class="archive-source">The Times of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-29</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNVXdGRmxRU0NobkhMUXdQUEhYNG1NNVFFQUF6cW5vVjBZdFFjLUZZVE9MVm1PNG9BbkVZNXA4Rkk1UnlOanlPOHUwSlVlMUVjMTUwUjYzWl9VWlctWDRWYmRGUmgtWlZyYnJCRHE2elRaRzlIdVJWS0NOWWlwZ1drRm1vTWtuSHM0Ujc1czFWdTN4RTlFOFZZSmRiUGdQRGg1NEhBckJxdmxhbUItUUdKd1FScW5lSGE2MlE?oc=5">Laid off on H-1B visa? America mulls scrapping 60-day window to find a new job - Deccan Herald</a></span>
+<span class="archive-source">Deccan Herald</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9EUnQ2c0F6eWFFdmNRbjhYc0lhUlEyTEpFSkdGVFdXRFFQbDRHNUZubFFCQ3llRWZESVhmLWVsbjB3Y0s0SEN4UW1CMlVrdy0tRkM2c2R1TWxNZTlqT2N4aXBvaUMwTVF5eEl0THZPVlJUYmtJUmJ6by0zV2gyNTA?oc=5">Of course we need a crackdown on H-1B visas - The Spectator</a></span>
+<span class="archive-source">The Spectator</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQazZyM01jVWE2Y0ZEY2tvdVZQN3QtYTRxQTBnNm9iT0p5Tl9Gb25ZYWZXOUVRQWk4VDJlWTdpMU14S2dYckc0c1ZUdVdDZUZTUlRvQ0ktdmw4Q2lLV05yTGxZSHZQVFZkNDRWcjFMaWxEaHgxUzJuNTBoQTR1aGlUN3RBNUZoc3c5VnJWM3k0TnBuS2J6QnVTOUI4ZEZaQ1dGVVE?oc=5">DHS Proposes Additional H-1B Visa Application Fee - The Presidential Prayer Team</a></span>
+<span class="archive-source">The Presidential Prayer Team</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQamJiMjJzemlmeFNDZDdTMWY0S3FlYm9ZazVVQWhGQXowa3hnTHhxYS14bk40TjBwenUzNjY1cWI0SzdtTW1fQ2xwV1dab213a0Nwd2ktMlVza1FURy1SVjhxejZfaEt4S2lHcTdTYW5Cam8tSEsxN3o5N0FfTkdCZWZpVlhmOVJMM3Exbm5zcWVwNUtXWmpZMTBXUC1yNlFiUEJ6dTZFXzNob2RyRGx1Ug?oc=5">H-1B Workers to Lose Grace Period in White House-Approved Plan - Bloomberg Law News</a></span>
+<span class="archive-source">Bloomberg Law News</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNaHRoR3NhQTdwdkRpUE5vemtqeFB3a1B3bGVTQnJFRU9peUNseERha0dQMnNVSVFZRGFwTDdMbTQ2VERndktRS0psVGJuanV0OGZiSEViSk4xaTYteXBxZHFmdFFDb04zU0xQTzdVNzUtc0p4SGRaNFNIYWN1am5CMGFMWmxQUFBud25ybW9oa1ROUklhbHo3elZR?oc=5">An outright ban on H-1B visas in schools goes too far - Dallas News</a></span>
+<span class="archive-source">Dallas News</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiqAJBVV95cUxNZDVlNEdBeEhpUXpya2t5eHVUSGx5T0ZEc0lUWWs0WmtXRlI1VjlWQU9MbDUwUmVmOXQxTWNlUDhLcXJJVFo2YXdOdTc1UjB0XzQyU1VwZGhjcG94Zk9rYi1tbWkzTGlYNXhzY05VUWJzNEQ4MDl3V05iVTExX2d5MjNWbThyMnZ5c19NTXk0WFM5ZVkxMTZLekd4c2JjeEZ2a25rSWpjaG12OWtLQ3U1ckVxbDZWUEpaTWRCVHNJOVlxa1VEVTNqLXcwZFlFbjVmeFV0SmdIc2ZHbU16bTJuNjBnelVfU3JZeGRPNkdaT2F0Y3pwLUpVSGh4XzNUQXBIWmtUNHRtdkd4dzU3MnN2MjVjY3kya09uYU5CMEpVQU1tRk9yVlZOadIBrgJBVV95cUxORENoYjFQWDc0bllKMUN0azBQVTd0MTktZkc5R19LdE56UGxOM1VFNGEzLUttblJFY0cyTXhmLVlCTWJ3ekJjXzc0V0V3VzB2QVo2MTlQVmt4WXo4WHV2bDBrcVBWUGU2U1E3bElPc0ZMYURiLXFuYzJrQUVHZzZqdzBzWEV1aW04Q0tpTklEQzQ0S1RtcV9fQmo3bHFvbWVMUVBhSHR5SWc1bm5uRlQ5Wmt2T0UwemxNaFF5MWNXakpGd1FLeWg5WTV2Tkk1eFlfMklmQi1iZHktSV9ra3ZMR2FLQXNnSU1jYU9HamxVY2NYVTdrRGZybU9FVlc1Uk1XRHhHd1JFcFNzM1lHVWs5RXZVa09pWTVSc01FeEpGUVNSd190OFZ3bTZBcjQ4QQ?oc=5">H-1B workers to lose 60-day grace period? Indian-American entrepreneur says big tech won't lobby against - The Times of India</a></span>
+<span class="archive-source">The Times of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi8gFBVV95cUxQLURHdXFBS1cwZkVTWUpBTnBPR21kTFU3RXgxOVFJenE3Mzd4R3dNcE9GLTdfMXF1SXdKVkUyeXNOTzl2ZF9IUHA0MzVZUzI2ZXozMjBtSTVWZUxLV0tON2NpNUY3YlN4NzBVMm9Zbk9zcDNLaEFKeVU2dnc2TDR0SHRIXzNtMnplWnZEeTM5RXdIenVWN0pjMjM4eFVWU3JWU2lpc2FqajVwcGhtZnhGTUloU2JLTXBncnBiZHhic2RCSlpCOFJXWVRrMHJ0ZnVfSFZpOVh1Nlo2cU50Ump3S016d2paSEhNMTBrdU01eXpRQdIB9wFBVV95cUxNWTVEbWo5NFBiTUlYWkkwaEVkNHdpbndINHVfaUJOWnB5Wi1DSkxDeWxUNVlkRnhaNVhzSUpQNG1KdEVEeGlhU1F2S0FENmdNRG92Ymt4SS01MEVpV2ItOE90VloySTNOdWRJc2prR01YMUkzemN4Mk1VLVBQNVMzVnZ1WmtCSlExU2haQmhuSWl0M1ZDajYyc3ZzT0l6YkdTMHpTSnA0UGZtdFE1OWFaNG5lZE1RbW50Z3M0b185YnNjblQ4S1J6VzdiMWhRNm9DaU85M29Oam5EVEFYSDZqS0pJSjdoYUxnLVJXUmN0Qlp5RjRNOHNj?oc=5">179-Year Green Card Wait? Why Indian Applicants Face US Immigration Crisis | Firstpost America |N18G - Firstpost</a></span>
+<span class="archive-source">Firstpost</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQeTJvM2NRcExMZ0xzM2I1ZHVHZHlSN1dHLUhsRUotb2FKbUgwZS1rUExUakttaVV4NjBGT2MzYmJveGY4WVdQVEEwMzd4Q0twUHlFQXhZVC15Z3VsU21laXNWd2FZMTJtVE4yWVRkd3V1cURzR1dvSnYtVXZSWDhZU3hSRDhncGgtT3d3OS0ySUJzTERuc2J4SnhBbk0?oc=5">US Green Card Crisis: Nearly 1 Million Indians Face A 179-Year Wait - Vibes Of India</a></span>
+<span class="archive-source">Vibes Of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVzZ4UnY4VFA2eUJkbXhnbkNjS0ItQnhXdXN6UWNNZHZkRmduT0VnOUk4aXlTLUNjbnl0a1dTU3M5OFVTYU9BcmpYMXZ2REV3R2JZejFsM0xSQTN2MlN3X0lMMUtBMDhCb3RVNkNaUUV3dGVkQ1M4S2FISzZ6QTVJak1JQ2taSWVLdm84?oc=5">Why Nearly 1 Million Indians Are Waiting for US Green Cards - Hyderabad Mail</a></span>
+<span class="archive-source">Hyderabad Mail</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxOazRpT3FlVjQzY3lFaVJRems3MjdoRHpNLXZWRHdkZS01ZG9OeTVwX3dVbEpnekRYWmdGWTUyQV9WRkdiQk9RalBmaUFuMlpkalRRdUVDMFctWWVRa1ZvdUZrcTdTZzNTZEhFb1VlaEtEMEcyRkRYOVB2RklsV2xBNlIwM24xbVFOcXU5XzhvNDByY3VUQWpRU2E5UGwxNng0cVFma1hQQlloTGVuODRHaVU4UHpJYV9sZ2Z1YlNvdHBOUkJqRU43amFLM29ycDROV19MRGVVbHMzSnB1TGRCeUhub9IB6AFBVV95cUxNTW5zRnA5SFh1OUdsNU9XRVlEMGVkdllGS194LVZGdGV1N19oeWhnUURUNUQ0aVYwd0hiQ29yNWlMUzV4Y2JOd0JOajRQc09BaEJfeF9DZ2hnXzFsSHMwNEg0YkJHdVlSSjA1QjI4c0Q2UlI1dXQtWXpvdlFZcFQtN3VaSWItZUdwTlN4cHZZZERBdHltLUd6RDJzeGJnZ2tySERKdVp0RHRrSU1FV056NmllR0dQUGRHNG9QcU84Vm5OZmJpTTZSZnE1Y2JRWEM5WXpXSkxDUVQ0MURDX2RyN2tKRHVfZGdT?oc=5">US Green Card Wait, USCIS Checks, UK Visas: How Immigration Rules Impact Indians - The Times of India</a></span>
+<span class="archive-source">The Times of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZlptcTY5cmdScFdIdXNVOFJjdkp4b0xMeEw2ZVpoM2tMU1VCSmhsUXIwc0JFNzA3b09jTVR3OHpWR3JCenpwUEhoczRnaFB3WXc2TDdLQ2N6UnZlbVdZNTlGT3F6TFRWaGpCX2tQOWF4RVpXTjh0WWdKdEVDWmNBdF9JcVktQUc2QnphMmlodWplMVFBd280azl0SUQ3VGMzZ2RxRXBpZmdabDdVczRtYy1YVDBNeDRKUjJRUVpPYUo?oc=5">Why Trump wants H-1B skilled worker visas to cost employers more than $100,000 - France 24</a></span>
+<span class="archive-source">France 24</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxQTmpoeDQ3VWgwZzdMVEVNTF9LbzZKS0pnWWtGZ0U2MHJMbVpGdGQySDRidkVQeUxsZHZVWjd6dF9lWnY4RFVCdnJtWEVDeEF5eXJRWXpGTDRSUVhlSWRXV3RSdkF3b3oyZEhOS1RGclJJOVBRdnkyYlNsMmUzUVcyV0xGMA?oc=5">Trump Administration Proposes New Six-figure H-1B Fee - AIP.ORG</a></span>
+<span class="archive-source">AIP.ORG</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPc0kzMGtUT25OU0VYYzRkc3lmYmNBVzNrbGU2S3h3eXpBTkJFenN0eDl3dDdubl93VUNTM1hGSmZ6SkdsVE4tNlBvQUpvYjUtTmJVRTJXMDlkTWN3SnJhUkpKTEN0UnlsREJkR1BTcnBaMk9KTUNRNHdhTmlMVUhKNUJPYVFWRU9PLS1Va3BQTWVGMGpJUzVIRlJTa3RkWTYwaUJHYlowMEh0aWc?oc=5">DHS suggests new $103K H-1B visa fee: What employers need to know - McKnight's Senior Living</a></span>
+<span class="archive-source">McKnight's Senior Living</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTFBMN0hiSldlNThDZkJuNnBGOUZUVXpfYzVBUmVZNU9Db2haZ1l1ckt4STRoa0dlODQ1NzVTX1JRV2pkNENwS3VQbFBTbk1kTThYSVp2d1NubEgtblBSaFNMWnJoUUlMS2gxT0xhN2pzTjA?oc=5">Feds Propose New $103K H-1B Visa Fee - CBIA</a></span>
+<span class="archive-source">CBIA</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxOZ0N3SG1VemJPVHlLWkxmX0g4Q3Y4Vk9Eb3FsQTFDX2plWHpxTU9fMDBBT0xfU1oyc0NvY0c5MGQ4aDNXd2YxSi15VG16TENhbFp5a29QZ21YTF92TlFmVmtoS0lDSDBWcjVzUkM3Rkxsa2Q0REVvZXVyZ2hQSWNZaUR4Z1FqaUdLUlIyZ2RZTjBDVVkwN1d4RTF0MXZrUVVRN3hDVHlrV0xFSl96Tl80d1NhUXp3MXFCREHSAc4BQVVfeXFMTzltcjNLdmZWQ3VrZEFXclc4ZG1SVVRIMllyRVNDNUFCVnNyRF9scTdIenFDX09paDYweGZHZUc4ZV9uZ1kzMWhzb1hIQlpLcWNKdHR5TUtJNjJFSUJIUzdwTWU1clhsMU9CTk1sLUpYWm1rOHhIU3pYRWlINHpHa1dKTHRiRmpZUGRSZHBWTjRPZTdJci1qWU9rSVIwSU1YVVcxTHY5Ny1MUEF6QVVGWGQ2LUk2OXg4aDVHVjU3cTk2Vmp4Vnh1MkoxUXk2LUE?oc=5">Proposed $103K H-1B visa fee puts north Phoenix tech boom, Taiwanese community on edge - AZ Family</a></span>
+<span class="archive-source">AZ Family</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOVXNweXVkdWctcVNISWE0bEhSOFFUcnkxVmxJbWRnUFJEUnd6c0hfbnFIa1l3LS1XRDZXRDZzRFMyejVFQjNNdVAtbHM4eHVyLTFLTVQwMmdhdTNWVDA0SGJ4WGFMR3VaQ2lmOVk2NmNIVU1odkpidzB5dzhBeThLN0NVUE1LanNUT2FhSEx2Uk9DZlNaQjZxMzNySEtqeXpl?oc=5">Hidden H-1B job network claims under review: Trump admin - Newsweek</a></span>
+<span class="archive-source">Newsweek</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxQekxpeFVYa0lINWZBS28xY2VwXzhra3UyQUxtd3FXZjRCaDJHV25HZlhDWFVscTRKS1cyWndFNFc5NzBEZU5sSTh6dHFvZ1NEX0pncHc3NHIwMHhmT1poeXFfN3gxYU1YZlZ4amt1YzkyM2lsRF9IVFJUWDZfQmkyTTlhRWxReVI4MW1vTHNVa0xQTmkwRG9kMWZKTURzaF9aRUc1c3VGcC1kRVVOOXphQTVB?oc=5">Trump $103,000 H-1B Charge Tests Bounds of Fee-Setting Authority - Bloomberg Law News</a></span>
+<span class="archive-source">Bloomberg Law News</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNUExVeFBmSVVmb2tIMnhzbkNIYU9IMy04anZLVVd4aEZoVHQ0anZCVU1CcEFCcFh4WW5OWFF2akRsN20xTnl6VlM1TjdVRzh3b1pVbnFjV3NRUkV3dXNpNmVyTnRGa0tWand4VERlZzNCY0IwVnRRdVdSWjdISE1GbG5HTVVkVlQ5SEVoWjZqa1dLdXRBX240MFlTcGthd25HRm5vMTJ6cVZHOFQ3eHIwYw?oc=5">Y Combinator’s Ankit Gupta faces backlash over H-1B comments; Nalin Haley reacts - The American Bazaar</a></span>
+<span class="archive-source">The American Bazaar</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxQMnkxdnBlQjNfRnZJZHpLWDN6N2Q2LVJSWW90aFRyTHpWSmZTbEM2bWlETmk0cjl5a3d2MW9McGNadFduYmtDSU5pM0xXRHZjTkJkaHJMcHd6TmlwamVYUFlKYmZPdkxCNFFJUTZXOV82WnNBRFZZOXZlRmZEZFVGWUFMcGM3UQ?oc=5">The Visa Bulletin for September 2026: Final Action Dates and an Employer’s Immigration Action Plan - JD Supra</a></span>
+<span class="archive-source">JD Supra</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi8gFBVV95cUxQczN3RjhraHpOYWNuUlVwYlZpYVhFN1hQelZCWm91bVM4S2xkclVKbDJfMGI2b2NvcFRiX0VoX3U5OGVUUFhpWjJxeUU5d2JnVDB3Y2ZoOFZreklWMzFza2dwS2o4a3dUZWtQYVJBb1dZNFlQUTVpdU1iOTBFNzlnYWZ5TWZZalV1SVVLM1c3M0FxWGdyb2FXQ3NGaGpKNXMtTUZTeU9PRUxCQ3JZcU9xM3F5cEpvRno3eDVlcjZ2UDJXNy1DanZrTVRHZ2ZBRXUwLVd6WVV4U3h5ZGNiUkV6bE1abzFhRjZFZWdreUJ1dHdYd9IB9wFBVV95cUxPUkdmWHoydXBPV2FjczBLY1hvWEdYMVNDRUVadDk4YWc3NkozT3VKYm5yZVpYZ0VQcl8zamtnVTA3eERFakgzVWRsOGlJOHotY04xWVpiUUdHbkJGS180eVZDV2tqV2pyOFkwa0x0SmhGODI5bjdXT0ZBZEhkMTBvNWp2ZU81ZGo2UWxaZE80Y3QwVDJueFpLLUhhQVBVUmU2LXF1LVVUZ3VGTXVObjRHSExROUZzWl9vc2tneFhWTHRRaENlMG5VUnRSSXdRMlRwMFN3SFAtX0lzOU1scVNZUUFyYjlNSWF0Zmdwcm1obXFPNTB0RDRN?oc=5">Nearly one million Indians stuck in US green card backlog; EB-2 wait could stretch to 179 years - The Times of India</a></span>
+<span class="archive-source">The Times of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-26</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxONXZobDZGMk5QZm16VW50T3hqaEhlaUtjRG5lQ2dBeUEtUDlpWDhNV0pIMVFJc1hmU0ZsQWVtOW1rRTA1b3FLWWtiQ3lBeVdIdVRFeWhGQWdqWjJjVlVmMUtGZklqZnpMbWVpMndGMHptaHhKWlB1WXVzY1dMbHp2a3RDSUdyZXlIUFZkN0F3R3c5cVhCbldJekUzNTZ4dnk4aDNVVkVtX012SXFJSlQteklBNW02V0pRSnJ5RnY1dWJrbndyMXdvQ0VoU2NYMDI1?oc=5">The Trump Administration’s Proposed $103,265 Fee for H-1B Visas Could Affect the Health Care Workforce - KFF</a></span>
+<span class="archive-source">KFF</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-26</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPaU5JZUFYOGJLV1l3X2NkRUlKRW56MzU3ZFB3OUV4TW5TRnA4QkdvRTFZQXk2enBWRkY4SUFOLXN4b2prZllZQ2M1WmNBUkRJRXdYc1gyTVdPdTE0MlJqcTdDbkEwc2JDLTg1Z3hlYkxFeDdYb25pOUtpTTVkOG9ZQ0dvZlNOTmpFU2pWZ3ExX2JtUDhaX0xRaGRVZlQ1VDgwU1dwYTVmellrTkRISGp3czZ1WTRMaHBRMHY2RnRQWjM4bWdP?oc=5">DHS Omits Describing H-1B Data Undermining Premise Of Immigration Rule - Forbes</a></span>
+<span class="archive-source">Forbes</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-26</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQZmxSNVBGRHN0VGpjUW1SRzJscUdTbmxRTTVET0RwdDg1bkduN2xXeURWandhb2xQbmpaS3BQbE0tbjJmZk93Yy1zeDIyTjVjbG1pRGpQa2tHaWVBUzBmV0o5NEJXTmVqYlR1OGd3Sk5rMHdjTDFXeUt5U0ltcXBEUmg5NFgtdGtvNkNVLXRqclhqVkxKTEN4Y21DMG52RVEyM0dGU09ud0dMbU56NjdaNHZwVGZSQQ?oc=5">Dear Gov. Abbott: School districts like Marble Falls need teachers on H-1B visas - Austin American-Statesman</a></span>
+<span class="archive-source">Austin American-Statesman</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-26</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE5JUzN2YnN4TkN4ZmhBWXAzTjZQb2RCLXc3bFRFZ0xlMUlack5Lel9OWUx4OEZvVmhfZWNFamdUTjNSaE1ZaDdPLThyRDNhaEVyd1dnNm5iQU5lbU5o0gFiQVVfeXFMUGVyUnRCSlQ0SUd1RmZnLUY2M0gtS3ZhTmFieG5qSkZXb0htWDhZTXZwRmpLWWlqbHFoWnhaVGtQT0hxWElEVmtGVVNqUTBDUnRZd29MUW1VdFd0aXNaT1pRa0E?oc=5">US visa appointment pause and B1, B2 mass visa revocation: Trump administration pause immigrant visa appointments for applicants worldwide, plan to cancel visas of 200,000 asylum seekers and increase H-1B visa fee to ova $103,000 - BBC</a></span>
+<span class="archive-source">BBC</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-26</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQZW8xT1pMa2hKQTE2X3BQa2FFdENKV1FZMTQwZFI2dEhUQ1hzWUVSTEI4LVVfUk5ya0kyd1BtSkpoV3FGckNMVC1JTzU0LUhOeEdNenlhOTloY1ZZaUNwaU5yRHhkd0ZmM0lPZjBrNHZlNGhSNnh4UENzV3ljR1E4N21UQjN1dnJDNTdfdDV5WEtabGs?oc=5">Some Employers Could Pay a New $103K H-1B Fee under Latest DHS Proposal - New Jersey Business &amp; Industry Association</a></span>
+<span class="archive-source">New Jersey Business &amp; Industry Association</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-26</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxNM1RiVW4yajE5SHJycWVjWlRFdDZfR2ZfQVZMeFNmNnYwOExGNWRIdGM2RjdrQjloSjdvRGFUYXRiWUVNVzJWZVdFSzR2aWFPcUxhdndIWlBzV0ZxYlF0RkhFQzRfUkU5M194M3RCNGJNMWpRdWRaaGxfWk9ReDF0Wmo4UDJIVVdaS1JMblVkYWRLZURYTHpzd295VzR1VDA2VDktN05CVThrTjJKUG1UZnl2bmJOcmxDWVpaV1hQSnFfMVl4RWhzUm5EQWxBMnNoT214VF9oTmxBLVpTTXp0Tzd3Xy1zaEJY0gHuAUFVX3lxTE9IWXYwSGhkRnUwTC10MEtDUndFQTZzLWE4Z3BKZVZHVlhBc050VTR5dk5VWFZvM0VKMU5CNWY5TWlYLXRYbml5RGd6dEVDemVLdjUzaUpsME1IVE14RXJleTc3UzlaWFA4ckg0OUVLckJZX0NnSTBJd20yX3h4a0VvZEcwLS1PMjZWNnBfN3FNS0NBdWtab1ZmLW55d1pxNDdGbXV3VF9yaW1JRF94T1lvbUowSkpxcE5uMUhuVGktQmdqUHl5elVVb1RuLW16Qm1vOUY1ZUxqWmVubzV4MzJBOTJKdEJoX1drUFd5UEE?oc=5">Trump’s immigrant visa pause: Can Indian applicants see the US green card queue move back? - The Economic Times</a></span>
+<span class="archive-source">The Economic Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-26</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxObDBub1NieUZTSXcySnFFb2ZIOU9DZGktS2k0eUpJc2VTRjJfN18wRXl4OExOaFlfS0Vvd2pya05LLUcwd3hNSXZmdG4zcVpQel9yNlkwX0lUWllWOFJySUJiMm1MaTg3d3oyRDA4ZEtLclk3ekU0VDdfejFuYzI2MU5lZWREd1pUZFE?oc=5">Indian workers seeking U.S. green cards could face 179-year wait, report finds - San Francisco Chronicle</a></span>
+<span class="archive-source">San Francisco Chronicle</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://www.federalregister.gov/documents/2026/08/25/2026-17324/fee-for-certain-h-1b-petitions">Fee for Certain H-1B Petitions</a></span>
+<span class="archive-source">Federal Register — USCIS (DHS) Immigration Rules</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxORlI1R0tyak1yaHFWMEE4VHpscy1GSXVqRjBUYl9xSW1hbDRrbGlOcXhEckNFNmZ1ZGU0WTQ0bldZLUdBdzI1SUtQNDVBSFNxOXBFOFNJZzBzN3piZUxGTC1qVEF6NVZmaXg2VnBvZHNOeEdNVnVjZnpwWkFUN1gwaG5kQTdtYUh6eXBKekdfRi0zTmNfSGY0MFdVTnZYNmlubWZqVURpaVhYTkZNS1hBS3Nrc0t0WmpwcWtjUTVpZXY?oc=5">DHS Immigration Rule Proposes A $103,265 Tax On New H-1B Visa Holders - Forbes</a></span>
+<span class="archive-source">Forbes</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPZGlMenMwT3ZOUjB2dkMtTXdDUXN1Nml1ZXZPYllFMExKNFdidTJFMzVBOFd1Wm1Da3BEVHNqYzA2bGRmbXNKeGh1VG4zbjNNbElmcVFiTTVaZEZnY3BPLWZsM1ZpWFY3RmxlX3g4NlYxMnVEbUxneG1lQUF5bzFmbjAtbkhVUy1jcUtKSXdJOGhaVlRJckdJZDRaeTJFYXNZSlVVS193eGpHTVJMN1RKMXpqX1FBNTRQYWhqZUt1d3R5cDdE?oc=5">Trump administration proposes $103,000 fee for H-1B visas after legal setback - The Washington Post</a></span>
+<span class="archive-source">The Washington Post</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPOHEycW9WQmtqdFZQN19SRWVfSmdtMk5GVW1GalJCNnM4U3pHdDhTUVFWdkRUU0J4QVVwWlRPS25DdG9FcTdXX2dSZy02RGhCdnVrMjBzQTRJTHZ5NEp3eHl5OUlwbmdVUlJORnRqejQ5dWJnQ3d2YXdickU2WFVsUXNHZEpZNkVwb3o3cDM0RThlajNiY0dn?oc=5">DHS proposes new $100K filing fee on H-1B visa petitions - Jurist.org</a></span>
+<span class="archive-source">Jurist.org</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdnJWYnBvNk1lalc3QjIxMm55Z1pWc0hoOGpQdVRUQVlGOTdGWVFIZ3NoSkZkUEZTYXBWOEZvbHBOZlVrV2ZIRVR3dTdGUTgxb3BzQkJCUzRlWm5pSVNwUVpmTEVJclFJUXZXSFQ3MVBYY2VXVlpKVUJKVERKc1RhOWx1RmlpMjl1VnB5U2NxeVZycUhUb08yeHprbGstRk1NcEpiSUU1Q3FhNXRndklCOEYxQlBXMENXdW1SeW4zX01LREg3TFFleE4zWVlmdmF4V3c?oc=5">India IT industry body urges US to weigh H-1B visa benefits as Trump proposes hefty fee - Reuters</a></span>
+<span class="archive-source">Reuters</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxORXZId3pnTk5uamVLSTZkd0h4TzdCWmQ0enhUa2NFN2JtUzRGUkNqME55ZlZGb0hYTVF4V1NnMkRrczFodWtJVG1tdHhLYm12RDNxRXBCVGcxVHZYVkpIVW5OZlNuMWd6MnBIdnlrbzNEazdpckFMVFBieUVJZldXQWY3SnJRQi1wRTVqNDl1Q1VlUlhxSklMSU05R2tnTENtNWZ0NUd6WnotWEpWaWlsYkNQUWdEc2FhY1JCbHNtT0taU25nRmc?oc=5">Why Trump Is Now Trying to Charge a $103,000 Fee for H-1B Visas - Bloomberg.com</a></span>
+<span class="archive-source">Bloomberg.com</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNR2tPOW1aa0JvWk5qNzhFMklGTlFRRnVwMmxyVWFzd3FRSUM1d2dPYVVraWhyRllMWTlHOWJpazBwVklvcEg3ZndXN0pwVkE1Z0tYSnJvdklsMTRyb2h3V1Jsc1ZJcGhPdlZ1elRYbVlldjlSM0F5Q05pY2xMWDJ1cU5XNnl4RWRROWxZOU5wV25JT3dZdmtKZUJubjU2QQ?oc=5">Trump administration proposes $103,000 fee for skilled worker visas - ABC News &amp; Headlines – Australian Broadcasting Corporation</a></span>
+<span class="archive-source">ABC News &amp; Headlines – Australian Broadcasting Corporation</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQU1dkSU9xSENnUmhXOFhkcTZldlR0QUc4MWY0UUJTRjNrZ1lWSjcwU0w3UWVlNlpPdnhkeE5pMDVMcW9NakhwM1NDbE9PZHVDRE9vYm03UzJVLVRGMldLclgwTy11bGpzVEQtSUhYQWIwUTVJUkNTU2FqYTkwTGxQcUlyLUFzYm90NmhWY3pUeWxLbGVUZHFFNENyVDdBV1FFZFVsU2t1SnFua2Q2NFhlSGFMdFo?oc=5">India Tech Firms Face Less Exposure To Trump’s $103,000 H-1B Fee - Bloomberg.com</a></span>
+<span class="archive-source">Bloomberg.com</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPM3pwckd3SlBYYWRUOVZVYTZQcUYxQTY5ZG5sTW5sODFCNUxOM2JwZGstQWREdjYwaFBXUUN5dEIyY2VlSlN1NVFYNnFGUGliWlh6SFlkM3F3ZmZScTFTdTZmWEpwanlmVENMOWJQb2lHMXkyWXNxQjNtX1JZdG8teXFaazlDRjVhSHY5cmlaaU9xaDNucDJmR3dydlkzUUJjZEs5RmJwbVNwYTNORDJWX1pKblVhRW9pc2RCWGt2eWJBak1ReVA4N0RnMNIBywFBVV95cUxOa3VJYjV5RHcwQkQ2WUZNQWJ0ZUtOWFhmMVpkMTkyUUJkd2JnRlJXbElXcjFSWVFYMFYzNkNMRGk0UHdER29qUzR6UTdsRGJXY2hRUWY5QlRKa0JCc0xnZGtGTU40dEVDUkkyUkNMdDFaU1ZBWXFMUXdfQnZyWDk3MENua2N4clNLRFZLNDdUb0ktLVRxMThIOHl3emEzbl9vZDZuWDV4RmxhZFNqek9GbVR1OHFtaXhZWGlucUdJRFVQTFNDWWJIMUtCQQ?oc=5">America proposes new US$103,265 H-1B fee, expanding charge beyond new arrivals - South China Morning Post</a></span>
+<span class="archive-source">South China Morning Post</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNOFIxcGNqdkhwX0haMHFPLUJmU1JHU0drNUE4Ym04cWRnV244UGxTblhTWUgtSlQwNDNIb0VrTUdJZE90MnVXNmJEVnRORVZITFlQMzlqMHZWb0E3NEpxb2tFYk1VUnNmY1NGV29pYVl6VjBudm1sTWs2MDlHa19FME91ZTBPY3JORllxbEItajJzcWNIT1c1LVhTSEg5QlcyLTdadEY3eUtPLWUycEVLRF8tOGQ2XzU0QXZNbWtVWVBwNlU?oc=5">India tech firms in the US limiting H-1B visas even before $103,000 fee - Staffing Industry Analysts</a></span>
+<span class="archive-source">Staffing Industry Analysts</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxOb0Q2MHBqUVdaSU5YWDA2dHA4a21FVHR2V2hsV25PM3VYZHBrM3FGOGVDQ1JQU0tMRkhfWjl2bWlvbktDNEpRU2U3bXpCbTlHUlM5OUlLZ0dmYkZ5RGJXRFQzUVFGejI1bThuMUtCYV9LMEN2Snp5TFJLYmR3aXZRa2tpSWhQeGhyRjhnMUVwbXlfMks0dzVDeEp1Mlc2aUdRWkV6NGN1U2pMNlQ2bFVSUmJhemt0SUxrU05wa3l4ZHVkc08xMTdCbXl2aWkyZFNHajJtOWRZd9IB3AFBVV95cUxOYTBFVzV1RmQzc1FWUHpRNXR1NE5qQjY1UzlPYTk0a1Bta1gxLXFFd1JaYVlxTUZhc3hkUDVUZzFqNURYNVFBZklHSVNEeXFrNkgwcnhGU0dGYzZVeTRQVUtjcnJIbk40LWQwVnRQa3dsREdQYUNtZnpHWkVDNWd5WTZ4clpyWEZqLUlwSFJEbFhSbkM3SExXV0FoWXZFeURLU1F5UnpJVHZvTFlWdEN1YjdaWUdCSHVfZ01Fak5sUHhuY00xNkg4bXNhbHdFSUZKbVNIQVdrVVlsY2pn?oc=5">US Visa Bulletin September 2026: Indian family green card wait gets shorter - Business Standard</a></span>
+<span class="archive-source">Business Standard</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxNREd1Nzh0cXhGekxGTlpMRElwdUl2S3dEZEVBakZYdWZKT2taR1VYaUgwOW1EVjdYQ3ZTaWRLNmZ0SGhCU2VfNTh1cmo4THp4UE90SjZPbzl3azIteGZ2bjBSQ2dOaERTbzZmWFJiWkZOZWlsSWZHbzR2Q0pQcFZneTVwY3o1eDA2SEx6cWFHVkJ3RVdKMzVSWndLNU1XZW04VUpMUjRUUGtfd1RReElpbDRVREFlZ3dibE9Cajh1TkUxQ0xZWW9GVE5LUmVzNWhpVHEtWFFwY2pfdWxzSmc1UTNsMjlmVElqQVliSG1Wa3B2RFFFNmoydjFmTdIBgAJBVV95cUxNV2RMd3dKMk9wZ0hZRFQ0V0FlTndMczI5dGx5dGd0dEVjRUw1a2tyZ2laV1Y5Ml9NdTFkUXJud1luQlp3dDN6Rkd3NGdqU2tUOHY2LV9qSnZNSTJaekdpRmNwQ1VBUEJUMTJLWURkWEpEbGxKT196QmpDc0MzemF4TGl1c2J5Q25QdFc2T2RfcldScmV4cGhOeU1kX2NNYTdmUzlHdnRBbGhsc3RjRUZRLTBLUy05QTZoM0h4WUgtcDIxdUh3cFpwdmFQS01Ka0JpLUl2Vy04UWxuQTFZVk50R1RDeFRjNnZRTlUwYnEzMGxNM04wWlZMUm9Bb2stckpu?oc=5">US Green Card September visa bulletin: Relief for Indian families, but employment-based categories remain stalled | Hindustan Times - Hindustan Times</a></span>
+<span class="archive-source">Hindustan Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://www.murthy.com/2026/08/25/proposed-h-1b-rule-under-review/">Proposed H1B Rule Under Review</a></span>
+<span class="archive-source">Murthy Law Firm — Immigration Bulletins</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE1PRmhkd1NXRzd1MFFWWDFEVHNlaDZIRkxzUlprek51TUdDenU3Nmt0OUtmSHUtSWg5aVZETXlURkVNN05KbmZ3N3hyS1BvWG4wd0dNZkl0NmtOeWE3blFDLXU0S21Lc1RYQ01NVC1oN3Zodw?oc=5">DHS Is Adding Another $100K Tax on H-1B Visas - Cato Institute</a></span>
+<span class="archive-source">Cato Institute</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxOeWZCQWRWcHNLaDQ5QTVVUlVoSlVIcWU5bWREdnc1SThXZ2Jta0F6alQzTnB0NnFFbTVPYjRITDBOU3JieURjNldSOEt4a2RULVIta1hDYm1OaDA1ZFRpZzNCVTZnbDR3S25pMlAxcEJUVHdzVUJZNHB1ZWZaRkJ5ZUJPeUpJdw?oc=5">Trump administration proposes more than $100K fee for H-1B visas - Politico</a></span>
+<span class="archive-source">Politico</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNTVEtXzhLalNpX1Y1eFJpVmtpMExGS1FWLXlfZGY5SWZGN010TV9yQ3RscHhoMHNXNTNoSl9lV0lIWjVPQzhOR2dOSVdzekZJMHVIRFo5YVZHRW9DVHFUTGNtOWlMckMtOFVpMUhpZlUxelhFOGVCdmhVSjBUc0p0QzFUYkNYZ9IBiwFBVV95cUxPT2RzRVpEUV9GNEdDQzZNZzdyZUlIVDR6Tml3UHRrdEFRX1FHbTNhSXVXZGtVdDI3djQ3a1ZWalRNU1pCRjhMWTEwNVBhLUZieUYwa2lYZmxXbGhPTHo2SVpYUDhRbmJlc1BZQklHOGljaFJ2MW55MVdKRzlCQ2xJQ1JnMmdFa1RCc0tB?oc=5">Trump administration lays out new $103K fee proposal for H-1B visas - The Hill</a></span>
+<span class="archive-source">The Hill</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNdHYwZkxieHRiZzItZFA5M2IxUXhHLVRkZ0hFaGgzRzNGTXZmdF9fenhJc2o5ejFWMVhLN0VBOWQybWdBVDdOeXhoa0pfb2ZxR1JuNnR5OUsxenJiNlZibnE1SHRoY0tBU1RCY0FkUmdGaW45TlZCODNJRkhuN3dQbzFoamVmU2VnOEgyZmp0eVNwVXl1R3c?oc=5">DHS proposes new filing fee for certain H-1B visas - American Hospital Association</a></span>
+<span class="archive-source">American Hospital Association</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://www.murthy.com/2026/08/24/newsflash-dhs-proposes-103265-fee-for-certain-h-1b-petitions/">NewsFlash! DHS Proposes $103,265 Fee for Certain H-1B Petitions</a></span>
+<span class="archive-source">Murthy Law Firm — Immigration Bulletins</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNMHdhYXN2bXhUTlJVcWNBcENkdFU4UU80ZWFOczBOWnhjSEt1aDViX043SE53MHQtWkRqUFRhekRrcXI0U25mQUt6NTNyQmdKdDVKZVlWTzg3dUZ5Q21YZXpOWEhXeFkyazhHWGFibHQ5ZWE4ZURSOXRsSHFKVnpyNThNRS1VLXZtUDMwMU9VdjlVZ25kbjJGTDd6eXdMNFNI?oc=5">September 2026 Visa Bulletin: Family-Based Final Action Dates Advance Sharply - WR Immigration</a></span>
+<span class="archive-source">WR Immigration</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxQM3lOOTltSHpMdGtzRS1HVlc3cHNjZ2pybXBnMmgtSVNYcjI2ZFU4eHI2eGFGU1JWUFZ4N3NUeXBJOU5IdVVoc2p1V2lPemV2SGlKdG9uY3NyQzQ2enB1VzdKR2lWTTROeGtiTzE1cW1NSXlOaTNweU5BMmN4akV2bl8wNy14WnZIbGhUcm83bHBEWklyazNIeXl0S1BET2tyb2ZfTFNjOUw4V2dRZEp2RjJJUTJIRm16bk05TWcweEJQX1dwMjBZSGRUdndYZWJ2Q3RqclQ4UWRNLXozbk1CMHZRV3QxWk40OWNzcjZXcw?oc=5">United States | September 2026 Visa Bulletin: Final Action Dates remain unchanged, certain categories may become unavailable - BAL Immigration Law</a></span>
+<span class="archive-source">BAL Immigration Law</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNQlRnVmtsdjJKUDJCdjVyZE5GQk9POUwwZEFTRkgzU0xVN2NMalRSMF9zR1ltQkFlcVhIU05jeWktbXNBYWdPN19IMlVhUWNEblBaVHFYNHZxQ2V5MExoUG4tUmZ5QVhSQ2U5VzJTbnZuSks3NWNaSlV5ZGpPanNHR3NpeHFQelVSYnRnUmI0QlpKWEZGaGZuOVUzXzRlVHlTTzZVZWRDakJWMWktR2t1NGVTQQ?oc=5">Bill Would Bring USCIS-Style Premium Processing to PERM Labor Certifications - The National Law Review</a></span>
+<span class="archive-source">The National Law Review</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxOTFVuSGVhUzV6T3l0VWZQTTJBQzdSNmFfa2ZhMUx6REhTUXRXN0F5TU10TmRJTDJZOUQzS3F5Qi1Fby1xN1ZlczNkaUpDYnNmZWpnV1VUU0hUUUJkVFY4NVZPSExGdk1nMnZycVJEYnVtMDRyVzExWkoxZnFPS2hnclUwLWgzZFE0TmNKR1JTQjh2Y0FXZWIwaGJDdTFOT0lCR0dlbdIBrAFBVV95cUxNcEdRcmtaX2hxMVVDTGxtWTJHbXctZ1Zqc0lkTDlDV2lMcDF2aHpWMEpWNGhyZXplQjhRa0p5VHcwUnBlVmI5bkV1ajFnSllPVFR6ZjBsUm40dXg1SkFfX0JSVGZKOXdXVDMtVkVpSy1XUXNXc09ienA3V0RjVFdHQ1VnWXNDckM4M1A4WnZpOGZGbGVEV2RacTVJODZGdzVrbF9vNzNHZXM5YzE4?oc=5">US Green Card Alert: US EB-1 Visa May Turn 'Unavailable' For Indians - NDTV</a></span>
+<span class="archive-source">NDTV</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-23</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNWmNrLVdoWGhUZExHLTVKRWVLbWVHY0JlRl9LMkZqNl8wQWNDYURVVTRMRXBSdDl1aERuajhUTzZwQ1JPbl82eEpac3o2R1lrNUVXSUc0VjVLUUZhRkRaZngzLU40dHp0LWpVWHhVTU5rd0hjaHBxVXFnWG9FNFAxanNFX2pkeEtwQUZqNDJGWk1lYW9Lendqb3E1Mk9telRaRjdDbWc3cGNQazNnNkE?oc=5">September Visa bulletin brings relief for Indian families - The American Bazaar</a></span>
+<span class="archive-source">The American Bazaar</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-23</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxQeDZZUVRBOEg0UFlQSEgwZV9YRVdaajV0X21vM0xnSVBHS2FtYVhXVW5YOWUyVU5tcjdFeDRSVEo4UkVZZEdfREY4bVBMaTNEbEZ1cGJkOGRkYXcwSzU2bm9namZrTmJma0txR3I4d3VYanNUWVMzVFVXY2xOcElpYzdsczgtdnMxYzE0WkFSTGdHOW9tTmtGd1pLSjYtSFlQRkJsV2xhMUlaUHRtMWFad3p0M1ZEMUcyc2pQbWxuSm90cjEzdkJTMTU2TFNKekJ1SVB2U0lwY3JIaE9ueGZ2RG81N2fSAesBQVVfeXFMT3JGSFRDeHRWZkdfY21FSV9BelNVX2l0NkJHYzhydklPb0xacnlrX3QxTzlvTWVHM2pBTFRMWXZGMmxSNm15Zm5ob0ZFbmFGZnBiRFJfWi1kR0pOVWhLLVBSY19YQ0phTGxxMVpYbFRhS3JnSnU3NXZNTXFDdG1sSmJLdHRXMlpJbGhFMFF3elNUQlJxZVJYUHJlOUEtQzdfMXdaSFl3X1BQUnlfUm5xRjBGOFVpdFVURV9mUkJtdElka2FJN25IUFNDaDUzcl9GRkk1bVN0VEpza2RiRl9QRzU3c3Q1cVFsazVwTQ?oc=5">US Green Card September bulletin: Indian family categories jump; EB visas stuck - The Indian Express</a></span>
+<span class="archive-source">The Indian Express</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-23</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxNZWoyeGdscU16VVpBMDFTR3RJNkNqeENKOFNCQ21VM2NwYnBpd0N4RFJDUnlzajdUcUNUNVJhRWlkMlVVODExTzJfMWs4eks4TnZKdGJvMElUWFQ5T2ZIa0ZseUxlOU4weFF5MXVaRnBJaEFBa0NUUkJGejkxbHhBV1pOUHhMNFJ3QWQxT2daTnY1ajlWX3Eta1dWWkpxV0cyck5zcS1YSUlJMVZVUlNEODFObDlyNU0tSlptV0tJUnVxQVQxYXAzN2ZycHJDY0HSAdYBQVVfeXFMTXN4eW1LMEx4TGxlYW0wc2xGSG5Zay14TDd5bWxGVllSWm1DbU92YkVCMUdmOUdLSWZ1Tm9DMUpZRDVkSENybGdsOHFFUUVkTFpsY3RIT1FBQ2g5TjVXbGhEcGVWWGg3UWF0VGZmYUl3bkxJSVpBcFY5M0ZaeDRidWFkNWhDZnBobkNBYm1kOWNEblZBdHhiN0NVaXk3eDZQQjZkMU9zSmF4QVFTbnB4TlRJaXgxOEUwQTFBQU92UnQ4RW1UQmo5RTBxUFhWYk9NVEpRMHZEQQ?oc=5">US Green Card September update: Why Indian families got relief, workers didn’t - The Indian Express</a></span>
+<span class="archive-source">The Indian Express</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-22</span>
+<span class="archive-link"><a href="https://www.murthy.com/2026/08/22/september-2026-visa-bulletin/">September 2026 Visa Bulletin</a></span>
+<span class="archive-source">Murthy Law Firm — Immigration Bulletins</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPeXNvNmNPOGtpQzEweW1oQmdrT2I3QmU5dkJzT1ZaTXhGX2F5RTgwRG9qNmpDUzFzTUJpc25PUnAyZHhxb0VKbE5XZGpUd0VfZHdGV056UjNFdGZzd0otbnZZNktFZ2dwVm9lWXplOXh6TW9FSnllSlhoVHl3R1ZxdHZ3U3prQ1hhNUczR1I4STJ4c0FMOUtYejJUSFdOMEIxQzVHTQ?oc=5">Green Card Update: Changes Happening to Applications in September - Newsweek</a></span>
+<span class="archive-source">Newsweek</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxOMXhfY1hXeTBfV3BDT0lXZXpibU9YUzRYRTdwbVlMTXhRWFJmLWxudDMxdkRvai1tQ3pNNWEwWEV3WmFvQ0diaHpPZzVmQVpHcHRHOTBmSjJnblJZc05FU085YnhVSmhmREhrRVZYOXlKMUw1T25IVzVnT21JMHMyNzdpNXFtTDlNV0tHaHdJMjFtWUZfbWdmb0RtTWRmX1RkT1pNMkR3Q211M2M4R1RyR015YjhUSmNqSk12aTVpNE1DM0ZEVXUwZmxrVnA4QVZmRjBLSHhFanZUSjN1d2FISTV3UDBqbkhfQU9rcnhuLS1NdVNQN0xXVWxnWdIBgAJBVV95cUxQc0pjNnpsT3FMZ3RtSklVVjVEMkdRU082dXdDU3B1Zi02eEd0bHFsTmpDa1ByOW1YSUcyZVhIaWV6eXhTdjVwTUlDUWc1R0pSeU1sUU1HcVpqN2pmdEtVU3RWUWZkRjRjTDVIblh4Z2xHUXRvekdJbVJlZkdLYjBSRFgxYXNoTDFWU09zVjZmVy0zVnRwQUR4ZzBCWTE2Q3FXRU4teWNkRGVjY0JMS1E1YVVUVmFXZGs2RThIRzdfcmpuR0E0a0ZNZGhTTlVqNmxIdFEyWVA2NV8tcXlybEt0ZXRpWXpTRjNPTDVEc3Fmc1J1bUU0YmEyRG4xRmR6a1FH?oc=5">September 2026 US Visa Bulletin: Latest update brings relief for Indians, but there’s a catch - here’s what to know | Hindustan Times - Hindustan Times</a></span>
+<span class="archive-source">Hindustan Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMipwJBVV95cUxOQ3RXcVdGVEtYNjFyXzRfcXl6OUNqRmhybkFWWkpWNTFBNEMxQVpHcVc2aGlhYTRBWFFVVE1OdV9sVjlSajNPeVBUaTBzSHI4b2xiS3AzaXBuRm9kM0RXbG5wa0U0dDdjMVJTTENTdUM4b193UGx4ampOUjJvWFhkTTNtZ184WDN3NTdUWG9hT0U5QURWR1B1c1o4Z05KUEt0akwtZTJ6Rkk3dEF1TTRVdlZKaTRXYkFyMEttVFlDdGhoVXpmX2p0OWRUejVsdkVPWFREWjktbXJuTmtqeFI5OFVIMDhERXJ5TkFoM1lMcVdPa3VsQjd0TlZIOHpuRC1kelhXdjVuYmFOYkJBdjJ4NXgydXNIY0psNWtnVHhZZjAxQ2NtWmhF0gGsAkFVX3lxTE8tU2xiSmEzMnlNSVhsbzRfSnpiVVp2X19kVVA2VlBNYmRBcHZmY0R2Wk0wWFI0cVRCbEVIZDZrZnhTS0UxS3k0czNxbHNFTFZfXzN6aE1DdmRfcjBpQ1RyUHBsWDA0WFhxT2tublFyU0c5NktlQVNpcmRwRVpDYjBlcUNKNnJuR0FVamRpS2NMSGZpMHlpRUJCSVN5dmdrVkJaT2l4dV8yZWs0YzhqUk9aYkxKeGEzSHVuenhJZlg4LWJyelBxOXRmajNnQkJVbDVOWnlxQXZ0djFEa0EzTFN3QTFyVU9ubGRBQVR4eDItaFl3TG1yZ1NrUjZBV0xPd1NSV1BSUVRuNURSQll3S0Z1UXJoY2NqVXNnb2g5N2V0SHc4WTRnVVZsMGp5bw?oc=5">Good news for family-based Green Card applicants from India in Visa Bulletin September 2026, no relief fo - The Times of India</a></span>
+<span class="archive-source">The Times of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi_gFBVV95cUxPd3djWVdsam1TZzU3NVVlVDZOQmxQVTl6TFRUQzkxdWhUWklBWmd2ajl6aXlVckdDQkdERkFFb0RvdEFIM0VjNURtMjZoMzFSV2NSaGdpX0lCM1hNT2lhbFZCLTRPV2NTZ1VpMUk4ejdYeldRZkYyOUNNNVpOdUNTaFBELW1SQmEtUndBOWl5TkU4SjNLdDlPWENpQ0lWYXdaRzhkblpLR2d2WHVtbldFWC15UWo5cnRIOHo4RUY3OWFHc3RSVE9fcWJReV9tbUpsWmpFeko5aWpRVXlVRm1nUEJkOGlqSUh1eUh1WG9kZkp3ZldOUXBRTThaSXZqd9IBgwJBVV95cUxPMXNmTEFXbVBLWkRtQ0ZOemRMbDBfcFlxYkhldnJlOGpLZV83OW1VaERVaUVrbm1ENnN6NDNfT0hiNFlEbFJfRXQ3UFVEWUVqS1d2TmNQcU1ra2oxY2RBLWVqME9yblhZSThJTkpEc2tzZjV2cFlNY1ZTcUloNUd6RW0yNEl6XzQ3N2hXM1k5YlZTRDBtQ0thc1pkTlEwT1FOeFdqcTJwNHJ1SEhYWG84VHFObVNtSnJKNU5PV0NOck5Qa1pqT2VDVW44ZGRId2ozLXg1TmFkVHNxTWxxUGk2Y2Y0eHBsdkFoMVlrR2tiZVFjOXA4NkVmd25Za0xnSEtNanVN?oc=5">US Visa Bulletin September 2026: Big green card relief for Indians as family visa dates make major gains - The Economic Times</a></span>
+<span class="archive-source">The Economic Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxQUmdMc3hwOXU2QjBNSU8zb0xFamxrSlVoelBCQ2hyWm1zYmdmaEFsUjN4VXA1aUdtdmZ3eGx1b3lIX3ZQUFFNcDdCM3o4VTZYMjlGS1p1T3llV0EwVm1qSE95Y1NXaEpoMXJGOWtZR2t6NG1UNTVOUHIzTDl2cmdfbU1GV0ZUS2JwaG90ZWdLaHZDVFFONThtSzZfQ1ZfME1VTFFnSUZkdWo2T0pOdXhEN0dOM3poWm8ybGlHMFZR?oc=5">Why This Governor Wants to Ban H-1B Visas for Teachers—and Why Schools Use Them - Education Week</a></span>
+<span class="archive-source">Education Week</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-20</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQcHU0aF9ac1BQeGRWMkZBZEs0QXlkU3JscUppd21qc3ZHRGJXVlZWb0pZQXI4aDV4R1A0RXFUMm9HcG5MSVFnV1BHUTk1Q1UtTElHZVFfQVBTc21wT2ZyUGVacWZ0NEplaW1KRG1FRGlpeDN3SWUwVU9mbC1KVmVBa2t3RTJiSjVVT015SkxnMHRLdHY1dFpUdldoVi1JaHE2YVVCZXM5ZEZldHo0X0c5Mm5rUXF3OVVrRFRENEtmdkprMWJ0Q3fSAcsBQVVfeXFMTmhaQVpYalo2ZGpvc1c1TjVGcHRIejJRUHJydC1HWVdwdl8zOWFSYnhZSXk0dVlZT0tpa2V3TXdlZVZYM1pDaU9FTXZtRlc2aHJGSFMtMkFHTVdNVjU2aV9ZSGE4LW1qbXdfYnJmeV9qMXZYRjhndXlVd0k5dElLaUtzbHZZQ2VOQ2tsWlhrajlTbklwaVpia2ZZTnJLSl91SmdEaWpfQXlaUFFDRnNXOXZSUWJKSllYMGVWcEdUMllGMm9pV3diYXhKX28?oc=5">US tightens green card scrutiny: Indians in backlog face new ‘public charge’ test - WION</a></span>
+<span class="archive-source">WION</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-19</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNZGxPT2FfYnJkQW5oaG9lRXgwLXJKWmgzUU9HRnJqYnRzeDVWU0paZnhqV1FPM3d2M2pHeTJiZkZEX0F0bmFfaU1CRGVhcFZza1RXRmFIS1dWcm1WZkhEYmNkOTZlbW5MWG42NjdxMkdtWTZ0NG15VXdSRWJDaURsUGdtaGRfZnpIbndoa3phYjFRQmPSAZgBQVVfeXFMTVY2ZWZTWFBmX1h2LWRNVzY1S2VsS1I1eVJ4cnpXVk1BNGpkd18xcjFFNTdLNmpibGhPT2JIejhlNU5FZTRNb0ZRN05hUnpIQVl3NTJsc09KZ3pUaHBFQWZXUFB6X2VwODA1NUoydDUzRlVyYVlaWFNBbEMwT2NPcUdwMXByMzVoQ2JKSkkzSWxGX1lWUFJzcko?oc=5">Gov. Abbott wants to end H-1B visas in Texas classrooms - FOX 4 News Dallas-Fort Worth</a></span>
+<span class="archive-source">FOX 4 News Dallas-Fort Worth</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-19</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPd2JMbWhPU19qcnR6UV8wRWxTTmtIOS1oN1ZuR0c5dHZpel84TG0tRFJLUHlub3paTEphYW1oQUZiRDlmSEtDTVRlVWRJVE5US2RPazNoZUgwMlNMcEg5c2J5aDFhM243OW5DdWhXYlZFaHBpU1hOVXZ6RGRCWHVHQXh6dXFZdE5aTTlCMXVZZS1XY0NlajBkOWNxZ01wNXQ0V3lFcEtYOA?oc=5">I've spent 5 years building a life in the US. Even with an H-1B, I don't feel secure enough to buy a home or start a family. - Business Insider</a></span>
+<span class="archive-source">Business Insider</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-18</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUkhEc1NiUmIxQTFHMmVSTl92dGhORUVUTHZNdDRaa1dEQzk2YmhvQkNQSHBuV2dtZjVyb1NrY2RPUDdtVkRSbGtoYVpxTHJDamJpYW9GQmNZa2w4TkdkTEFsU2NQMjFzWEpvUXRtN09Vc3VKamRhMmczSTlrZnc3S0p1VXk1N0NBOE9R?oc=5">Gov. Abbott proposes ban on H-1B visa use for Texas public schools during campaign stop - The Texas Tribune</a></span>
+<span class="archive-source">The Texas Tribune</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-18</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxOWmtVRjkyMUd0ZWlKR2VzSGZrNC01SmctRGFjVnNaeFFVdXM3UUE1YnM3UGJFQjV1V2lpSlh0Qkw1cHFYUFplQzhVVmtHQlU5TDE3TmFJMlJxeWY1djBORlBndlE2NFJQSmhWeFZ6cjdoUzcwOFluZmJxZGVwOFFxc0lsUW5Rc29nQ1lxR1BJbDRKNGI4S2JyOGlkUng3UQ?oc=5">US Visa Bulletin explained: What it is, why it matters and how to read it - inkl</a></span>
+<span class="archive-source">inkl</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-18</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOdFFqN1hoSmZMejVGemR5WXFXVUkzN00xLTBnN3FldEJOVGFZcnBHOUlZVW9zM19ibWF3bEZhLXR6Sy1QYjlQa0hMRmlpZ1hnY2tscU9YZDU3MjNSSDB1WEd4N1E3cWxTMFQ0OFFvRXVYQVo5NXZzVzhIQzZVOC1PbnNwNnF0ZzJ5QVdHWFV3?oc=5">Employment-Based Green Card Backlogs Reach Record Highs as USCIS Delays and Denials Increase - American Immigration Council</a></span>
+<span class="archive-source">American Immigration Council</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-17</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOMlFHQmQ2dmZteDVYRnh6RmswM090bUJLa3Q2NUZrc2RoT3VuckJ4R3p2YURDWElUNlE2ZU9OWFBBaUU4ZmFuWU1oempsN1Z1ZURyekZWTnBDM3NidEZGV29NWnJZM0tvb09lSHg1b1JGNloySXF3a0Q4ODE3RXlwMGN4N2NoeF9FOHpNUzVPZ2NtdFpoQTVPbGRVSEJwaFhpRGg0SFFNQndsdHpwa0E?oc=5">H-1B Workers Could Lose 60-Day Grace Period Under DHS Proposal - Immigration Blog</a></span>
+<span class="archive-source">Immigration Blog</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-17</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNdk1xTW96dklxeGxjTksxNUozOGd1T1BqM3pWWTBYY1M0aGdwUnJidTVBbjdmeHBJVnB3RlpMdHl2MVMxbFlrVEZiNjFnZlB6MGZRZFJkNWVGSjBBV01TSjBlTVJMVXZfV0FLeFd0SU5MOVRLVmtOVkd1cHlGRGE1aEEzZTVocnFxNkUtWmJpTWdwaXVmNkI2ZS1kX0dyRGROOFNvNGIxNWxxU0N6MFVrdzJTNW5GWmQ1Z0E?oc=5">US President Trump’s H-1B visa crackdown is starting to drive tech talent back to India, China - Asia News Network</a></span>
+<span class="archive-source">Asia News Network</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-17</span>
+<span class="archive-link"><a href="https://www.bal.com/perspectives/perm-processing-times-faq-for-employers/">PERM processing times FAQ for employers</a></span>
+<span class="archive-source">Berry Appleman &amp; Leiden (BAL) — Immigration News</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-14</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOSms2UFNxZ2NYVy1kTGZ4RkFnWkQwUkJJejhPRzhrM294ZUdyRVY0OGFJNXRkMkl3NjdnRmtjT0J4V0tvTHFCVGR5MlZ3VUZmQ2RnNDhWbVZRWlI5ck5pUERrMVpDcHVnQzlTUkxaSzRucnQxSkdxY09qSGZ0Vl9zQzdJMjRsZU5sYTdoZTNtTUJYQVNvaFlWeFZQeWdMazhY?oc=5">DHS to propose end of 60-day grace period for H-1B visa holders - HR Dive</a></span>
+<span class="archive-source">HR Dive</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-12</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxORmpzWWd0c1FheV91WXRzMjF6cDdVTmhpVUpnWExud05JWllTeE01aWV0QlpJTFRkTVFhVWR1Y1g5aURJUGlhRUIyU0d6NlB6dkxCM0phMjJiZWFtWWMtcXhWTkRoMThib2U5ZVljQTU2ODZFa0pJd256MjVQaHB0WWpBZ1l6VUo3T2RVeFF4Z0pYYmFYak9PXw?oc=5">I missed out on the H-1B lottery 3 times. I wasn't ready to give up on my career in the US. - Business Insider</a></span>
+<span class="archive-source">Business Insider</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-11</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTFA2QjNidzBwSW53ZTFzV0NSaFpDZ2g4WGlFVnVwdldBRTF1TnFvTlh4NnRsR0Rnbk5jaTViQXFKdHBkck1aZXVsZkhCSzRwLWVrRXp1OVVJTFJlMDVSOEctRXBpb2pHQQ?oc=5">The Biggest Myth About H-1B Is That It’s ‘Broken’ - Center for Immigration Studies</a></span>
+<span class="archive-source">Center for Immigration Studies</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-11</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMirwJBVV95cUxOUjhoejA1SV9QR3hYZG1Lbk1KUFN3TXlJaVVtaGljQlhsandZODgxSEpuTlpoa3dha0trS2xMdGJQczlKYUVoeVBoZjlxd3ZJR245YVh0dzdDb1pqNF8yeDN3SHdCbGZEci03ZVdGMTF4czY3SExsNFE0cllYa2tLOHI1MWItQVJRSHB5NE9pMTQ2anlGOTRab09pUFk2bWg5aXRhZTh6ZkVMNDVsYWVCLWZEMVY0VTdzNTFrNHZuNFE1R0Q5SVU3YmFzM1FMTjNxdjZwS01vYzVQSmYzRFVBSjNfNDJnLU9DOGpPLTh0eWUxS2dhT1ZqRWZTZl9RVy1EblB2SHJkSmYwRi1UUW1TYjhkNGNhTFp5a0wwZmdQaVNaNU1pVW5taHlncWdodFXSAbQCQVVfeXFMT2U1ckVZNUthcUZCQmFldzNDV01kakRhUklqNnNyZ3p6N1JsQTZkbVFNT2dsQ1UwaEVzQ0x6M0s4YksydlRGRTFTRWZIWHR4ZTdBQ0dpdXBzVVlldlA0UldiVTRBc0hqVGF5QmFMZVN6enBsck5jX3B1T2JtSFdlbXhjWmNKUHZuWTlabWRpT3FnMElmZGZCdDNyT2IwZVdQSUhzTGJCRFdJQl9zeHV3WncyYlBjRnYxVHJGc3NwbXozNTVNYXN2RTJLR3BNVXJwODdGVTBiTUluZDJyM1dhOUNyLUpkNllZdEZQVG0zTlJwTGJnZkVPTmg0NmJCZ3ZZV3RIZkFwYTE2UzQ3OE1uS1BKeU5FbWNUdDNMWmQ2VUxCTDBPcGR2OVcwT2RQaW1JQllvZUY?oc=5">Department of Homeland Security plan that hints at US government increasing fees for H-1B and L-1 visas f - The Times of India</a></span>
+<span class="archive-source">The Times of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-11</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMDVsVWZWTk9mU3dXY1RjSmZOVFNVQnowcnE5Wm8xSkgtbThDS3YtcUFkazJxMVVxYjdJT3lrbk10bWFwR29FNW5lTWtmMXhjMkNVM0lEMmNUZy1ZTXdtSUtlY3U4c0lpdVJqNFV2YnQwMk1zVXBIb3lwU0R4V0VWWHVodFJDODNNcVg0WVNrT1VucTZEOFo2a0xHY2dycm8tUXFUNkhwUXpoVjNiZGR6eUVmNGJOVzkx?oc=5">August 2026 Visa Bulletin Shows Advancement in Final Action Dates - Ogletree</a></span>
+<span class="archive-source">Ogletree</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-10</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPSEdmbHZTU0ZMd25LV1hWZE1LcXplUTBWSDVFcndHd0c5b2Z4TVQyTzFYTDB6NFFiUVdyN2R3YUVRUXZKbFYyM0pQTklSVmpxZDVCX1FCWkVVR0ZucWNPRlFVOFZPYnQzTGVxUjd2ZmJidHRiekpwZW84a0pLNTFBanJVbDdTY0lGMVpFOWR1emMwUjBGd3daUTJpUlNDMzJJ?oc=5">Green Card Update: USCIS Prepares Major Change to Application Process - Newsweek</a></span>
+<span class="archive-source">Newsweek</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-04</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiggJBVV95cUxOZG5NY2wwMnhyYmFneXd1YzJXcHNMT1Bybk5tb0FkZmZaMWVsOFF4c0dVNFJqSElyVVNlek9OVnpuVGdIRExtUmpIUkVkWEg3S2lPaUtsZm4xSU1ZSjlJZEQzeDF2cW9kbDBha3ViaUJNZDJRRGJ0dUItUDJYdlBlTHFZMDJ6MUZOVkNaSWJORWlPN2tIOXpCYkZ4NlJQc0o1Z252aUJHRktPWGhMVTZ2dXZzVEdzR3Z3LUEya25fTU45LVV5bUt6ZUVWNU9sVTc4NVJodXF4bFBIbXRUOEkzX2V5YjE2WXp5dGswWWVyQXhKaEtGUTRvcG5RdUgzOVBRZnc?oc=5">Trump Administration Green Card Memo Is Another Attack on Legal Immigration That Risks Separating Families and Harming the Economy - Center for American Progress</a></span>
+<span class="archive-source">Center for American Progress</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-03</span>
+<span class="archive-link"><a href="https://www.federalregister.gov/documents/2026/08/03/2026-15673/labor-certification-process-for-the-temporary-employment-of-foreign-workers-in-agriculture-in-the">Labor Certification Process for the Temporary Employment of Foreign Workers in Agriculture in the United States: Adverse Effect Wage Rate Updates for Non-Range Occupations</a></span>
+<span class="archive-source">Federal Register — USCIS (DHS) Immigration Rules</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-03</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiggJBVV95cUxPYXFSOEdCZjhLYjNfakV1bTc1dGRtakd4VXNTdFlFUmJiblY0NWczTUlBWlpEdTJDcVFlV1hFZXVKUjEwVjE2ckFDeHJOaTlGbXI4Y29xQy1YeXdYY1lSc3llOFhJR0hqelQ5bzVPQS1rNU96N09Za2hzLXlRNmtudWhBeDBhSHBUYjloMU9ILXZrMUNDY1Rsemd5bm1RLUNvUHg4T1F4Nk1jSWh5TVBSa2lEWmUtRzV1Wk1wUTI1LXVPS1NPWGRpYTlhcFF1R1l5NE5ZdlNLLS1KR21BX3lqYUFmU3B3Z250ZjhmdmFuSEdKazF2SDRRbE5kdDVJd2s0VVE?oc=5">Decline of Remote Work May Factor in Reported H-1B Visa Homebuyer Exodus From North Texas - thetexan.news</a></span>
+<span class="archive-source">thetexan.news</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-03</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMirgNBVV95cUxNWmc3enpKejFQVjNlajVUMDlPUk9NeXhhM3NvcC03Zk1ZdFJDcVNWZnhhZlBYWDJXcjg5QnlVeF9vNkRERS11aUFGaFFZY25WZWFvOUpQUHBrWEJJUGt1OGk4LXJoTUtKQlM4VnVmM0l5eUtPdW1sWnJLRTRwdjN5ek5vWUhqcXBFWUdnUk9DeXNiNTFPTGtEbVdhRnBWVVdNYTFaRGRsQkNDekVXMW9mWHBnNTJINWlka1hXeDZMVm5ydlZURW5jSHZzcGpZR0o2Y3pIbU5LellnRENyUjhZQWdVRFVMT1g2M2pnRHl1MTlSdnpUQTVHOEFFQXYwQ2ZmRUZuM25FUklIdkYyWHZmbHAtcWRaNk5ZQW1QZGpReDFmUkNuUWlud3hpd3Q5eEFsSW1zbFM2eWhETDJTejU2UjN2QW4tSVBDTUpJbWtZZDliYkhVSHFueGVseUd1MWptQ3VPbTUzZHdKcXdCMnVsdm91aG15UkRXeTRER1N5a1Z5dS1VTlF0ZjBoTWFwc0RKQTVYS0p4MTlvNXFnVTlmeUxLdFYzUVR4MVRjdHhR0gGzA0FVX3lxTFBiQzJRT1l6d3haVXhoNUxOeGgxTEIxVllzYTBSYWtfLWYyUlFuVWIta19lcTlhNUplbjFCWlc1RW5obDhTOEVaaVlYTzI5SHRsWnhLNk96T2s1aGh5NGFOLTJQMFdMbHFFZ0ozZ1pPVHlLLUVKRHdxTjhaS2RhaWVTOWg2WWZZTFQ5SVZKcXFoZ2lTQ2pWNmhNX19iSE9LR3FsU1h2ZDlWZXRWcUJObHUtU3Zma3Fma0VKemdxSThiSkR4T3RYbjcxdEcyMzl6ajlzcERwNkt4YjR4bFJRRHJTUFJUUEQyWE5GUFo4YzBnQ0x4ZlhZcVFFUl8xMU1lUDZJVXdKZUVhaVVMWDBUbnJzUE5ZWjB1RVE0cmd5U0Q5dS1ZbXctckRySl9mS0RzbThzWUNTcVpvdXlreW9UUUtmMFNyMm1ZZC1UQkR1SE8zUVFKOTFFekp1RUR1V0otVTZlaTVYSUFJR0xmMTRwNDdKLU5wRDhYaUY3SkU3VG9YVFUwcnNIcUZtMlJEb2g3ZWxXQlBJVkhRSjNiLXY3aEpsLWNYdjFRdzFNczAwNTY2M3dKMA?oc=5">US Immigration authority's Green Card update: EB-1 visa category may become unavailable if this limit rea - The Times of India</a></span>
+<span class="archive-source">The Times of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-31</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxQeGxrVjUtTUtwQ2RsWmE0R3oyVWZ6NTg0emQ1YkJqYUUxMUtQR2hCUkUxRjl3c0RpOEJhMXhuczk4cUt1RDB4cGRVZlo1azRNcDl0QWRObUFKQ1pGTXlDakVyR1BxZThERjZjeFFTU3ZtX3h0cHk5Y3puRlJ5QzJxNnBvMU03ZExCN05Zb0RZYlk4dExsQmMxOVlsRmFWZ2hRcDQwQ0dMLWdBOE1LaEJCTWlBLTJIdEnSAbwBQVVfeXFMTnlmaTJBOXdQMTVhQUdtb1UwcjJDSlBvRVdDXzFYNUVKMHZzS2JpckZ2S3kxMnlQYkJWQXM1WjNiM3UtWFd5OVdXalZpZlRPVUFFb2g5bnU5Qm1pdmlsWjZOQ2VOTXpmWHBPUks0b1BUN1RRZ2hEUkluVVVkRlEzYWZlRFNWMlVFQlpIM0M1WjJyOUFvME9lSl92UDFSaFZaNEplZGJuUEtDMml4TUlWQlE3d1BKMG1jM09rQVk?oc=5">July 2026 Visa Bulletin – Year-End Slowdown Continues; Court Lifts Country-Based Green Card Suspensions - The National Law Review</a></span>
+<span class="archive-source">The National Law Review</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNMXNxUGxqRXhTREw5ZWtzU3JTaGxVRmpTZ09CTGtDcWw3cjBGUXZVSkxUVkhGU0lIRHBlaVF4WEJ2cnFKRFpGMVBReFpWdUd6XzlBNVoxWWVOc1ZrdkM2dnFLWFFXanlreUJNYWVXbkFBMDZKdmlBNTgxaUhTR1VneFhVZFRwWHpuNzV5dC10VlNRalR3aEZwZzM2bkpxQXQ0MXNMckZnTXFreWw3bHBrNDFHYVlJUV83QVNMWGdfNGo?oc=5">USCIS Wants More Green Card Cases Processed Abroad: Is the State Department Prepared? - EB-5 Insights</a></span>
+<span class="archive-source">EB-5 Insights</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-26</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxPU1BnMThzTjZoNHRlQTlVSnd3U3VpVXo1WG1Jcm1lNkhRdm9jOWc4QlhLajRzOEtoYmU4eGk2ZWNudDhWYXlNSXpZSXJKT2cxdmY5cURzVC1nOHhzcUJNTGYxbFJsLTJDYzR5eG96TWJvYi1RUjJFeDNjQTM5VTVCbDJDbDZWb0JpenMyVnBncVN0WVJlYXU3R3plMEotY3plM3FDTmxxWXNzTmpENl8wUUdsRjFJNXloQXQxdGlNZC1wMXVFQU5lQUNrZGI4V0XSAdQBQVVfeXFMTWNxUFNzMkZKMXJtV3pieDNoUDIwVXJPczAxd2puRUhfcEJ1NVpFRlJDdGtyQ2FrdURiaFdFY1BrX3JwRG1IeFJoNzFKYnh5ZEF5UGNwS0RPaWo4a3F4cUs2QUNzWlBaWjVBMURoZVFjRVlncEtscVliSDFLNUFrLUd5WUI5bVQtOTY3am1Hbmc4UUZia2lWenZBMFM1cTJNV2k1b1A5aUgzZ2c4eFR6amx0b1VsOHktLVpxdWlNU0IzaHBGYy1HSFp0dW91Sk5zZHJrUkI?oc=5">What is an EB-1 visa? Why is it narrowing for Indians in FY 2026? - The Times of India</a></span>
+<span class="archive-source">The Times of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-23</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxPUkM1bHJDTkFjcm0ydzVpQ1pWU1hNUzZSUzRvNlQ3MWNtQTdiNko3Y1RxekxDWFF2bmJVS1VkLUpNZUtiLWxtY1ZaWEQ5WGtyNDY4bjRRNGdBTlRsRDdUTUVkbkM0RTg0VFR6QTR0eDRrRnBQeXpIZmV1VFFkYXY5Q0pYSQ?oc=5">August 2026 Visa Bulletin Released - JD Supra</a></span>
+<span class="archive-source">JD Supra</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMmJzM3JvNDZvTmdNTmx4SFNHLVJmcmNWcVJIWUxjNUl4X1VIODh4c2F4UzZ2NElHSzVlSnJMNTZkRmRFYkFHTlo3dW1EN1UwVUdJeTZlVFhKTDBpMzEyV2h0REFzZ1NTRVk5bFZmSF9wZ3U0YVpsbTBkMWlVU2I0cjRsZ0oxbTZWYmtZV2hYeGx1RlNqOGNzbGN5dzFLXzN0emdEZnZDbFNRSHpUQTYyNkFDLXRKUUVfMThMaHZHTUhaQ3pHZFhGNQ?oc=5">July 2026 Visa Bulletin Shows Unavailability in India EB-2 Final Action Dates - Ogletree</a></span>
+<span class="archive-source">Ogletree</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-22</span>
+<span class="archive-link"><a href="https://www.bal.com/perspectives/the-employers-guide-to-reading-the-visa-bulletin/">The employer’s guide to reading the Visa Bulletin</a></span>
+<span class="archive-source">Berry Appleman &amp; Leiden (BAL) — Immigration News</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTFA2d2F0WTkxbkFWT3BIN0x4YU5UaV9FNUxVRlVZaTJvR3pGX0QxanVCUnh5VnFxazM2em42UlZKd0xvOW1NMjNsc25VSWRxSW0yMGJRN1VoUXVlM3lnUm5fNl9ieDlMWDdBZVpveGxHeFhhU01FaTF5TnBaVEY4Tnc?oc=5">August Visa Bulletin 2026: F2A Advances, EB-2 Delays - IndianEagle</a></span>
+<span class="archive-source">IndianEagle</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcmFPbFZTVlgtR0QtUVVjY3VFOTBuVm9ZYnlSYm83R1NEbmVjWHJQTUVWV29zZmtFZWREUUZGNzkteGU5NW5JR0RqbHQ0aUE2WUc2cEZVZTBHX3gwY19pQXB3THlhR09GdXgyRWZNbkZiVHh2bFhtN0hXSmhmYWN3YnFXM0RMSVdGZU1HVUFjQ1pWUXdlTWZxTjVVZXVFYlJndWNjU2o1VmV4U0FaZ2QxcDVMaWZONXFnVnhmU2Z3TGZwc0RxWkNXVlpMcjlRVVNn0gHWAUFVX3lxTE51YTJ2cmVPdFNsQ1NZdnVjaHVodlR3SzBRd1NaakMwMWoxVkhxVVQyRFJCTksxdXRURkloUU9mM19BNVkydFdmaWJESkZ6QndHUE9aSlc3enFXZXlWckNTeTUxUnRKZHVfNTlydlVBTW05Y3Fqczl4UGc0aWxIY1JyanFjZWhmMndCaVZNWmh5Z1J3RXpfRWp1ZFZBNUJUc01KMmdoSnc5SVJJQVp2cnVva2ZqZTZaazk3VGh5aXhpLUxQRkN2aGk5emVXMG9qN1dscXRhZEE?oc=5">US August Visa Bulletin: No EB-2 relief, fresh EB-1 warning for Indians - Business Standard</a></span>
+<span class="archive-source">Business Standard</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxORlFRbTBvd0FjaFdCbldHSzkzclZzaVkycWxvUmcyVTBxb0NVZk5jOFRZekg2R3BBRTlnZnBObXpKT0xkX3RLdEJDSExOMEtaUWxJVU43ZE5fdlA5aU1ybGNvZUJSb3hTSFBLOUFpOVgtY21IdzJrMjJ4bkJBMW8xWDVUUkdwTXd0V1lhX2tOVE1ROGFzTF9sSTJvU3gwMDNTclY5S2Riamo1U2F1TWxnUWlFUTRTY0dWeXhlaDhqaS1LNnNTc1hZeDNGbDhjNm9QUHZhcE0walZEZw?oc=5">Green Card Applicants Face Mounting Denials as Trump Rules Peel Back Protections | National News | U.S. News - U.S. News &amp; World Report</a></span>
+<span class="archive-source">U.S. News &amp; World Report</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPV0twVjRjdjc4dS1GSFB1VkRHclRrbzRhY09lZWFraHYyVHAtM2xzYU5HTmh2a3lhd1FjNWRtTUc0dkM0anZkVHhLSjVfc3BwaTh5RFBsZVpmclZPNVV5VXRQdmVycnlxNTFKNFpRcWNlVHRoSDFmM1ZJZndFSnlJMy1xZTI0TDcxUWI1bVhtUnRKOTM4TFdXZDFGdHowdXMyNHhBQWExQnktRkhteXhPRjM4NDc5cF9ocUZIa1QzSWRwYVJIZzhR?oc=5">United States | August 2026 Visa Bulletin: China EB-3 advances, India EB-2 remains unavailable - BAL Immigration Law</a></span>
+<span class="archive-source">BAL Immigration Law</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GaENDN3EyMTQwLVVlLUN1R095aHV2cVF5eWlMTHV3QlFfZDkzUkU0Y19hMUZWZllOd1VQMGJVN3pEdGk5M3VOb0RZVnpPNEVXWTJocnVxbXdsUQ?oc=5">August Green Card Update Moves Family Applications Forward, but EB-1 Visas for India Could Soon Stop - NCHStats</a></span>
+<span class="archive-source">NCHStats</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxOSWtuWkw1UzFkRU9YUm1nUFRqNDJET3FYU0Ficjh6bUQ5cXlRWm81ZHBfemg2VjROUVV2Q0tSRDhNaTZiSGFBZ3QzMVVrMlROVU1SVnRuZkduOUw5eWhWMzVsTlFMRkk0Zk1pZHZZeEd1b2xCVjhwQkg0Q0FEekhoaVVGM2gwZGl6TjlwVGJ6YnlJblBuRUFZUzg5SDlzenhsVkEwMFVYN0pzeDRHaUhTM0Q0RzJ1dTZqWU9vVA?oc=5">Green Card Update: Full List of Changes As Family Visas Surge Forward - Newsweek</a></span>
+<span class="archive-source">Newsweek</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMirwJBVV95cUxNTEszLUJQUk9mNUdSRHRqWU1DbFdLTmpwRWgxZWt5WDZsLTdCNGlKRERpRy1DMEJ4bWU3VC12NG01NUJlbU9oVGpXMjdMVnJvcnJiSUkxbGR3U0M4LTlTTWo4ZGNfQmlhQS1MTElBZDJCQjlDM2VuRURpYlBDa2FwOFdlVEZqdU1TNmRvcWZDdUQ3TE9JNFpZNTlBLXdZcTNQQmEtQWRFS2pQWHFOdTJLZGFfaVVlb2J1bHVNclJsMXJxZHdLVEJOX211MjFGU09UZTRvZkVSVlAxX0owbDAtdTlkcjNZOGw4MmZBV0hoZFpZdy1fWXlPQ2JlTmE3MThDOVIxazZaSUZwcFFwcW9hQXVxZ1V4TC1oOHRUVWRhNzFMQncyOUttSEtnM3g4SEHSAbQCQVVfeXFMTldXVV9nOU9wLXZFMXJ5WkdGWGFFUTRJLXBWNW1CWk5lMk1fdzNub1VEOG1kMGhWcm5oU0ExVEYyVE9OaTRQVG5TRl9mYW1OWW44ZFFUazdvTGZrLWVRTy1HcGQ4UXFuWjAyeW9vNG16SVhybFRKb1pmaTg5aV93X0p3cHlWRlBoUmtfRm9hTnk4MTZlWjZrYWdya1JxMGtqaWFubk9kRnFISVlveXVGc3JWcjRKSC0yVWpfOFc3OUk5NGNIUlNINlBqMVJ3S21paHNFN3NiUXN6N29Lb3RfcnJ1bTNTV0pBVHZvSU5jNlN4TXFNaVc3eEtfeDM0VlpfNGlreUlmdFFzUGk2Y0lYb2pjalNnTXl0SWpMWXZxS0dCczlDMUNWNHRLYldLbWZ3M0U3cGo?oc=5">Good news for family Green Card applicants in August visa bulletin, bad news for employment-based candida - The Times of India</a></span>
+<span class="archive-source">The Times of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYWhrRDRZLURuN2FpSmlkT0htcktYdjhMUTVKZGY3ZkxXLVgzcHVqNXZoUzBoaE5DaGVYUTQtVHZNRV9CdzhIbVpaRWsyWUx6Z3gwOGQ1T1FpTFB4ekx4MVRFUFkyZkgyMEotOEY1Ukc5aFpudS1TXzBIRlFNZzhxR2gwaTl0SjUxM2JWaEJMUmQ0TE5rNkxkUGxpQ1FFdmFfSEFhQ19SZDJfdUk?oc=5">August Visa Bulletin Brings Little Movement in Employment-Based Green Cards - nepyork</a></span>
+<span class="archive-source">nepyork</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxOZkVMcmZETllxMG5XTVNhM2hGeG02eWdIUTEtT0U2Nks4ZVVSVWNjSG1vUFFndFpVSkRGVWhpTlZ2OEhxTGRiUnQ0QlV5Slo1VGo3TjZ2MmhCX2EtSXJsVXV3LVEyZ290M2ozTjZGSnZTd3RTUWgwQ2ZteEFuSlJWc2pkbDB6aHBXeENXeDluWjJ5QW9jZkxpNTZRV0FZQVRWNmhmaDBqN2pyXzZ5WFY3VjFlRHRHdWQ2bjhOaFJIckstaHBVQ3ctQWhoYXlVUDQ2VkNtdzZpTGFDZk9TTUJtZzFUSU5OOFBOUkQw0gHwAUFVX3lxTE5uZ2lOMFA3cWFNMW1fVF82a0JMNXA3VnQtRUkxRGgwOXdjTEZLRUFYUXJOUExvVVJsV0YxdWNkNFJlejk1RmhBOXlyMGtXS3UtZWxpZXI0ZkQ0TjdOT2VRcWhwM05tNllFRHNTM1BacGd3U0Y3VHdNSWtLR0o2aWp2YmhFaWliamJOMmpKckhzSUpYMmFKX0szZDB3WDRjanIzUEdwSTF6dlBvTzdISHVmOVBpSkE3c0hBSzJmNzVlem9FS0tkUFNva1RpYm5oRnVEVVpsc2VlSGt1c1h5Rl9VMHlhVGZ0X1NJZWlGUUVXbw?oc=5">US Visa Bulletin August 2026: A new uncertainty looms over Indians in the Green Card queue - The Economic Times</a></span>
+<span class="archive-source">The Economic Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxOVHFZazZ5Mm9aaVRtMERvZnBYYkEzemRpekpMaGpiWXFBdExfUjRac2tLdmRGZ1ItTGhJWW9mT3lEVmlaUmJRdWk4UG9MT2xxOFhIMTM1QTJ6VVhKeEZubmg0Sy1jc3VRdV9GaDdaV0dvSmR1Z1AxUGhSc2xBWExxbEhocDRPZ1ZONHdMZ0pYMFZKVzNEenVsVDZtZjBGQnRoZHZkX0pYU2RjMVNGelZvU0VSb0Z1ZG1CWXFTWU13X3hKTHN0U3VpUzdySHTSAdIBQVVfeXFMUHBjeG1jbmFYMDUwQjl3MUxEVEhwNUI2RjBWQ0NtMjZGbFpRbkJYaHhfRjZ0Z1JubDRzbmdSV0tfbHpMd2JXdk5IeUczdXBrUGdsdTBoOVBwQlVseDNOVnVuTlFDVmZPcHJyVmpsOE5yLXZIajU5RWl1S0JBbVBjTl9IUUNLRDd1UktCM1YzaGVuMFY0djhwYS0yYnFlQWxPSnV0ckIwTFVlYUhCNHRiMDE1M0I0dktJdWJGZ180OGJERW85TGZWM1VTUW1PcmoyWXZn?oc=5">US warns EB-1 India may become unavailable as visa numbers run out - Business Standard</a></span>
+<span class="archive-source">Business Standard</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-20</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNcE5KVEZFSkNGMTJacEZlN21EZ1hZZVlLOHhaOGg1MmJqeVhadjRwWDFWal81UXV6a0lhanZ5V1hZVVBRakFOSHlDSU1McVd2dTBCX2lwZXFvVXRaSWhOM1VTNExEdkcxQnREVUZnSlhtbGROcGF6ZTN3ekhBQVVzclVuUmtSY2lfVmx0VmtPR2h3OVBoTUlyakdwU0VDYlRsNkVTTG5WMkdzaG9Vb1E?oc=5">August 2026 Visa Bulletin: What Employers, Professionals and EB-5 Investors Need to Know - WR Immigration</a></span>
+<span class="archive-source">WR Immigration</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-17</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE05RGZjY2lFVDNHN0Z4Q1lfVldIRjJKSko2TFZoekJFN0lSVk1EZkZSSW5NeWxQaEpUbXJTNEUxSzJJbG1SYmJQOFlkVnRHc0Z1RlJ1SlNMYkswTTg?oc=5">June 2026 Visa Bulletin | Law Offices Of Mary Kennedy Shakira (gD4D9Xkd8o) - Mshale</a></span>
+<span class="archive-source">Mshale</span>
+</div>
+</div>
+</div>
+<footer>Generated by the green card tool daily monitor. Not legal advice.</footer>
+</div></body></html>

@@ -1,0 +1,95 @@
+# faq-staleness.yml — stage 1 of FAQ maintenance: which answers just went stale?
+#
+# Deterministic, no LLM, no Slack. Reads faq.html + automation/faq_tripwires.json
+# and reports drift from five sources:
+#
+#   * a date in the page has arrived, or lands inside the horizon
+#   * a watched Federal Register RIN has a document its baseline does not
+#   * ANY rule amending 8 CFR 204 / 214 / 274a, including unwatched rulemakings
+#   * a watched federal docket has a new entry or was terminated (CourtListener)
+#   * an archived USCIS page's content digest changed (via archive.org)
+#   plus the age of the "Last checked against primary sources on ..." stamp
+#
+# It NEVER edits faq.html and never updates its own baselines here. The report is
+# committed so drift is visible in git history, and the job FAILS on any ACTION
+# finding so the run goes red instead of quietly passing. Same propose-then-
+# approve shape as diff_proposal.py / apply_proposal.py.
+#
+# uscis.gov and travel.state.gov are NEVER fetched directly — they are
+# Cloudflare-walled (see RUNBOOK.md), so page-change detection reads archive.org
+# capture digests instead. No bypass anywhere.
+#
+# WHY WEEKLY, not monthly: the only cost is one faq.html parse and four HTTP
+# calls to the Federal Register API. The failure mode being prevented is an
+# answer that reads "changes September 15, 2026" still saying that on September
+# 16. A monthly cadence leaves that wrong for up to 30 days; weekly caps it at 7.
+#
+# HONEST BOUNDARY: litigation status is NOT checked. The Federal Register does
+# not index injunctions, so a court blocking a watched rule produces no FR
+# document and this job stays silent. Court-tracked items carry their docket in
+# faq_tripwires.json so a human knows what to go read.
+#
+# Personal-learning project. NOT legal advice, NOT official guidance.
+
+name: faq-staleness
+
+on:
+  schedule:
+    # Mondays 13:00 UTC. Ahead of the daily-monitor slot (14:00) so the two
+    # never contend for the same commit.
+    - cron: '0 13 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: faq-staleness
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Writes the report and exits 2 if anything needs action. `|| true` here so
+      # the report still gets committed; the gate is re-asserted at the end.
+      - name: Check FAQ staleness
+        id: check
+        run: |
+          set +e
+          python3 automation/faq_staleness.py \
+            --out automation/faq_staleness_report.md \
+            --fail-on-action --verbose
+          echo "rc=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Report
+        run: cat automation/faq_staleness_report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add automation/faq_staleness_report.md \
+                  automation/faq_staleness_ledger.json || true
+          if git diff --cached --quiet; then
+            echo "no change to the staleness report"
+          else
+            git commit -m "faq staleness report $(date -u +%Y-%m-%d)" && git push \
+              || echo "push failed"
+          fi
+
+      # Re-assert the gate so an ACTION finding turns the run red AFTER the
+      # report has been committed and surfaced in the step summary.
+      - name: Fail if any answer needs action
+        if: steps.check.outputs.rc != '0'
+        run: |
+          echo "faq_staleness.py exited ${{ steps.check.outputs.rc }} — see the summary above."
+          exit 1

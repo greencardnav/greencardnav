@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<title>Green Card Navigator — Employment-Based Green Card Guide</title>
+<meta name="description" content="A plain-English, private guide to the U.S. employment-based green card process: where you stand in the queue, the live Visa Bulletin, and your timeline. Not legal advice.">
+<link rel="canonical" href="https://www.greencardnav.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Green Card Navigator">
+<meta property="og:title" content="Green Card Navigator — Understand Your Employment-Based Green Card">
+<meta property="og:description" content="A plain-English, private guide to the U.S. employment-based green card process: where you stand in the queue, the live Visa Bulletin, and your timeline. Not legal advice.">
+<meta property="og:url" content="https://www.greencardnav.com/">
+<meta property="og:image" content="https://www.greencardnav.com/og.png?v=3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Green Card Navigator — Understand Your Employment-Based Green Card">
+<meta name="twitter:description" content="A plain-English, private guide to the U.S. employment-based green card process: where you stand in the queue, the live Visa Bulletin, and your timeline. Not legal advice.">
+<meta name="twitter:image" content="https://www.greencardnav.com/og.png?v=3">
+<script>
+  // Apply the saved theme BEFORE first paint to avoid a flash of the wrong theme.
+  // Stores only the theme preference ('light' | 'dark' | 'system') under 'gc_theme';
+  // no case data is ever persisted. 'system' resolves to the OS setting here.
+  (function () {
+    try {
+      var pref = localStorage.getItem('gc_theme') || 'system';
+      var effective = pref === 'system'
+        ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : pref;
+      document.documentElement.setAttribute('data-theme', effective);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Green Card Navigator",
+  "url": "https://www.greencardnav.com/",
+  "description": "A plain-language, privacy-first guide to the U.S. employment-based (EB) green card process: where you stand in the queue, the live Visa Bulletin, and your timeline. A personal educational project, not legal advice.",
+  "inLanguage": "en-US",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<div class="topbar" role="banner">
+  <nav class="hubnav" aria-label="Section navigation">
+    <a class="brand" href="index.html" aria-label="Green Card Navigator — home">Green Card <span class="brand-dot">Navigator</span></a>
+    <div class="hubnav-links" id="hubnav-links">
+      <a href="status.html" data-nav="check">Check My Status</a>
+      <a href="eb1a.html" data-nav="paths">EB Paths</a>
+      <a href="tools.html" data-nav="tools">Tools</a>
+      <a href="faq.html" data-nav="faq">FAQ</a>
+      <a href="glossary.html" data-nav="glossary">Glossary</a>
+      <a href="niw-guide.html" data-nav="guide">NIW Guide</a>
+      <a href="niw-appeals.html" data-nav="appeals">NIW Appeals</a>
+      <a href="niw-decisions.html" data-nav="decisions">Browse Decisions</a>
+      <a href="resources.html" data-nav="resources">Resources</a>
+    </div>
+    <div class="hubnav-actions">
+      <button class="topbar-tour" id="tourReopen" type="button" title="See a quick guided tour of the site">Take a quick tour</button>
+      <button class="egg-btn" id="eggBtn" type="button" aria-label="A little celebration" title="Fingers crossed 🤞">🛂</button>
+      <div class="theme-toggle" role="group" aria-label="Color theme">
+        <button type="button" data-theme-pref="light" aria-pressed="false" title="Light theme" aria-label="Light theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+          <span class="tt-label">Light</span>
+        </button>
+        <button type="button" data-theme-pref="dark" aria-pressed="false" title="Dark theme" aria-label="Dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <span class="tt-label">Dark</span>
+        </button>
+        <button type="button" data-theme-pref="system" aria-pressed="false" title="Match system setting" aria-label="System theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span class="tt-label">System</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="disclaimer-banner" role="note" aria-label="Personal learning disclaimer">
+    <span class="icon" aria-hidden="true">i</span>
+    <span><strong>Personal learning tool.</strong> Not legal advice and not official guidance. Your answers are never sent anywhere. The Status questionnaire isn't saved; optional tools like the H-1B checklist save only on your device. <a href="privacy.html">Read the full privacy and disclosure note.</a></span>
+  </div>
+</div>
+
+<section class="landing-hero" id="top" aria-label="Introduction">
+  <div class="landing-hero-inner">
+    <div class="landing-hero-copy">
+      <h1>Green Card Navigator</h1>
+      <p class="lh-tagline">Understand where you stand in the employment-based green card process, and what happens next.</p>
+      <p class="lh-desc">The employment-based green card process is long, and the rules can feel like they were written for someone else. This is a plain-language guide to help you see where you stand and what happens next.</p>
+    </div>
+    <nav class="landing-cta" aria-label="What you can do here">
+      <a class="cta-btn cta-primary" href="status.html">Check my status</a>
+      <a class="cta-btn cta-ghost" href="#basics">New here? Learn how it works</a>
+      <a class="cta-btn cta-ghost" href="faq.html">Answers to common questions</a>
+      <a class="cta-btn cta-ghost" href="compare.html">Compare the EB paths</a>
+      <a class="cta-btn cta-ghost" href="tools.html">Tools &amp; Visa Bulletin</a>
+    </nav>
+  </div>
+</section>
+
+<div class="container" id="maincontent" role="main" tabindex="-1">
+
+  <!-- ============ BASICS: plain-English on-ramp for total beginners ============ -->
+  <section id="basics" class="hub-section basics" aria-labelledby="basics-title">
+    <span class="hub-eyebrow">New to all this?</span>
+    <h2 class="hub-title" id="basics-title">The 5 steps to a green card</h2>
+    <p class="hub-sub">If you've never dealt with green cards, the process can feel impossible to follow. It's really just a long line with a few steps to join it. Here's the whole employment-based (EB) process from start to finish, told through one person's path.</p>
+
+    <!-- Collapsed by default so the landing page opens uncluttered; the "New here?"
+         hero link auto-opens this (see openSectionOnAnchor in app.js). -->
+    <details class="section-collapse">
+      <summary>Walk through the 5 steps</summary>
+      <div class="section-collapse-body">
+
+    <p class="basics-persona"><strong>Meet Priya.</strong> She was born in India and works in the U.S. on an H-1B visa. Here's her path to a green card.</p>
+
+    <ol class="basics-steps">
+      <li>
+        <span class="bs-title">Stay in the U.S. legally while you wait</span>
+        <p>Before anything starts, Priya needs a valid work status to live and work in the U.S. Most people are on an H-1B. This isn't the green card itself. It just lets her stay and keep working while everything below plays out.</p>
+      </li>
+      <li>
+        <span class="bs-title">Get in line and take a "number"</span>
+        <p>Her employer proves to the government that no U.S. worker was available for her job. This step is called PERM. The day that paperwork is filed becomes her <strong>priority date</strong>. Think of it as taking a numbered ticket at a deli counter: that date is her place in line, and it's hers to keep.</p>
+      </li>
+      <li>
+        <span class="bs-title">The employer files the petition (I-140)</span>
+        <p>Her employer files a petition, Form I-140, showing Priya qualifies for her category (EB-2 or EB-3 for most professionals). Once it's approved, her spot in line is locked to her, even if she changes jobs.</p>
+      </li>
+      <li>
+        <span class="bs-title">Wait for her number to come up</span>
+        <p>This is where almost all of the waiting happens. Every month the government publishes a kind of "now serving" sign called the <strong>Visa Bulletin</strong>. When it reaches Priya's number (her priority date), she can take the final step. The U.S. limits how many green cards go to each country each year, so the lines for people born in <strong>India and China are much longer</strong> than for everyone else, often many years.</p>
+      </li>
+      <li>
+        <span class="bs-title">File the last application and get the green card</span>
+        <p>Once her number comes up, Priya files the last application, the I-485. When it's approved, she has her green card: permanent permission to live and work in the U.S.</p>
+      </li>
+    </ol>
+
+    <!-- Priya's concrete result preview (folded in from the former standalone
+         "home-example" block): the same India/EB-2 sample, now tied to Priya so it
+         doubles as "what the tool shows her" instead of an orphan example. -->
+    <div class="basics-preview">
+      <span class="home-example-eyebrow">What Priya sees when she checks her status</span>
+      <p class="home-example-subline"><strong>India &middot; EB-2</strong> &middot; priority date March 2023</p>
+      <ol class="home-example-stages" aria-label="Priya's progress through the green card process">
+        <li class="he-stage he-done">PERM (done)</li>
+        <li class="he-arrow" aria-hidden="true">&rarr;</li>
+        <li class="he-stage he-done">I-140 (done)</li>
+        <li class="he-arrow" aria-hidden="true">&rarr;</li>
+        <li class="he-stage he-current">Priority-date wait (she's here)</li>
+        <li class="he-arrow" aria-hidden="true">&rarr;</li>
+        <li class="he-stage">I-485</li>
+        <li class="he-arrow" aria-hidden="true">&rarr;</li>
+        <li class="he-stage">Green card</li>
+      </ol>
+      <p class="home-example-line">Her priority date isn't current yet, so she's still in line. The tool estimates how long that wait runs and flags what could change it, like spouse cross-chargeability or EB-1 / NIW eligibility.</p>
+    </div>
+
+    <p class="basics-closer">That's the entire process. The confusing part is almost always step 4: the wait, and how long your line specifically is. That's what this tool works out for you. You don't need to know every term. Hover any acronym for a quick definition, or open the <a href="glossary.html">Glossary</a> anytime.</p>
+
+    <div class="process-cta"><a href="status.html">See where you stand &rarr;</a></div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ OVERVIEW: end-to-end process explainer ============ -->
+  <section id="overview" class="hub-section" aria-labelledby="overview-title">
+    <span class="hub-eyebrow">Your journey</span>
+    <h2 class="hub-title" id="overview-title">How the Employment-Based Green Card Works</h2>
+    <p class="hub-sub">The whole path, start to finish. For India and China, the priority-date wait in the middle is where most of the total time goes. Timelines vary; this is not legal advice.</p>
+    <details class="section-collapse">
+      <summary>Show the full path, stage by stage</summary>
+      <div class="section-collapse-body">
+        <div id="process-flow" class="process-flow" role="list"></div>
+        <div class="process-legend">Durations are typical ranges and can shift with policy changes and backlog movement. Your personalized numbers are in <a href="status.html">Check My Status</a>.</div>
+        <div class="process-cta"><a href="status.html">Find your place in the queue &rarr;</a></div>
+      </div>
+    </details>
+  </section>
+
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <nav class="foot-links" aria-label="Footer navigation">
+    <a href="index.html#overview">The Process</a>
+    <a href="status.html">Check My Status</a>
+    <a href="eb1a.html">EB Paths</a>
+    <a href="tools.html">Tools</a>
+    <a href="faq.html">FAQ</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="niw-appeals.html">NIW Appeals</a>
+      <a href="niw-decisions.html">Browse Decisions</a><a href="niw-guide.html">NIW Guide</a>
+    <a href="resources.html">Resources</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+  <p class="foot-fine">A personal learning project. Not legal advice. See the <a href="privacy.html">Privacy &amp; Disclosure</a> note.</p>
+</footer>
+
+<div class="print-only print-footer-block" aria-hidden="true">
+  Not legal advice &middot; not official guidance &middot; verify with official sources and a licensed immigration attorney.
+  Generated from a personal tool; nothing is saved or transmitted.
+</div>
+
+<script src="rulebook.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

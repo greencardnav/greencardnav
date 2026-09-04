@@ -1,0 +1,65 @@
+# Local-only internal hosting notes (never publish)
+DEPLOYMENT.md
+
+# Local-only working/reference docs (not site content; kept out of the deploy)
+DESIGN_SPEC.md
+H1B_INDIA_TRACKING.md
+HOSTING_OPTIONS.md
+
+# Raw Visa Bulletin PDFs (~18MB source data; vb_history.json is the committed extract)
+visa-bulletin/
+
+# Local USCIS reference docs (source material for content, not deployed site content)
+forms/
+uscis_policy-manual_volume-6-part-f-chapter-5/
+
+# OG image export template (not linked from the site; og.png is the committed artifact)
+og.html
+
+# macOS folder metadata (junk; never source)
+.DS_Store
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Runtime state (regenerated each run; not source)
+automation/news_seen_ledger.json
+automation/email_seen_ledger.json
+
+# Local fetch/proposal artifacts
+automation/news_results*.json
+!automation/news_results_example.json
+automation/bulletin_snapshot*.json
+automation/.news_slack_payload_*.txt
+freshness_proposals/*.md
+!freshness_proposals/2026-08-05.md
+
+# Local planning doc (not site content)
+COMMUNITY_TAXONOMY_PLAN.md
+BURNDOWN.md
+
+# Throwaway nav-affordance comparison demo (not site content)
+_chipnav-demo.html
+
+# Raw AAO decision PDFs (~22MB public USCIS source material for the private NIW
+# research; same reason as forms/ and visa-bulletin/ above - reference, not site content)
+niw results/
+
+# openpyxl for automation/fetch_eb_inventory.py. Homebrew's Python is PEP 668
+# externally-managed, so the dependency lives in a venv rather than site-packages.
+# Recreate with: python3 -m venv automation/.venv && automation/.venv/bin/pip install openpyxl
+automation/.venv/
+
+# AAO decision indexer: the SCRIPTS are versioned, the data is not.
+#   cache/  ~2.6GB of public AAO decision PDFs, re-downloadable from USCIS
+#   out/    derived artifacts, regenerated from cache/ in minutes
+# out/decisions.json is deliberately NOT committed: it carries per-case identifiers
+# lifted from the published PDFs, and this repo is public. It is cheap to rebuild
+# (aao_index.py parse) so nothing is lost by leaving it out.
+aao-indexer/cache/
+aao-indexer/out/
+aao-indexer/*.log
+
+# Test-only downloads (axe-core for the a11y audit). Never served to the site.
+.cache/

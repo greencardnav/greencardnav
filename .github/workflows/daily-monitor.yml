@@ -1,0 +1,141 @@
+# daily-monitor.yml - the always-on runner for the green card DAILY news layer.
+#
+# CLOUDFLARE-HONEST DESIGN
+# ------------------------
+# This workflow runs UNATTENDED and fetches ONLY authorized feeds: the Federal
+# Register API v1 (public JSON, no auth), law-firm / community / DOL RSS, Google
+# News RSS, and a best-effort read of flag.dol.gov. It NEVER scrapes the
+# bot-walled official pages (travel.state.gov, egov.uscis.gov processing-times,
+# USCIS newsroom RSS) - those 403 a scripted client and bypassing bot protection
+# is out of bounds. The descriptive User-Agent set by the fetchers is client
+# courtesy, not evasion.
+#
+# The MONTHLY bulletin FACTS still require human review: fetch_bulletin.py pulls
+# an UNVETTED community mirror for eyeballing, and diff_proposal.py ->
+# apply_proposal.py -> deploy.sh (RUNBOOK.md) is the only path that changes
+# rulebook.json - always human-gated. This workflow does NOT touch rulebook.json.
+#
+# Everything here is stdlib-only Python; no pip install runs anywhere.
+#
+# Personal-learning project. NOT legal advice, NOT official guidance.
+
+name: daily-monitor
+
+on:
+  schedule:
+    # 14:00 UTC daily. That is ~06:00 PT during PDT (summer) and ~07:00 PT during
+    # PST (winter) - GitHub cron is always UTC and does not observe DST, so the
+    # local wall-clock time shifts by an hour across the DST boundary. Adjust the
+    # hour here if a fixed local time matters.
+    - cron: '0 14 * * *'
+  # Manual runs from the Actions tab (and API), for testing / off-cycle checks.
+  workflow_dispatch: {}
+
+# Least-privilege token: this job commits the ledger + digests back to the repo,
+# which needs write access to contents. Nothing else is granted. (If you would
+# rather not grant write at all, switch the persistence step to actions/cache -
+# see SETUP.md - and set this to `contents: read`.)
+permissions:
+  contents: write
+
+# Never run two daily digests concurrently (they share the committed ledger).
+concurrency:
+  group: daily-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 1. Fetch authorized feeds -> news_results.json (stdlib only; no pip).
+      - name: Fetch feeds (authorized sources only)
+        run: python3 automation/fetch_feeds.py --out automation/news_results.json --verbose
+
+      # 1b. OPTIONAL email-alert ingest: the GovDelivery alerts the dedicated
+      #     inbox is subscribed to (USCIS policy/news, DOL OFLC) are AUTHORIZED
+      #     pushes, read read-only over IMAP (no scraping, no LLM). Their items
+      #     are merged into news_results.json so the daily digest surfaces them.
+      #     Skips cleanly if the GC_IMAP_* secrets are not set. This is the only
+      #     purpose the IMAP setup serves now that bulletin NUMBERS come from the
+      #     Wayback path (monthly-bulletin-auto.yml), not email.
+      - name: Email-alert ingest (optional) and merge
+        env:
+          GC_IMAP_USER: ${{ secrets.GC_IMAP_USER }}
+          GC_IMAP_PASSWORD: ${{ secrets.GC_IMAP_PASSWORD }}
+          GC_IMAP_HOST: ${{ secrets.GC_IMAP_HOST }}
+          GC_IMAP_MAILBOX: ${{ secrets.GC_IMAP_MAILBOX }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GC_IMAP_USER:-}" ] || [ -z "${GC_IMAP_PASSWORD:-}" ]; then
+            echo "GC_IMAP_* not set; skipping email-alert ingest (feed items only)."
+            exit 0
+          fi
+          HOST_ARG=""; [ -n "${GC_IMAP_HOST:-}" ] && HOST_ARG="--host ${GC_IMAP_HOST}"
+          MAILBOX_ARG=""; [ -n "${GC_IMAP_MAILBOX:-}" ] && MAILBOX_ARG="--mailbox ${GC_IMAP_MAILBOX}"
+          python3 automation/ingest_email.py --as news --user "$GC_IMAP_USER" \
+            --out automation/email_results_news.json $HOST_ARG $MAILBOX_ARG --verbose \
+            || { echo "ingest_email exited non-zero; continuing with feed items only"; exit 0; }
+          python3 - <<'PY'
+          import json, os
+          nr, er = "automation/news_results.json", "automation/email_results_news.json"
+          if not os.path.exists(er):
+              raise SystemExit(0)
+          n = json.load(open(nr)); e = json.load(open(er))
+          seen = {it.get("id") for it in n.get("items", [])}
+          added = 0
+          for it in e.get("items", []):
+              if it.get("id") not in seen:
+                  n["items"].append(it); seen.add(it.get("id")); added += 1
+          json.dump(n, open(nr, "w"), ensure_ascii=False, indent=2)
+          print("merged %d email item(s) into news_results.json" % added)
+          PY
+
+      # 2. Dedup vs the committed ledger, rank, write digest + Slack payload.
+      - name: Build digest (mechanical core)
+        run: python3 automation/news_digest.py --news-results automation/news_results.json
+
+      # 3. Post to Slack. Degrades gracefully (prints, exits 0) if the secret is
+      #    unset. The webhook URL is a SECRET and is read only from the env.
+      - name: Post digest to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          DATE_UTC="$(date -u +%Y-%m-%d)"
+          PAYLOAD="automation/.news_slack_payload_${DATE_UTC}.txt"
+          if [ -f "$PAYLOAD" ]; then
+            python3 automation/post_slack.py --payload "$PAYLOAD"
+          else
+            echo "No payload file at $PAYLOAD (news_digest.py names it by run_date)."
+            echo "Falling back to the newest payload file, if any:"
+            LATEST="$(ls -t automation/.news_slack_payload_*.txt 2>/dev/null | head -n1 || true)"
+            if [ -n "$LATEST" ]; then
+              python3 automation/post_slack.py --payload "$LATEST"
+            else
+              echo "No Slack payload file found; nothing to post."
+            fi
+          fi
+
+      # 4. Persist the dedup ledger + digests by committing them back. We choose
+      #    commit-back over actions/cache because it is DURABLE and gives a
+      #    VISIBLE, auditable history of every day's digest right in the repo
+      #    (a cache can silently evict, and the ledger must never be lost or the
+      #    same story re-surfaces). Guarded with `|| echo` so a no-change day
+      #    (nothing new) does not fail the run.
+      - name: Commit ledger + digests back
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add automation/news_seen_ledger.json news_digests/ community.json || true
+          if git diff --cached --quiet; then
+            echo "no changes to commit"
+          else
+            git commit -m "daily digest $(date -u +%Y-%m-%d)" && git push || echo "no changes"
+          fi

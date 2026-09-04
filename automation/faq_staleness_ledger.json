@@ -1,0 +1,187 @@
+{
+  "consecutive_failures": {
+    "cfr-20-655-lca": 0,
+    "cfr-20-656-perm": 0,
+    "cfr-22-41-visas": 0,
+    "cfr-8-106-fees": 0,
+    "cfr-8-204-immigrant-petitions": 0,
+    "cfr-8-214-nonimmigrants": 0,
+    "cfr-8-248-change-of-status": 0,
+    "cfr-8-264-registration": 0,
+    "cfr-8-274a-employment-auth": 0,
+    "ead-auto-extension-removed": 0,
+    "fji-fixed-admission": 0,
+    "h1b-supplemental-fee": 0,
+    "h1b-weighted-selection": 0,
+    "litigation-presidents-alliance": 0,
+    "pres-entry-restriction": 0,
+    "pres-immigrant-visa": 0,
+    "pres-nonimmigrant": 0,
+    "uscis-h1b-registration-page": 0,
+    "uscis-policy-manual-vol10-partb": 0
+  },
+  "last_fingerprint": "838d4520474abc26",
+  "last_run": "2026-09-02",
+  "seen_findings": {
+    "date|mod-f1|2026-09-03|flag": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "SOON"
+    },
+    "docket|litigation-presidents-alliance|entry-45": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-20-655-lca|2026-06017": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-20-655-lca|2026-10456": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-22-41-visas|2026-15726": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-8-106-fees|2026-00321": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-106-fees|2026-12542": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-8-106-fees|2026-16231": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-106-fees|2026-16313": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-106-fees|2026-17324": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-106-fees|C1-2026-12542": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-8-204-immigrant-petitions|2026-13392": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-8-214-nonimmigrants|2026-00830": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-8-214-nonimmigrants|2026-02131": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-8-214-nonimmigrants|2026-16319": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-8-264-registration|2026-13057": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-274a-employment-auth|2026-03595": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-274a-employment-auth|2026-08333": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-274a-employment-auth|2026-11285": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-pres-filtered|pres-entry-restriction|10": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-pres-filtered|pres-immigrant-visa|3": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-pres-filtered|pres-nonimmigrant|5": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-pres|pres-entry-restriction|2025-01948": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-pres|pres-entry-restriction|2025-19752": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-pres|pres-entry-restriction|2026-10598": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "WATCH"
+    },
+    "fr-pres|pres-immigrant-visa|2025-18602": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-pres|pres-nonimmigrant|2025-10669": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-pres|pres-nonimmigrant|2025-18601": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-pres|pres-nonimmigrant|2025-23570": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "fr-pres|pres-nonimmigrant|2026-16404": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "ACTION"
+    },
+    "watch-date|fji-fixed-admission|effective_date|2026-09-15": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "SOON"
+    },
+    "watch-date|h1b-supplemental-fee|comments_close|2026-09-24": {
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "severity": "SOON"
+    }
+  }
+}

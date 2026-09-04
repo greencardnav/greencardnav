@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immigration News Digest — 2026-09-03</title>
+<style>    :root {
+      --neutral-950: #0f141a;
+      --neutral-900: #161d26;
+      --neutral-850: #232b37;
+      --neutral-650: #424650;
+      --neutral-600: #656871;
+      --neutral-500: #8c8c94;
+      --neutral-350: #c6c6cd;
+      --neutral-250: #ebebf0;
+      --neutral-150: #f6f6f9;
+      --neutral-100: #f2f3f3;
+      --white: #ffffff;
+      --primary-600: #006ce0;
+      --primary-700: #003c75;
+      --primary-50: #f0fbff;
+      --success-600: #00802f;
+      --success-50: #effff1;
+      --warning-900: #855900;
+      --warning-50: #fffef0;
+      --warning-border: #f7db8a;
+      --error-600: #db0000;
+      --error-50: #fff5f5;
+      --border: #e9ebed;
+      --shadow-sm: 0 0 1px 1px #e9ebed, 0 1px 8px 2px rgba(0,7,22,0.06);
+      --shadow-md: 0 0 1px 1px #e9ebed, 0 6px 24px 2px rgba(0,7,22,0.10);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-badge: 4px;
+      --radius-button: 20px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Helvetica Neue", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--neutral-100);
+      color: var(--neutral-950);
+      margin: 0; padding: 0;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container { max-width: 820px; margin: 0 auto; padding: 24px 20px 60px; }
+    header.hero {
+      background:
+        radial-gradient(120% 140% at 88% -10%, rgba(0,108,224,0.22) 0%, rgba(0,108,224,0) 55%),
+        linear-gradient(160deg, #16202b 0%, var(--neutral-950) 62%);
+      color: var(--neutral-250);
+      padding: 40px 34px 36px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero h1 {
+      margin: 0 0 10px; font-size: 30px; font-weight: 700;
+      letter-spacing: -0.4px; color: #ffffff; line-height: 1.18;
+    }
+    header.hero .subtitle {
+      color: #d9dde3; font-size: 15px; margin: 0; font-weight: 400;
+      line-height: 1.55;
+    }
+    .disclaimer {
+      font-style: italic; color: var(--neutral-600); font-size: 13px;
+      margin-bottom: 18px; padding: 0 4px;
+    }
+    .counts {
+      display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .count-badge {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-badge); padding: 8px 14px;
+      font-size: 13px; box-shadow: var(--shadow-sm);
+    }
+    .count-badge strong { font-size: 18px; display: block; color: var(--primary-600); }
+    .callout-warning {
+      background: var(--warning-50);
+      border: 1px solid var(--warning-border);
+      border-left: 4px solid var(--warning-900);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .callout-warning h2 {
+      margin: 0 0 10px; font-size: 16px; font-weight: 700;
+      color: var(--warning-900);
+    }
+    .callout-warning p { margin: 0 0 10px; font-size: 13px; color: #5d4503; }
+    .callout-warning ul { margin: 0; padding-left: 18px; }
+    .callout-warning li { margin-bottom: 8px; font-size: 14px; }
+    .callout-warning a { color: var(--warning-900); text-decoration: underline; }
+    .card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 20px 22px;
+      margin-bottom: 16px; box-shadow: var(--shadow-sm);
+    }
+    .card h2 {
+      margin: 0 0 14px; font-size: 18px; font-weight: 700;
+      color: var(--neutral-950); border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .item { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--neutral-100); }
+    .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .item-header { display: flex; align-items: baseline; gap: 6px; }
+    .item-num { flex-shrink: 0; font-weight: 700; color: var(--primary-600); font-size: 14px; min-width: 22px; }
+    .item-headline { flex: 1; }
+    .item-headline a {
+      color: var(--primary-600); font-weight: 600; font-size: 15px;
+      text-decoration: none; line-height: 1.4;
+    }
+    .item-headline a:hover { text-decoration: underline; }
+    .item-headline a::after {
+      content: " \2197"; font-size: 11px; opacity: 0.6;
+    }
+    .item-meta { font-size: 12px; color: var(--neutral-650); margin: 4px 0 0 28px; }
+    .item-why {
+      font-size: 13px; margin: 8px 0 0 28px; color: var(--neutral-850);
+      border-left: 3px solid var(--primary-600); padding-left: 10px;
+      font-style: italic; line-height: 1.45;
+    }
+    .item-summary { font-size: 14px; margin: 6px 0 0 28px; color: var(--neutral-950); }
+    .item-badges { margin: 8px 0 0 28px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .conf-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .conf-high { background: #dcfce7; color: #166534; }
+    .conf-medium { background: #fef3c7; color: #92400e; }
+    .conf-low { background: #f3f4f6; color: #6b7280; }
+    .affects-tag {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      background: var(--warning-50); color: var(--warning-900);
+      border: 1px solid var(--warning-border);
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .community-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      background: var(--neutral-150); color: var(--neutral-650);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .community-disclaimer {
+      font-size: 12px; color: var(--neutral-650); font-style: italic;
+      background: var(--neutral-150); border-left: 3px solid var(--neutral-350);
+      padding: 10px 12px; margin: 0 0 14px; border-radius: 4px; line-height: 1.5;
+    }
+    footer {
+      text-align: center; font-size: 12px; color: var(--neutral-600);
+      margin-top: 30px; padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .empty-msg { font-size: 14px; color: var(--neutral-650); padding: 12px 0; }
+    .archive-toggle {
+      background: none; border: 1px solid var(--border); border-radius: var(--radius-badge);
+      padding: 8px 16px; font-size: 13px; color: var(--primary-600); cursor: pointer;
+      font-weight: 600; margin-bottom: 12px;
+    }
+    .archive-toggle:hover { background: var(--primary-50); }
+    .archive-list { display: none; }
+    .archive-list.open { display: block; }
+    .archive-item {
+      display: flex; align-items: baseline; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid var(--neutral-150);
+      font-size: 13px;
+    }
+    .archive-item:last-child { border-bottom: none; }
+    .archive-date { flex-shrink: 0; color: var(--neutral-600); font-size: 12px; min-width: 80px; }
+    .archive-link { flex: 1; }
+    .archive-link a { color: var(--neutral-850); text-decoration: none; }
+    .archive-link a:hover { color: var(--primary-600); text-decoration: underline; }
+    .archive-source { flex-shrink: 0; font-size: 11px; color: var(--neutral-500); }
+    @media (max-width: 600px) {
+      header.hero { padding: 28px 20px 24px; }
+      header.hero h1 { font-size: 24px; }
+      .card { padding: 16px; }
+      .container { padding: 16px 12px 40px; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="hero">
+<h1>Immigration News Digest</h1>
+<p class="subtitle">2026-09-03</p>
+</header>
+<p class="disclaimer">Personal-learning project. NOT legal advice. NOT official guidance. Scope: EB-1, EB-2, EB-3, and H-1B only.</p>
+<div class="counts">
+<div class="count-badge"><strong>28</strong>new items</div>
+<div class="count-badge"><strong>19</strong>deduped</div>
+<div class="count-badge"><strong>1</strong>affects facts</div>
+</div>
+<div class="callout-warning">
+<h2>AFFECTS FACTS — may require a rulebook refresh</h2>
+<p>These items suggest a fact in the rulebook may have changed. They trigger the monthly facts flow for review.</p>
+<ul>
+<li><a href="https://www.dol.gov/agencies/eta/foreign-labor">OFLC Announces Updates to Implementation of the H-2A Adverse Effect Wage Rate Methodology for Non-Range Occupations Interim Final Rule; Compliance with District Court Order</a> — govdelivery-dol-oflc (2026-09-02)</li>
+</ul>
+</div>
+<div class="card">
+<h2>H-1B</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5wcyl/h1b_transfer_premium_processing_time/">H1B Transfer Premium processing Time?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w67bpg/any_regular_cos_h1b_filings_with_april_2026/">Any Regular COS H-1b filings with APRIL 2026 receipts still processing?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">3.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w65on6/h1b_transfer_approved_but_i_decided_not_to/">H-1B transfer approved, but I decided not to join—anyone had the same experience?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">4.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5zemq/entering_us_on_old_and_valid_h1b_stamp_with_new/">Entering US on old and valid H1B stamp with new approved I -797</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">5.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5xglw/h1b_approval_under_consular_processing/">H1B approval under consular processing?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">6.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5wnin/h1b_pp/">H1B PP</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">7.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5w3k1/is_it_advisable_to_change_the_employer_with_in_34/">Is it advisable to change the Employer with in 3-4 months on H1B in USA ?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">8.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5sjbd/h1b_grace_period_transfer_real_experience/">H1b grace period transfer real experience</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">9.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5riju/h1b_case_rejected_before_receipt_notice_was_even/">H-1B case rejected before receipt notice was even issued,anyone dealt with this?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">10.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5plwz/looking_for_advice_on_options_after_the_final_h1b/">Looking for advice on options after the final h1b attempt</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">11.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5lbs9/h1b_expedited_appointments_in_india/">H1b expedited appointments in India?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">12.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5vrtu/can_an_employer_apply_for_the_h1b_transfer_while/">Can an Employer apply for the H1B transfer while my H4 (No EAD) application is pending?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">13.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5zs4n/spouses_h4_cos_still_pending_and_my_h1b_extension/">Spouse's H-4 COS still pending and my H-1B extension is coming up, what to do?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>EB-1</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxQRGJ5SlJCV2pDVWs0QmkzNUE3OVpUOEd4SVhzTDlNLTlnSEtxWmtka244VzNtcVpTcWRyVW9HSXBiS1VyaVNCOXdYRjFQbE5teVZGbGRadGE2M0hJWjJ0OUY1aGZpQWlONHpEcjlkUGNTWnJhbzB1NmNxMVNMMEQtSVZ1b1hXRFZmYzhCNlROV1hDNXJK?oc=5">September Visa Bulletin Warns EB-1 India Could Go Unavailable Before Fiscal Year Ends - The Eastern Herald</a></span>
+</div>
+<div class="item-meta">The Eastern Herald | 2026-09-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOZU41R3Fjb2hXVmVNbVdwbk5TR2NGVVJBU2FYSjB2eFhaZUo5RzRLRGFLSktHa1pIaEFBMXdMTFAwVmpjTHlQZndvMk5BYXJMSHhRT29FVnpjTlNPVTlJbEloM2dMMV9jV0ZsQzdlc29vQmZWMVdfMXVFU29PRW1jMFhaNEZrLVVZR0U1OUlvWjB2RDNNTGkzc0F1d1l4QWF6cnpLTFFFYlRFZ283V2pEaFZ30gGyAUFVX3lxTE5lTjVHcWNvaFdWZU1tV3BuTlNHY0ZVUkFTYVhKMHZ4WFplSjlHNEtEYUtKS0drWkhoQUExd0xMUDBWamNMeVBmd28yTkFhckxIeFFPb0VWemNOU09VOUlsSWgzZ0wxX2NXRmxDN2Vzb29CZlYxV18xdUVTb09FbWMwWFo0RmstVVlHRTU5SW9aMHZEM01MaTNzQXV3WXhBYXpyektMUUViVEVnbzdXakRoVnc?oc=5">US warns EB-1 green cards may shut for India - The Tribune</a></span>
+</div>
+<div class="item-meta">The Tribune | 2026-09-03</div>
+<div class="item-summary">US warns EB-1 green cards may shut for India - The Tribune (also reported by 4 other outlets)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">3.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSWxjZEg1VWhqUzlkNTRIc1lfM2FTaGlDcUR0Z0ZrT2hVX0cwYTlMZjAyd3pJcE1WTThUeFNTOWVDUGNGT0FtbVpoeHplel9DRDIxbW81TzAtRTZQemFVLUtYRGI5M2FoelZvRVBJbkd4Qk1neXZMNWVnNklUeU5MenR4RHZGQUhzLWVKbjJ1MUpXOWVSeFlocU9lUlNkM0VQUE54VjY1bnZFMk00bnlrQm1oTnZmVDA5bWlGWV9JZi3SAcYBQVVfeXFMT0pjQnVIUzQzMEhIM1NTRG00RWxPSHRYSkF1Z0JBT1VsWG1nR3BlamJybVFhTmc3QmE4YmhuSnZQc2taMnpkaVJ2YjY0dGxQZmFXeDlKMmpST0Y1Z2N1blg1eGZTaF9iaVVOdU1hbDQ1OGtZSHJ3X3pIbnJPQUs3bmJkenNYNHI3Rm1FaTFIaWxKV3ljckFJRU5MVVFDcXMxVlZKM1ZHbjhmbV9rVUhEdVV6NnZlUnk1ekNVazFmUEVqZFJ6YUNR?oc=5">Green Card Blow For Indians? US Warns EB-1 Category Could Soon Become Unavailable - News18</a></span>
+</div>
+<div class="item-meta">News18 | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">4.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMirgNBVV95cUxNWmc3enpKejFQVjNlajVUMDlPUk9NeXhhM3NvcC03Zk1ZdFJDcVNWZnhhZlBYWDJXcjg5QnlVeF9vNkRERS11aUFGaFFZY25WZWFvOUpQUHBrWEJJUGt1OGk4LXJoTUtKQlM4VnVmM0l5eUtPdW1sWnJLRTRwdjN5ek5vWUhqcXBFWUdnUk9DeXNiNTFPTGtEbVdhRnBWVVdNYTFaRGRsQkNDekVXMW9mWHBnNTJINWlka1hXeDZMVm5ydlZURW5jSHZzcGpZR0o2Y3pIbU5LellnRENyUjhZQWdVRFVMT1g2M2pnRHl1MTlSdnpUQTVHOEFFQXYwQ2ZmRUZuM25FUklIdkYyWHZmbHAtcWRaNk5ZQW1QZGpReDFmUkNuUWlud3hpd3Q5eEFsSW1zbFM2eWhETDJTejU2UjN2QW4tSVBDTUpJbWtZZDliYkhVSHFueGVseUd1MWptQ3VPbTUzZHdKcXdCMnVsdm91aG15UkRXeTRER1N5a1Z5dS1VTlF0ZjBoTWFwc0RKQTVYS0p4MTlvNXFnVTlmeUxLdFYzUVR4MVRjdHhR0gGzA0FVX3lxTFBiQzJRT1l6d3haVXhoNUxOeGgxTEIxVllzYTBSYWtfLWYyUlFuVWIta19lcTlhNUplbjFCWlc1RW5obDhTOEVaaVlYTzI5SHRsWnhLNk96T2s1aGh5NGFOLTJQMFdMbHFFZ0ozZ1pPVHlLLUVKRHdxTjhaS2RhaWVTOWg2WWZZTFQ5SVZKcXFoZ2lTQ2pWNmhNX19iSE9LR3FsU1h2ZDlWZXRWcUJObHUtU3Zma3Fma0VKemdxSThiSkR4T3RYbjcxdEcyMzl6ajlzcERwNkt4YjR4bFJRRHJTUFJUUEQyWE5GUFo4YzBnQ0x4ZlhZcVFFUl8xMU1lUDZJVXdKZUVhaVVMWDBUbnJzUE5ZWjB1RVE0cmd5U0Q5dS1ZbXctckRySl9mS0RzbThzWUNTcVpvdXlreW9UUUtmMFNyMm1ZZC1UQkR1SE8zUVFKOTFFekp1RUR1V0otVTZlaTVYSUFJR0xmMTRwNDdKLU5wRDhYaUY3SkU3VG9YVFUwcnNIcUZtMlJEb2g3ZWxXQlBJVkhRSjNiLXY3aEpsLWNYdjFRdzFNczAwNTY2M3dKMA?oc=5">US Immigration authority's Green Card update: EB-1 visa category may become unavailable if this limit rea - timesofindia.indiatimes.com</a></span>
+</div>
+<div class="item-meta">timesofindia.indiatimes.com | 2026-08-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>EB-2</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi8gFBVV95cUxQczN3RjhraHpOYWNuUlVwYlZpYVhFN1hQelZCWm91bVM4S2xkclVKbDJfMGI2b2NvcFRiX0VoX3U5OGVUUFhpWjJxeUU5d2JnVDB3Y2ZoOFZreklWMzFza2dwS2o4a3dUZWtQYVJBb1dZNFlQUTVpdU1iOTBFNzlnYWZ5TWZZalV1SVVLM1c3M0FxWGdyb2FXQ3NGaGpKNXMtTUZTeU9PRUxCQ3JZcU9xM3F5cEpvRno3eDVlcjZ2UDJXNy1DanZrTVRHZ2ZBRXUwLVd6WVV4U3h5ZGNiUkV6bE1abzFhRjZFZWdreUJ1dHdYd9IB9wFBVV95cUxPUkdmWHoydXBPV2FjczBLY1hvWEdYMVNDRUVadDk4YWc3NkozT3VKYm5yZVpYZ0VQcl8zamtnVTA3eERFakgzVWRsOGlJOHotY04xWVpiUUdHbkJGS180eVZDV2tqV2pyOFkwa0x0SmhGODI5bjdXT0ZBZEhkMTBvNWp2ZU81ZGo2UWxaZE80Y3QwVDJueFpLLUhhQVBVUmU2LXF1LVVUZ3VGTXVObjRHSExROUZzWl9vc2tneFhWTHRRaENlMG5VUnRSSXdRMlRwMFN3SFAtX0lzOU1scVNZUUFyYjlNSWF0Zmdwcm1obXFPNTB0RDRN?oc=5">Nearly one million Indians stuck in US green card backlog; EB-2 wait could stretch to 179 years - timesofindia.indiatimes.com</a></span>
+</div>
+<div class="item-meta">timesofindia.indiatimes.com | 2026-08-27</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxPNlQyNkJqdXdPSkdIR2dmd2Q4a0FrWDNrYV91c3dZaEw3eHo4RUVQYkxUZFAxSE9tU1ozUHpBcWVJYk51ck1iNjc0bTByYnlCdldfSVBLYnYxR2V2bHYzUjlaODJ4TjVLRV90UFZkNGMwVHZjUzJyeWNqdTkxbzFLOHhjVnhqMnJuTjBDaE1JUVZUbUJuSDZBbEdJZllnVm9Cd2czWW5mWmJaaW9ITXlBdkdqUG93cWFnSkctVThBTnJ2VTlZWU1rZVNDQ19OOUVkeXYxcTRR0gHcAUFVX3lxTE5Kc2ZkZklSY292TElLV09OZF9mcWdmeGE0Ny1sRnJOeDlnVjJZbVhFSlk5MnlXa0I5d0NZb2F4T25LM1o5eVQxclZxVUZVeVBLUkYtOHhGbm45bC1jVlV3X1ltdWRrSldUdm1ndmRhLUd0ZjlfVjI0eXMzeDJ3azk3UXdzUWNKSnNnV1liNkg3SkNmZVd2NzUxMThjQ3JlOVFvVnV5Z2pwVkJoVk0xT1ROaVViSy1lY19lVTNKYzNYdnhxRmFwNXJNQXoxRTdUMTVjei1vYjg3X2FBSGE?oc=5">179-year US green card wait for Indians? NFAP explains why EB-2 queue could be so long - financialexpress.com</a></span>
+</div>
+<div class="item-meta">financialexpress.com | 2026-09-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>EB-3</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPUmVIVURhb0gyZjFhcGs0TlFuU3lVaDd1MXZJUk04dzdwNWZEdGJQRUtsblJxbnpTSHFiN0w2dzJWOFk3OTlERmtJSTZQMDdCRzBlS3FGWDZDTXVzdTJQWWJ3N0VlS1kzRmtfWkFFalRmTWh3VF9VVXhFWnMwQ2laazd2bkpLSWt4SzRaYlVTYUdXQjdjQ0c0ZTRVOXlUdE5URFpwWFktRjhpa1U2QUFiSlQwcEJEQm81bVByaF9YdllrcDIxbVHSAcsBQVVfeXFMTUF1S2pOQU1xcF9kdFZodF9XWm1HMzFvTFhkWktHd3FLeTc3S0JxdHFfT3dRQ09HNkdiMjMtZzZod2F1N2lBR0hvdnJyNkdqTWItUUhoOEpFcjVMX3hOOXJkaVZpVFJ3dnNOaGZKdzM0RU9CRWo0TkNVdmlQR0tXLWthMXVJSkRFcTRnS29qeC14NDgyLXNmWHExbURPd1hFT18xS2d0ZmlzYWdhT2ZYNHZONkhzWVRieGR5TWNfSVJ0LVRWbzhPZmNkZFU?oc=5">EB3.Work Launches Platform to Explore High-Demand U.S. Jobs - manilatimes.net</a></span>
+</div>
+<div class="item-meta">manilatimes.net | 2026-07-23</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPdEcyVjF6WmozMUNSZ25DSTRfeGlkbjZUbzBNazRVenppZ1JrVTZBRk5vT1liN1JvX2pNSTVEc1N0RFFIc0hLSk9SdEgzNmQ2Mk9BWURKYmFOTTh5eERNejJzc0RjMzBtSUtZQV9CMC1WMzdialU0cy1jcjlEQVFsYi1nNWdIVGZibVhmVkE3b21fT1VUUnNhWVpHbVpSWWJJQTVGeWZja214ZVhE?oc=5">EB3.Work Issues 2026 PERM Processing Update for U.S. Employers - einpresswire.com</a></span>
+</div>
+<div class="item-meta">einpresswire.com | 2026-09-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Cross-cutting</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://www.dol.gov/agencies/eta/foreign-labor">OFLC Announces Updates to Implementation of the H-2A Adverse Effect Wage Rate Methodology for Non-Range Occupations Interim Final Rule; Compliance with District Court Order</a></span>
+</div>
+<div class="item-meta">govdelivery-dol-oflc | 2026-09-02</div>
+<div class="item-why">Foreign Labor Certification | U.S. Department of Labor Skip to main content Foreign Labor Certification More in This Section Close Farmworker Protection Final Rule Program and FLAG Resources Prevailing Wage Information and Resources Seasonal Jobs...</div>
+<div class="item-summary">You are receiving this bulletin as a subscriber to the Department of Labor Office of Foreign Labor Certification (OFLC) website. You can view the original announcements here: https://www.dol.gov/agencies/eta/foreign-labor [ https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Flinks-2.govdelivery.com%2FCL0%2Fhttps%3A%252F%252Fwww.dol.gov%252Fagencies%252Feta%252Fforeign-labor%2F1%2F0101019e27520aa4-f588cf8f-3a28-4740-9d64-63b04f2dd455-000000%2Fo49S-FNX0E8thsxDGVL08dmZSn2vPQgE0dNbnxmS4lo%3D452&amp;data=05%7C02%7Ch2b.ombudsman%40dol.gov%7C38443c0fdda2413dc15308deb1d5ed03%7C75a6305472044e</div>
+<div class="item-badges">
+<span class="conf-badge conf-high">Tier 1 · High confidence</span>
+<span class="affects-tag">AFFECTS FACTS</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w5liul/cos_premium_processing_delay_after_rfe_response/">COS, Premium Processing Delay after RFE response, California Service Center</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">3.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQWGNwVk8zYUdZVmdQc0syU2xSV3B6M2ZMUWNfLTBkblhIQ0NHZnQzQThkUmxDVWUwWk9UU3ExOWFwYnV5UnpnQjBYcUEybThtSEd3VUtPVDdiSlVOVE5lSlhuajQ4SzJyODd3bWdYZ2NGZy1JSUJPUl9QTXlYYTB2UTctU3BqVnc?oc=5">September 2026 Visa Bulletin Released - JD Supra</a></span>
+</div>
+<div class="item-meta">JD Supra | 2026-08-31</div>
+<div class="item-summary">September 2026 Visa Bulletin Released - JD Supra (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">4.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNMHdhYXN2bXhUTlJVcWNBcENkdFU4UU80ZWFOczBOWnhjSEt1aDViX043SE53MHQtWkRqUFRhekRrcXI0U25mQUt6NTNyQmdKdDVKZVlWTzg3dUZ5Q21YZXpOWEhXeFkyazhHWGFibHQ5ZWE4ZURSOXRsSHFKVnpyNThNRS1VLXZtUDMwMU9VdjlVZ25kbjJGTDd6eXdMNFNI?oc=5">September 2026 Visa Bulletin: Family-Based Final Action Dates Advance Sharply - wolfsdorf.com</a></span>
+</div>
+<div class="item-meta">wolfsdorf.com | 2026-08-24</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">5.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNRS0zdXVibF9qZ3d1SHlPTTlpM2QyVE5semZkV0lmREJoMGFncGU1T2wyaUNGSnEwODFXQjVrVkN0Ul96WW1qdVprSG1GM2NCOFFudkt3NGhnZnRFNVZWY2x4cVc4M0otS2E2YkdLN1d5VzVSTE9kTlBSTjVmc3dLTlJSXzhPUHRUY0lUNE85bnpTWENoMWZ3NURWS1NMXzRUWWRWeDFIbzVua3RR?oc=5">September 2026 Visa Bulletin: What changed for green card applicants - El Cronista</a></span>
+</div>
+<div class="item-meta">El Cronista | 2026-09-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">6.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxNUzMtVUlnWk4xcG5uZTF4cXYtMGttYlFZckVuWnBPbzNNUzNIS3NvUGctb3pJZFUzS2RjUUd2NEthWDk2QVR0RVk4Z2gwdGF3eEhEdy1EYUZiRm40WV93NXNtajFGcUlUMFJueFVvRkdjQWtNZXFQSk5laWhJM25yVGNfS3R4d1ZjNmJoRQ?oc=5">US Warns EB 1 Green Cards For Indians Could Become Unavailable - INDToday</a></span>
+</div>
+<div class="item-meta">INDToday | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">7.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1w67nro/i_built_a_free_opensource_index_of_every_permlca/">I built a free, open-source index of every PERM/LCA filing since 2008 - check any employer's real sponsorship record before you apply (11M filings, 333K employers, no signup)</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Previously Reported (19 items)</h2>
+<button class="archive-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Hide archive' : 'Show archive'">Show archive</button>
+<div class="archive-list">
+<div class="archive-item">
+<span class="archive-date">2026-08-31</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxNbjRyTjFnVXE2NHZDNjFqMmdiSUkwb2NOZTVLSmlkVjcxeU44bV8xSEppMlFxTF9EM2dPNkpSYktEUHNtcl9LN01qYXlLVFo2SjlRM0syRHdJcVh4d0tSdkVtcTRyS0xJYWtSUjAxalVEQVp3ejVkbkl4MTFQeU1pY3NZcVQtelFUdnRsY2FreHByTHlaQmh6SzBDOXdQN2lkSzV2Y2tKaTcwd0x3UnRWVHpxY1JydkRoYzNOVzBXdXdKS195dWVISnU4eXl4NUdyakFPcTV6TFFpMEpMRnhqWmhJb3N2d09IanpkRnFiRXRIWGM2REI4?oc=5">September 2026 Visa Bulletin: Final Action Dates Unchanged, but State Department Warns of Potential Unavailability - Ogletree</a></span>
+<span class="archive-source">Ogletree</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-28</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQeTJvM2NRcExMZ0xzM2I1ZHVHZHlSN1dHLUhsRUotb2FKbUgwZS1rUExUakttaVV4NjBGT2MzYmJveGY4WVdQVEEwMzd4Q0twUHlFQXhZVC15Z3VsU21laXNWd2FZMTJtVE4yWVRkd3V1cURzR1dvSnYtVXZSWDhZU3hSRDhncGgtT3d3OS0ySUJzTERuc2J4SnhBbk0?oc=5">US Green Card Crisis: Nearly 1 Million Indians Face A 179-Year Wait - Vibes Of India</a></span>
+<span class="archive-source">Vibes Of India</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-27</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxQMnkxdnBlQjNfRnZJZHpLWDN6N2Q2LVJSWW90aFRyTHpWSmZTbEM2bWlETmk0cjl5a3d2MW9McGNadFduYmtDSU5pM0xXRHZjTkJkaHJMcHd6TmlwamVYUFlKYmZPdkxCNFFJUTZXOV82WnNBRFZZOXZlRmZEZFVGWUFMcGM3UQ?oc=5">The Visa Bulletin for September 2026: Final Action Dates and an Employer’s Immigration Action Plan - JD Supra</a></span>
+<span class="archive-source">JD Supra</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-26</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxNM1RiVW4yajE5SHJycWVjWlRFdDZfR2ZfQVZMeFNmNnYwOExGNWRIdGM2RjdrQjloSjdvRGFUYXRiWUVNVzJWZVdFSzR2aWFPcUxhdndIWlBzV0ZxYlF0RkhFQzRfUkU5M194M3RCNGJNMWpRdWRaaGxfWk9ReDF0Wmo4UDJIVVdaS1JMblVkYWRLZURYTHpzd295VzR1VDA2VDktN05CVThrTjJKUG1UZnl2bmJOcmxDWVpaV1hQSnFfMVl4RWhzUm5EQWxBMnNoT214VF9oTmxBLVpTTXp0Tzd3Xy1zaEJY0gHuAUFVX3lxTE9IWXYwSGhkRnUwTC10MEtDUndFQTZzLWE4Z3BKZVZHVlhBc050VTR5dk5VWFZvM0VKMU5CNWY5TWlYLXRYbml5RGd6dEVDemVLdjUzaUpsME1IVE14RXJleTc3UzlaWFA4ckg0OUVLckJZX0NnSTBJd20yX3h4a0VvZEcwLS1PMjZWNnBfN3FNS0NBdWtab1ZmLW55d1pxNDdGbXV3VF9yaW1JRF94T1lvbUowSkpxcE5uMUhuVGktQmdqUHl5elVVb1RuLW16Qm1vOUY1ZUxqWmVubzV4MzJBOTJKdEJoX1drUFd5UEE?oc=5">Trump’s immigrant visa pause: Can Indian applicants see the US green card queue move back? - The Economic Times</a></span>
+<span class="archive-source">The Economic Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-25</span>
+<span class="archive-link"><a href="https://www.murthy.com/2026/08/25/proposed-h-1b-rule-under-review/">Proposed H1B Rule Under Review</a></span>
+<span class="archive-source">Murthy Law Firm — Immigration Bulletins</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-24</span>
+<span class="archive-link"><a href="https://www.murthy.com/2026/08/24/newsflash-dhs-proposes-103265-fee-for-certain-h-1b-petitions/">NewsFlash! DHS Proposes $103,265 Fee for Certain H-1B Petitions</a></span>
+<span class="archive-source">Murthy Law Firm — Immigration Bulletins</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-23</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNWmNrLVdoWGhUZExHLTVKRWVLbWVHY0JlRl9LMkZqNl8wQWNDYURVVTRMRXBSdDl1aERuajhUTzZwQ1JPbl82eEpac3o2R1lrNUVXSUc0VjVLUUZhRkRaZngzLU40dHp0LWpVWHhVTU5rd0hjaHBxVXFnWG9FNFAxanNFX2pkeEtwQUZqNDJGWk1lYW9Lendqb3E1Mk9telRaRjdDbWc3cGNQazNnNkE?oc=5">September Visa bulletin brings relief for Indian families - The American Bazaar</a></span>
+<span class="archive-source">The American Bazaar</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxOMXhfY1hXeTBfV3BDT0lXZXpibU9YUzRYRTdwbVlMTXhRWFJmLWxudDMxdkRvai1tQ3pNNWEwWEV3WmFvQ0diaHpPZzVmQVpHcHRHOTBmSjJnblJZc05FU085YnhVSmhmREhrRVZYOXlKMUw1T25IVzVnT21JMHMyNzdpNXFtTDlNV0tHaHdJMjFtWUZfbWdmb0RtTWRmX1RkT1pNMkR3Q211M2M4R1RyR015YjhUSmNqSk12aTVpNE1DM0ZEVXUwZmxrVnA4QVZmRjBLSHhFanZUSjN1d2FISTV3UDBqbkhfQU9rcnhuLS1NdVNQN0xXVWxnWdIBgAJBVV95cUxQc0pjNnpsT3FMZ3RtSklVVjVEMkdRU082dXdDU3B1Zi02eEd0bHFsTmpDa1ByOW1YSUcyZVhIaWV6eXhTdjVwTUlDUWc1R0pSeU1sUU1HcVpqN2pmdEtVU3RWUWZkRjRjTDVIblh4Z2xHUXRvekdJbVJlZkdLYjBSRFgxYXNoTDFWU09zVjZmVy0zVnRwQUR4ZzBCWTE2Q3FXRU4teWNkRGVjY0JMS1E1YVVUVmFXZGs2RThIRzdfcmpuR0E0a0ZNZGhTTlVqNmxIdFEyWVA2NV8tcXlybEt0ZXRpWXpTRjNPTDVEc3Fmc1J1bUU0YmEyRG4xRmR6a1FH?oc=5">September 2026 US Visa Bulletin: Latest update brings relief for Indians, but there’s a catch - here’s what to know | Hindustan Times - Hindustan Times</a></span>
+<span class="archive-source">Hindustan Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi_gFBVV95cUxPd3djWVdsam1TZzU3NVVlVDZOQmxQVTl6TFRUQzkxdWhUWklBWmd2ajl6aXlVckdDQkdERkFFb0RvdEFIM0VjNURtMjZoMzFSV2NSaGdpX0lCM1hNT2lhbFZCLTRPV2NTZ1VpMUk4ejdYeldRZkYyOUNNNVpOdUNTaFBELW1SQmEtUndBOWl5TkU4SjNLdDlPWENpQ0lWYXdaRzhkblpLR2d2WHVtbldFWC15UWo5cnRIOHo4RUY3OWFHc3RSVE9fcWJReV9tbUpsWmpFeko5aWpRVXlVRm1nUEJkOGlqSUh1eUh1WG9kZkp3ZldOUXBRTThaSXZqd9IBgwJBVV95cUxPMXNmTEFXbVBLWkRtQ0ZOemRMbDBfcFlxYkhldnJlOGpLZV83OW1VaERVaUVrbm1ENnN6NDNfT0hiNFlEbFJfRXQ3UFVEWUVqS1d2TmNQcU1ra2oxY2RBLWVqME9yblhZSThJTkpEc2tzZjV2cFlNY1ZTcUloNUd6RW0yNEl6XzQ3N2hXM1k5YlZTRDBtQ0thc1pkTlEwT1FOeFdqcTJwNHJ1SEhYWG84VHFObVNtSnJKNU5PV0NOck5Qa1pqT2VDVW44ZGRId2ozLXg1TmFkVHNxTWxxUGk2Y2Y0eHBsdkFoMVlrR2tiZVFjOXA4NkVmd25Za0xnSEtNanVN?oc=5">US Visa Bulletin September 2026: Big green card relief for Indians as family visa dates make major gains - The Economic Times</a></span>
+<span class="archive-source">The Economic Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPdFRWRzF4b21WbUp6bXlVamVYREZKMEFHR3p4UWxTVjVKam9BRDZWNk95dWk2aDI1Y0Q3YlV2LTUtZ2c0SXJHWnFtQUdlTGhFM2FPUHUzS0F2RUFzT3pUdkgxc2Jwa3FoaXBxRVdrMDdIcTlSSjJhZWVMV3lRSVZFUjlCWTM2Z3pYR3pUUG5MVHpsdkk?oc=5">US Green Card Backlog Keeps Indian Talent In Limbo - BW People</a></span>
+<span class="archive-source">BW People</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-18</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxOd0V6Z1loZG1KLWJhMVluN1R6bWV2XzF3X0laSDIxOEZCSVl5NTZPQTBWd0N2XzJROXhCam9PSzRJVmt2TTlBaGhrR19zSmdRY0ZwcjJHLTV0dW5fUGc3dElNV2lMM3VuaU5naTVJbkx0VXBGRU9WRTZJZFdIMENMbmF4RGpSQ2R2N3Bnbkl3RVdncHptY3JnRVVvSmoyOGdBR1k5dTRSeDVJM3NETWNQVkthOTRYdGpYQVh6UVZvZjVOOEdZeEYwYnFrcU4yRU9DZ1pv0gHYAUFVX3lxTFA0aW5OMEdJOTljZUExb1dQWjBraFlka2IyOEhzb3QzNGdReHpVdmg0bVhKRzlNLXZnV2JMaUUwMTRlU3hELVFQckRNQW4xeFdJLXZXMFNPS2tQaFNaTFVYWTBTWS1Dc2h6eFIxOUowQWlZS2Q1bE1JTHl1Q3k4R3dIbDg3YXJObS1NQW1fR2N2WmZwLU1JZ2lxT2JrdkFHSkItTkkxY1FqN3ZWNEpvOGJNOGJOOFB1YzJ3NEV1TG1jLTNHRHRkUE1CdTNrN1drblpQNXM0M0R2ag?oc=5">US Visa Bulletin explained: What it is, why it matters and how to read it - The Economic Times</a></span>
+<span class="archive-source">The Economic Times</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-17</span>
+<span class="archive-link"><a href="https://www.bal.com/perspectives/perm-processing-times-faq-for-employers/">PERM processing times FAQ for employers</a></span>
+<span class="archive-source">Berry Appleman &amp; Leiden (BAL) — Immigration News</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-08-03</span>
+<span class="archive-link"><a href="https://www.federalregister.gov/documents/2026/08/03/2026-15673/labor-certification-process-for-the-temporary-employment-of-foreign-workers-in-agriculture-in-the">Labor Certification Process for the Temporary Employment of Foreign Workers in Agriculture in the United States: Adverse Effect Wage Rate Updates for Non-Range Occupations</a></span>
+<span class="archive-source">Federal Register — USCIS (DHS) Immigration Rules</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-31</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxQeGxrVjUtTUtwQ2RsWmE0R3oyVWZ6NTg0emQ1YkJqYUUxMUtQR2hCUkUxRjl3c0RpOEJhMXhuczk4cUt1RDB4cGRVZlo1azRNcDl0QWRObUFKQ1pGTXlDakVyR1BxZThERjZjeFFTU3ZtX3h0cHk5Y3puRlJ5QzJxNnBvMU03ZExCN05Zb0RZYlk4dExsQmMxOVlsRmFWZ2hRcDQwQ0dMLWdBOE1LaEJCTWlBLTJIdEnSAbwBQVVfeXFMTnlmaTJBOXdQMTVhQUdtb1UwcjJDSlBvRVdDXzFYNUVKMHZzS2JpckZ2S3kxMnlQYkJWQXM1WjNiM3UtWFd5OVdXalZpZlRPVUFFb2g5bnU5Qm1pdmlsWjZOQ2VOTXpmWHBPUks0b1BUN1RRZ2hEUkluVVVkRlEzYWZlRFNWMlVFQlpIM0M1WjJyOUFvME9lSl92UDFSaFZaNEplZGJuUEtDMml4TUlWQlE3d1BKMG1jM09rQVk?oc=5">July 2026 Visa Bulletin – Year-End Slowdown Continues; Court Lifts Country-Based Green Card Suspensions - The National Law Review</a></span>
+<span class="archive-source">The National Law Review</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-23</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE1tM0RZa1A4X080MmJPMjFqNm1tenhDU3hXckJTSGhaYkcyR1NnRmdJSU5MWWZCV21uQXdkRWEyb3B0SEJkdEEwWGplSF9IR2RveE1kTjkyY3VEN0lGTXU1TFdKRG1sZWdvMHR1SUpRckQ5aG0w?oc=5">August 2026 Visa Bulletin - International Legal and Business Services Group</a></span>
+<span class="archive-source">International Legal and Business Services Group</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-22</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcmFPbFZTVlgtR0QtUVVjY3VFOTBuVm9ZYnlSYm83R1NEbmVjWHJQTUVWV29zZmtFZWREUUZGNzkteGU5NW5JR0RqbHQ0aUE2WUc2cEZVZTBHX3gwY19pQXB3THlhR09GdXgyRWZNbkZiVHh2bFhtN0hXSmhmYWN3YnFXM0RMSVdGZU1HVUFjQ1pWUXdlTWZxTjVVZXVFYlJndWNjU2o1VmV4U0FaZ2QxcDVMaWZONXFnVnhmU2Z3TGZwc0RxWkNXVlpMcjlRVVNn0gHWAUFVX3lxTE51YTJ2cmVPdFNsQ1NZdnVjaHVodlR3SzBRd1NaakMwMWoxVkhxVVQyRFJCTksxdXRURkloUU9mM19BNVkydFdmaWJESkZ6QndHUE9aSlc3enFXZXlWckNTeTUxUnRKZHVfNTlydlVBTW05Y3Fqczl4UGc0aWxIY1JyanFjZWhmMndCaVZNWmh5Z1J3RXpfRWp1ZFZBNUJUc01KMmdoSnc5SVJJQVp2cnVva2ZqZTZaazk3VGh5aXhpLUxQRkN2aGk5emVXMG9qN1dscXRhZEE?oc=5">US August Visa Bulletin: No EB-2 relief, fresh EB-1 warning for Indians - Business Standard</a></span>
+<span class="archive-source">Business Standard</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-22</span>
+<span class="archive-link"><a href="https://www.bal.com/perspectives/the-employers-guide-to-reading-the-visa-bulletin/">The employer’s guide to reading the Visa Bulletin</a></span>
+<span class="archive-source">Berry Appleman &amp; Leiden (BAL) — Immigration News</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GaENDN3EyMTQwLVVlLUN1R095aHV2cVF5eWlMTHV3QlFfZDkzUkU0Y19hMUZWZllOd1VQMGJVN3pEdGk5M3VOb0RZVnpPNEVXWTJocnVxbXdsUQ?oc=5">August Green Card Update Moves Family Applications Forward, but EB-1 Visas for India Could Soon Stop - NCHStats</a></span>
+<span class="archive-source">NCHStats</span>
+</div>
+<div class="archive-item">
+<span class="archive-date">2026-07-21</span>
+<span class="archive-link"><a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxOZkVMcmZETllxMG5XTVNhM2hGeG02eWdIUTEtT0U2Nks4ZVVSVWNjSG1vUFFndFpVSkRGVWhpTlZ2OEhxTGRiUnQ0QlV5Slo1VGo3TjZ2MmhCX2EtSXJsVXV3LVEyZ290M2ozTjZGSnZTd3RTUWgwQ2ZteEFuSlJWc2pkbDB6aHBXeENXeDluWjJ5QW9jZkxpNTZRV0FZQVRWNmhmaDBqN2pyXzZ5WFY3VjFlRHRHdWQ2bjhOaFJIckstaHBVQ3ctQWhoYXlVUDQ2VkNtdzZpTGFDZk9TTUJtZzFUSU5OOFBOUkQw0gHwAUFVX3lxTE5uZ2lOMFA3cWFNMW1fVF82a0JMNXA3VnQtRUkxRGgwOXdjTEZLRUFYUXJOUExvVVJsV0YxdWNkNFJlejk1RmhBOXlyMGtXS3UtZWxpZXI0ZkQ0TjdOT2VRcWhwM05tNllFRHNTM1BacGd3U0Y3VHdNSWtLR0o2aWp2YmhFaWliamJOMmpKckhzSUpYMmFKX0szZDB3WDRjanIzUEdwSTF6dlBvTzdISHVmOVBpSkE3c0hBSzJmNzVlem9FS0tkUFNva1RpYm5oRnVEVVpsc2VlSGt1c1h5Rl9VMHlhVGZ0X1NJZWlGUUVXbw?oc=5">US Visa Bulletin August 2026: A new uncertainty looms over Indians in the Green Card queue - The Economic Times</a></span>
+<span class="archive-source">The Economic Times</span>
+</div>
+</div>
+</div>
+<footer>Generated by the green card tool daily monitor. Not legal advice.</footer>
+</div></body></html>

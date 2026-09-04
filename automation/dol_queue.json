@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "source_url": "https://flag.dol.gov/processingtimes",
+  "source_name": "U.S. Department of Labor, Office of Foreign Labor Certification (OFLC)",
+  "source_fetch_path": {
+    "path": "direct",
+    "detail": "https://flag.dol.gov/processingtimes"
+  },
+  "source_note": "Source: U.S. Department of Labor, Office of Foreign Labor Certification - Processing Times (flag.dol.gov/processingtimes). PERM figures as published by DOL as of August 28, 2026; prevailing wage determination (ETA-9141) figures as published by DOL as of June 30, 2026. DOL publishes these numbers on its own schedule and its page is the authoritative record; the figures shown here are a mirror of it.",
+  "perm": {
+    "as_of": "2026-08-28",
+    "as_of_raw": "8/28/2026",
+    "stages": {
+      "analyst_review": {
+        "month": "2025-11",
+        "month_label": "November 2025",
+        "raw": "November 2025"
+      },
+      "audit_review": {
+        "month": "2025-12",
+        "month_label": "December 2025",
+        "raw": "December 2025"
+      },
+      "reconsideration": {
+        "month": "2026-04",
+        "month_label": "April 2026",
+        "raw": "April 2026"
+      }
+    },
+    "average_calendar_days": {
+      "analyst_review": {
+        "determinations_month": "2026-08",
+        "determinations_month_label": "August 2026",
+        "calendar_days": 336,
+        "raw": "336"
+      },
+      "audit_review": {
+        "determinations_month": "2026-08",
+        "determinations_month_label": "August 2026",
+        "calendar_days": null,
+        "raw": "N/A"
+      }
+    }
+  },
+  "prevailing_wage": {
+    "as_of": "2026-06-30",
+    "as_of_raw": "6/30/2026",
+    "queues": {
+      "CW-1": {
+        "oews_receipt": {
+          "month": "2026-05",
+          "month_label": "May 2026",
+          "raw": "May 2026"
+        },
+        "non_oews_receipt": {
+          "month": null,
+          "month_label": null,
+          "raw": "--"
+        }
+      },
+      "H-1B": {
+        "oews_receipt": {
+          "month": "2026-04",
+          "month_label": "April 2026",
+          "raw": "April 2026"
+        },
+        "non_oews_receipt": {
+          "month": "2026-03",
+          "month_label": "March 2026",
+          "raw": "March 2026"
+        }
+      },
+      "H-2B": {
+        "oews_receipt": {
+          "month": "2026-06",
+          "month_label": "June 2026",
+          "raw": "June 2026"
+        },
+        "non_oews_receipt": {
+          "month": "2026-05",
+          "month_label": "May 2026",
+          "raw": "May 2026"
+        }
+      },
+      "PERM": {
+        "oews_receipt": {
+          "month": "2026-04",
+          "month_label": "April 2026",
+          "raw": "April 2026"
+        },
+        "non_oews_receipt": {
+          "month": "2026-03",
+          "month_label": "March 2026",
+          "raw": "March 2026"
+        }
+      }
+    },
+    "redeterminations": {
+      "H-1B": {
+        "month": "2026-04",
+        "month_label": "April 2026",
+        "raw": "April 2026"
+      },
+      "PERM": {
+        "month": "2026-04",
+        "month_label": "April 2026",
+        "raw": "April 2026"
+      }
+    },
+    "center_director_reviews": {
+      "CW-1": {
+        "month": "2026-02",
+        "month_label": "February 2026",
+        "raw": "February 2026"
+      },
+      "H-1B": {
+        "month": null,
+        "month_label": null,
+        "raw": "N/A"
+      },
+      "H-2B": {
+        "month": "2025-02",
+        "month_label": "February 2025",
+        "raw": "February 2025"
+      },
+      "PERM": {
+        "month": "2026-05",
+        "month_label": "May 2026",
+        "raw": "May 2026"
+      }
+    },
+    "pending_requests": {
+      "CW-1": {
+        "by_receipt_month": [
+          {
+            "month": "2026-03",
+            "month_label": "March 2026",
+            "remaining_requests": 12,
+            "raw": "12"
+          },
+          {
+            "month": "2026-04",
+            "month_label": "April 2026",
+            "remaining_requests": 28,
+            "raw": "28"
+          },
+          {
+            "month": "2026-05",
+            "month_label": "May 2026",
+            "remaining_requests": 21,
+            "raw": "21"
+          },
+          {
+            "month": "2026-06",
+            "month_label": "June 2026",
+            "remaining_requests": 129,
+            "raw": "129"
+          }
+        ],
+        "total_remaining_requests": 190
+      },
+      "H-1B": {
+        "by_receipt_month": [
+          {
+            "month": "2025-11",
+            "month_label": "November 2025",
+            "remaining_requests": 1,
+            "raw": "1"
+          },
+          {
+            "month": "2025-12",
+            "month_label": "December 2025",
+            "remaining_requests": 2,
+            "raw": "2"
+          },
+          {
+            "month": "2026-01",
+            "month_label": "January 2026",
+            "remaining_requests": 0,
+            "raw": "0"
+          },
+          {
+            "month": "2026-02",
+            "month_label": "February 2026",
+            "remaining_requests": 12,
+            "raw": "12"
+          },
+          {
+            "month": "2026-03",
+            "month_label": "March 2026",
+            "remaining_requests": 21,
+            "raw": "21"
+          },
+          {
+            "month": "2026-04",
+            "month_label": "April 2026",
+            "remaining_requests": 273,
+            "raw": "273"
+          },
+          {
+            "month": "2026-05",
+            "month_label": "May 2026",
+            "remaining_requests": 260,
+            "raw": "260"
+          },
+          {
+            "month": "2026-06",
+            "month_label": "June 2026",
+            "remaining_requests": 311,
+            "raw": "311"
+          }
+        ],
+        "total_remaining_requests": 880
+      },
+      "H-2B": {
+        "by_receipt_month": [
+          {
+            "month": "2026-04",
+            "month_label": "April 2026",
+            "remaining_requests": 2,
+            "raw": "2"
+          },
+          {
+            "month": "2026-05",
+            "month_label": "May 2026",
+            "remaining_requests": 44,
+            "raw": "44"
+          },
+          {
+            "month": "2026-06",
+            "month_label": "June 2026",
+            "remaining_requests": 1526,
+            "raw": "1,526"
+          }
+        ],
+        "total_remaining_requests": 1572
+      },
+      "PERM": {
+        "by_receipt_month": [
+          {
+            "month": "2025-12",
+            "month_label": "December 2025",
+            "remaining_requests": 11,
+            "raw": "11"
+          },
+          {
+            "month": "2026-01",
+            "month_label": "January 2026",
+            "remaining_requests": 63,
+            "raw": "63"
+          },
+          {
+            "month": "2026-02",
+            "month_label": "February 2026",
+            "remaining_requests": 106,
+            "raw": "106"
+          },
+          {
+            "month": "2026-03",
+            "month_label": "March 2026",
+            "remaining_requests": 627,
+            "raw": "627"
+          },
+          {
+            "month": "2026-04",
+            "month_label": "April 2026",
+            "remaining_requests": 14386,
+            "raw": "14,386"
+          },
+          {
+            "month": "2026-05",
+            "month_label": "May 2026",
+            "remaining_requests": 18310,
+            "raw": "18,310"
+          },
+          {
+            "month": "2026-06",
+            "month_label": "June 2026",
+            "remaining_requests": 16797,
+            "raw": "16,797"
+          }
+        ],
+        "total_remaining_requests": 50300
+      }
+    }
+  },
+  "notes": [
+    "perm.average_calendar_days.audit_review.calendar_days is null: DOL published 'N/A', not a number.",
+    "prevailing_wage.queues.CW-1.non_oews_receipt is null: DOL published '--', which is not a 'Month YYYY' value."
+  ],
+  "parse_ok": true,
+  "fetched_at": "2026-09-02T18:29:35Z",
+  "content_digest": "sha256:b7ed2bffa56828f2bee5924ee653f4d943f48563433df3445a7d0f4095ca79fa"
+}

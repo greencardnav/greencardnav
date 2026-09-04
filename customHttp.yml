@@ -1,0 +1,108 @@
+# AWS Amplify custom HTTP headers.
+#
+# WHY: after the single-file -> 5-page split, the shared app.js / styles.css /
+# rulebook.js are separate cached files. Without this, a browser could serve a
+# stale app.js or styles.css against a freshly-deployed HTML page after a deploy
+# (including the daily cron commit), causing broken/mismatched behavior.
+#
+# FIX: mark the HTML pages and shared assets/data as `no-cache` (store but
+# ALWAYS revalidate with the server). Combined with Amplify's CloudFront
+# invalidation on each deploy, a returning visitor always gets the current file
+# via a conditional GET (304 when unchanged, fresh copy when changed). This
+# needs no manual version bump.
+#
+# SCOPE: this file only takes effect on AWS Amplify hosting. It has no effect on
+# local file:// opening or other static hosts (which is fine).
+customHeaders:
+  - pattern: '**/*.html'
+    headers:
+      - key: 'Cache-Control'
+        value: 'no-cache'
+  - pattern: '**/*.js'
+    headers:
+      - key: 'Cache-Control'
+        value: 'no-cache'
+  - pattern: '**/*.css'
+    headers:
+      - key: 'Cache-Control'
+        value: 'no-cache'
+  - pattern: '**/*.json'
+    headers:
+      - key: 'Cache-Control'
+        value: 'no-cache'
+
+# ---------------------------------------------------------------------------
+# SECURITY / PRIVACY HEADERS (added 2026-09-02)
+#
+# WHY: visitors to an immigration site are a sensitive population, so the number of
+# third parties who learn anything about them is kept as close to zero as possible.
+# As of 2026-09-02 there is exactly ONE: GoatCounter, a privacy-focused analytics
+# service. Webfonts were the other and are now self-hosted. (For contrast,
+# casereviewer.ai runs two Google Analytics properties.)
+#
+# The one remaining leak was the Referer header: without a policy, every
+# outbound click told the destination which page the visitor came from. On this
+# site that could reveal, say, that someone was reading about the EB-2 India
+# backlog. 2,210 links in news_digests/ lacked rel="noreferrer", and patching
+# generated files is futile - a header fixes all of them at once.
+#
+# NOTE: these only take effect on AWS Amplify, not on local file:// opening.
+# ---------------------------------------------------------------------------
+  - pattern: '**'
+    headers:
+      # Send no Referer at all, to any destination. Nothing on this site needs it.
+      - key: 'Referrer-Policy'
+        value: 'no-referrer'
+      # Never let a browser MIME-sniff a response into something executable.
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+      # No framing: blocks clickjacking and stops the site being embedded.
+      - key: 'X-Frame-Options'
+        value: 'DENY'
+      # Deny device APIs outright. The site asks for none of them.
+      - key: 'Permissions-Policy'
+        value: 'geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()'
+      # HSTS: after the first visit, the browser refuses to talk to this host over
+      # plain http for a year, even if a link or a typed URL says http. That closes
+      # the SSL-strip window where an attacker on a shared network downgrades the
+      # first request and rewrites the page in transit.
+      #
+      # One year is the standard max-age. Deliberately WITHOUT 'preload', and
+      # without 'includeSubDomains':
+      #   - preload bakes the domain into a list shipped inside browser binaries.
+      #     Removal takes months and there is no way to hurry it, so it is a
+      #     one-way door not worth walking through on a site this young.
+      #   - includeSubDomains would force https on every future subdomain before
+      #     one exists. If a staging or preview subdomain later needs http, it
+      #     would be unreachable in any browser that had seen this header.
+      # Both can be added later once the domain has been stable for a while; going
+      # the other direction is the hard part.
+      - key: 'Strict-Transport-Security'
+        value: 'max-age=31536000'
+      # Content-Security-Policy, ENFORCING as of the greencardnav.com cutover.
+      #
+      # It ran as Content-Security-Policy-Report-Only first, because it cannot be
+      # tested locally (Amplify only sends these headers on a real deploy) and a
+      # wrong CSP breaks the whole site. Flipped only after the 16-page sweep in
+      # automation/verify_cutover.mjs came back with zero violations on the live
+      # site. Re-run that gate after ANY change that adds an external resource;
+      # under enforcement a violation is no longer a console message, it is a
+      # blocked request and a visibly broken page.
+      #
+      # 'unsafe-inline' is required and unavoidable: every page has an inline
+      # <script>, plus 19 inline onclick= handlers and 16 style="" attributes.
+      # So this does NOT stop injected inline script. What it does stop is any
+      # EXTERNAL script, frame, font, style or exfiltration endpoint that is not
+      # named here - which is the realistic threat for a fully static site with no
+      # server, database or forms.
+      #
+      # Known gap: gc.zgo.at is allowlisted in script-src, so GoatCounter is a
+      # third party that CAN still execute code on every page and the CSP cannot
+      # protect against it. Self-hosting count.js would let script-src drop to
+      # 'self' with no exceptions.
+      #
+      # Webfonts used to need fonts.googleapis.com and fonts.gstatic.com here. They
+      # are self-hosted now (automation/fetch_fonts.py), so font-src and style-src
+      # stay 'self' and two third-party origins are gone rather than allowlisted.
+      - key: 'Content-Security-Policy'
+        value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://gcnav.goatcounter.com; frame-src 'none'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<title>Check My Status — Green Card Navigator</title>
+<meta name="description" content="Answer a few questions and see where you stand in the green card queue, with a realistic projected timeline. Runs in your browser, nothing is saved. Not legal advice.">
+<link rel="canonical" href="https://www.greencardnav.com/status.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Green Card Navigator">
+<meta property="og:title" content="Check My Status — Green Card Navigator">
+<meta property="og:description" content="Answer a few questions and see where you stand in the green card queue, with a realistic projected timeline. Runs in your browser, nothing is saved. Not legal advice.">
+<meta property="og:url" content="https://www.greencardnav.com/status.html">
+<meta property="og:image" content="https://www.greencardnav.com/og.png?v=3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Check My Status — Green Card Navigator">
+<meta name="twitter:description" content="Answer a few questions and see where you stand in the green card queue, with a realistic projected timeline. Runs in your browser, nothing is saved. Not legal advice.">
+<meta name="twitter:image" content="https://www.greencardnav.com/og.png?v=3">
+<script>
+  // Apply the saved theme BEFORE first paint to avoid a flash of the wrong theme.
+  // Stores only the theme preference ('light' | 'dark' | 'system') under 'gc_theme';
+  // no case data is ever persisted. 'system' resolves to the OS setting here.
+  (function () {
+    try {
+      var pref = localStorage.getItem('gc_theme') || 'system';
+      var effective = pref === 'system'
+        ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : pref;
+      document.documentElement.setAttribute('data-theme', effective);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<div class="topbar" role="banner">
+  <nav class="hubnav" aria-label="Section navigation">
+    <a class="brand" href="index.html" aria-label="Green Card Navigator — home">Green Card <span class="brand-dot">Navigator</span></a>
+    <div class="hubnav-links" id="hubnav-links">
+      <a href="status.html" data-nav="check" class="active" aria-current="page">Check My Status</a>
+      <a href="eb1a.html" data-nav="paths">EB Paths</a>
+      <a href="tools.html" data-nav="tools">Tools</a>
+      <a href="faq.html" data-nav="faq">FAQ</a>
+      <a href="glossary.html" data-nav="glossary">Glossary</a>
+      <a href="niw-guide.html" data-nav="guide">NIW Guide</a>
+      <a href="niw-appeals.html" data-nav="appeals">NIW Appeals</a>
+      <a href="niw-decisions.html" data-nav="decisions">Browse Decisions</a>
+      <a href="resources.html" data-nav="resources">Resources</a>
+    </div>
+    <div class="hubnav-actions">
+      <button class="egg-btn" id="eggBtn" type="button" aria-label="A little celebration" title="Fingers crossed 🤞">🛂</button>
+      <div class="theme-toggle" role="group" aria-label="Color theme">
+        <button type="button" data-theme-pref="light" aria-pressed="false" title="Light theme" aria-label="Light theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+          <span class="tt-label">Light</span>
+        </button>
+        <button type="button" data-theme-pref="dark" aria-pressed="false" title="Dark theme" aria-label="Dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <span class="tt-label">Dark</span>
+        </button>
+        <button type="button" data-theme-pref="system" aria-pressed="false" title="Match system setting" aria-label="System theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span class="tt-label">System</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="disclaimer-banner" role="note" aria-label="Personal learning disclaimer">
+    <span class="icon" aria-hidden="true">i</span>
+    <span><strong>Personal learning tool.</strong> Not legal advice and not official guidance. Your answers are never sent anywhere. The Status questionnaire isn't saved; optional tools like the H-1B checklist save only on your device. <a href="privacy.html">Read the full privacy and disclosure note.</a></span>
+  </div>
+</div>
+
+<div class="container" id="maincontent" role="main" tabindex="-1">
+
+  <!-- ============ CHECK MY STATUS: the questionnaire ============ -->
+  <div id="check">
+  <!-- STEP 1: Landing -->
+  <header class="hero" id="landing" role="group">
+    <div class="hero-copy">
+      <h1>Where do you stand in the green card queue?</h1>
+      <p class="subtitle">Answer 4 quick questions to see where you stand (category, work visa, country, priority date). Add optional details for a more personalized explanation. <strong>Nothing here is legal advice.</strong></p>
+      <button class="start" type="button" id="startBtn">Start</button>
+      <p class="privacy-reassure">Private by design: no account, and your answers stay in your browser.</p>
+      <div class="privacy-clear">
+        <button class="clear-data-btn" type="button" id="clearDataBtn">Clear my data</button>
+        <span class="clear-data-note" id="clearDataNote" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+    <!-- Reinforces the four required questions. Kept in the a11y tree (not
+         aria-hidden) because the glossify pass linkifies acronyms here, and an
+         aria-hidden subtree must not contain focusable links. -->
+    <aside class="hero-aside" aria-label="What you'll answer">
+      <div class="ha-label">What you'll answer</div>
+      <ol class="ha-steps">
+        <li><span class="ha-n">1</span><span class="ha-text"><strong>Your category</strong><span class="ha-d">EB-1, EB-2, or EB-3</span></span></li>
+        <li><span class="ha-n">2</span><span class="ha-text"><strong>Your work visa</strong><span class="ha-d">H-1B, L-1, F-1, or none</span></span></li>
+        <li><span class="ha-n">3</span><span class="ha-text"><strong>Your country of birth</strong><span class="ha-d">Sets which queue you're in</span></span></li>
+        <li><span class="ha-n">4</span><span class="ha-text"><strong>Your priority date</strong><span class="ha-d">Your place in line</span></span></li>
+      </ol>
+      <p class="ha-foot">Then you'll see where you stand and a realistic timeline. Optional details refine it.</p>
+    </aside>
+  </header>
+
+  <!-- STEP 1: Category -->
+  <section class="step" id="step-category" aria-labelledby="q-category">
+    <div class="step-num">Question 1 of 4 &middot; Required</div>
+    <h2 id="q-category">What green card category is your case (or would be) filed under?</h2>
+    <p class="help">Pick one. If you have a green card case filed, select the EB category (shown on your ETA 9089 or I-140). If you haven't started the green card process yet, pick the category you expect, or the "haven't started" option below. Your current work visa is the next question.</p>
+    <div class="radio-cards" role="radiogroup" aria-label="Employment-based category or visa status">
+      <label class="radio-card" data-value="EB-1">
+        <input type="radio" name="category" value="EB-1">
+        <div class="label">EB-1</div>
+        <div class="helper">Extraordinary ability (A), outstanding researcher (B), or multinational manager (C). No PERM required.</div>
+      </label>
+      <label class="radio-card" data-value="EB-2">
+        <input type="radio" name="category" value="EB-2">
+        <div class="label">EB-2</div>
+        <div class="helper">Advanced degree or exceptional ability. Usually PERM-based; a National Interest Waiver (NIW) is the self-petition exception that waives the job offer and PERM.</div>
+      </label>
+      <label class="radio-card" data-value="EB-3">
+        <input type="radio" name="category" value="EB-3">
+        <div class="label">EB-3</div>
+        <div class="helper">Skilled worker or bachelor's degree. Requires PERM labor certification.</div>
+      </label>
+      <label class="radio-card" data-value="F-1">
+        <input type="radio" name="category" value="F-1">
+        <div class="label">F-1 OPT / STEM</div>
+        <div class="helper">Currently on F-1 OPT or STEM OPT, exploring the path to a green card or H-1B.</div>
+      </label>
+      <label class="radio-card" data-value="PRE">
+        <input type="radio" name="category" value="PRE">
+        <div class="label">I haven't started the green card process yet</div>
+        <div class="helper">Your PERM / green card hasn't begun, so you don't have a priority date yet. Get a plan: when to start, your status runway, and a projected wait. (Note your current work visa in the question below.)</div>
+      </label>
+    </div>
+  </section>
+
+  <!-- STEP 1b: EB-1 sub-category (shown only when EB-1 is selected) -->
+  <section class="step" id="step-eb1sub" aria-labelledby="q-eb1sub">
+    <div class="step-num">Question 1 continued &middot; Required for EB-1</div>
+    <h2 id="q-eb1sub">Which EB-1 sub-category?</h2>
+    <p class="help">EB-1 has three distinct sub-types with different eligibility rules. Pick the one your case is (or would be) filed under. All three skip PERM and share the same visa queue.</p>
+    <div class="radio-cards" role="radiogroup" aria-label="EB-1 sub-category">
+      <label class="radio-card" data-detail="eb1sub" data-value="EB-1A">
+        <input type="radio" name="d-eb1sub" value="EB-1A">
+        <div class="label">EB-1A: Extraordinary Ability</div>
+        <div class="helper">Self-petition (no employer needed). Meet 3 of 10 criteria. File I-140 directly. For individuals with national or international acclaim.</div>
+      </label>
+      <label class="radio-card" data-detail="eb1sub" data-value="EB-1B">
+        <input type="radio" name="d-eb1sub" value="EB-1B">
+        <div class="label">EB-1B: Outstanding Researcher / Professor</div>
+        <div class="helper">Employer-sponsored. Requires 3+ years research experience plus international recognition. For academics and researchers.</div>
+      </label>
+      <label class="radio-card" data-detail="eb1sub" data-value="EB-1C">
+        <input type="radio" name="d-eb1sub" value="EB-1C">
+        <div class="label">EB-1C: Multinational Manager / Executive</div>
+        <div class="helper">Employer-sponsored. Worked 1+ year abroad for the same company (or affiliate) in the last 3 years, coming to a managerial or executive role.</div>
+      </label>
+      <label class="radio-card" data-detail="eb1sub" data-value="unsure">
+        <input type="radio" name="d-eb1sub" value="unsure">
+        <div class="label">Not sure yet</div>
+        <div class="helper">Show all three and how to figure out which fits.</div>
+      </label>
+    </div>
+  </section>
+
+  <!-- STEP 2: Work visa (its own required question). Multi-select, non-exclusive:
+       someone on H-1B with an EB-3 case picks EB-3 above AND H-1B here. Writes
+       state.workVisa (array); at least one selection is required. -->
+  <section class="step" id="step-workvisa" aria-labelledby="q-workvisa">
+    <div class="step-num">Question 2 of 4 &middot; Required</div>
+    <h2 id="q-workvisa">What work visa are you on right now?</h2>
+    <p class="help">Select all that apply. This is separate from the green card category above. If you're not on a work visa, choose "None of these."</p>
+    <div class="workvisa-chips" role="group" aria-label="Current work visa (select all that apply)">
+      <label class="workvisa-chip" data-multi="workVisa" data-value="H-1B" tabindex="0" title="H-1B: employer-sponsored specialty-occupation work visa (6-year max, cap lottery). See the Glossary for details.">
+        <input type="checkbox" name="wv-h1b" value="H-1B">
+        <span class="wv-label">On H-1B</span>
+      </label>
+      <label class="workvisa-chip" data-multi="workVisa" data-value="L-1" tabindex="0" title="L-1: intracompany transfer visa. L-1A for managers/executives, L-1B for specialized knowledge. See the Glossary for details.">
+        <input type="checkbox" name="wv-l1" value="L-1">
+        <span class="wv-label">On L-1</span>
+      </label>
+      <label class="workvisa-chip" data-multi="workVisa" data-value="F-1" tabindex="0" title="F-1: student visa. OPT / STEM OPT provide post-graduation work authorization. See the Glossary for details.">
+        <input type="checkbox" name="wv-f1" value="F-1">
+        <span class="wv-label">On F-1 / OPT</span>
+      </label>
+      <label class="workvisa-chip" data-multi="workVisa" data-value="None" tabindex="0">
+        <input type="checkbox" name="wv-none" value="None">
+        <span class="wv-label">None of these</span>
+      </label>
+    </div>
+  </section>
+
+  <!-- STEP 3: Country -->
+  <section class="step" id="step-country" aria-labelledby="q-country">
+    <div class="step-num">Question 3 of 4 &middot; Required</div>
+    <h2 id="q-country">What is your country of chargeability?</h2>
+    <p class="help">Normally this is your country of birth. See the note below for the spouse exception.</p>
+    <div class="radio-cards" role="radiogroup" aria-label="Country of chargeability">
+      <label class="radio-card" data-value="India">
+        <input type="radio" name="country" value="India">
+        <div class="label">India</div>
+        <div class="helper">Longest EB-2 and EB-3 backlogs.</div>
+      </label>
+      <label class="radio-card" data-value="China">
+        <input type="radio" name="country" value="China">
+        <div class="label">China</div>
+        <div class="helper">Second-longest backlog.</div>
+      </label>
+      <label class="radio-card" data-value="Mexico">
+        <input type="radio" name="country" value="Mexico">
+        <div class="label">Mexico</div>
+        <div class="helper">Born in Mexico.</div>
+      </label>
+      <label class="radio-card" data-value="Philippines">
+        <input type="radio" name="country" value="Philippines">
+        <div class="label">Philippines</div>
+        <div class="helper">Born in the Philippines.</div>
+      </label>
+      <label class="radio-card" data-value="ROW">
+        <input type="radio" name="country" value="ROW">
+        <div class="label">Rest of World</div>
+        <div class="helper">Everywhere else. Most countries share one queue.</div>
+      </label>
+    </div>
+    <details class="collapsible">
+      <summary>Spouse born in a different country?</summary>
+      <div class="body">
+        Under INA §202(b) you may be able to charge your case to your spouse's country of birth if it has a shorter queue. Requirements are strict (both spouses as beneficiaries, marriage exists when a visa becomes available). Ask an immigration attorney before assuming this applies.
+      </div>
+    </details>
+  </section>
+
+  <!-- STEP 3: Priority date -->
+  <section class="step" id="step-pd" aria-labelledby="q-pd">
+    <div class="step-num">Question 4 of 4 &middot; Required</div>
+    <h2 id="q-pd">What is your priority date?</h2>
+    <p class="help" id="pd-help-text">Your priority date depends on your category: for a PERM-based case (most EB-2 and EB-3) it is the day the Department of Labor received your ETA-9089 labor certification; for EB-1 and the EB-2 National Interest Waiver, which skip PERM, it is the day USCIS received your I-140 petition. Pick your category above and this updates for your case. No date yet? Enter today's date for an illustrative "if filed today" scenario.</p>
+    <div class="date-row">
+      <div class="date-field">
+        <label for="pd-input">Priority date</label>
+        <input type="date" id="pd-input" aria-describedby="pd-error">
+      </div>
+    </div>
+    <div class="error-msg" id="pd-error" role="alert">Please enter a valid date.</div>
+  </section>
+
+  <!-- STEP 3-F1: OPT Status (shown instead of priority date for F-1 users) -->
+  <section class="step" id="step-f1-opt" aria-labelledby="q-f1-opt">
+    <div class="step-num">Question 4 of 4 &middot; Required</div>
+    <h2 id="q-f1-opt">Your OPT status</h2>
+    <p class="help">This helps calculate your timeline and how many H-1B lottery chances remain.</p>
+    <div class="date-row">
+      <div class="date-field">
+        <label for="opt-expiry-input">When does your OPT / STEM OPT expire?</label>
+        <input type="date" id="opt-expiry-input">
+      </div>
+    </div>
+    <div style="margin-top:18px;">
+      <p class="help" style="margin-bottom:8px;"><strong>Have you been selected in the H-1B lottery?</strong></p>
+      <div class="radio-cards" role="radiogroup" aria-label="H-1B lottery status">
+        <label class="radio-card" data-detail="h1bLottery" data-value="selected"><input type="radio" name="d-h1blottery" value="selected"><div class="label">Yes, selected</div></label>
+        <label class="radio-card" data-detail="h1bLottery" data-value="not-selected"><input type="radio" name="d-h1blottery" value="not-selected"><div class="label">No, not selected</div></label>
+        <label class="radio-card" data-detail="h1bLottery" data-value="not-applied"><input type="radio" name="d-h1blottery" value="not-applied"><div class="label">Haven't applied yet</div></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3-PRE: H-1B/L-1 pre-PERM details (shown instead of priority date for the PRE path) -->
+  <section class="step" id="step-pre" aria-labelledby="q-pre">
+    <div class="step-num">Question 4 of 4 &middot; Required</div>
+    <h2 id="q-pre">Your current status</h2>
+    <p class="help">You don't have a priority date yet (PERM hasn't started), so instead we'll build a plan around your current visa and intended path.</p>
+    <div style="margin-top:6px;">
+      <p class="help" style="margin-bottom:8px;"><strong>Which visa are you on?</strong></p>
+      <div class="radio-cards" role="radiogroup" aria-label="Current visa">
+        <label class="radio-card" data-detail="preVisa" data-value="H-1B"><input type="radio" name="d-previsa" value="H-1B"><div class="label">H-1B</div><div class="helper">6-year cap; AC21 extensions once the green card is in motion.</div></label>
+        <label class="radio-card" data-detail="preVisa" data-value="L-1A"><input type="radio" name="d-previsa" value="L-1A"><div class="label">L-1A (manager / executive)</div><div class="helper">7-year max. Natural fit for EB-1C.</div></label>
+        <label class="radio-card" data-detail="preVisa" data-value="L-1B"><input type="radio" name="d-previsa" value="L-1B"><div class="label">L-1B (specialized knowledge)</div><div class="helper">5-year max, not extendable past it.</div></label>
+      </div>
+    </div>
+    <div style="margin-top:18px;">
+      <p class="help" style="margin-bottom:8px;"><strong>What year are you in on that visa?</strong></p>
+      <div class="radio-cards" role="radiogroup" aria-label="Current visa year">
+        <label class="radio-card" data-detail="preYear" data-value="1"><input type="radio" name="d-preyear" value="1"><div class="label">Year 1</div></label>
+        <label class="radio-card" data-detail="preYear" data-value="2"><input type="radio" name="d-preyear" value="2"><div class="label">Year 2</div></label>
+        <label class="radio-card" data-detail="preYear" data-value="3"><input type="radio" name="d-preyear" value="3"><div class="label">Year 3</div></label>
+        <label class="radio-card" data-detail="preYear" data-value="4"><input type="radio" name="d-preyear" value="4"><div class="label">Year 4</div></label>
+        <label class="radio-card" data-detail="preYear" data-value="5"><input type="radio" name="d-preyear" value="5"><div class="label">Year 5</div></label>
+        <label class="radio-card" data-detail="preYear" data-value="6"><input type="radio" name="d-preyear" value="6"><div class="label">Year 6</div></label>
+        <label class="radio-card" data-detail="preYear" data-value="7"><input type="radio" name="d-preyear" value="7"><div class="label">Year 7 (L-1A)</div></label>
+        <label class="radio-card" data-detail="preYear" data-value="skip"><input type="radio" name="d-preyear" value="skip"><div class="label">Not sure</div></label>
+      </div>
+    </div>
+    <div style="margin-top:18px;">
+      <p class="help" style="margin-bottom:8px;"><strong>Which EB category do you expect to file under?</strong> (Once PERM starts.)</p>
+      <div class="radio-cards" role="radiogroup" aria-label="Intended EB category">
+        <label class="radio-card" data-detail="preIntent" data-value="EB-2"><input type="radio" name="d-preintent" value="EB-2"><div class="label">EB-2</div><div class="helper">Advanced degree or exceptional ability.</div></label>
+        <label class="radio-card" data-detail="preIntent" data-value="EB-3"><input type="radio" name="d-preintent" value="EB-3"><div class="label">EB-3</div><div class="helper">Skilled worker or bachelor's degree.</div></label>
+        <label class="radio-card" data-detail="preIntent" data-value="unsure"><input type="radio" name="d-preintent" value="unsure"><div class="label">Not sure yet</div><div class="helper">We'll assume EB-2 for the projection.</div></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPTIONAL: sits right after the 3 required questions, above the full result ============ -->
+  <section class="refine-block" id="refine-block" aria-label="Optional details to sharpen your estimate">
+    <div class="refine-head-row">
+      <h2 class="refine-head">Optional: sharpen your estimate</h2>
+      <a class="refine-jump" href="#step-result">Jump to your result &darr;</a>
+    </div>
+    <p class="refine-sub">You've answered the four required questions, so your result is ready below. These questions are all optional. Answer any that apply and your result updates as you go.</p>
+    <div class="refine-body">
+
+  <!-- STEP 4: Role change. This asks the legal test directly rather than inferring it
+       from a job level, because the level number is not what the regulation looks at:
+       20 CFR 656.17 turns on whether the DUTIES change materially. Asking the change
+       itself also works at any employer and covers a case a level band cannot express
+       (a move into a different job family). -->
+  <section class="step" id="step-rolechange" aria-labelledby="q-rolechange">
+    <div class="step-num is-optional">Optional</div>
+    <h2 id="q-rolechange">Are you changing roles?</h2>
+    <p class="help">Optional. What matters legally is whether your <em>duties</em> change materially, not your title or level. A same-track promotion usually carries lower PERM risk; a move into management or a different job family more often needs reassessment. It depends on your actual duties, so confirm with an attorney.</p>
+    <div class="radio-cards" role="radiogroup" aria-label="Are you changing roles?">
+      <label class="radio-card" data-detail="roleChange" data-value="none"><input type="radio" name="d-rolechange" value="none"><div class="label">No change planned</div></label>
+      <label class="radio-card" data-detail="roleChange" data-value="same-track"><input type="radio" name="d-rolechange" value="same-track"><div class="label">Promotion, same kind of work</div><div class="helper">Same discipline and duties.</div></label>
+      <label class="radio-card" data-detail="roleChange" data-value="ic-to-manager"><input type="radio" name="d-rolechange" value="ic-to-manager"><div class="label">Individual contributor to manager</div></label>
+      <label class="radio-card" data-detail="roleChange" data-value="different-family"><input type="radio" name="d-rolechange" value="different-family"><div class="label">Different job family or function</div></label>
+      <label class="radio-card" data-detail="roleChange" data-value="skip"><input type="radio" name="d-rolechange" value="skip"><div class="label">Prefer not to say</div></label>
+    </div>
+  </section>
+
+  <!-- STEP 5: H-1B year -->
+  <section class="step" id="step-h1b" aria-labelledby="q-h1b">
+    <div class="step-num is-optional">Optional</div>
+    <h2 id="q-h1b">Current H-1B year</h2>
+    <p class="help">H-1B has a 6-year cap. Extensions past that come from AC21 protections.</p>
+    <div class="radio-cards" role="radiogroup" aria-label="H-1B year">
+      <label class="radio-card" data-detail="h1b" data-value="1"><input type="radio" name="d-h1b" value="1"><div class="label">Year 1</div></label>
+      <label class="radio-card" data-detail="h1b" data-value="2"><input type="radio" name="d-h1b" value="2"><div class="label">Year 2</div></label>
+      <label class="radio-card" data-detail="h1b" data-value="3"><input type="radio" name="d-h1b" value="3"><div class="label">Year 3</div></label>
+      <label class="radio-card" data-detail="h1b" data-value="4"><input type="radio" name="d-h1b" value="4"><div class="label">Year 4</div></label>
+      <label class="radio-card" data-detail="h1b" data-value="5"><input type="radio" name="d-h1b" value="5"><div class="label">Year 5</div></label>
+      <label class="radio-card" data-detail="h1b" data-value="6"><input type="radio" name="d-h1b" value="6"><div class="label">Year 6</div></label>
+      <label class="radio-card" data-detail="h1b" data-value="106a"><input type="radio" name="d-h1b" value="106a"><div class="label">On extension via §106(a)</div><div class="helper">1-year increments past the cap.</div></label>
+      <label class="radio-card" data-detail="h1b" data-value="104c"><input type="radio" name="d-h1b" value="104c"><div class="label">On extension via §104(c)</div><div class="helper">3-year increments after I-140.</div></label>
+      <label class="radio-card" data-detail="h1b" data-value="not-h1b"><input type="radio" name="d-h1b" value="not-h1b"><div class="label">Not on H-1B</div></label>
+      <label class="radio-card" data-detail="h1b" data-value="skip"><input type="radio" name="d-h1b" value="skip"><div class="label">Prefer not to say</div></label>
+    </div>
+  </section>
+
+  <!-- STEP 6: PERM status -->
+  <section class="step" id="step-perm" aria-labelledby="q-perm">
+    <div class="step-num is-optional">Optional</div>
+    <h2 id="q-perm">PERM status</h2>
+    <p class="help">Where your ETA 9089 is in the DOL pipeline.</p>
+    <div class="radio-cards" role="radiogroup" aria-label="PERM status">
+      <label class="radio-card" data-detail="perm" data-value="not-filed"><input type="radio" name="d-perm" value="not-filed"><div class="label">Not filed yet</div></label>
+      <label class="radio-card" data-detail="perm" data-value="pwd"><input type="radio" name="d-perm" value="pwd"><div class="label">PWD in flight</div><div class="helper">Prevailing Wage Determination.</div></label>
+      <label class="radio-card" data-detail="perm" data-value="lmt"><input type="radio" name="d-perm" value="lmt"><div class="label">Labor market test</div></label>
+      <label class="radio-card" data-detail="perm" data-value="filed"><input type="radio" name="d-perm" value="filed"><div class="label">ETA 9089 filed and pending</div></label>
+      <label class="radio-card" data-detail="perm" data-value="audited"><input type="radio" name="d-perm" value="audited"><div class="label">Audited</div></label>
+      <label class="radio-card" data-detail="perm" data-value="approved"><input type="radio" name="d-perm" value="approved"><div class="label">Approved</div></label>
+      <label class="radio-card" data-detail="perm" data-value="denied"><input type="radio" name="d-perm" value="denied"><div class="label">Denied</div></label>
+      <label class="radio-card" data-detail="perm" data-value="skip"><input type="radio" name="d-perm" value="skip"><div class="label">Prefer not to say</div></label>
+    </div>
+  </section>
+
+  <!-- STEP 7: I-140 status -->
+  <section class="step" id="step-i140" aria-labelledby="q-i140">
+    <div class="step-num is-optional">Optional</div>
+    <h2 id="q-i140">I-140 status</h2>
+    <p class="help" id="i140-help-text">The immigrant petition for your employment-based category. For PERM-based cases (most EB-2 and EB-3) it generally follows PERM approval; some categories, including EB-1A and the EB-2 NIW, can be self-petitioned without PERM.</p>
+    <div class="radio-cards" role="radiogroup" aria-label="I-140 status">
+      <label class="radio-card" data-detail="i140" data-value="not-filed"><input type="radio" name="d-i140" value="not-filed"><div class="label">Not filed yet</div></label>
+      <label class="radio-card" data-detail="i140" data-value="pending-regular"><input type="radio" name="d-i140" value="pending-regular"><div class="label">Pending, regular</div></label>
+      <label class="radio-card" data-detail="i140" data-value="pending-premium"><input type="radio" name="d-i140" value="pending-premium"><div class="label">Pending, premium</div></label>
+      <label class="radio-card" data-detail="i140" data-value="approved"><input type="radio" name="d-i140" value="approved"><div class="label">Approved</div></label>
+      <label class="radio-card" data-detail="i140" data-value="rfe"><input type="radio" name="d-i140" value="rfe"><div class="label">RFE issued</div><div class="helper">Request for Evidence.</div></label>
+      <label class="radio-card" data-detail="i140" data-value="denied"><input type="radio" name="d-i140" value="denied"><div class="label">Denied</div></label>
+      <label class="radio-card" data-detail="i140" data-value="skip"><input type="radio" name="d-i140" value="skip"><div class="label">Prefer not to say</div></label>
+    </div>
+  </section>
+
+  <!-- STEP 8: Spouse country -->
+  <section class="step" id="step-spouse" aria-labelledby="q-spouse">
+    <div class="step-num is-optional">Optional</div>
+    <h2 id="q-spouse">Spouse country of birth</h2>
+    <p class="help">If different from yours and shorter queue, cross-chargeability may apply.</p>
+    <div class="radio-cards" role="radiogroup" aria-label="Spouse country of birth">
+      <label class="radio-card" data-detail="spouse" data-value="same"><input type="radio" name="d-spouse" value="same"><div class="label">Same as mine</div></label>
+      <label class="radio-card" data-detail="spouse" data-value="India"><input type="radio" name="d-spouse" value="India"><div class="label">India</div></label>
+      <label class="radio-card" data-detail="spouse" data-value="China"><input type="radio" name="d-spouse" value="China"><div class="label">China</div></label>
+      <label class="radio-card" data-detail="spouse" data-value="Mexico"><input type="radio" name="d-spouse" value="Mexico"><div class="label">Mexico</div></label>
+      <label class="radio-card" data-detail="spouse" data-value="Philippines"><input type="radio" name="d-spouse" value="Philippines"><div class="label">Philippines</div></label>
+      <label class="radio-card" data-detail="spouse" data-value="ROW"><input type="radio" name="d-spouse" value="ROW"><div class="label">Rest of World</div></label>
+      <label class="radio-card" data-detail="spouse" data-value="not-married"><input type="radio" name="d-spouse" value="not-married"><div class="label">Not married</div></label>
+      <label class="radio-card" data-detail="spouse" data-value="skip"><input type="radio" name="d-spouse" value="skip"><div class="label">Prefer not to say</div></label>
+    </div>
+  </section>
+
+  <!-- STEP 9: Advanced degree -->
+  <section class="step" id="step-degree" aria-labelledby="q-degree">
+    <div class="step-num is-optional">Optional</div>
+    <h2 id="q-degree">Advanced degree status</h2>
+    <p class="help">Affects EB-2 eligibility and the National Interest Waiver framing.</p>
+    <div class="radio-cards" role="radiogroup" aria-label="Advanced degree status">
+      <label class="radio-card" data-detail="degree" data-value="us-masters"><input type="radio" name="d-degree" value="us-masters"><div class="label">US master's or higher</div></label>
+      <label class="radio-card" data-detail="degree" data-value="us-bach-5"><input type="radio" name="d-degree" value="us-bach-5"><div class="label">US bachelor's + 5 years progressive experience</div></label>
+      <label class="radio-card" data-detail="degree" data-value="foreign-masters"><input type="radio" name="d-degree" value="foreign-masters"><div class="label">Foreign master's or higher (equivalent)</div></label>
+      <label class="radio-card" data-detail="degree" data-value="foreign-bach-5"><input type="radio" name="d-degree" value="foreign-bach-5"><div class="label">Foreign bachelor's + 5 years</div></label>
+      <label class="radio-card" data-detail="degree" data-value="skip"><input type="radio" name="d-degree" value="skip"><div class="label">Prefer not to say</div></label>
+    </div>
+  </section>
+
+  <!-- STEP 10: Location matrix -->
+  <section class="step" id="step-location" aria-labelledby="q-location">
+    <div class="step-num is-optional">Optional</div>
+    <h2 id="q-location">Where do you currently work, and where might you consider moving?</h2>
+    <p class="help">Same MSA usually means lower risk of a PERM location problem; a different MSA is usually treated as a material change and often requires reassessment. The MSA (not the state line) is the test, but the actual impact depends on your case stage and whether duties or wage also change. Confirm with an immigration attorney. Skip this question if you'd rather not say.</p>
+    <div class="location-row">
+      <div class="location-field">
+        <label for="loc-current">Current location</label>
+        <select id="loc-current" aria-label="Current location">
+          <option value="">Select your current location</option>
+        </select>
+      </div>
+      <div class="location-field">
+        <label for="loc-prospective">Prospective new location (optional)</label>
+        <select id="loc-prospective" aria-label="Prospective new location">
+          <option value="__none__" selected>No move under consideration</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submit -->
+  <section class="step" id="step-submit" aria-labelledby="q-submit">
+    <div class="step-num">Optional</div>
+    <h2 id="q-submit">Recheck my estimate</h2>
+    <p class="help">Your result above updates automatically as you answer. Use this if you'd like to jump back up to it.</p>
+    <div>
+      <button class="btn-primary" type="button" id="submitBtn">See updated estimate</button>
+    </div>
+    <div class="error-msg" id="submit-error" role="alert">Please complete the 3 required questions (category, country, priority date) before continuing.</div>
+  </section>
+
+    </div><!-- /.refine-body -->
+  </section>
+
+  <!-- ============ RESULT: the full result, below the optional questions ============ -->
+  <section class="step" id="step-result" aria-live="polite">
+    <div id="result-content"></div>
+  </section>
+  </div><!-- /#check -->
+
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <nav class="foot-links" aria-label="Footer navigation">
+    <a href="index.html#overview">The Process</a>
+    <a href="status.html">Check My Status</a>
+    <a href="eb1a.html">EB Paths</a>
+    <a href="tools.html">Tools</a>
+    <a href="faq.html">FAQ</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="niw-appeals.html">NIW Appeals</a>
+      <a href="niw-decisions.html">Browse Decisions</a><a href="niw-guide.html">NIW Guide</a>
+    <a href="resources.html">Resources</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+  <p class="foot-fine">A personal learning project. Not legal advice. See the <a href="privacy.html">Privacy &amp; Disclosure</a> note.</p>
+</footer>
+
+<div class="print-only print-footer-block" aria-hidden="true">
+  Not legal advice &middot; not official guidance &middot; verify with official sources and a licensed immigration attorney.
+  Generated from a personal tool; nothing is saved or transmitted.
+</div>
+
+<script src="rulebook.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

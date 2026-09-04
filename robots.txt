@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Not real pages: og.html is the template used to render og.png, and
+# _chipnav-demo.html is a dev scratch file. Neither is in the sitemap and
+# neither carries a canonical, so keep them out of the index.
+Disallow: /og.html
+Disallow: /_chipnav-demo.html
+
+Sitemap: https://www.greencardnav.com/sitemap.xml

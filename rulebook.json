@@ -1,0 +1,677 @@
+{
+  "meta": {
+    "version": "0.3.1",
+    "last_verified": "2026-08-26",
+    "bulletin_verified_source": "State Department Visa Bulletin for September 2026 (No. 18, Vol. XI), verified 2026-08-26 against the official DoS PDF (parsed with automation/bulletin_pdf_fetch.py) and cross-confirmed by the USCIS 'When to File' page at uscis.gov/visabulletininfo (updated 2026-08-24). All EB-1/2/3 x India/China/ROW/Mexico/Philippines Final Action Dates and Dates-for-Filing cells are UNCHANGED from August 2026 (No. 17) — no movement this month. USCIS honors the Final Action Dates chart for employment-based I-485 filing in September 2026. Bulletin changes remain human-gated.",
+    "scope": "EB-2 and EB-3, India and China. H-1B holders filing employment-based PERM through a large employer.",
+    "not_in_scope": [
+      "EB-1 (A/B/C) — different rules, faster queue, referenced only for comparison",
+      "EB-5 investment-based",
+      "F-1 OPT/STEM entrants without a prior H-1B",
+      "L-1 blanket",
+      "TN (Canadian/Mexican)",
+      "O-1 extraordinary ability",
+      "K-1 fiancé, family-based, asylum, refugee",
+      "CSPA / kids aging out",
+      "Cross-chargeability edge cases beyond spouse country of birth"
+    ],
+    "disclaimer": "Personal learning project. Not legal advice, not official guidance. Numbers reflect the state of the queue as of the last_verified date and will drift.",
+    "primary_sources": [
+      {
+        "name": "travel.state.gov Visa Bulletin",
+        "url": "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html",
+        "note": "DOS often 403-blocks direct fetch; use law-firm aggregators as secondary."
+      },
+      {
+        "name": "egov.uscis.gov Processing Times",
+        "url": "https://egov.uscis.gov/processing-times/"
+      },
+      {
+        "name": "flag.dol.gov PERM data",
+        "url": "https://flag.dol.gov/"
+      },
+      {
+        "name": "20 CFR §656 (PERM)",
+        "url": "https://www.ecfr.gov/current/title-20/chapter-V/part-656"
+      },
+      {
+        "name": "8 CFR §214.2(h) (H-1B)",
+        "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/section-214.2#p-214.2(h)"
+      },
+      {
+        "name": "USCIS Policy Manual",
+        "url": "https://www.uscis.gov/policy-manual"
+      },
+      {
+        "name": "American Competitiveness in the 21st Century Act (AC21) Pub. L. 106-313",
+        "url": "https://www.congress.gov/bill/106th-congress/house-bill/2870"
+      }
+    ],
+    "secondary_sources": [
+      "Murthy Law Firm — murthy.com",
+      "Fragomen — fragomen.com",
+      "Boundless — boundless.com",
+      "Morgan Lewis — morganlewis.com",
+      "Green Card Clock — greencardclock.com",
+      "USA Visa Law — usavisalaw.com"
+    ]
+  },
+  "bulletin": {
+    "as_of": "2026-09",
+    "chart_note": "USCIS honors Final Action Dates chart for I-485 filing in September 2026. Users on the Date for Filing chart cannot file I-485 this month.",
+    "categories": {
+      "EB-2": {
+        "India": {
+          "final_action_date": null,
+          "date_for_filing": "2015-01-15",
+          "status_note": "Final Action Date is UNAVAILABLE ('U') per the September 2026 bulletin (2nd preference India). DFF 15JAN15. Verified against travel.state.gov September 2026.",
+          "verified": true
+        },
+        "China": {
+          "final_action_date": "2021-09-01",
+          "date_for_filing": "2022-01-01",
+          "status_note": "FAD 01SEP21, DFF 01JAN22. Verified against travel.state.gov September 2026.",
+          "verified": true
+        },
+        "ROW": {
+          "final_action_date": "CURRENT",
+          "date_for_filing": "CURRENT",
+          "status_note": "Current for all Rest-of-World countries. Verified against travel.state.gov September 2026.",
+          "verified": true
+        },
+        "Mexico": {
+          "final_action_date": "CURRENT",
+          "date_for_filing": "CURRENT",
+          "status_note": "Current. Verified against travel.state.gov September 2026.",
+          "verified": true
+        },
+        "Philippines": {
+          "final_action_date": "CURRENT",
+          "date_for_filing": "CURRENT",
+          "status_note": "Current. Verified against travel.state.gov September 2026.",
+          "verified": true
+        }
+      },
+      "EB-3": {
+        "India": {
+          "final_action_date": "2014-01-01",
+          "date_for_filing": "2015-01-15",
+          "status_note": "FAD 01JAN14, DFF 15JAN15 (3rd preference India). Verified against travel.state.gov September 2026. Downgrade from EB-2 only helps when EB-3 India FAD is meaningfully AHEAD of the EB-2 India position; check the current bulletin before acting.",
+          "verified": true
+        },
+        "China": {
+          "final_action_date": "2022-01-01",
+          "date_for_filing": "2022-01-08",
+          "status_note": "FAD 01JAN22, DFF 08JAN22. Verified against travel.state.gov September 2026.",
+          "verified": true
+        },
+        "ROW": {
+          "final_action_date": "2024-09-01",
+          "date_for_filing": "CURRENT",
+          "status_note": "FAD 01SEP24, DFF Current. Verified against travel.state.gov September 2026.",
+          "verified": true
+        },
+        "Mexico": {
+          "final_action_date": "2024-09-01",
+          "date_for_filing": "CURRENT",
+          "status_note": "FAD 01SEP24, DFF Current. Verified against travel.state.gov September 2026.",
+          "verified": true
+        },
+        "Philippines": {
+          "final_action_date": "2023-08-01",
+          "date_for_filing": "2024-01-01",
+          "status_note": "FAD 01AUG23, DFF 01JAN24. Verified against travel.state.gov September 2026.",
+          "verified": true
+        }
+      },
+      "EB-1": {
+        "India": {
+          "final_action_date": "2022-10-15",
+          "date_for_filing": "2023-12-01",
+          "status_note": "FAD 15OCT22, DFF 01DEC23. Verified against travel.state.gov September 2026. DOS warns EB-1 India may go 'unavailable' before FY2026 ends (2026-09-30). Reference/comparison category — most users will not qualify for EB-1A/EB-1B.",
+          "verified": true
+        },
+        "China": {
+          "final_action_date": "2023-07-01",
+          "date_for_filing": "2023-12-01",
+          "status_note": "FAD 01JUL23, DFF 01DEC23. Verified against travel.state.gov September 2026. Reference/comparison category.",
+          "verified": true
+        },
+        "Mexico": {
+          "final_action_date": "CURRENT",
+          "date_for_filing": "CURRENT",
+          "status_note": "Current. Verified against travel.state.gov September 2026.",
+          "verified": true
+        },
+        "Philippines": {
+          "final_action_date": "CURRENT",
+          "date_for_filing": "CURRENT",
+          "status_note": "Current. Verified against travel.state.gov September 2026.",
+          "verified": true
+        }
+      }
+    },
+    "twelve_month_lookback_eb2_india": [
+      {
+        "month": "2025-08",
+        "final_action_date": "2013-01-01"
+      },
+      {
+        "month": "2026-04",
+        "final_action_date": "2014-07-15",
+        "note": "Unusual ~14-month forward jump"
+      },
+      {
+        "month": "2026-06",
+        "final_action_date": "2013-09-01",
+        "note": "Retrogressed"
+      },
+      {
+        "month": "2026-07",
+        "final_action_date": null,
+        "note": "Unavailable"
+      },
+      {
+        "month": "2026-08",
+        "final_action_date": null,
+        "note": "Unavailable — FY2026 exhausted"
+      },
+      {
+        "month": "2026-09",
+        "final_action_date": null,
+        "note": "Unavailable — FY2026 exhausted (final FY month)"
+      }
+    ]
+  },
+  "wait_estimates": {
+    "note": "Realistic-wait bands for a priority date locked NOW, given the backlog to burn. These are structural estimates from the source document, not month-by-month bulletin math. Ranges are wide because they depend on legislative changes to country caps.",
+    "bands": {
+      "EB-2 India, PD locked 2026": {
+        "backlog_to_burn_years": 14,
+        "best_case_years": 10,
+        "typical_case_years": [
+          15,
+          20
+        ],
+        "worst_case_years": [
+          30,
+          70
+        ],
+        "worst_case_note": "Continued retrogression like the current pattern. Cato Institute and NFAP have published models citing 50+ years.",
+        "changed_by": "Legislation on per-country caps is the only thing that changes this dramatically."
+      },
+      "EB-2 China, PD locked 2026": {
+        "backlog_to_burn_years": 5,
+        "best_case_years": 3,
+        "typical_case_years": [
+          5,
+          8
+        ],
+        "worst_case_years": [
+          8,
+          12
+        ],
+        "verified": false,
+        "verification_note": "Estimate derived from FAD 2021-09-01 position. Confirm before shipping."
+      },
+      "EB-1 India, PD locked 2026": {
+        "best_case_years": [
+          5,
+          7
+        ],
+        "typical_case_years": [
+          8,
+          12
+        ],
+        "worst_case_years": [
+          12,
+          18
+        ],
+        "cite": "September 2026 Visa Bulletin via Morgan Lewis, Fragomen, USA Visa Law, Green Card Clock"
+      }
+    }
+  },
+  "perm": {
+    "cite": "20 CFR §656",
+    "total_duration_months": [
+      15,
+      25
+    ],
+    "priority_date_rule": "The day DOL RECEIVES the ETA 9089 is the priority date. This is the single most important date in the whole process.",
+    "priority_date_cite": "20 CFR §656.17",
+    "stages": [
+      {
+        "id": "pwd",
+        "name": "Prevailing Wage Determination",
+        "duration_months": [
+          4,
+          5
+        ],
+        "current_queue_note": "DOL processing OEWS PWD requests received April 2026 (Non-OEWS March 2026) as of 2026-06-30. Confirmed against flag.dol.gov/processingtimes (tier-1).",
+        "as_of": "2026-06"
+      },
+      {
+        "id": "labor_market_test",
+        "name": "Labor Market Test",
+        "duration_months": [
+          2,
+          3
+        ],
+        "who_runs": "Your employer's recruiting team or immigration counsel runs it."
+      },
+      {
+        "id": "eta9089_review",
+        "name": "ETA 9089 DOL Analyst Review",
+        "duration_months": 13,
+        "current_queue_note": "DOL PERM ETA 9089 analyst review processing July 2025 filings as of 2026-07-17. Confirmed against flag.dol.gov/processingtimes (tier-1).",
+        "as_of": "2026-07",
+        "priority_date_locks_here": true
+      }
+    ],
+    "audit": {
+      "rate_percent": 30,
+      "cause": "Random selection plus targeted audits based on ETA 9089 content or employer patterns.",
+      "additional_duration_months": 9
+    },
+    "qualifying_experience_rule": {
+      "cite": "20 CFR §656.17(i)(3)",
+      "rule": "Cannot use same-employer same-or-substantially-comparable experience as qualifying experience for the PERM position (would be circular). Standard practice for in-line promotions: list ONLY the prior role as qualifying experience, not the current role.",
+      "example": "For a senior engineer being sponsored using junior-level experience at the same employer, only the junior role appears on ETA 9089."
+    }
+  },
+  "i140": {
+    "name": "I-140 Immigrant Petition for Alien Worker",
+    "who_files": "Employer files. Your employer's immigration counsel prepares it.",
+    "adjudicator": "USCIS",
+    "regular_processing_months": 8,
+    "regular_processing_note": "Approximate. USCIS processing times cannot be auto-verified (egov.uscis.gov is behind a Cloudflare human-verification wall). Check the live figure at egov.uscis.gov/processing-times (select Form I-140). This number is low-leverage anyway: an 8-vs-11-month I-140 is negligible against a multi-year priority-date wait.",
+    "regular_processing_source_url": "https://egov.uscis.gov/processing-times/",
+    "regular_processing_verified": false,
+    "premium_processing": {
+      "duration_business_days": 15,
+      "fee_usd": 2805,
+      "employer_policy_note": "Many employers do not automatically pay for premium processing; it often requires manager approval.",
+      "verified": true
+    },
+    "approval_unlocks": [
+      {
+        "id": "ac21_104c",
+        "summary": "AC21 §104(c): 3-year H-1B extensions past the 6-year cap, indefinitely."
+      },
+      {
+        "id": "priority_date_portability",
+        "summary": "Priority date locks to the applicant AND becomes portable to a new employer."
+      },
+      {
+        "id": "h4_ead",
+        "summary": "Spouse H-4 EAD (Employment Authorization Document) becomes available."
+      }
+    ]
+  },
+  "i485": {
+    "name": "I-485 Adjustment of Status",
+    "eligibility_rule": "Only filable when the applicant's priority date is current per whichever chart USCIS honors that month (Final Action Dates or Dates for Filing).",
+    "concurrent_filings": [
+      {
+        "form": "I-765",
+        "purpose": "EAD — Employment Authorization Document"
+      },
+      {
+        "form": "I-131",
+        "purpose": "Advance Parole (travel document)"
+      }
+    ],
+    "stages": [
+      {
+        "id": "biometrics",
+        "duration_after_filing_months": 2
+      },
+      {
+        "id": "interview_and_approval",
+        "duration_after_biometrics_months": [
+          7,
+          12
+        ]
+      }
+    ],
+    "total_duration_months": [
+      7,
+      14
+    ]
+  },
+  "ac21": {
+    "cite": "American Competitiveness in the Twenty-First Century Act of 2000, Pub. L. 106-313",
+    "purpose": "Enables H-1B extensions past the 6-year cap for green card applicants stuck in backlog.",
+    "provisions": {
+      "106a": {
+        "name": "AC21 §106(a)",
+        "trigger": "PERM has been pending 365+ days",
+        "unlocks": "H-1B extends in 1-year increments past the 6-year cap, indefinitely, until green card issues.",
+        "practical_note": "Unlocks approximately one year after ETA 9089 filing date."
+      },
+      "104c": {
+        "name": "AC21 §104(c)",
+        "trigger": "I-140 approved (any employer, if priority date is retained)",
+        "unlocks": [
+          "H-1B extends in 3-year increments",
+          "Priority date is portable to a new employer"
+        ],
+        "practical_note": "This is the practical extension tool for anyone stuck in EB-2 India or EB-3 India backlogs, because §106(c) is unreachable for decades."
+      },
+      "106c": {
+        "name": "AC21 §106(c)",
+        "trigger": "I-485 has been pending 180+ days",
+        "unlocks": "'Same or similar' job portability via Supplement J (Form I-485J)",
+        "practical_note": "Irrelevant for EB-2/EB-3 India applicants for the foreseeable future because I-485 cannot even be filed while priority date is not current."
+      }
+    },
+    "optimal_perm_timing": "Filing PERM in H-1B Year 3 is optimal - roughly 3 years of H-1B runway, and §106(a) unlocks in Year 4, so the H-1B never lapses during the priority date wait. Filing much later is riskier: §106(a) only unlocks after the PERM has been pending 365 days, so a Year 5 filing can leave a gap before the 6-year cap."
+  },
+  "perm_restart_triggers": {
+    "note": "Any of these three changes may invalidate the current PERM and require restart (new PWD, new ETA 9089, new priority date). Title alone does NOT trigger restart. Salary alone does NOT trigger restart, unless below prevailing wage.",
+    "triggers": [
+      {
+        "id": "entity_change",
+        "name": "Employing entity change",
+        "example": "Parent company → a subsidiary or affiliate",
+        "always_restart": true
+      },
+      {
+        "id": "location_change",
+        "name": "Location change outside the Metropolitan Statistical Area",
+        "cite_regulation": "20 CFR §656.3 defines 'area of intended employment' as within normal commuting distance.",
+        "cite_case": "Matter of Simeio Solutions, 26 I&N Dec. 542 (AAO 2015)",
+        "cite_regulation_h1b": "8 CFR §214.2(h)(2)(i)(E) and 20 CFR §655.715 mirror this rule for H-1B.",
+        "test": "Same MSA per US Census Bureau delineations = automatically safe. Different MSA = material change requiring new PERM + new PWD + amended H-1B (Form I-129) filed BEFORE the move.",
+        "wrong_calls_to_avoid": [
+          "'Same state = safe' — MSA is the legal test, not state.",
+          "'Same commuting area' as a colloquial notion — the test is the MSA delineation, not miles."
+        ]
+      },
+      {
+        "id": "duties_change",
+        "name": "Job duties change >50% or different job family",
+        "restart_condition": "If more than 50% of duties change or the job family changes.",
+        "usually_safe": "In-line promotion within the same job series (same discipline, same duties) usually does not trigger restart.",
+        "usually_unsafe": "IC → Manager transition is typically a >50% duty shift and usually triggers restart."
+      }
+    ],
+    "danger_window": {
+      "when": "From PERM filing until I-140 approval - approximately 2 years in typical large-employer cases.",
+      "risk": "Material change during this window can LOSE the priority date because it hasn't attached to the applicant yet. Highest-stakes window in the whole process.",
+      "safe_after_i140": "After I-140 approval, priority date is portable (per AC21 §104(c)) and restart-triggering changes become less catastrophic — the applicant keeps the priority date even if a new PERM is required."
+    },
+    "internal_transfer_rule": "Never accept an internal transfer offer during an active PERM window without first getting a written assessment from your employer's immigration counsel. A move that changes the employing entity, the MSA, or more than 50% of duties can force a PERM restart and cost the priority date, and that assessment is what tells you which of those applies."
+  },
+  "msa_reference": {
+    "cite": "US Census Bureau Metropolitan Statistical Area delineations",
+    "note": "MSA lists are updated periodically. Verify against current Census Bureau data for edge cases.",
+    "examples": [
+      {
+        "msa": "Seattle-Tacoma-Bellevue, WA",
+        "cities_safe_within_msa": [
+          "Seattle",
+          "Bellevue",
+          "Redmond",
+          "Tacoma",
+          "Kirkland",
+          "Everett"
+        ]
+      },
+      {
+        "msa": "San Francisco-Oakland-Berkeley, CA",
+        "cities_safe_within_msa": [
+          "San Francisco",
+          "Oakland",
+          "Berkeley"
+        ]
+      },
+      {
+        "msa": "San Jose-Sunnyvale-Santa Clara, CA",
+        "cities_safe_within_msa": [
+          "San Jose",
+          "Sunnyvale",
+          "Palo Alto",
+          "Santa Clara",
+          "Mountain View"
+        ]
+      },
+      {
+        "msa": "Los Angeles-Long Beach-Anaheim, CA",
+        "cities_safe_within_msa": [
+          "Los Angeles",
+          "Long Beach",
+          "Anaheim",
+          "Irvine",
+          "Santa Monica"
+        ]
+      },
+      {
+        "msa": "New York-Newark-Jersey City, NY-NJ-PA",
+        "cities_safe_within_msa": [
+          "New York City",
+          "Newark",
+          "Jersey City"
+        ]
+      },
+      {
+        "msa": "Arlington-Alexandria-Reston, VA (part of Washington-Arlington-Alexandria MSA)",
+        "cities_safe_within_msa": [
+          "Arlington",
+          "Alexandria",
+          "Reston",
+          "Herndon"
+        ]
+      }
+    ],
+    "cross_msa_examples_that_trigger_restart": [
+      {
+        "from": "Los Angeles, CA",
+        "to": "San Francisco, CA",
+        "note": "Different MSAs (Los Angeles-Long Beach-Anaheim vs San Francisco-Oakland-Berkeley). Not 'same commuting area' despite same state."
+      },
+      {
+        "from": "Seattle, WA",
+        "to": "Bellevue, WA",
+        "note": "SAFE — same Seattle-Tacoma-Bellevue MSA."
+      },
+      {
+        "from": "Seattle, WA",
+        "to": "Portland, OR",
+        "note": "Different MSAs. Restart required."
+      }
+    ]
+  },
+  "locations": {
+    "note": "Common US metros for employment-based filings. Each entry maps a display label to its US Census Bureau Metropolitan Statistical Area. Two locations in the same MSA = automatically safe for PERM. Two locations in different MSAs = restart required.",
+    "cite": "US Census Bureau MSA delineations, 20 CFR §656.3",
+    "metros": [
+      {
+        "id": "seattle",
+        "label": "Seattle area (Seattle / Bellevue / Redmond / Kirkland)",
+        "state": "WA",
+        "msa": "Seattle-Tacoma-Bellevue"
+      },
+      {
+        "id": "bay-area-sf",
+        "label": "San Francisco / Oakland",
+        "state": "CA",
+        "msa": "San Francisco-Oakland-Berkeley"
+      },
+      {
+        "id": "bay-area-sj",
+        "label": "South Bay (San Jose / Sunnyvale / Palo Alto / Santa Clara / Mountain View)",
+        "state": "CA",
+        "msa": "San Jose-Sunnyvale-Santa Clara"
+      },
+      {
+        "id": "la",
+        "label": "Los Angeles / Long Beach / Irvine",
+        "state": "CA",
+        "msa": "Los Angeles-Long Beach-Anaheim"
+      },
+      {
+        "id": "san-diego",
+        "label": "San Diego",
+        "state": "CA",
+        "msa": "San Diego-Chula Vista-Carlsbad"
+      },
+      {
+        "id": "nyc",
+        "label": "New York City / Newark / Jersey City",
+        "state": "NY-NJ-PA",
+        "msa": "New York-Newark-Jersey City"
+      },
+      {
+        "id": "boston",
+        "label": "Boston / Cambridge",
+        "state": "MA",
+        "msa": "Boston-Cambridge-Newton"
+      },
+      {
+        "id": "arlington",
+        "label": "Arlington / DC area / Herndon / Reston",
+        "state": "VA-DC-MD",
+        "msa": "Washington-Arlington-Alexandria"
+      },
+      {
+        "id": "austin",
+        "label": "Austin",
+        "state": "TX",
+        "msa": "Austin-Round Rock-Georgetown"
+      },
+      {
+        "id": "dallas",
+        "label": "Dallas / Fort Worth / Plano",
+        "state": "TX",
+        "msa": "Dallas-Fort Worth-Arlington"
+      },
+      {
+        "id": "houston",
+        "label": "Houston",
+        "state": "TX",
+        "msa": "Houston-The Woodlands-Sugar Land"
+      },
+      {
+        "id": "nashville",
+        "label": "Nashville",
+        "state": "TN",
+        "msa": "Nashville-Davidson-Murfreesboro-Franklin"
+      },
+      {
+        "id": "atlanta",
+        "label": "Atlanta",
+        "state": "GA",
+        "msa": "Atlanta-Sandy Springs-Alpharetta"
+      },
+      {
+        "id": "chicago",
+        "label": "Chicago",
+        "state": "IL",
+        "msa": "Chicago-Naperville-Elgin"
+      },
+      {
+        "id": "denver",
+        "label": "Denver / Boulder",
+        "state": "CO",
+        "msa": "Denver-Aurora-Lakewood"
+      },
+      {
+        "id": "phoenix",
+        "label": "Phoenix / Tempe",
+        "state": "AZ",
+        "msa": "Phoenix-Mesa-Chandler"
+      },
+      {
+        "id": "detroit",
+        "label": "Detroit area",
+        "state": "MI",
+        "msa": "Detroit-Warren-Dearborn"
+      },
+      {
+        "id": "minneapolis",
+        "label": "Minneapolis / St. Paul",
+        "state": "MN",
+        "msa": "Minneapolis-St. Paul-Bloomington"
+      },
+      {
+        "id": "portland-or",
+        "label": "Portland",
+        "state": "OR",
+        "msa": "Portland-Vancouver-Hillsboro"
+      },
+      {
+        "id": "miami",
+        "label": "Miami / Fort Lauderdale",
+        "state": "FL",
+        "msa": "Miami-Fort Lauderdale-Pompano Beach"
+      },
+      {
+        "id": "other",
+        "label": "Other / prefer not to say",
+        "state": null,
+        "msa": null
+      }
+    ]
+  },
+  "strategies": {
+    "eb2_niw": {
+      "name": "EB-2 National Interest Waiver",
+      "shape": "Self-petition. Applicant files I-140 directly without an employer sponsor or PERM.",
+      "cost_range_usd": [
+        12000,
+        18000
+      ],
+      "attorney_type": "Private immigration attorney, independent of your employer.",
+      "priority_date": "Same EB-2 backlog applies. Does not skip the queue for India applicants.",
+      "value_proposition": "Portability. The I-140 is not tied to your employer, so priority date and future portability options survive employer changes. Useful primarily as insurance if there is any chance of changing employers before the green card issues.",
+      "typical_evidence_bar": "National interest of the person's work - publications, patents, media, policy impact, and advanced degree or exceptional-ability equivalent. High bar; not automatic for any senior individual contributor.",
+      "cite": "USCIS Policy Manual Vol. 6, Part F, Chapter 5 (Matter of Dhanasar, 26 I&N Dec. 884 (AAO 2016))"
+    },
+    "eb1b_outstanding_researcher": {
+      "name": "EB-1B Outstanding Researcher",
+      "shape": "Employer-sponsored. Requires 3+ years of research experience and international recognition in a specific academic area.",
+      "priority_date": "EB-1 India — meaningfully faster than EB-2 India but still 8-12 years typical.",
+      "typical_fit": "PhD researchers with publications, citations, editorial roles. Not typically a fit for a mid-level engineer without a research publication record.",
+      "cite": "8 CFR §204.5(i)"
+    },
+    "eb3_downgrade": {
+      "name": "EB-3 Downgrade",
+      "shape": "File a second I-140 under EB-3 using the same approved PERM, if EB-3 queue is moving faster than EB-2 for that country.",
+      "when_useful": "Only when EB-3 India Final Action Date is meaningfully ahead of EB-2 India FAD. Historically rare. As of September 2026, requires bulletin verification before recommending.",
+      "risk": "Salary must still meet the PERM's prevailing wage. Downgrading job classification is a red flag that USCIS may scrutinize."
+    },
+    "cross_chargeability": {
+      "shape": "If spouse is born in a country different from applicant (and that country has a shorter queue), applicant can 'charge' the case to spouse's country of birth per INA §202(b).",
+      "cite": "INA §202(b), 8 CFR §204.5(e)",
+      "requirements": [
+        "Applicant and spouse are both beneficiaries",
+        "Marriage exists at time of visa availability",
+        "Spouse's country of birth has a more current priority date for the same category"
+      ],
+      "not_available_when_spouse_same_country": true
+    }
+  },
+  "wrong_calls_to_avoid": [
+    {
+      "claim": "EB-1 India is 'current or a few years'",
+      "correction": "September 2026: FAD 2022-10-15, DFA 2023-12-01. Realistic wait for a new EB-1 India priority date is 8-12 years typical."
+    },
+    {
+      "claim": "'Same state = safe' for location moves",
+      "correction": "MSA is the legal test, not state. Los Angeles → San Francisco is a restart even though both are in California."
+    },
+    {
+      "claim": "'Same commuting area' by mileage",
+      "correction": "The test is US Census Bureau MSA delineations, not miles. Verify against Census MSA lists."
+    },
+    {
+      "claim": "Title change alone triggers PERM restart",
+      "correction": "Title alone does NOT trigger restart. Only entity change, MSA change, or >50% duty change trigger restart."
+    },
+    {
+      "claim": "PERM approval sets the priority date",
+      "correction": "The DAY DOL RECEIVES ETA 9089 sets the priority date. Approval is many months later and does not change the priority date."
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+# dol-queue.yml — answers the single most-hunted number: where is the DOL queue?
+#
+# Runs automation/fetch_dol_queue.py weekly, which reads the DOL Office of
+# Foreign Labor Certification processing-times page and commits a small JSON
+# (automation/dol_queue.json) the static site reads with no backend:
+#
+#   * which priority-date month PERM applications are in Analyst Review,
+#     Audit Review, and Reconsideration
+#   * the ETA-9141 prevailing-wage receipt month per queue (OEWS / non-OEWS),
+#     plus Redeterminations and Center Director Reviews
+#   * the pending ETA-9141 request backlog per queue, by receipt month, + total
+#   * DOL's published average calendar days to a PERM determination
+#
+# NO LLM. stdlib only. No third-party actions beyond checkout/setup-python.
+#
+# WHY flag.dol.gov IS FETCHED DIRECTLY (and this is not a bypass): unlike
+# uscis.gov and travel.state.gov, which are Cloudflare-walled and therefore read
+# through archive.org only (see RUNBOOK.md), flag.dol.gov answers a plain stdlib
+# client with HTTP 200 — verified 2026-09-02, with and without a User-Agent. Its
+# robots.txt allows /processingtimes and sets no Crawl-delay. We send an honest
+# descriptive UA and never spoof a browser. If the direct read ever fails, the
+# script falls back to the archive.org capture, the same public-mirror route
+# wayback_fetch.py uses. No stealth client anywhere.
+#
+# WHY WEEKLY: DOL's own schedule on that page says PERM and PWD figures refresh
+# at the close of the first work week of each month. A weekly run catches that
+# monthly refresh within 7 days at a cost of one HTTP GET, and — because the
+# script is byte-idempotent — a week with no upstream change produces no commit
+# at all. Daily would be 7x the requests for the same information.
+#
+# NO COMMIT NOISE: fetch_dol_queue.py digests the payload excluding its
+# timestamps and preserves the existing `fetched_at` when the digest is
+# unchanged, so an unchanged week rewrites the file byte-for-byte and `git diff`
+# is empty. The commit step is a no-op on those weeks.
+#
+# HONEST BOUNDARY: this job MIRRORS DOL's numbers, it does not validate them.
+# DOL's as-of dates are per-section and can lag its own schedule badly (observed
+# 2026-09-02: PERM as of 8/28/2026 but prevailing wage still as of 6/30/2026,
+# about two months behind). The JSON carries both as-of dates verbatim so the
+# page can show the real age; this job only flags the lag in its summary.
+#
+# Personal-learning project. NOT legal advice, NOT official guidance.
+
+name: dol-queue
+
+on:
+  schedule:
+    # Wednesdays 12:23 UTC. Deliberately clear of every existing job — a
+    # different day, hour AND minute than daily-monitor (0 14 * * *),
+    # faq-staleness (0 13 * * 1) and monthly-bulletin-auto (0 15 10-20 * *), so
+    # no two runs ever contend for the same commit.
+    - cron: '23 12 * * 3'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dol-queue
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Exit codes: 0 = wrote or confirmed unchanged. 3 = could not fetch at all
+      # (existing JSON deliberately left untouched, so the site keeps serving the
+      # last known good numbers). 4 = fetched but nothing parsed. `|| true` so the
+      # artifact still gets committed; the gate is re-asserted at the end.
+      - name: Fetch DOL processing times
+        id: fetch
+        run: |
+          set +e
+          python3 automation/fetch_dol_queue.py \
+            --out automation/dol_queue.json --verbose
+          echo "rc=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Summary
+        run: |
+          {
+            echo '## DOL processing queue'
+            echo
+            echo "Exit code: \`${{ steps.fetch.outputs.rc }}\`"
+            echo
+            if [ -f automation/dol_queue.json ]; then
+              echo '```json'
+              cat automation/dol_queue.json
+              echo '```'
+            else
+              echo 'No automation/dol_queue.json present.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Reports how stale DOL's OWN figures are. This is informational: a lagging
+      # DOL page is not our bug, but publishing a two-month-old number as "right
+      # now" would be, so the lag is surfaced on every run.
+      - name: Report DOL as-of age
+        if: steps.fetch.outputs.rc == '0'
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import datetime, json, pathlib
+          p = pathlib.Path("automation/dol_queue.json")
+          d = json.loads(p.read_text())
+          today = datetime.date.today()
+          print("")
+          print("### Age of DOL's own figures")
+          print("")
+          print("| Section | DOL as of | Age (days) |")
+          print("|---|---|---|")
+          for key, label in (("perm", "PERM"),
+                             ("prevailing_wage", "Prevailing wage (ETA-9141)")):
+              iso = (d.get(key) or {}).get("as_of")
+              if not iso:
+                  print("| %s | not published | unknown |" % label)
+                  continue
+              age = (today - datetime.date.fromisoformat(iso)).days
+              print("| %s | %s | %d |" % (label, iso, age))
+          PY
+
+      - name: Commit dol_queue.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add automation/dol_queue.json || true
+          if git diff --cached --quiet; then
+            echo "no change to the DOL queue snapshot (idempotent run, nothing to commit)"
+          else
+            git commit -m "dol queue snapshot $(date -u +%Y-%m-%d)" && git push \
+              || echo "push failed"
+          fi
+
+      # A structural break (rc=4: page fetched, nothing parsed) means DOL changed
+      # the page and the parser needs a human. That MUST go red — silently
+      # publishing nothing is how a stale gauge becomes a wrong gauge.
+      - name: Fail if the page was fetched but nothing parsed
+        if: steps.fetch.outputs.rc == '4'
+        run: |
+          echo "::error::fetch_dol_queue.py fetched flag.dol.gov but parsed no figures."
+          echo "DOL likely restructured /processingtimes. See the summary for the recorded reasons."
+          exit 1
+
+      # rc=3 is a fetch failure (DOL down, DNS, archive.org also unreachable).
+      # That is transient and OUR code is fine, and the previous good JSON was
+      # deliberately left in place, so this warns instead of going red — a weekly
+      # job that flashes red on every upstream blip trains people to ignore it.
+      - name: Warn if the page could not be fetched
+        if: steps.fetch.outputs.rc == '3'
+        run: |
+          echo "::warning::Could not fetch flag.dol.gov this run; automation/dol_queue.json left untouched (last known good data preserved). Transient — the next weekly run retries."
+
+      - name: Fail on any unexpected exit code
+        if: steps.fetch.outputs.rc != '0' && steps.fetch.outputs.rc != '3' && steps.fetch.outputs.rc != '4'
+        run: |
+          echo "::error::fetch_dol_queue.py exited ${{ steps.fetch.outputs.rc }} (unexpected)."
+          exit 1

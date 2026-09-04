@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://green-card-tool.local/green_card_tool/fetch_results_schema.json",
+  "title": "Green Card Tool - Freshness Fetch Results",
+  "description": "Structured output that a Claude-assisted FETCH session produces during Step 1 of the monthly freshness workflow. IMPORTANT: a bare cron/Python script CANNOT produce this file. travel.state.gov and uscis.gov are Cloudflare-walled (they 403 both scripts and headless browsers). The only working fetch path is Claude's WebFetch tool against tier-2 law-firm aggregators (which a cron has no access to). So this JSON is the HAND-OFF ARTIFACT between the (Claude-assisted, not pure-cron) fetch step and the mechanical diff/apply steps. The harness (diff_proposal.py) CONSUMES this file; it never scrapes to produce it. See RUNBOOK.md Step 1 for the exact fetch prompt.",
+  "type": "object",
+  "required": ["run_date", "bulletin_month_found", "findings"],
+  "additionalProperties": false,
+  "properties": {
+    "run_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "The canonical date of this freshness run, YYYY-MM-DD. This becomes the proposal filename and meta.last_verified on apply. Set it explicitly so runs are reproducible - do NOT rely on wall-clock time."
+    },
+    "bulletin_month_found": {
+      "type": "string",
+      "description": "The Visa Bulletin month the fetch session actually found live on the sources, e.g. '2026-08' or '2026-09'. If the next month's bulletin is not yet published on any source, report the current live month here and note it in the finding-level notes."
+    },
+    "fetched_by": {
+      "type": "string",
+      "description": "Optional. Who/what ran the fetch, e.g. 'claude-websession-2026-09-10' or 'manual'. For the audit trail only."
+    },
+    "fetch_notes": {
+      "type": "string",
+      "description": "Optional free-text run-level notes: which tier-1 sources 403-blocked (expected), whether the next month was published, aggregator disagreements, etc."
+    },
+    "findings": {
+      "type": "array",
+      "description": "One entry per rulebook field the fetch session gathered a value for. Only include fields the SOP marks in-scope. Do NOT include fields whose source is auto_fetchable:false (uscis-processing-times) unless you are recording a deliberate could-not-verify note; the harness will skip them regardless.",
+      "items": {
+        "type": "object",
+        "required": ["field_path", "found_value", "sources", "confidence", "tier"],
+        "additionalProperties": false,
+        "properties": {
+          "field_path": {
+            "type": "string",
+            "description": "Dot path into rulebook.json, e.g. 'bulletin.categories.EB-2.India.final_action_date'. Category cells live under bulletin.categories.<EB-1|EB-2|EB-3>.<India|China|ROW|Mexico|Philippines>.<final_action_date|date_for_filing|status_note>. Use null-denotes-unavailable and the string 'CURRENT' verbatim per the rulebook convention."
+          },
+          "found_value": {
+            "description": "The value observed on the source(s), in the SAME shape the rulebook stores. A date string 'YYYY-MM-DD', the literal string 'CURRENT', null for UNAVAILABLE/'U', a number, or a [low, high] range array. NEVER invent single-value precision from a range (per SOP 2.3).",
+            "type": ["string", "number", "null", "array", "boolean"]
+          },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string"},
+            "description": "Source ids from sources.json (e.g. 'travel-state-visa-bulletin', 'murthy-visa-bulletin', 'fragomen-visa-bulletin'). At least one. Per SOP: a tier-1 success OR two tier-2 sources in agreement is required to pass. A single tier-2 source alone is low confidence."
+          },
+          "tier": {
+            "type": "integer",
+            "enum": [1, 2, 3],
+            "description": "The BEST tier among the sources that agreed on this value. 1 = government primary (travel.state.gov, flag.dol.gov, uscis). 2 = law-firm aggregator. 3 = community. The verified:false -> true transition is only allowed when tier == 1."
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "high = structured data (table cell) with exact match, or tier-1 confirmation. medium = regex over prose OR two tier-2 sources in agreement. low = inferred/computed/ambiguous OR single tier-2 source. LOW findings are REJECTED by the harness (listed under could-not-verify), never auto-merged."
+          },
+          "notes": {
+            "type": "string",
+            "description": "Optional. Source snippet, raw excerpt, aggregator disagreement detail, or reasoning. The proposal carries this through for human review."
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "run_date": "2026-09-10",
+      "bulletin_month_found": "2026-09",
+      "fetched_by": "claude-websession-example",
+      "fetch_notes": "travel.state.gov 403-blocked as expected; used Murthy + Fragomen for tier-2 agreement. September 2026 bulletin was live.",
+      "findings": [
+        {
+          "field_path": "bulletin.categories.EB-2.India.date_for_filing",
+          "found_value": "2015-01-15",
+          "sources": ["murthy-visa-bulletin", "fragomen-visa-bulletin"],
+          "tier": 2,
+          "confidence": "medium",
+          "notes": "Two aggregators agree; unchanged from prior month. Example of a no_change finding."
+        },
+        {
+          "field_path": "bulletin.categories.EB-2.China.date_for_filing",
+          "found_value": "2022-01-01",
+          "sources": ["murthy-visa-bulletin", "fragomen-visa-bulletin"],
+          "tier": 2,
+          "confidence": "medium",
+          "notes": "Currently null in rulebook -> this is new_coverage. Two tier-2 sources agree so it clears the auto-merge bar; verified flag stays false (tier 2, not tier 1)."
+        },
+        {
+          "field_path": "bulletin.categories.EB-2.India.final_action_date",
+          "found_value": "2013-01-01",
+          "sources": ["travel-state-visa-bulletin"],
+          "tier": 1,
+          "confidence": "high",
+          "notes": "Example verification_transition: EB-2 India FAD was null (Unavailable, verified:false candidate). A tier-1 confirmation both fills the value AND authorizes flipping verified:false -> true."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "last_verified": "2026-08-05",
+    "purpose": "Trusted-source registry for the personal-learning green card questionnaire tool. Each source lists which rulebook.json field paths it can authoritatively update, so the freshness agent knows which source to hit for which field. Tier 1 = official government primary sources. Tier 2 = law firm aggregators and trackers. Tier 3 = community sources for sanity checks only, never authoritative.",
+    "scope_note": "This registry covers only the monthly-cadence fields the freshness agent touches (bulletin dates, USCIS processing times, DOL queue positions, wait-band estimates). It intentionally does NOT list sources for rules-that-don't-move (CFR citations, AC21 provisions, MSA definitions, case names) — those are baked into rulebook.json permanently and never refreshed by the agent."
+  },
+
+  "tiers": {
+    "tier_1_primary": [
+      {
+        "id": "travel-state-visa-bulletin",
+        "name": "U.S. Department of State — Visa Bulletin",
+        "url": "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html",
+        "hosts": ["travel.state.gov"],
+        "covers": [
+          "bulletin.as_of",
+          "bulletin.chart_note",
+          "bulletin.categories.EB-2.India.final_action_date",
+          "bulletin.categories.EB-2.India.date_for_filing",
+          "bulletin.categories.EB-2.India.status_note",
+          "bulletin.categories.EB-2.China.final_action_date",
+          "bulletin.categories.EB-2.China.date_for_filing",
+          "bulletin.categories.EB-2.China.status_note",
+          "bulletin.categories.EB-2.ROW.final_action_date",
+          "bulletin.categories.EB-2.ROW.date_for_filing",
+          "bulletin.categories.EB-2.ROW.status_note",
+          "bulletin.categories.EB-3.India.final_action_date",
+          "bulletin.categories.EB-3.India.date_for_filing",
+          "bulletin.categories.EB-3.India.status_note",
+          "bulletin.categories.EB-3.China.final_action_date",
+          "bulletin.categories.EB-3.China.date_for_filing",
+          "bulletin.categories.EB-3.China.status_note",
+          "bulletin.categories.EB-3.ROW.final_action_date",
+          "bulletin.categories.EB-3.ROW.date_for_filing",
+          "bulletin.categories.EB-3.ROW.status_note",
+          "bulletin.categories.EB-1.India.final_action_date",
+          "bulletin.categories.EB-1.India.date_for_filing",
+          "bulletin.categories.EB-1.India.status_note",
+          "bulletin.categories.EB-1.China.final_action_date",
+          "bulletin.categories.EB-1.China.date_for_filing",
+          "bulletin.categories.EB-1.China.status_note",
+          "bulletin.twelve_month_lookback_eb2_india[]"
+        ],
+        "access_notes": "DOS frequently 403-blocks direct HTTP fetches from non-browser user agents. When fetch fails, fall back to tier-2 aggregators and require agreement across at least two aggregators before accepting the value. Do NOT trust a single tier-2 source alone when tier-1 is unavailable.",
+        "refresh_cadence": "monthly",
+        "authority_score": 5
+      },
+      {
+        "id": "uscis-processing-times",
+        "name": "USCIS — Case Processing Times",
+        "url": "https://egov.uscis.gov/processing-times/",
+        "hosts": ["egov.uscis.gov", "www.uscis.gov"],
+        "covers": [
+          "i140.regular_processing_months",
+          "i485.stages[id=biometrics].duration_after_filing_months",
+          "i485.stages[id=interview_and_approval].duration_after_biometrics_months",
+          "i485.total_duration_months"
+        ],
+        "access_notes": "HUMAN-ONLY — CANNOT AUTO-FETCH. egov.uscis.gov sits behind a Cloudflare 'Verify you are human' bot challenge (interactive checkbox). Verified 2026-08-05: WebFetch returns HTTP 403; a headless browser (Playwright) loads only the Cloudflare 'Performing security verification' interstitial, never the data. Defeating the challenge would be circumventing a federal site's access controls (out of bounds). The freshness agent MUST NOT attempt to fetch this source. Treatment in the tool: link the user out to this page rather than hardcoding a processing-time number. Processing-time values are also the lowest-leverage data in the tool (an 8-vs-11-month I-140 is noise against a 15-year EB-2 India priority-date wait), so a stale hardcoded value is worse than a live link.",
+        "auto_fetchable": false,
+        "human_only_reason": "cloudflare-bot-challenge",
+        "refresh_cadence": "manual-link-out",
+        "authority_score": 5
+      },
+      {
+        "id": "uscis-form-fees",
+        "name": "USCIS — Form Fee Schedule (Form I-907 Premium Processing)",
+        "url": "https://www.uscis.gov/forms/filing-fees",
+        "hosts": ["www.uscis.gov"],
+        "covers": [
+          "i140.premium_processing.duration_business_days",
+          "i140.premium_processing.fee_usd"
+        ],
+        "access_notes": "Fee changes only when USCIS publishes a Federal Register rule. Cadence is effectively yearly or less; agent should treat 'no change' as the default and flag any change hard.",
+        "refresh_cadence": "rarely",
+        "authority_score": 5
+      },
+      {
+        "id": "dol-flag-perm-data",
+        "name": "U.S. Department of Labor — FLAG PERM Disclosure Data",
+        "url": "https://flag.dol.gov/programs/perm",
+        "hosts": ["flag.dol.gov"],
+        "covers": [
+          "perm.total_duration_months",
+          "perm.stages[id=pwd].duration_months",
+          "perm.stages[id=pwd].current_queue_note",
+          "perm.stages[id=pwd].as_of",
+          "perm.stages[id=labor_market_test].duration_months",
+          "perm.stages[id=eta9089_review].duration_months",
+          "perm.stages[id=eta9089_review].current_queue_note",
+          "perm.stages[id=eta9089_review].as_of",
+          "perm.audit.rate_percent",
+          "perm.audit.additional_duration_months"
+        ],
+        "access_notes": "Bulk quarterly CSV / dashboard. DOL publishes lag-corrected queue-position updates on its own cadence; the FAQ page in the OFLC PERM Processing Times section carries the human-readable 'we are currently processing filings from month X' string.",
+        "refresh_cadence": "monthly",
+        "authority_score": 5
+      },
+      {
+        "id": "dol-oflc-processing-times",
+        "name": "U.S. Department of Labor — OFLC Processing Times",
+        "url": "https://www.dol.gov/agencies/eta/foreign-labor/performance",
+        "hosts": ["www.dol.gov"],
+        "covers": [
+          "perm.stages[id=pwd].current_queue_note",
+          "perm.stages[id=eta9089_review].current_queue_note"
+        ],
+        "access_notes": "Companion to FLAG for the queue-position narrative. Cross-check the 'currently processing filings from X' string against flag.dol.gov before accepting.",
+        "refresh_cadence": "monthly",
+        "authority_score": 5
+      },
+      {
+        "id": "ecfr-title-20-part-656",
+        "name": "eCFR — 20 CFR Part 656 (PERM regulations)",
+        "url": "https://www.ecfr.gov/current/title-20/chapter-V/part-656",
+        "hosts": ["www.ecfr.gov"],
+        "covers": [],
+        "access_notes": "Rules-that-don't-move source. Referenced by rulebook for citation strings only. NOT touched by the freshness agent — if this changes, the change is a legislative or rulemaking event that requires human review of the entire rulebook, not a monthly refresh.",
+        "refresh_cadence": "rarely",
+        "authority_score": 5
+      },
+      {
+        "id": "ecfr-title-8-part-214",
+        "name": "eCFR — 8 CFR Part 214 (H-1B nonimmigrant regulations)",
+        "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214",
+        "hosts": ["www.ecfr.gov"],
+        "covers": [],
+        "access_notes": "Rules-that-don't-move. Freshness agent must NOT touch fields citing this source.",
+        "refresh_cadence": "rarely",
+        "authority_score": 5
+      },
+      {
+        "id": "ecfr-title-8-part-204",
+        "name": "eCFR — 8 CFR Part 204 (immigrant petition regulations)",
+        "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-204",
+        "hosts": ["www.ecfr.gov"],
+        "covers": [],
+        "access_notes": "Rules-that-don't-move. Freshness agent must NOT touch fields citing this source.",
+        "refresh_cadence": "rarely",
+        "authority_score": 5
+      },
+      {
+        "id": "uscis-policy-manual",
+        "name": "USCIS Policy Manual",
+        "url": "https://www.uscis.gov/policy-manual",
+        "hosts": ["www.uscis.gov"],
+        "covers": [],
+        "access_notes": "Rules and policy interpretations (e.g. Matter of Dhanasar for EB-2 NIW). Not a monthly-refresh source. Structural changes require full-rulebook review.",
+        "refresh_cadence": "rarely",
+        "authority_score": 5
+      },
+      {
+        "id": "census-msa-delineations",
+        "name": "U.S. Census Bureau — Metropolitan and Micropolitan Statistical Areas",
+        "url": "https://www.census.gov/programs-surveys/metro-micro/about/delineation-files.html",
+        "hosts": ["www.census.gov"],
+        "covers": [],
+        "access_notes": "MSA delineations. Census updates these on a multi-year cycle. NOT touched by the freshness agent — a Census MSA revision is a rulebook-wide review event, not a monthly refresh.",
+        "refresh_cadence": "rarely",
+        "authority_score": 5
+      },
+      {
+        "id": "congress-ac21",
+        "name": "U.S. Congress — American Competitiveness in the 21st Century Act (Pub. L. 106-313)",
+        "url": "https://www.congress.gov/bill/106th-congress/house-bill/2870",
+        "hosts": ["www.congress.gov"],
+        "covers": [],
+        "access_notes": "Statute. Not touched by the freshness agent. Only relevant if Congress amends AC21, which is a legislative event.",
+        "refresh_cadence": "rarely",
+        "authority_score": 5
+      },
+      {
+        "id": "ina-202b",
+        "name": "Immigration and Nationality Act — INA §202(b) (cross-chargeability)",
+        "url": "https://www.uscis.gov/laws-and-policy/legislation/immigration-and-nationality-act",
+        "hosts": ["www.uscis.gov"],
+        "covers": [],
+        "access_notes": "Statutory citation for cross-chargeability. Rules-that-don't-move.",
+        "refresh_cadence": "rarely",
+        "authority_score": 5
+      }
+    ],
+
+    "tier_2_aggregators": [
+      {
+        "id": "murthy-visa-bulletin",
+        "name": "Murthy Law Firm — Visa Bulletin analysis",
+        "url": "https://www.murthy.com/priority-dates-and-processing-times/",
+        "hosts": ["www.murthy.com", "murthy.com"],
+        "covers": [
+          "bulletin.categories.EB-2.India.final_action_date",
+          "bulletin.categories.EB-2.India.date_for_filing",
+          "bulletin.categories.EB-2.China.final_action_date",
+          "bulletin.categories.EB-2.China.date_for_filing",
+          "bulletin.categories.EB-3.India.final_action_date",
+          "bulletin.categories.EB-3.India.date_for_filing",
+          "bulletin.categories.EB-3.China.final_action_date",
+          "bulletin.categories.EB-3.China.date_for_filing",
+          "bulletin.categories.EB-1.India.final_action_date",
+          "bulletin.categories.EB-1.India.date_for_filing",
+          "bulletin.twelve_month_lookback_eb2_india[]"
+        ],
+        "access_notes": "Republishes the DOS Visa Bulletin with plain-language commentary. Reliably fetches. Cross-check numbers against a second aggregator before accepting when DOS is 403-blocked.",
+        "refresh_cadence": "monthly",
+        "authority_score": 3
+      },
+      {
+        "id": "fragomen-visa-bulletin",
+        "name": "Fragomen — Visa Bulletin summaries",
+        "url": "https://www.fragomen.com/insights/",
+        "hosts": ["www.fragomen.com", "fragomen.com"],
+        "covers": [
+          "bulletin.categories.EB-2.India.final_action_date",
+          "bulletin.categories.EB-2.India.date_for_filing",
+          "bulletin.categories.EB-2.China.final_action_date",
+          "bulletin.categories.EB-2.China.date_for_filing",
+          "bulletin.categories.EB-3.India.final_action_date",
+          "bulletin.categories.EB-3.India.date_for_filing",
+          "bulletin.categories.EB-3.China.final_action_date",
+          "bulletin.categories.EB-3.China.date_for_filing",
+          "bulletin.categories.EB-1.India.final_action_date",
+          "bulletin.categories.EB-1.India.date_for_filing",
+          "i140.regular_processing_months",
+          "perm.stages[id=pwd].current_queue_note",
+          "perm.stages[id=eta9089_review].current_queue_note"
+        ],
+        "access_notes": "Large-firm client alerts. Coverage is consistent for the top EB categories and generally posts within 48 hours of the DOS release. Good second tier-2 source to cross-check Murthy.",
+        "refresh_cadence": "monthly",
+        "authority_score": 3
+      },
+      {
+        "id": "boundless-visa-bulletin",
+        "name": "Boundless — Visa Bulletin explainer",
+        "url": "https://www.boundless.com/immigration-resources/visa-bulletin/",
+        "hosts": ["www.boundless.com", "boundless.com"],
+        "covers": [
+          "bulletin.categories.EB-2.India.final_action_date",
+          "bulletin.categories.EB-2.India.date_for_filing",
+          "bulletin.categories.EB-2.China.final_action_date",
+          "bulletin.categories.EB-3.India.final_action_date",
+          "bulletin.categories.EB-3.China.final_action_date",
+          "bulletin.categories.EB-1.India.final_action_date",
+          "bulletin.chart_note"
+        ],
+        "access_notes": "Consumer-focused platform. Chart-note (which chart USCIS honors) is often surfaced clearly. Less reliable for less-common categories.",
+        "refresh_cadence": "monthly",
+        "authority_score": 2
+      },
+      {
+        "id": "morgan-lewis-visa-bulletin",
+        "name": "Morgan Lewis — Immigration client alerts",
+        "url": "https://www.morganlewis.com/pubs/",
+        "hosts": ["www.morganlewis.com", "morganlewis.com"],
+        "covers": [
+          "bulletin.categories.EB-1.India.final_action_date",
+          "bulletin.categories.EB-1.India.date_for_filing",
+          "bulletin.categories.EB-2.India.final_action_date",
+          "bulletin.categories.EB-2.China.final_action_date",
+          "wait_estimates.bands"
+        ],
+        "access_notes": "Cited by rulebook wait-estimate bands for EB-1 India. Publishes structural analysis alongside monthly numbers.",
+        "refresh_cadence": "monthly",
+        "authority_score": 3
+      },
+      {
+        "id": "greencardclock",
+        "name": "Green Card Clock — priority-date and wait-band tracker",
+        "url": "https://www.greencardclock.com/",
+        "hosts": ["www.greencardclock.com", "greencardclock.com"],
+        "covers": [
+          "bulletin.categories.EB-2.India.final_action_date",
+          "bulletin.categories.EB-3.India.final_action_date",
+          "bulletin.categories.EB-1.India.final_action_date",
+          "wait_estimates.bands"
+        ],
+        "access_notes": "Community-driven tracker aggregating bulletin history plus wait-time models. Reliable for structural wait-band context; treat point-in-time date claims as tier-2 (cross-check).",
+        "refresh_cadence": "monthly",
+        "authority_score": 2
+      },
+      {
+        "id": "usa-visa-law",
+        "name": "USA Visa Law — Visa Bulletin coverage",
+        "url": "https://www.usavisalaw.com/",
+        "hosts": ["www.usavisalaw.com", "usavisalaw.com"],
+        "covers": [
+          "bulletin.categories.EB-2.India.final_action_date",
+          "bulletin.categories.EB-2.India.date_for_filing",
+          "bulletin.categories.EB-3.India.final_action_date",
+          "bulletin.categories.EB-3.India.date_for_filing",
+          "bulletin.categories.EB-1.India.final_action_date",
+          "wait_estimates.bands"
+        ],
+        "access_notes": "Cited by rulebook wait-estimate bands. Consistent monthly Visa Bulletin summaries.",
+        "refresh_cadence": "monthly",
+        "authority_score": 2
+      }
+    ],
+
+    "tier_3_community": [
+      {
+        "id": "trackitt-perm",
+        "name": "Trackitt — PERM and I-140 case tracker",
+        "url": "https://www.trackitt.com/",
+        "hosts": ["www.trackitt.com", "trackitt.com"],
+        "covers": [
+          "perm.stages[id=pwd].current_queue_note",
+          "perm.stages[id=eta9089_review].current_queue_note",
+          "i140.regular_processing_months"
+        ],
+        "access_notes": "Anonymous user-reported case timeline data. Skew: heavily India-cohort, self-selected reporters. Use for directional sanity check only; never accept a Trackitt value as authoritative.",
+        "refresh_cadence": "monthly",
+        "authority_score": 1
+      },
+      {
+        "id": "reddit-immigration",
+        "name": "Reddit — r/immigration and r/USCIS",
+        "url": "https://www.reddit.com/r/immigration/",
+        "hosts": ["www.reddit.com", "reddit.com"],
+        "covers": [],
+        "access_notes": "Anecdotal discussion. Never authoritative. Only useful for detecting that something changed (e.g. USCIS quietly updated a policy) before tier-1 catches up. Any Reddit-sourced claim must be independently verified against a tier-1 source before it is proposed as a rulebook update.",
+        "refresh_cadence": "rarely",
+        "authority_score": 1
+      }
+    ]
+  }
+}

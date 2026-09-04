@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "last_verified": "2026-08-07",
+    "purpose": "Trusted-source registry for the DAILY immigration-news monitoring layer of the personal-learning green card tool. This is SEPARATE from sources.json (which registers bulletin-DATA sources for the monthly facts refresh). This registry lists sources that publish immigration NEWS (policy, rule-making, litigation, lottery cycles, RFE/processing trends) so a Claude-assisted fetch session knows where to look and how much to trust each source. Tier 1 = official government newsrooms. Tier 2 = law-firm and practitioner alerts (the reliably-fetchable workhorses). Tier 3 = aggregators and community (sanity-check only, never authoritative).",
+    "disclaimer": "Personal-learning project. NOT legal advice. NOT official guidance. Nothing here is a substitute for a licensed immigration attorney.",
+    "scope_note": "Categories tracked: EB-1, EB-2, EB-3, and H-1B ONLY (H-1B cap, lottery, extensions, RFEs, portability). Explicitly OUT of scope: EB-4, EB-5, family-based, asylum/refugee, enforcement/ICE, naturalization. This narrow scope keeps signal-to-noise high — an item that does not touch EB-1/2/3 or H-1B should not be reported.",
+    "covers_vocabulary": [
+      "policy",
+      "rule-making",
+      "litigation",
+      "h1b-lottery",
+      "h1b-cap",
+      "processing-times",
+      "visa-bulletin",
+      "rfe-trends",
+      "priority-dates"
+    ],
+    "cloudflare_note": "Most tier-1 official sites (uscis.gov, travel.state.gov, dol.gov, federalregister.gov) 403 plain scripts and headless browsers (Cloudflare / bot walls). A bare cron CANNOT fetch them. The only working path is Claude's WebFetch tool, and even then tier-1 often fails — expect to fall back to tier-2 practitioner sites, which fetch reliably. See NEWS_RUNBOOK.md.",
+    "fetch_status_note": "Each source below carries a fetch_status reflecting what a plain stdlib/urllib client (fetch_feeds.py) can actually reach, VERIFIED LIVE on 2026-08-07. Values: 'live' = direct feed/API returns HTTP 200 to a scripted client; 'blocked' = 403 / Cloudflare / bot wall; 'no-feed' = the direct RSS/feed path 404s or does not exist; 'via-google-news' = the publisher has no working direct feed for us but its stories are captured through the Google News RSS aggregator query instead. Sources are NEVER deleted — a 'blocked'/'no-feed' source is still a valid tier-1/2 authority for the Claude-assisted WebFetch path; the annotation only documents the unattended-script reality."
+  },
+
+  "tiers": {
+    "tier_1_official": [
+      {
+        "id": "uscis-newsroom",
+        "name": "USCIS Newsroom — All News",
+        "url": "https://www.uscis.gov/newsroom/all-news",
+        "hosts": ["www.uscis.gov", "uscis.gov"],
+        "covers": ["policy", "rule-making", "h1b-cap", "h1b-lottery", "processing-times", "rfe-trends"],
+        "access_notes": "Primary source for USCIS policy alerts, H-1B cap-season announcements, fee rules, and policy-manual updates. Cloudflare-walled: WebFetch frequently returns 403 and headless browsers see only the bot interstitial. Expect failure and fall back to tier-2. When it DOES fetch, treat as authoritative (tier 1).",
+        "refresh_cadence": "daily",
+        "authority_score": 5,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "uscis.gov Cloudflare-blocks scripted clients; the newsroom RSS also blocks. Unattended path captures USCIS stories through the Google News RSS query instead."
+      },
+      {
+        "id": "dos-visa-news",
+        "name": "U.S. Department of State — Visa News & Announcements",
+        "url": "https://travel.state.gov/content/travel/en/News/visas-news.html",
+        "hosts": ["travel.state.gov"],
+        "covers": ["policy", "visa-bulletin", "priority-dates"],
+        "access_notes": "DOS visa news and Visa Bulletin release announcements. Same Cloudflare 403 behavior as travel.state.gov generally (verified for the bulletin data path in sources.json). Expect fallback to tier-2. A NEW Visa Bulletin release here is the strongest affects_facts trigger — it feeds the monthly diff_proposal.py flow.",
+        "refresh_cadence": "daily",
+        "authority_score": 5,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "travel.state.gov Cloudflare-blocks scripted clients. Visa Bulletin release headlines are captured via the Google News query; the bulletin DATA itself is handled by the monthly fetch_bulletin.py path, not this daily fetcher."
+      },
+      {
+        "id": "dol-oflc-announcements",
+        "name": "U.S. DOL OFLC — Foreign Labor Certification Announcements",
+        "url": "https://www.dol.gov/agencies/eta/foreign-labor",
+        "hosts": ["www.dol.gov", "flag.dol.gov"],
+        "covers": ["policy", "processing-times", "rule-making"],
+        "access_notes": "PERM/PWD program announcements, prevailing-wage and ETA-9089 processing bulletins, and OFLC rule notices relevant to the EB-2/EB-3 labor-certification step. Rate-limited to scripts; may 403. Fall back to tier-2 practitioner summaries.",
+        "refresh_cadence": "daily",
+        "authority_score": 5,
+        "fetch_status": "blocked",
+        "fetch_status_detail": "dol.gov/rss/releases.xml returns HTTP 403 to scripted clients (verified 2026-08-07). No usable direct feed for the unattended path; DOL/OFLC stories are also covered via the Google News query. flag.dol.gov/processingtimes HTML scrape was removed from the fetcher as unreliable."
+      },
+      {
+        "id": "federal-register-uscis",
+        "name": "Federal Register — USCIS (DHS) Immigration Rules",
+        "url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+        "hosts": ["www.federalregister.gov", "federalregister.gov"],
+        "covers": ["rule-making", "policy", "h1b-cap"],
+        "access_notes": "Authoritative source for proposed and final rules (fee schedules, H-1B modernization/registration rules, wage-selection rules). A final or proposed rule affecting H-1B or EB-1/2/3 filing/fees is a high-importance, affects_facts item. Federal Register has a public API and IS reachable by an unauthenticated stdlib client (JSON, no auth). Cross-check any headline against the practitioner tier for plain-language context.",
+        "refresh_cadence": "daily",
+        "authority_score": 5,
+        "fetch_status": "live",
+        "fetch_status_detail": "Federal Register API v1 (documents.json) returns HTTP 200 to the unattended fetcher, no auth. This is the ONLY tier-1 source the daily script reaches directly. All four agency slugs verified live against /api/v1/agencies.json on 2026-08-07: u-s-citizenship-and-immigration-services, state-department, employment-and-training-administration, homeland-security-department."
+      },
+      {
+        "id": "uscis-policy-manual-updates",
+        "name": "USCIS Policy Manual — Updates",
+        "url": "https://www.uscis.gov/policy-manual/updates",
+        "hosts": ["www.uscis.gov", "uscis.gov"],
+        "covers": ["policy", "rfe-trends"],
+        "access_notes": "Policy Manual change log (e.g. EB-2 NIW guidance, H-1B specialty-occupation criteria, adjudication standards driving RFE trends). Cloudflare-walled like the rest of uscis.gov — expect 403 and fall back to tier-2 alerts that summarize the change.",
+        "refresh_cadence": "daily",
+        "authority_score": 5,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "uscis.gov Cloudflare-blocks scripted clients. Policy-manual change stories are captured via the Google News query and via tier-2 practitioner summaries."
+      }
+    ],
+
+    "tier_2_practitioner": [
+      {
+        "id": "aila-news",
+        "name": "AILA — American Immigration Lawyers Association news",
+        "url": "https://www.aila.org/library",
+        "hosts": ["www.aila.org", "aila.org"],
+        "covers": ["policy", "rule-making", "litigation", "h1b-cap", "h1b-lottery", "rfe-trends", "priority-dates"],
+        "access_notes": "Practitioner association; authoritative-adjacent. Strong for litigation tracking and rapid policy readouts. Good primary tier-2 workhorse to pair with a second source for agreement.",
+        "refresh_cadence": "daily",
+        "authority_score": 3,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "aila.org/feed returns HTTP 404 (verified 2026-08-07) — no working direct RSS for the unattended path. AILA stories are captured via the Google News query. Still directly fetchable via Claude WebFetch."
+      },
+      {
+        "id": "fragomen-insights",
+        "name": "Fragomen — Immigration Insights & Alerts",
+        "url": "https://www.fragomen.com/insights/",
+        "hosts": ["www.fragomen.com", "fragomen.com"],
+        "covers": ["policy", "rule-making", "h1b-cap", "h1b-lottery", "processing-times", "visa-bulletin", "priority-dates"],
+        "access_notes": "Large-firm client alerts, usually within 24-48h of a government action. Consistent coverage across H-1B and EB categories. Pairs well with BAL for two-source agreement.",
+        "refresh_cadence": "daily",
+        "authority_score": 3,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "fragomen.com/insights/feed returns HTTP 404 (verified 2026-08-07) — no working direct RSS for the unattended path. Fragomen stories are captured via the Google News query. Still directly fetchable via Claude WebFetch."
+      },
+      {
+        "id": "bal-alerts",
+        "name": "Berry Appleman & Leiden (BAL) — Immigration News",
+        "url": "https://www.bal.com/bal-news/",
+        "hosts": ["www.bal.com", "bal.com"],
+        "covers": ["policy", "rule-making", "h1b-cap", "h1b-lottery", "processing-times", "priority-dates"],
+        "access_notes": "Corporate-immigration firm with fast, structured news alerts. Strong on H-1B cap-season mechanics and USCIS operational changes.",
+        "refresh_cadence": "daily",
+        "authority_score": 3,
+        "fetch_status": "live",
+        "fetch_status_detail": "https://www.bal.com/feed/ returns HTTP 200 (application/rss+xml) to the unattended fetcher (verified 2026-08-07). Note the working feed is /feed/, not the /bal-news/ landing page in 'url' above. Fetched directly as source_id 'bal-alerts' (tier 2)."
+      },
+      {
+        "id": "murthy-news",
+        "name": "Murthy Law Firm — Immigration Bulletins",
+        "url": "https://www.murthy.com/news/",
+        "hosts": ["www.murthy.com", "murthy.com"],
+        "covers": ["policy", "h1b-cap", "h1b-lottery", "visa-bulletin", "priority-dates", "rfe-trends"],
+        "access_notes": "Plain-language bulletins with a heavy India/EB-2-EB-3 readership focus — useful for priority-date and retrogression context. Already a trusted tier-2 in the monthly bulletin flow (sources.json).",
+        "refresh_cadence": "daily",
+        "authority_score": 3,
+        "fetch_status": "live",
+        "fetch_status_detail": "https://www.murthy.com/feed/ returns HTTP 200 (application/rss+xml) to the unattended fetcher (verified 2026-08-07). Fetched directly as source_id 'murthy-news' (tier 2)."
+      },
+      {
+        "id": "boundless-news",
+        "name": "Boundless — Immigration News",
+        "url": "https://www.boundless.com/blog/",
+        "hosts": ["www.boundless.com", "boundless.com"],
+        "covers": ["policy", "h1b-cap", "h1b-lottery", "processing-times", "visa-bulletin"],
+        "access_notes": "Consumer-focused explainers; good for confirming that a change is real and for plain-language summaries. Slightly less authoritative than the big firms — treat as a second-agreement source, not a sole citation.",
+        "refresh_cadence": "daily",
+        "authority_score": 3,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "boundless.com/feed returns HTTP 404 (verified 2026-08-07) — no working direct RSS for the unattended path. Boundless stories are captured via the Google News query. Still directly fetchable via Claude WebFetch."
+      },
+      {
+        "id": "morgan-lewis-immigration",
+        "name": "Morgan Lewis — Immigration Alerts",
+        "url": "https://www.morganlewis.com/pubs/",
+        "hosts": ["www.morganlewis.com", "morganlewis.com"],
+        "covers": ["policy", "rule-making", "litigation", "h1b-cap", "priority-dates"],
+        "access_notes": "Big-firm client alerts with structural/legal analysis. Strong for rule-making and litigation. Good second source to cross-check Fragomen or BAL.",
+        "refresh_cadence": "daily",
+        "authority_score": 3,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "morganlewis.com/feed returns HTTP 404 (verified 2026-08-07) — no working direct RSS for the unattended path. Morgan Lewis stories are captured via the Google News query. Still directly fetchable via Claude WebFetch."
+      },
+      {
+        "id": "nafsa-news",
+        "name": "NAFSA — Immigration Policy & Practice Resources",
+        "url": "https://www.nafsa.org/professional-resources/browse-by-interest/immigration-policy-and-practice",
+        "hosts": ["www.nafsa.org", "nafsa.org"],
+        "covers": ["policy", "rule-making", "h1b-cap", "processing-times"],
+        "access_notes": "International-education association tracking F/J/H visa policy. Useful for H-1B and cap-gap context and for policy-change confirmation.",
+        "refresh_cadence": "daily",
+        "authority_score": 3,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "nafsa.org has no working RSS feed for the unattended path (rss.xml 404, verified 2026-08-07). NAFSA stories are captured via the Google News query. Still directly fetchable via Claude WebFetch."
+      }
+    ],
+
+    "tier_3_aggregator": [
+      {
+        "id": "forbes-immigration-nfap",
+        "name": "Forbes — Immigration (Stuart Anderson / NFAP)",
+        "url": "https://www.forbes.com/sites/stuartanderson/",
+        "hosts": ["www.forbes.com", "forbes.com"],
+        "covers": ["policy", "rule-making", "litigation", "h1b-cap", "h1b-lottery"],
+        "access_notes": "Stuart Anderson (National Foundation for American Policy / NFAP) writes data-driven analysis of H-1B and employment-based policy. Higher-quality than typical aggregators, but still commentary — cite for context and framing, never as the sole authority for a fact change. Confirm any factual claim against tier-1 or two tier-2 sources.",
+        "refresh_cadence": "daily",
+        "authority_score": 2,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "NFAP's own /feed 404s and the Forbes column has no clean per-author RSS for the unattended path. Stuart Anderson / NFAP pieces are captured via the Google News query."
+      },
+      {
+        "id": "immigration-impact",
+        "name": "Immigration Impact (American Immigration Council)",
+        "url": "https://immigrationimpact.com/",
+        "hosts": ["immigrationimpact.com"],
+        "covers": ["policy", "litigation", "rule-making"],
+        "access_notes": "Advocacy-org news and litigation tracking. Useful early signal on lawsuits and policy shifts affecting employment-based categories. Perspective-driven — treat as a lead to verify, not authoritative.",
+        "refresh_cadence": "daily",
+        "authority_score": 2,
+        "fetch_status": "via-google-news",
+        "fetch_status_detail": "Not fetched directly by the unattended script; immigrationimpact.com stories surface through the Google News query when in scope."
+      },
+      {
+        "id": "reddit-immigration",
+        "name": "Reddit — r/immigration and r/h1b",
+        "url": "https://www.reddit.com/r/h1b/",
+        "hosts": ["www.reddit.com", "reddit.com"],
+        "covers": ["h1b-lottery", "h1b-cap", "rfe-trends", "processing-times"],
+        "access_notes": "Community discussion. NEVER authoritative. Only useful for detecting that something MIGHT have changed (e.g. a wave of RFEs or a lottery-selection round) before official sources confirm. Any Reddit-sourced signal MUST be independently verified against tier-1 or two tier-2 sources before it appears in a digest as anything other than an unconfirmed low-confidence note.",
+        "refresh_cadence": "daily",
+        "authority_score": 1,
+        "fetch_status": "live",
+        "fetch_status_detail": "https://www.reddit.com/r/h1b/.rss returns HTTP 200 (application/atom+xml) to the unattended fetcher (verified 2026-08-07). Fetched directly as source_id 'reddit-immigration' (tier 3, low confidence, never sets affects_facts)."
+      }
+    ]
+  }
+}
