@@ -97,8 +97,28 @@ Two licenses, on purpose:
 - **Data and written content** — CC BY 4.0. See [`LICENSE-DATA`](LICENSE-DATA).
   Use it freely, including commercially; just credit it.
 
+**The attribution condition is deliberately narrow.** It covers the schema, the
+classification choices, and the written documentation — the original expression
+added here. It does **not** cover the individual facts extracted from public
+records: outcomes, dates, dockets, quoted agency text. Those are public domain and
+free to take with no obligation.
+
+Concretely:
+
+| What you're doing | Obligation |
+|---|---|
+| Reusing the dataset as published, or its docs | Attribute |
+| Extracting facts, building your own structure | None |
+| Collecting the source documents from the agency yourself | None — this license doesn't reach you |
+
+That last row is the normal case for public-access projects that scrape the
+originating agency, and nothing here constrains it.
+
 Underlying federal government works are public domain and not claimed here.
-[`NOTICE`](NOTICE) spells out exactly which files fall under which license.
+`LICENSE-DATA` states the scope precisely and explains the reasoning
+(*Feist Publications v. Rural Telephone Service*, 499 U.S. 340 (1991) — no US
+database right, thin compilation copyright only). [`NOTICE`](NOTICE) maps which
+files fall under which license.
 
 If you use the decision dataset in research or writing, a citation is in
 `LICENSE-DATA`, and I would genuinely like to hear about it.

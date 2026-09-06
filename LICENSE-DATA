@@ -37,17 +37,52 @@ Suggested citation:
 
 Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
 
-ON THE UNDERLYING SOURCES
+SCOPE - WHAT CC BY DOES AND DOES NOT COVER
 
-The federal government works these datasets are derived FROM are in the public
-domain and are not claimed here: the Department of State Visa Bulletin, DOL PERM
-disclosure files, USCIS Administrative Appeals Office decisions, USCIS inventory
-data, the Federal Register, and the eCFR. What is licensed here is the parsing,
-structuring, and presentation of that material, not the underlying documents.
+This matters, so it is stated precisely rather than left to inference.
+
+NOT COVERED. The federal government works these datasets are derived FROM are in
+the public domain under 17 U.S.C. 105 and no rights are asserted over them: the
+Department of State Visa Bulletin, DOL PERM disclosure files, USCIS
+Administrative Appeals Office decisions, USCIS inventory data, the Federal
+Register, and the eCFR.
+
+ALSO NOT COVERED. Any individual fact extracted from those works - an outcome, a
+date, a docket number, a cutoff, a quoted span of the agency's own words - is
+likewise public domain. Facts are not copyrightable, and this project does not
+purport to make them so by putting them in a table. If you want the underlying
+facts and nothing else, take them freely and without attribution.
+
+COVERED. What CC BY attaches to is the original expression this project added:
+the selection of fields, the schema and its documentation, the classification
+choices, and the written prose in the data dictionary, methodology note, and
+site pages.
+
+WHY SAY IT THIS WAY. Under Feist Publications v. Rural Telephone Service, 499
+U.S. 340 (1991), the United States has no "sweat of the brow" database right -
+compilation copyright is thin and reaches only original selection and
+arrangement. Asserting more than that over public records is a real problem
+(sometimes called copyfraud), and it would also be self-defeating: the point of
+this dataset is that people use it. So the attribution condition is deliberately
+narrow. It asks for credit for the work of building the thing, not for the
+public records inside it.
+
+PRACTICAL EFFECT FOR REUSERS
+
+  - Reusing the dataset as published, or its documentation: attribute.
+  - Extracting facts and rebuilding your own structure: no obligation.
+  - Ingesting the source documents directly from the agency: no obligation, and
+    this license is irrelevant to you.
+
+That last case is the normal one for public-access projects such as the Free Law
+Project, which collect from the originating agency rather than from a
+third-party dataset. Nothing here constrains that.
+
+AUDITABILITY
 
 Because every parsed field records the span of source text it was extracted
-from, any row can be audited against the original government PDF. If you find a
-discrepancy, the source document governs, not this dataset.
+from, any row can be audited against the original government document. If you
+find a discrepancy, the source document governs, not this dataset.
 
 NOT LEGAL ADVICE
 

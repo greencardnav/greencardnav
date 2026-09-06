@@ -12,8 +12,20 @@ DATA AND WRITTEN CONTENT — CC BY 4.0 (see LICENSE-DATA)
   The derived datasets (niw-decisions.json, vb_history.json, perm_history.json,
   eb_inventory.json, rulebook.json) and the explanatory prose in the HTML pages.
 
-  Attribution is the one condition. Use it commercially if you want, just
-  credit it. Suggested citation is in LICENSE-DATA.
+  Attribution is the one condition, and its SCOPE IS DELIBERATELY NARROW: it
+  covers the schema, the classification choices, and the written documentation -
+  the original expression this project added. It does NOT cover the individual
+  facts extracted from public records (outcomes, dates, dockets, quoted agency
+  text), which are public domain and free to take without attribution.
+
+  So: reusing the dataset as published, attribute. Extracting facts and building
+  your own structure, no obligation. Collecting the source documents directly
+  from the agency, this license does not apply to you at all - which is the
+  normal case for public-access projects that scrape the originating agency.
+
+  LICENSE-DATA states the scope precisely and explains why (Feist Publications
+  v. Rural Telephone Service, 499 U.S. 340 (1991): no US database right, thin
+  compilation copyright only). Suggested citation is there too.
 
 UNDERLYING GOVERNMENT WORKS — public domain, not claimed here
 
