@@ -63,3 +63,12 @@ aao-indexer/*.log
 
 # Test-only downloads (axe-core for the a11y audit). Never served to the site.
 .cache/
+
+# MSPB decision indexer: the SCRIPTS are versioned, the data is not.
+#   cache/  public MSPB decision PDFs, re-downloadable from the manifest
+#   out/    manifest + derived artifacts, regenerated from cache/ in minutes
+# out/ is deliberately NOT committed: manifest.json carries appellant NAMES (MSPB
+# publishes them; USCIS does not), and this repo is public. The parser drops those
+# names, but the raw manifest it reads from must not be republished here.
+mspb-indexer/cache/
+mspb-indexer/out/
