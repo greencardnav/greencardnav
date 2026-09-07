@@ -30,6 +30,20 @@ MSPB also supports analysis the immigration corpus cannot:
 | Access | paginated HTML listing | **single JSON manifest** |
 | Names in source | redacted by USCIS | **published in full** |
 
+## Free Law Project already collects these documents
+
+Worth stating plainly so this is not mistaken for novel access: juriscraper ships
+`mspb_u.py`, which reads
+`mspb.gov/decisions/nonprecedential/NonPrecedentialDecisions_Manifest_Table.json`
+— the same directory this tool reads its manifest from. FLP has scraped MSPB
+non-precedential decisions since 2014.
+
+What FLP does is **collect the documents**. What this tool does is **extract
+structured fields deterministically from them** — outcome, deciding office,
+employing agency, clause polarity and scope, reasoning-phrase counts — each with
+the matched span stored so any row can be audited. Those two things are
+complementary, and the access is not the contribution here.
+
 ## The identity problem
 
 This is the substantive difference between the two corpora and it drove the design.
@@ -42,6 +56,19 @@ Those names are already public, so nothing here is a secrecy question. But a
 structured, searchable index of named individuals' employment disputes is not the same
 artifact as the same names scattered across ten thousand agency PDFs — aggregation
 collapses the practical obscurity that makes the originals relatively harmless.
+
+**That argument is weaker than it first looks, and the honest version is worth
+stating.** Free Law Project's `mspb_u.py` builds each case name as
+`f"{APL_FIRST_NAME} {APL_LAST_NAME} v. {AGENCY}"` straight from the same manifest,
+so **CourtListener already hosts a structured, searchable index of these names.**
+The practical obscurity this tool is declining to erode has, in large part,
+already been eroded by a well-resourced public-access project acting entirely
+reasonably.
+
+So dropping the names here is not a claim to be preventing something. It is a
+narrower judgement: this tool has no analytical need for them, so it does not
+carry them. Every question it answers is about offices, agencies, outcomes and
+reasoning.
 
 So this tool **discards identity at parse time** rather than publishing it and hoping
 nobody aggregates:

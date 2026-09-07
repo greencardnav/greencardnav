@@ -1,6 +1,11 @@
-<!-- Fixture: USCIS AAO non-precedent decision listing, results region only.
+<!-- Fixture: USCIS AAO non-precedent decision listing, results rows only.
      Fetched 2026-09-06 from the public listing. US Government work, 17 U.S.C. 105.
-     AAO redacts petitioner identity before publication, so no personal names here. -->
+     AAO redacts petitioner identity before publication, so no personal names here.
+     Built by serialising the real row ELEMENTS with lxml. An earlier version was
+     cut with a regex that did not balance closing </div> tags, so every row nested
+     the ones after it and each case_name became all remaining titles concatenated.
+     FLP's own harness caught that; my offline test did not, because it only checked
+     that name was non-empty and the display was truncated to 42 chars. -->
 <html><body><div class="view-content">
 <div class="views-row first">
 <div class="views-field views-item-title">
@@ -17,7 +22,9 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-914,&quot;Sec. 101(a)(15)(T) of the INA&quot;
+        I-914,"Sec. 101(a)(15)(T) of the INA"
+    </div>
+</div></div>
     
 <div class="views-row">
 <div class="views-field views-item-title">
@@ -34,7 +41,9 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-140,&quot;Secs. 203(b)(2)(A)-(B) of the INA&quot;
+        I-140,"Secs. 203(b)(2)(A)-(B) of the INA"
+    </div>
+</div></div>
     
 <div class="views-row">
 <div class="views-field views-item-title">
@@ -51,7 +60,9 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-140,&quot;Secs. 203(b)(2)(A)-(B) of the INA&quot;
+        I-140,"Secs. 203(b)(2)(A)-(B) of the INA"
+    </div>
+</div></div>
     
 <div class="views-row">
 <div class="views-field views-item-title">
@@ -68,7 +79,9 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-140,&quot;Secs. 203(b)(2)(A)-(B) of the INA&quot;
+        I-140,"Secs. 203(b)(2)(A)-(B) of the INA"
+    </div>
+</div></div>
     
 <div class="views-row">
 <div class="views-field views-item-title">
@@ -85,7 +98,9 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-140,&quot;Secs. 203(b)(2)(A)-(B) of the INA&quot;
+        I-140,"Secs. 203(b)(2)(A)-(B) of the INA"
+    </div>
+</div></div>
     
 <div class="views-row">
 <div class="views-field views-item-title">
@@ -102,7 +117,9 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-140,&quot;Secs. 203(b)(2)(A)-(B) of the INA&quot;
+        I-140,"Secs. 203(b)(2)(A)-(B) of the INA"
+    </div>
+</div></div>
     
 <div class="views-row">
 <div class="views-field views-item-title">
@@ -119,7 +136,9 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-140,&quot;Secs. 203(b)(2)(A)-(B) of the INA&quot;
+        I-140,"Secs. 203(b)(2)(A)-(B) of the INA"
+    </div>
+</div></div>
     
 <div class="views-row">
 <div class="views-field views-item-title">
@@ -136,7 +155,9 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-140,&quot;Secs. 203(b)(2)(A)-(B) of the INA&quot;
+        I-140,"Secs. 203(b)(2)(A)-(B) of the INA"
+    </div>
+</div></div>
     
 <div class="views-row">
 <div class="views-field views-item-title">
@@ -153,7 +174,9 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-140,&quot;Secs. 203(b)(2)(A)-(B) of the INA&quot;
+        I-140,"Secs. 203(b)(2)(A)-(B) of the INA"
+    </div>
+</div></div>
     
 <div class="views-row last">
 <div class="views-field views-item-title">
@@ -170,6 +193,11 @@
 </div>
 <div class="views-field">
     <div class="field-content">
-        I-140,&quot;Secs. 203(b)(2)(A)-(B) of the INA&quot;
-    
+        I-140,"Secs. 203(b)(2)(A)-(B) of the INA"
+    </div>
+</div></div>
+
+  
+  
+      
 </div></body></html>

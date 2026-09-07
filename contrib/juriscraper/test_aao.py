@@ -161,7 +161,16 @@ def main():
         eq("every case has an ISO date",
            all(len(c["date"]) == 10 and c["date"][4] == "-" for c in S.cases), True)
         eq("every case has a non-empty name",
-           all(c["name"] and c["name"] != "Matter of Unnamed" for c in S.cases), True)
+           all(c["name"] and c["name"] != "Unnamed AAO decision" for c in S.cases), True)
+        # These three would have caught the nested-fixture bug that FLP's harness
+        # found and this suite originally missed: names were all remaining titles
+        # concatenated, and a non-empty check plus a 42-char display hid it.
+        eq("names are DISTINCT per row (catches row nesting)",
+           len({c["name"] for c in S.cases}), len(S.cases))
+        eq("no name carries a (PDF, size) suffix",
+           not any("(PDF," in c["name"] for c in S.cases), True)
+        eq("no name is absurdly long (concatenation smell)",
+           max(len(c["name"]) for c in S.cases) < 200, True)
         eq("docket empty on all (AAO publishes none)",
            {c["docket"] for c in S.cases}, {""})
         # The listing emits NO <time datetime> -- the text fallback carries it.

@@ -9,10 +9,18 @@ History:
 The AAO decides administrative appeals of USCIS immigration benefit denials --
 employment-based petitions, national interest waivers, appeals of revocation.
 Its non-precedent decisions are published as PDFs behind a faceted Drupal
-listing. Free Law Project declares `aao` among its federal-special
-jurisdictions but has no scraper for it.
+listing.
+
+VERIFIED 2026-09-07 against juriscraper at e4c2aef: there is no `aao` scraper,
+and the string "aao" does not appear anywhere in the tree. The
+administrative_agency package ships asbca, bia, bva, mspb_p, mspb_u, olc and
+ttab. An earlier version of this docstring claimed FLP "declares aao among its
+federal-special jurisdictions" -- that was NOT verified against this repo and is
+removed; whether CourtListener's court table lists it is a separate question
+against a different repository.
 """
 
+import re
 from datetime import date, datetime
 
 from juriscraper.OpinionSiteLinear import OpinionSiteLinear
@@ -47,6 +55,10 @@ class Site(OpinionSiteLinear):
         self.court_id = self.__module__
         self.url = self._build_url("All")
         self.status = "Unpublished"
+        # The listing is never legitimately empty, so an empty parse means the
+        # markup changed. AbstractSite defaults this to False; mspb_p, ttab and
+        # olc set it True for the same reason.
+        self.should_have_results = True
 
     def _build_url(self, year_param, page=0, per_page=50):
         return (
@@ -94,7 +106,7 @@ class Site(OpinionSiteLinear):
                 {
                     "url": url,
                     "date": case_date,
-                    "name": " ".join(" ".join(name).split()) or "Matter of Unnamed",
+                    "name": self._clean_name(name),
                     # AAO publishes no docket number. Its decisions are cited by
                     # the redacted "Matter of X-" caption plus the decision date;
                     # the internal receipt number is deliberately withheld from
@@ -124,6 +136,16 @@ class Site(OpinionSiteLinear):
     # with no error. Match the untruncated value first, then shorter prefixes.
     DATE_FORMATS = ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d",
                     "%B %d, %Y", "%b %d, %Y", "%m/%d/%Y")
+
+    # The link text carries a file-size annotation -- "... - OCT302025_01B5203
+    # (PDF, 3.03 MB)". That is presentation metadata, not part of a case name.
+    SIZE_SUFFIX = re.compile(r"\s*\((?:PDF|DOC|DOCX)[^)]*\)\s*$", re.I)
+
+    @classmethod
+    def _clean_name(cls, parts):
+        name = " ".join(" ".join(parts).split())
+        name = cls.SIZE_SUFFIX.sub("", name).strip()
+        return name or "Unnamed AAO decision"
 
     @classmethod
     def _parse_date(cls, raw):
