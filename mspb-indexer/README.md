@@ -24,7 +24,7 @@ MSPB also supports analysis the immigration corpus cannot:
 
 | | AAO | MSPB |
 |---|---|---|
-| Records | 4,990 | **10,669** |
+| Records | 4,990 | **10,664** |
 | Deciding offices with usable n | 2 (Texas, Nebraska) | **9 regional offices** |
 | Employing-agency dimension | none | **yes** (VA, OPM, USPS, Army, DHS, …) |
 | Access | paginated HTML listing | **single JSON manifest** |
@@ -68,7 +68,7 @@ agencies, outcomes and reasoning.
 ```
 python3 mspb_index.py manifest                    # download the decision manifest
 python3 mspb_index.py fetch --sample 500          # reproducible stratified sample
-python3 mspb_index.py fetch                       # everything (10,669 PDFs, ~3h)
+python3 mspb_index.py fetch                       # everything (10,666 PDFs, ~3h)
 python3 mspb_index.py parse                       # parse cache -> out/
 python3 mspb_index.py report                      # aggregates to stdout
 ```
@@ -81,14 +81,69 @@ Requires Python 3 standard library plus `pdftotext` (Poppler). No API keys, no p
 
 ## What it extracts
 
-Outcome (`affirmed`, `reversed`, `remanded`, `vacated`, `mitigated`, `denied`,
-`dismissed`, `settled`) with the matched span in `outcome_evidence`; the regional office
-from the docket prefix; the employing agency; document type; 13 substantive-issue
-counts (removal, whistleblower, USERRA, discrimination, jurisdiction, timeliness, …);
-and 6 precedent-citation flags including *Douglas v. Veterans Administration*, the
-source of the twelve penalty factors.
+The disposition comes from **three independent signals**, none of them a
+hand-authored outcome taxonomy:
 
-Every field is a regex. Unparsed fields are left **empty rather than guessed**.
+| Field | Coverage | Where it comes from |
+|---|---|---|
+| `order_type` | 95.2% | the document's own title (`FINAL ORDER` 84.2%, `REMAND ORDER` 10.9%) |
+| `pfr_disposition` | 83.4% | the Board's own capitalised first-person clause granting or denying the petition |
+| `relief_verb` / `relief_object` / `relief_scope` / `relief_negated` | 99.0% | the top-scoring operative clause |
+| `outcome` | 97.9% of merits | a **function** of the three above |
+| `outcome_conflict` | all | 1 when the derived outcome contradicts the document's title |
+
+Plus: the regional office from the docket prefix, the employing agency, document
+class, 13 substantive-issue counts (removal, whistleblower, USERRA,
+discrimination, jurisdiction, timeliness, …), and 6 precedent-citation flags
+including *Douglas v. Veterans Administration*, source of the twelve penalty
+factors.
+
+Every field is deterministic. Unparsed fields are left **empty rather than
+guessed**.
+
+### The vocabulary is derived, not written
+
+`derive_dispositions.py` mines the Board's disposition grammar from the corpus
+and writes `dispositions.json` (115 verbs, 292 frames). `mspb_index.py` imports
+the grammar from it, so the two cannot drift.
+
+```
+python3 derive_dispositions.py            # re-derive after adding documents
+python3 selfcheck.py                      # mechanical audit, exit 0 = clean
+```
+
+This replaced a hand-typed table of nine outcome labels, and the replacement was
+not cosmetic — audited against its own stored evidence spans, **five of those nine
+labels were contaminated**: `reversed` 44.1% (24.6% were *negated* clauses like
+"provides no basis for reversing the initial decision"; 7.8% were reversals that
+favoured the *agency*), `vacated` 32.6% (partial vacatur of a single finding read
+as full relief), `corrective` 28.9% (19.7% attributed to an arbitrator or
+administrative judge rather than the Board), `settled` 21.8%. It labelled 281
+records `reversed` when only 191 documents contain a first-person "we reverse" at
+all.
+
+Deriving instead of writing also surfaced signal a hand-authored list missed: the
+5 CFR 1201.115 boilerplate ("the Board grants petitions such as this one only
+when…") accounts for **6,898 of 8,671** `grant` documents, and the Board's
+affirmance formula (`discern no reason to disturb` and kin) appears ~1,645 times
+with no representation in the old table.
+
+Per-verb selection uses three **measured** signals rather than a word list:
+`caps_ratio` (the Board capitalises operative verbs — `order` 94.1%, `deny` 90.5%
+versus `find` 0.1%), `edge_share` (holdings and order sections vs uniform spread),
+and `remand_lift` (`remand` 8.78×, `vacate` 3.08×, `deny` 0.09× against a 10.9%
+base rate — the title is independent of the clause, so this is held-out signal).
+
+### Two things this deliberately does not report
+
+There is **no single "appellant-favourable rate."** Relief and remand are reported
+separately, because that separation is the finding: across regional offices relief
+is flat at 3.12–4.52% while remand ranges 8.66–15.89%.
+
+A standalone `vacated` is **not** counted as relief. It usually means the Board
+tidied an administrative judge's reasoning while denying the petition — 27% of
+those spans mention dismissal and 8% explicitly deny the petition in the same
+sentence.
 
 ## Limitations
 

@@ -36,7 +36,15 @@ frontend:
         - mkdir -p .keep && cp automation/dol_queue.json .keep/dol_queue.json
 
         # --- drop tooling, tests, docs and generated working notes --------------
-        - rm -rf automation aao-indexer .github freshness_proposals
+        # NOTE: this list is explicit on purpose, and it MUST be extended whenever a
+        # new tooling directory is added to the repo. The extension guard below only
+        # catches *.py/*.mjs/*.md/*.sh -- it would NOT catch mspb-indexer/dispositions.json
+        # or contrib/juriscraper/aao_example.html, which would then be published to the
+        # live site. So prune whole directories here rather than relying on the guard.
+        #
+        # mspb-indexer and contrib were added 2026-09-06 and broke the build until they
+        # were listed here. That failure was the guard working as designed.
+        - rm -rf automation aao-indexer mspb-indexer contrib .github freshness_proposals
         - rm -f  *.mjs
         - rm -f  *.md
         - rm -f  persona-regression.js          # not referenced by any page

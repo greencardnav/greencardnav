@@ -72,3 +72,7 @@ aao-indexer/*.log
 # names, but the raw manifest it reads from must not be republished here.
 mspb-indexer/cache/
 mspb-indexer/out/
+
+# analysis virtualenv (local only, not part of the tool)
+.venv-analysis/
+mspb-indexer/.venv-analysis/

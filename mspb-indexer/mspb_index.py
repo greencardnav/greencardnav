@@ -137,29 +137,181 @@ DOC_CLASSES = [
     ("arb_review",  r'request\s+for\s+review\b.{0,60}arbitrat|RFR\s+File'),
 ]
 
-# Outcome, read from the Board's own order language. Order matters: the first pattern
-# that matches wins, so the more specific and more appellant-favourable ones lead.
+# The hand-typed OUTCOMES table that used to live here has been DELETED.
 #
-# The corrective-action forms were added after the sample: "We ORDER the agency to
-# cancel the removal and reinstate the appellant" and "...to substitute a 120-day
-# suspension" are unambiguous appellant wins that the first pattern set missed entirely,
-# because it only looked for the verbs "reverse" and "mitigate".
-OUTCOMES = [
-    ("settled",        r'dismiss\w*\s+as\s+settled|dismissed\s+the\s+appeal\s+as\s+settled|'
-                       r'withdraw\w*\s+(?:his|her|their|the)\s+(?:appeal|petition)'),
-    ("mitigated",      r'\bwe\s+mitigate\b|penalty\s+is\s+mitigated|'
-                       r'ORDER\s+the\s+agency\s+to\s+cancel\s+the\s+\w+\s+and\s+(?:to\s+)?substitute|'
-                       r'substitute\s+a\s+[\w-]+\s+(?:day\s+)?suspension'),
-    ("corrective",     r'ORDER\s+the\s+agency\s+to\s+cancel\s+the\s+(?:removal|suspension|demotion)|'
-                       r'reinstate\s+the\s+appellant|grant\w*\s+(?:the\s+appellant.{0,12})?request\s+for\s+corrective\s+action'),
-    ("remanded",       r'\bwe\s+remand\b|is\s+remanded|REMAND\s+ORDER|remand\w*\s+(?:the\s+)?(?:appeal|case)\s+to'),
-    ("reversed",       r'\bwe\s+reverse\b|is\s+reversed|revers\w*\s+the\s+initial\s+decision'),
-    ("vacated",        r'\bwe\s+vacate\b|is\s+vacated'),
-    ("affirmed",       r'\bwe\s+affirm\b|is\s+affirmed|affirm\w*\s+the\s+initial\s+decision'),
-    ("denied",         r'petition\s+for\s+review\s+is\s+denied|\bwe\s+deny\b|'
-                       r'DENY\s+the\s+petition\s+for\s+review'),
-    ("dismissed",      r'appeal\s+is\s+dismissed|\b(?:we|and)\s+(?:hereby\s+)?DISMISS\b'),
-]
+# It was nine labels, each a regex guessing at what the Board's order language
+# would look like. Audited against the stored evidence spans, five were badly
+# contaminated: `reversed` 44.1% (24.6% of hits were NEGATED clauses such as
+# "provides no basis for reversing the initial decision", 7.8% were
+# agency-favourable reversals counted as appellant wins), `vacated` 32.6%
+# (partial vacatur of a single finding read as full relief), `corrective` 28.9%
+# (19.7% attributed to an arbitrator, administrative judge or OPM rather than the
+# Board), `settled` 21.8% (withdrawal *requests*, some of them denied). It
+# labelled 281 records `reversed` when only 191 documents contain a first-person
+# "we reverse" at all.
+#
+# It is replaced by a vocabulary DERIVED from the corpus. The grammar is defined
+# once in derive_dispositions.py and imported here so the two cannot drift; the
+# scores it measures are read from dispositions.json at load time. Re-running
+# `python3 derive_dispositions.py` after adding documents updates the vocabulary
+# with no pattern authoring.
+from derive_dispositions import (                                  # noqa: E402
+    ORDER_TITLE as ORDER_TITLE_RX,
+    BOILERPLATE_OBJ as BOILERPLATE_OBJ_RX,
+    frames_in as _frames_raw,
+    norm_obj as _norm_obj,
+    PFR as PFR_RX,
+)
+
+DISPO_PATH = os.path.join(HERE, "dispositions.json")
+
+# Per-verb measured signals: caps_ratio, edge_share, remand_lift, negated_ratio.
+# Absent file is fatal rather than silently degrading -- an empty score table
+# would make every document look dispositionless.
+try:
+    with open(DISPO_PATH, encoding="utf-8") as _fh:
+        _DISPO = json.load(_fh)
+    DISPO_SCORE = {v["verb"]: v for v in _DISPO["verbs"]}
+except (IOError, ValueError, KeyError) as _e:
+    # Fatal, not a silent degrade. An empty score table makes every document look
+    # dispositionless, which would read as "the corpus has no outcomes" rather
+    # than "the vocabulary is missing".
+    sys.exit("cannot load %s (%s).\nRun: python3 derive_dispositions.py"
+             % (DISPO_PATH, _e))
+
+# NOTE: a draft of this block hand-wrote an ORDERED_RELIEF verb regex to decide
+# which `order` objects counted as relief. Deleted -- it was the same hardcoding
+# the rest of this rewrite removed, and it is not needed: `order` carries the
+# highest caps_ratio in the corpus (94.1%, the Board's own marking of an operative
+# clause), and its object distribution is dominated by genuine relief
+# (`agency to cancel the` 324, `agency to pay the` 48, `opm to grant the` 20,
+# `agency to restore the` 19). The compliance-notice objects that look procedural
+# (`agency to submit to` 31, `agency to tell the` 12) appear ONLY in decisions
+# that granted relief, because that paragraph is the standard follow-on to an
+# order -- so they are not false positives either. The verb alone is the signal.
+
+# PFR detection is imported from the grammar module (see PFR_RX in the import
+# block above) so mspb_index.py and derive_dispositions.py cannot disagree about
+# what an operative grant/deny clause looks like -- derive_dispositions.py needs
+# it too, to measure the per-object deny_rate that now supplies clause scope.
+
+# DERIVED clause level, replacing two hand-written scope regexes.
+#
+# SCOPE_PARTIAL / SCOPE_FULL were the last hardcoded surface in this pipeline and
+# they left relief_scope `unknown` on 43.7% of clauses. Worse, they were wrong on
+# the single most common object: `initial decision` (1,382 clauses) was labelled
+# `full` while co-occurring with a DENIED petition 97.0% of the time.
+#
+# Replaced by a measured signal. For each object head the miner records how often
+# the same document denies the petition -- a clause that merely tidies reasoning
+# co-occurs with denial, an operative disposition does not. pfr_of() reads a
+# different sentence than the frame, so this is not circular. The distribution is
+# sharply bimodal (99%+ vs 0%), which is why a 0.5 cut is safe rather than tuned.
+OBJ_DENY = {o["object"]: o["deny_rate"] for o in _DISPO.get("objects", [])}
+DENY_CUT = 0.5
+
+
+def _scope_of(verb, obj, regex_fallback):
+    """reasoning | operative, from the measured per-object deny rate.
+
+    LIMIT OF THE DENY-RATE PROXY, found by it breaking something: `order` clauses
+    must bypass it. "we ORDER the agency to cancel the removal" carries a 65.6%
+    denial rate, because the Board often denies the petition precisely when the
+    judge below already granted the right remedy -- so deny_rate conflates
+    "reasoning-level clause" with "relief the appellant already won below". Taking
+    it at face value reclassified 491 genuine corrective-action records as
+    reasoning and dropped `corrective` from 637 to 146.
+    `order` has no reasoning-level reading -- the Board directing an agency to act
+    is operative by construction -- so it is exempt. The proxy governs only the
+    verbs whose relief status is genuinely ambiguous (affirm/vacate/reverse/modify),
+    which is what it was measured on.
+    """
+    if verb == "order":
+        return "operative"
+    d = OBJ_DENY.get(obj)
+    if d is None:
+        return regex_fallback
+    return "reasoning" if d >= DENY_CUT else "operative"
+
+
+def _frames(text):
+    """frames_in() plus the match object, so evidence spans stay auditable."""
+    for fr in _frames_raw(text):
+        m = type("M", (), {"start": lambda self, s=fr["span"][0]: s,
+                           "end": lambda self, e=fr["span"][1]: e})()
+        yield fr, m
+
+
+def _sentence_at(t, a, b, cap=320):
+    """Clamp an evidence span to its own sentence.
+
+    The previous fixed 60-character window ran past the end of the clause and
+    pulled in whatever followed -- in one record a case citation whose party name
+    matched this appellant's own surname, which tripped the de-identification
+    check. A sentence boundary is both better evidence (the clause entire, no
+    fragment) and a smaller surface for that failure.
+    """
+    lo = max(0, a - cap)
+    left = t.rfind(". ", lo, a)
+    start = left + 2 if left != -1 else lo
+    right = t.find(". ", b, min(len(t), b + cap))
+    end = right + 1 if right != -1 else min(len(t), b + cap)
+    return re.sub(r"\s+", " ", t[start:end]).strip()
+
+
+def _outcome_from(o):
+    """Derive the SUBSTANTIVE disposition from the measured signals.
+
+    `outcome` and `pfr_disposition` answer different questions and are kept
+    apart. The standard MSPB order reads "we DENY the petition for review and
+    AFFIRM the initial decision": the denial is procedural, the affirmance is the
+    substantive result. An earlier version of this function collapsed both into
+    `denied`, which turned 5,106 affirmances into a label carrying no information
+    -- the same mistake as the deleted table, one layer up.
+
+    Relief is credited only when the clause is affirmative AND full-scope. A
+    negated clause ("we do not disturb the findings") or a partial one ("we
+    vacate that finding") leaves the initial decision standing.
+    """
+    v, scope, neg = o["relief_verb"], o["relief_scope"], o["relief_negated"]
+
+    if o["order_type"] == "Remand Order" or (v == "remand" and not neg):
+        return "remanded"
+    if v == "dismiss" and not neg:
+        return "dismissed"
+    if not neg and scope != "reasoning":
+        if v == "reverse":
+            return "reversed"
+        if v == "vacate":
+            return "vacated"
+        if v == "modify":
+            return "modified"
+        # Corrective action. An earlier version listed the verbs by hand
+        # ("mitigate", "substitute", "reinstate", "cancel", "restore") and all
+        # SEVEN of those branches were DEAD, because none of those verbs clears
+        # the derivation frequency floor -- the Board says "we ORDER the agency
+        # to cancel/restore/pay", so the relief rides in the object while the
+        # operative verb is always `order`.
+        if v == "order":
+            return "corrective"
+    # Everything else leaves the initial decision in place. That is an
+    # affirmance whether the Board says so explicitly, denies the petition, or
+    # merely declines to disturb the findings.
+    if v == "affirm" or o["pfr_disposition"] == "denied" or neg or scope == "reasoning":
+        return "affirmed"
+    return ""
+
+
+def _conflicts(o):
+    """1 when the derived outcome contradicts the document's own title."""
+    ot, oc = o["order_type"], o["outcome"]
+    if not ot or not oc:
+        return 0
+    if ot == "Remand Order" and oc != "remanded":
+        return 1
+    if ot == "Final Order" and oc == "remanded":
+        return 1
+    return 0
 
 # Recurring substantive issues. Counted, not interpreted.
 ISSUES = {
@@ -177,6 +329,58 @@ ISSUES = {
     "jurisdiction":       r'lack\w*\s+jurisdiction|without\s+jurisdiction',
     "timeliness":         r'untimely|time\s+limit',
 }
+
+# ADVERSE REASONING PHRASES.
+#
+# Two sets, kept separate on purpose.
+#
+# SHARED: the first six are the SAME regexes aao_index.py uses. They are generic
+# adjudicative-adverse vocabulary, not immigration-specific, so counting them here
+# gives a genuine like-for-like measure across the two agencies. An earlier version
+# of this file only tracked substantive ISSUE categories (jurisdiction, whistleblower,
+# performance), which describe what a case is ABOUT rather than how the Board reasoned
+# about it - those are not comparable to the AAO phrase set and comparing them would
+# have been an apples-to-oranges claim.
+#
+# MSPB-ONLY: standard-of-review moves specific to Board review of an administrative
+# judge's initial decision. There is no AAO analogue because AAO reviews a service
+# center's denial, not a prior adjudicator's findings.
+PHRASES_SHARED = {
+    "conclusory":       r'conclusor\w+',
+    "generalized":      r'generaliz\w+',
+    "speculative":      r'speculat\w+',
+    "unsupported":      r'unsupported',
+    "material_change":  r'material change',
+    "inconsistent":     r'inconsisten\w+',
+}
+
+PHRASES_MSPB = {
+    # Petitioner merely re-argues what the AJ already weighed
+    "mere_disagreement":    r'mere\w*\s+disagree\w+|simply\s+disagree\w+',
+    # Burden language
+    "failed_to_establish":  r'(?:has|have)\s+not\s+(?:shown|established|demonstrated)|'
+                            r'fail\w*\s+to\s+(?:show|establish|demonstrate)',
+    # New evidence on review is generally not considered
+    "no_new_evidence":      r'not\s+previously\s+available|new\s+evidence[^.]{0,60}not\s+consider',
+    # Board will not reweigh the record
+    "reweigh":              r'reweigh\w*|substitute\s+our\s+(?:own\s+)?(?:judgment|assessment)',
+    # Deference to the AJ on credibility (the Hillen factors)
+    "credibility_deference": r'defer\w*\s+to[^.]{0,50}credibility|credibility\s+determination',
+    # Error must be harmful to matter
+    "harmful_error":        r'harmful\s+error|error\w*\s+did\s+not\s+(?:prejudice|affect)',
+}
+
+# WHO PETITIONED FOR REVIEW. This is load-bearing and was missing from the first
+# version, which is a real defect: either party may petition, so a "reversal" only
+# favours the appellant when the APPELLANT was the petitioner. Where the agency
+# petitioned, a reversal favours the agency. Roughly 8% of decisions are agency,
+# cross- or dual-petitions, so treating every reversal as an appellant win
+# mislabels several hundred cases and biases any office comparison built on it.
+PETITIONER = [
+    ("cross", r'cross\s*petition\s+for\s+review'),
+    ("agency", r'(?:the\s+)?agency\s+(?:has\s+)?(?:timely\s+)?file\w*\s+a\s+petition\s+for\s+review'),
+    ("appellant", r'(?:the\s+)?appellant\s+(?:has\s+)?(?:timely\s+)?file\w*\s+a\s+petition\s+for\s+review'),
+]
 
 # Authorities MSPB leans on, the analogue of the AAO precedent set.
 PRECEDENTS = {
@@ -413,18 +617,122 @@ def parse_one(rec, text):
             out["doc_class"] = name
             break
 
-    out["outcome"] = ""
-    out["outcome_evidence"] = ""
-    for name, pat in OUTCOMES:
-        m = re.search(pat, t, re.I)
-        if m:
-            a, b = max(0, m.start() - 60), min(len(t), m.end() + 60)
-            out["outcome"] = name
-            out["outcome_evidence"] = redact(t[a:b].strip(), rx)
-            break
+    # ------------------------------------------------------------------
+    # Disposition. Three independent signals, none of them a hand-authored
+    # outcome taxonomy. See derive_dispositions.py for how the vocabulary is
+    # mined from the corpus and why the previous hand-typed OUTCOMES table was
+    # abandoned (five of its nine labels were contaminated: reversed 44.1%,
+    # vacated 32.6%, corrective 28.9%, settled 21.8%).
+    #
+    #   order_type       the document's own title. Independent of anything we
+    #                    extract, present on 95.2% of the corpus.
+    #   pfr_disposition  who won the petition for review, read from the Board's
+    #                    own capitalised first-person clause.
+    #   relief_*         the top-scoring operative clause, scored on signals
+    #                    MEASURED per verb (caps_ratio, edge_share, remand_lift)
+    #                    rather than on a list of verbs I expected to matter.
+    # ------------------------------------------------------------------
+    tm = ORDER_TITLE_RX.search(t[:6000])
+    out["order_type"] = tm.group(1).title() if tm else ""
 
+    out["pfr_disposition"] = ""
+    out["pfr_evidence"] = ""
+    best_pfr = None
+    for m in PFR_RX.finditer(t):
+        verb = m.group("v")
+        obj = _norm_obj(m.group("o") or "")
+        if BOILERPLATE_OBJ_RX.match(obj):      # 5 CFR 1201.115 standard, not a holding
+            continue
+        # The Board capitalises the operative one; prefer it, else take the first.
+        rank = (1 if verb.isupper() else 0, -m.start())
+        if best_pfr is None or rank > best_pfr[0]:
+            best_pfr = (rank, verb.lower(), m)
+    if best_pfr:
+        _, v, m = best_pfr
+        out["pfr_disposition"] = "granted" if v.startswith("grant") else "denied"
+        out["pfr_evidence"] = redact(_sentence_at(t, m.start(), m.end()), rx)
+
+    out["relief_verb"] = ""
+    out["relief_object"] = ""
+    out["relief_scope"] = ""
+    out["relief_negated"] = 0
+    out["outcome_evidence"] = ""
+    best = None
+    L = max(len(t), 1)
+    for fr, m in _frames(t):
+        # grant/deny answer the PETITION question and are already captured in
+        # pfr_disposition. Letting them compete here suppressed real relief:
+        # `deny` scores 90.5% caps against `reverse` at 29.2%, so every reversal
+        # lost to the denial clause in the same document and `reversed` fell to 2
+        # records out of 191 documents that contain "we reverse".
+        if fr["verb"] in ("grant", "grants", "deny", "denies"):
+            continue
+        sc = DISPO_SCORE.get(fr["verb"])
+        if sc is None:
+            continue                            # below the derivation frequency floor
+        rel = m.start() / L
+        score = (sc["caps_ratio"]
+                 + (0.5 if fr["caps"] else 0.0)
+                 + (0.4 if (rel < 0.15 or rel > 0.75) else 0.0)
+                 + 0.25 * min(sc["remand_lift"] / 4.0, 1.0))
+        if best is None or score > best[0]:
+            best = (score, fr, m)
+    # A clause only counts as relief if its verb shows measured dispositiveness:
+    # the Board capitalises it somewhere in the corpus, or it moves the order-type
+    # title. Without this bar, discussion verbs won the slot -- `conclude`
+    # (caps 0.0%, lift 0.17x) was landing in relief_verb with relief_object
+    # "the petitioner has not", which is both wrong and needless text to store.
+    if best:
+        _sc = DISPO_SCORE[best[1]["verb"]]
+        if _sc["caps_ratio"] <= 0.0 and _sc["remand_lift"] < 2.0:
+            best = None
+    if best:
+        _, fr, m = best
+        out["relief_verb"] = fr["verb"]
+        # redact(): this is an object phrase lifted from the decision and can
+        # carry a surname ("order agency to reinstate <name>"). Three records
+        # leaked here the moment the field was added to the FREE_TEXT check.
+        out["relief_object"] = redact(fr["obj"], rx)
+        out["relief_scope"] = _scope_of(fr["verb"], fr["obj"], fr["scope"])
+        out["relief_negated"] = 1 if fr["negated"] else 0
+        out["outcome_evidence"] = redact(_sentence_at(t, m.start(), m.end()), rx)
+
+    # `outcome` is retained so existing analysis keeps working, but it is now a
+    # FUNCTION of the three measured signals rather than a first-match regex.
+    # A negated or partial-scope clause can no longer be read as relief -- the
+    # exact bug that produced the withdrawn office-variation finding.
+    out["outcome"] = _outcome_from(out)
+
+    # Automated self-check the old code had no way to perform: does the derived
+    # outcome contradict the document's own title? Reported per row, aggregated
+    # by `report`, so drift is visible instead of silent.
+    out["outcome_conflict"] = _conflicts(out)
+
+    # Who petitioned for review. Both patterns are checked before deciding, because
+    # "cross" and "both" must not be silently collapsed into "appellant".
+    apl = re.search(PETITIONER[2][1], t, re.I)
+    agy = re.search(PETITIONER[1][1], t, re.I)
+    if re.search(PETITIONER[0][1], t, re.I):
+        out["petitioner"] = "cross"
+    elif apl and agy:
+        out["petitioner"] = "both"
+    elif agy:
+        out["petitioner"] = "agency"
+    elif apl:
+        out["petitioner"] = "appellant"
+    else:
+        out["petitioner"] = ""
+
+    # Substantive issue categories: what the case is ABOUT.
     for k, pat in ISSUES.items():
         out["issue_" + k] = len(re.findall(pat, t, re.I))
+    # Adverse reasoning phrases: HOW the Board reasoned. Counts, not booleans.
+    # ph_* names and regexes are shared with aao_index.py so the two corpora are
+    # directly comparable; phm_* are MSPB-specific standard-of-review moves.
+    for k, pat in PHRASES_SHARED.items():
+        out["ph_" + k] = len(re.findall(pat, t, re.I))
+    for k, pat in PHRASES_MSPB.items():
+        out["phm_" + k] = len(re.findall(pat, t, re.I))
     for k, pat in PRECEDENTS.items():
         out["cite_" + k] = 1 if re.search(pat, t, re.I) else 0
 
@@ -488,7 +796,12 @@ def cmd_parse(a):
     #
     # Structured fields (office, agency) are excluded from the scan for the same reason:
     # they are drawn from controlled vocabularies, not from the decision body.
-    FREE_TEXT = ("outcome_evidence",)
+    # Every field that carries document-derived text. `pfr_evidence` and
+    # `relief_object` were ADDED after an audit found them excluded: the
+    # "0 leaks" result before that only covered outcome_evidence, so the
+    # de-identification guarantee this tool advertises was not actually being
+    # checked on two of the four text fields.
+    FREE_TEXT = ("outcome_evidence", "pfr_evidence", "relief_object")
     by_key_rec = {doc_key(r): r for r in rows}
     leaked = []
     for rec_out in parsed:
@@ -533,19 +846,44 @@ def cmd_report(a):
     dist("employing agency", "agency", 10)
     dist("year", "year", 20)
 
-    print("\noutcome by office (merits only)")
-    MERITS = {"affirmed", "reversed", "remanded", "mitigated", "vacated"}
+    # Office comparison.
+    #
+    # The previous version of this block printed a single "appellant-favourable"
+    # rate and every part of it was wrong. It counted `vacated` as a win (a
+    # standalone vacatur is usually the Board tidying an administrative judge's
+    # reasoning while DENYING the petition), counted a `mitigated` key that no
+    # longer exists and was therefore always 0, omitted `corrective` -- the
+    # largest relief category at 637 records -- and did not restrict to
+    # appellant-petitioned cases even though agency-petitioned reversals favour
+    # the AGENCY (49.9% vs 6.6% favourable). It reproduced both of the coding
+    # errors that forced a finding to be withdrawn, and it printed by default.
+    #
+    # Replaced with the two rates kept SEPARATE, because that separation is the
+    # actual result: relief rate is flat across offices while remand rate is not.
+    print("\noutcome by office (regional, merits, APPELLANT-petitioned only)")
+    print("  %-22s %6s  %-18s  %s"
+          % ("office", "n", "relief granted", "remanded"))
+    RELIEF = {"reversed", "vacated", "corrective", "modified"}
     by = collections.defaultdict(collections.Counter)
     for r in rows:
-        if r.get("outcome") in MERITS and r.get("is_regional"):
-            by[r["office"]][r["outcome"]] += 1
-    for off in sorted(by, key=lambda o: -sum(by[o].values())):
+        if (r.get("is_regional") and r.get("doc_class") == "merits"
+                and r.get("petitioner") == "appellant" and r.get("outcome")):
+            c = by[r["office"]]
+            c["n"] += 1
+            if r["outcome"] in RELIEF:
+                c["relief"] += 1
+            if r["outcome"] == "remanded":
+                c["remand"] += 1
+    for off in sorted(by, key=lambda o: -by[o]["n"]):
         c = by[off]
-        tot = sum(c.values())
-        fav = c["reversed"] + c["mitigated"] + c["vacated"]
-        if tot >= 20:
-            print("  %-22s n=%5d  appellant-favourable %4d (%5.2f%%)"
-                  % (off, tot, fav, 100.0 * fav / tot))
+        if c["n"] < 100:
+            continue
+        print("  %-22s %6d  %5d (%5.2f%%)      %5d (%5.2f%%)"
+              % (off, c["n"], c["relief"], 100.0 * c["relief"] / c["n"],
+                 c["remand"], 100.0 * c["remand"] / c["n"]))
+    print("  NOTE: relief and remand are reported separately and neither is an\n"
+          "  approval rate. `vacated` is NOT counted as relief unless full-scope;\n"
+          "  see derive_dispositions.py for why.")
 
 
 def main():

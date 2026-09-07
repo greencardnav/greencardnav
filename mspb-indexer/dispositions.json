@@ -1,0 +1,5741 @@
+{
+ "generated_from": {
+  "documents": 28,
+  "text_cache": "/Users/aashayr/akg_kb/green_card_tool/mspb-indexer/cache/text"
+ },
+ "min_doc_frequency": 20,
+ "titles": {
+  "FINAL ORDER": 8983,
+  "REMAND ORDER": 1166,
+  "(none)": 515
+ },
+ "remand_base_rate": 0.10934,
+ "verbs": [
+  {
+   "verb": "deny",
+   "docs": 7602,
+   "occurrences": 8738,
+   "caps_ratio": 0.8745,
+   "edge_share": 0.3686,
+   "remand_lift": 0.12,
+   "negated_ratio": 0.0007,
+   "scope_partial": 2,
+   "scope_full": 7413,
+   "scope_unknown": 1323
+  },
+  {
+   "verb": "conclude",
+   "docs": 7480,
+   "occurrences": 8237,
+   "caps_ratio": 0.0,
+   "edge_share": 0.3819,
+   "remand_lift": 0.194,
+   "negated_ratio": 0.0008,
+   "scope_partial": 159,
+   "scope_full": 31,
+   "scope_unknown": 8047
+  },
+  {
+   "verb": "find",
+   "docs": 6193,
+   "occurrences": 19149,
+   "caps_ratio": 0.0025,
+   "edge_share": 0.1969,
+   "remand_lift": 1.434,
+   "negated_ratio": 0.0225,
+   "scope_partial": 1718,
+   "scope_full": 605,
+   "scope_unknown": 16826
+  },
+  {
+   "verb": "offer",
+   "docs": 4569,
+   "occurrences": 4571,
+   "caps_ratio": 0.0,
+   "edge_share": 0.082,
+   "remand_lift": 0.004,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 4571
+  },
+  {
+   "verb": "agree",
+   "docs": 3218,
+   "occurrences": 6654,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1237,
+   "remand_lift": 1.248,
+   "negated_ratio": 0.0167,
+   "scope_partial": 5193,
+   "scope_full": 28,
+   "scope_unknown": 1433
+  },
+  {
+   "verb": "have",
+   "docs": 3070,
+   "occurrences": 4835,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1909,
+   "remand_lift": 1.111,
+   "negated_ratio": 0.0112,
+   "scope_partial": 120,
+   "scope_full": 91,
+   "scope_unknown": 4624
+  },
+  {
+   "verb": "affirm",
+   "docs": 2538,
+   "occurrences": 3535,
+   "caps_ratio": 0.4891,
+   "edge_share": 0.4405,
+   "remand_lift": 0.432,
+   "negated_ratio": 0.0031,
+   "scope_partial": 914,
+   "scope_full": 2323,
+   "scope_unknown": 298
+  },
+  {
+   "verb": "discern",
+   "docs": 2006,
+   "occurrences": 3159,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1301,
+   "remand_lift": 0.935,
+   "negated_ratio": 0.0212,
+   "scope_partial": 9,
+   "scope_full": 0,
+   "scope_unknown": 3150
+  },
+  {
+   "verb": "grant",
+   "docs": 1750,
+   "occurrences": 1854,
+   "caps_ratio": 0.7977,
+   "edge_share": 0.8371,
+   "remand_lift": 5.409,
+   "negated_ratio": 0.0054,
+   "scope_partial": 4,
+   "scope_full": 182,
+   "scope_unknown": 1668
+  },
+  {
+   "verb": "note",
+   "docs": 1416,
+   "occurrences": 1772,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1992,
+   "remand_lift": 1.311,
+   "negated_ratio": 0.0006,
+   "scope_partial": 166,
+   "scope_full": 49,
+   "scope_unknown": 1557
+  },
+  {
+   "verb": "are",
+   "docs": 1147,
+   "occurrences": 1607,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1892,
+   "remand_lift": 1.922,
+   "negated_ratio": 0.0087,
+   "scope_partial": 22,
+   "scope_full": 91,
+   "scope_unknown": 1494
+  },
+  {
+   "verb": "remand",
+   "docs": 1138,
+   "occurrences": 1707,
+   "caps_ratio": 0.29,
+   "edge_share": 0.8336,
+   "remand_lift": 8.688,
+   "negated_ratio": 0.0252,
+   "scope_partial": 23,
+   "scope_full": 431,
+   "scope_unknown": 1253
+  },
+  {
+   "verb": "consider",
+   "docs": 993,
+   "occurrences": 1224,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1716,
+   "remand_lift": 1.225,
+   "negated_ratio": 0.7949,
+   "scope_partial": 15,
+   "scope_full": 18,
+   "scope_unknown": 1191
+  },
+  {
+   "verb": "dismiss",
+   "docs": 944,
+   "occurrences": 1089,
+   "caps_ratio": 0.5372,
+   "edge_share": 0.3811,
+   "remand_lift": 0.097,
+   "negated_ratio": 0.0129,
+   "scope_partial": 2,
+   "scope_full": 862,
+   "scope_unknown": 225
+  },
+  {
+   "verb": "address",
+   "docs": 865,
+   "occurrences": 1006,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1948,
+   "remand_lift": 1.406,
+   "negated_ratio": 0.7893,
+   "scope_partial": 45,
+   "scope_full": 44,
+   "scope_unknown": 917
+  },
+  {
+   "verb": "modify",
+   "docs": 736,
+   "occurrences": 1274,
+   "caps_ratio": 0.1578,
+   "edge_share": 0.1758,
+   "remand_lift": 0.447,
+   "negated_ratio": 0.0047,
+   "scope_partial": 152,
+   "scope_full": 1068,
+   "scope_unknown": 54
+  },
+  {
+   "verb": "order",
+   "docs": 693,
+   "occurrences": 2794,
+   "caps_ratio": 0.9853,
+   "edge_share": 0.1467,
+   "remand_lift": 0.66,
+   "negated_ratio": 0.0021,
+   "scope_partial": 1,
+   "scope_full": 12,
+   "scope_unknown": 2781
+  },
+  {
+   "verb": "vacate",
+   "docs": 685,
+   "occurrences": 938,
+   "caps_ratio": 0.4211,
+   "edge_share": 0.4104,
+   "remand_lift": 3.218,
+   "negated_ratio": 0.0053,
+   "scope_partial": 441,
+   "scope_full": 420,
+   "scope_unknown": 77
+  },
+  {
+   "verb": "considered",
+   "docs": 587,
+   "occurrences": 596,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1007,
+   "remand_lift": 0.966,
+   "negated_ratio": 0.0067,
+   "scope_partial": 0,
+   "scope_full": 508,
+   "scope_unknown": 88
+  },
+  {
+   "verb": "see",
+   "docs": 493,
+   "occurrences": 588,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1412,
+   "remand_lift": 1.057,
+   "negated_ratio": 0.0425,
+   "scope_partial": 2,
+   "scope_full": 0,
+   "scope_unknown": 586
+  },
+  {
+   "verb": "disagree",
+   "docs": 443,
+   "occurrences": 527,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1044,
+   "remand_lift": 2.477,
+   "negated_ratio": 0.0019,
+   "scope_partial": 231,
+   "scope_full": 3,
+   "scope_unknown": 293
+  },
+  {
+   "verb": "reach",
+   "docs": 391,
+   "occurrences": 409,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1956,
+   "remand_lift": 1.497,
+   "negated_ratio": 0.9462,
+   "scope_partial": 30,
+   "scope_full": 2,
+   "scope_unknown": 377
+  },
+  {
+   "verb": "must",
+   "docs": 370,
+   "occurrences": 425,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2635,
+   "remand_lift": 4.029,
+   "negated_ratio": 0.0212,
+   "scope_partial": 27,
+   "scope_full": 112,
+   "scope_unknown": 286
+  },
+  {
+   "verb": "will",
+   "docs": 341,
+   "occurrences": 413,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1525,
+   "remand_lift": 1.931,
+   "negated_ratio": 0.0,
+   "scope_partial": 10,
+   "scope_full": 9,
+   "scope_unknown": 394
+  },
+  {
+   "verb": "cannot",
+   "docs": 330,
+   "occurrences": 388,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2861,
+   "remand_lift": 2.439,
+   "negated_ratio": 0.0077,
+   "scope_partial": 6,
+   "scope_full": 4,
+   "scope_unknown": 378
+  },
+  {
+   "verb": "were",
+   "docs": 310,
+   "occurrences": 336,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1637,
+   "remand_lift": 0.797,
+   "negated_ratio": 0.003,
+   "scope_partial": 5,
+   "scope_full": 2,
+   "scope_unknown": 329
+  },
+  {
+   "verb": "forward",
+   "docs": 281,
+   "occurrences": 452,
+   "caps_ratio": 0.5996,
+   "edge_share": 0.385,
+   "remand_lift": 0.195,
+   "negated_ratio": 0.0221,
+   "scope_partial": 0,
+   "scope_full": 54,
+   "scope_unknown": 398
+  },
+  {
+   "verb": "accept",
+   "docs": 277,
+   "occurrences": 280,
+   "caps_ratio": 0.0036,
+   "edge_share": 0.0286,
+   "remand_lift": 0.429,
+   "negated_ratio": 0.0321,
+   "scope_partial": 1,
+   "scope_full": 2,
+   "scope_unknown": 277
+  },
+  {
+   "verb": "now",
+   "docs": 235,
+   "occurrences": 261,
+   "caps_ratio": 0.0,
+   "edge_share": 0.4598,
+   "remand_lift": 1.284,
+   "negated_ratio": 0.0268,
+   "scope_partial": 1,
+   "scope_full": 6,
+   "scope_unknown": 254
+  },
+  {
+   "verb": "disturb",
+   "docs": 231,
+   "occurrences": 274,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1533,
+   "remand_lift": 1.346,
+   "negated_ratio": 0.9964,
+   "scope_partial": 155,
+   "scope_full": 20,
+   "scope_unknown": 99
+  },
+  {
+   "verb": "recognize",
+   "docs": 226,
+   "occurrences": 251,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2231,
+   "remand_lift": 2.711,
+   "negated_ratio": 0.0,
+   "scope_partial": 30,
+   "scope_full": 4,
+   "scope_unknown": 217
+  },
+  {
+   "verb": "acknowledge",
+   "docs": 221,
+   "occurrences": 258,
+   "caps_ratio": 0.0,
+   "edge_share": 0.155,
+   "remand_lift": 1.945,
+   "negated_ratio": 0.0,
+   "scope_partial": 21,
+   "scope_full": 4,
+   "scope_unknown": 233
+  },
+  {
+   "verb": "believe",
+   "docs": 210,
+   "occurrences": 253,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1383,
+   "remand_lift": 1.873,
+   "negated_ratio": 0.3123,
+   "scope_partial": 38,
+   "scope_full": 5,
+   "scope_unknown": 210
+  },
+  {
+   "verb": "do",
+   "docs": 192,
+   "occurrences": 206,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1408,
+   "remand_lift": 1.524,
+   "negated_ratio": 0.2524,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 206
+  },
+  {
+   "verb": "reverse",
+   "docs": 191,
+   "occurrences": 260,
+   "caps_ratio": 0.3731,
+   "edge_share": 0.3692,
+   "remand_lift": 2.49,
+   "negated_ratio": 0.0269,
+   "scope_partial": 116,
+   "scope_full": 100,
+   "scope_unknown": 44
+  },
+  {
+   "verb": "make",
+   "docs": 191,
+   "occurrences": 200,
+   "caps_ratio": 0.0,
+   "edge_share": 0.295,
+   "remand_lift": 2.107,
+   "negated_ratio": 0.195,
+   "scope_partial": 182,
+   "scope_full": 1,
+   "scope_unknown": 17
+  },
+  {
+   "verb": "would",
+   "docs": 179,
+   "occurrences": 203,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1182,
+   "remand_lift": 0.869,
+   "negated_ratio": 0.0099,
+   "scope_partial": 5,
+   "scope_full": 12,
+   "scope_unknown": 186
+  },
+  {
+   "verb": "found",
+   "docs": 165,
+   "occurrences": 209,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1579,
+   "remand_lift": 2.106,
+   "negated_ratio": 0.0096,
+   "scope_partial": 8,
+   "scope_full": 0,
+   "scope_unknown": 201
+  },
+  {
+   "verb": "resolve",
+   "docs": 155,
+   "occurrences": 163,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1595,
+   "remand_lift": 1.593,
+   "negated_ratio": 0.9632,
+   "scope_partial": 3,
+   "scope_full": 4,
+   "scope_unknown": 156
+  },
+  {
+   "verb": "assume",
+   "docs": 141,
+   "occurrences": 156,
+   "caps_ratio": 0.0,
+   "edge_share": 0.0897,
+   "remand_lift": 0.843,
+   "negated_ratio": 0.0321,
+   "scope_partial": 5,
+   "scope_full": 1,
+   "scope_unknown": 150
+  },
+  {
+   "verb": "take",
+   "docs": 130,
+   "occurrences": 135,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1778,
+   "remand_lift": 1.337,
+   "negated_ratio": 0.0741,
+   "scope_partial": 0,
+   "scope_full": 11,
+   "scope_unknown": 124
+  },
+  {
+   "verb": "construe",
+   "docs": 126,
+   "occurrences": 143,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1259,
+   "remand_lift": 2.032,
+   "negated_ratio": 0.0629,
+   "scope_partial": 10,
+   "scope_full": 4,
+   "scope_unknown": 129
+  },
+  {
+   "verb": "determine",
+   "docs": 119,
+   "occurrences": 126,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2063,
+   "remand_lift": 2.613,
+   "negated_ratio": 0.7937,
+   "scope_partial": 14,
+   "scope_full": 3,
+   "scope_unknown": 109
+  },
+  {
+   "verb": "join",
+   "docs": 115,
+   "occurrences": 150,
+   "caps_ratio": 0.6533,
+   "edge_share": 0.5533,
+   "remand_lift": 1.352,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 3,
+   "scope_unknown": 147
+  },
+  {
+   "verb": "defer",
+   "docs": 111,
+   "occurrences": 134,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1045,
+   "remand_lift": 0.494,
+   "negated_ratio": 0.1045,
+   "scope_partial": 81,
+   "scope_full": 0,
+   "scope_unknown": 53
+  },
+  {
+   "verb": "reject",
+   "docs": 107,
+   "occurrences": 129,
+   "caps_ratio": 0.0,
+   "edge_share": 0.186,
+   "remand_lift": 0.94,
+   "negated_ratio": 0.0078,
+   "scope_partial": 1,
+   "scope_full": 0,
+   "scope_unknown": 128
+  },
+  {
+   "verb": "interpret",
+   "docs": 107,
+   "occurrences": 114,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1228,
+   "remand_lift": 1.709,
+   "negated_ratio": 0.2105,
+   "scope_partial": 11,
+   "scope_full": 4,
+   "scope_unknown": 99
+  },
+  {
+   "verb": "decide",
+   "docs": 106,
+   "occurrences": 109,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2294,
+   "remand_lift": 1.726,
+   "negated_ratio": 0.945,
+   "scope_partial": 14,
+   "scope_full": 3,
+   "scope_unknown": 92
+  },
+  {
+   "verb": "lack",
+   "docs": 105,
+   "occurrences": 119,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2101,
+   "remand_lift": 0.871,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 7,
+   "scope_unknown": 112
+  },
+  {
+   "verb": "first",
+   "docs": 103,
+   "occurrences": 104,
+   "caps_ratio": 0.0,
+   "edge_share": 0.0962,
+   "remand_lift": 2.309,
+   "negated_ratio": 0.0096,
+   "scope_partial": 2,
+   "scope_full": 0,
+   "scope_unknown": 102
+  },
+  {
+   "verb": "observe",
+   "docs": 98,
+   "occurrences": 110,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2636,
+   "remand_lift": 3.453,
+   "negated_ratio": 0.0091,
+   "scope_partial": 7,
+   "scope_full": 0,
+   "scope_unknown": 103
+  },
+  {
+   "verb": "sustain",
+   "docs": 93,
+   "occurrences": 123,
+   "caps_ratio": 0.1463,
+   "edge_share": 0.2195,
+   "remand_lift": 1.082,
+   "negated_ratio": 0.3333,
+   "scope_partial": 4,
+   "scope_full": 11,
+   "scope_unknown": 108
+  },
+  {
+   "verb": "concur",
+   "docs": 93,
+   "occurrences": 114,
+   "caps_ratio": 0.1053,
+   "edge_share": 0.1754,
+   "remand_lift": 0.787,
+   "negated_ratio": 0.0088,
+   "scope_partial": 94,
+   "scope_full": 0,
+   "scope_unknown": 20
+  },
+  {
+   "verb": "turn",
+   "docs": 85,
+   "occurrences": 92,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1196,
+   "remand_lift": 3.443,
+   "negated_ratio": 0.0,
+   "scope_partial": 4,
+   "scope_full": 0,
+   "scope_unknown": 88
+  },
+  {
+   "verb": "similarly",
+   "docs": 84,
+   "occurrences": 87,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1839,
+   "remand_lift": 1.524,
+   "negated_ratio": 0.0,
+   "scope_partial": 1,
+   "scope_full": 2,
+   "scope_unknown": 84
+  },
+  {
+   "verb": "clarify",
+   "docs": 84,
+   "occurrences": 94,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1277,
+   "remand_lift": 1.96,
+   "negated_ratio": 0.0319,
+   "scope_partial": 13,
+   "scope_full": 5,
+   "scope_unknown": 76
+  },
+  {
+   "verb": "nevertheless",
+   "docs": 84,
+   "occurrences": 89,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1236,
+   "remand_lift": 2.94,
+   "negated_ratio": 0.0,
+   "scope_partial": 3,
+   "scope_full": 16,
+   "scope_unknown": 70
+  },
+  {
+   "verb": "nonetheless",
+   "docs": 80,
+   "occurrences": 87,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2989,
+   "remand_lift": 3.201,
+   "negated_ratio": 0.023,
+   "scope_partial": 1,
+   "scope_full": 26,
+   "scope_unknown": 60
+  },
+  {
+   "verb": "can",
+   "docs": 79,
+   "occurrences": 80,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1125,
+   "remand_lift": 1.621,
+   "negated_ratio": 0.0125,
+   "scope_partial": 1,
+   "scope_full": 2,
+   "scope_unknown": 77
+  },
+  {
+   "verb": "supplement",
+   "docs": 76,
+   "occurrences": 106,
+   "caps_ratio": 0.0,
+   "edge_share": 0.0566,
+   "remand_lift": 0.602,
+   "negated_ratio": 0.0189,
+   "scope_partial": 47,
+   "scope_full": 55,
+   "scope_unknown": 4
+  },
+  {
+   "verb": "still",
+   "docs": 75,
+   "occurrences": 81,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1605,
+   "remand_lift": 1.097,
+   "negated_ratio": 0.0,
+   "scope_partial": 1,
+   "scope_full": 6,
+   "scope_unknown": 74
+  },
+  {
+   "verb": "discuss",
+   "docs": 74,
+   "occurrences": 76,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1447,
+   "remand_lift": 1.112,
+   "negated_ratio": 0.5658,
+   "scope_partial": 1,
+   "scope_full": 0,
+   "scope_unknown": 75
+  },
+  {
+   "verb": "next",
+   "docs": 72,
+   "occurrences": 82,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1463,
+   "remand_lift": 2.668,
+   "negated_ratio": 0.0,
+   "scope_partial": 1,
+   "scope_full": 2,
+   "scope_unknown": 79
+  },
+  {
+   "verb": "may",
+   "docs": 66,
+   "occurrences": 69,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2174,
+   "remand_lift": 1.663,
+   "negated_ratio": 0.0,
+   "scope_partial": 3,
+   "scope_full": 3,
+   "scope_unknown": 63
+  },
+  {
+   "verb": "revisit",
+   "docs": 65,
+   "occurrences": 72,
+   "caps_ratio": 0.0,
+   "edge_share": 0.125,
+   "remand_lift": 2.392,
+   "negated_ratio": 0.8889,
+   "scope_partial": 24,
+   "scope_full": 0,
+   "scope_unknown": 48
+  },
+  {
+   "verb": "understand",
+   "docs": 63,
+   "occurrences": 66,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1061,
+   "remand_lift": 1.452,
+   "negated_ratio": 0.0455,
+   "scope_partial": 5,
+   "scope_full": 1,
+   "scope_unknown": 60
+  },
+  {
+   "verb": "reopen",
+   "docs": 62,
+   "occurrences": 69,
+   "caps_ratio": 0.6957,
+   "edge_share": 0.4928,
+   "remand_lift": 1.18,
+   "negated_ratio": 0.1014,
+   "scope_partial": 0,
+   "scope_full": 47,
+   "scope_unknown": 22
+  },
+  {
+   "verb": "apply",
+   "docs": 61,
+   "occurrences": 69,
+   "caps_ratio": 0.0,
+   "edge_share": 0.0725,
+   "remand_lift": 1.499,
+   "negated_ratio": 0.3043,
+   "scope_partial": 1,
+   "scope_full": 0,
+   "scope_unknown": 68
+  },
+  {
+   "verb": "exercise",
+   "docs": 55,
+   "occurrences": 57,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2281,
+   "remand_lift": 1.663,
+   "negated_ratio": 0.3509,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 57
+  },
+  {
+   "verb": "ultimately",
+   "docs": 53,
+   "occurrences": 58,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1034,
+   "remand_lift": 2.071,
+   "negated_ratio": 0.0172,
+   "scope_partial": 3,
+   "scope_full": 1,
+   "scope_unknown": 54
+  },
+  {
+   "verb": "fail",
+   "docs": 51,
+   "occurrences": 58,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2414,
+   "remand_lift": 0.359,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 58
+  },
+  {
+   "verb": "should",
+   "docs": 50,
+   "occurrences": 65,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1846,
+   "remand_lift": 0.183,
+   "negated_ratio": 0.0308,
+   "scope_partial": 9,
+   "scope_full": 6,
+   "scope_unknown": 50
+  },
+  {
+   "verb": "did",
+   "docs": 50,
+   "occurrences": 51,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1373,
+   "remand_lift": 0.732,
+   "negated_ratio": 0.0,
+   "scope_partial": 1,
+   "scope_full": 0,
+   "scope_unknown": 50
+  },
+  {
+   "verb": "likewise",
+   "docs": 48,
+   "occurrences": 51,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2157,
+   "remand_lift": 0.762,
+   "negated_ratio": 0.0,
+   "scope_partial": 2,
+   "scope_full": 1,
+   "scope_unknown": 48
+  },
+  {
+   "verb": "credit",
+   "docs": 47,
+   "occurrences": 51,
+   "caps_ratio": 0.0,
+   "edge_share": 0.0784,
+   "remand_lift": 1.168,
+   "negated_ratio": 0.1176,
+   "scope_partial": 6,
+   "scope_full": 0,
+   "scope_unknown": 45
+  },
+  {
+   "verb": "previously",
+   "docs": 47,
+   "occurrences": 54,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2037,
+   "remand_lift": 1.362,
+   "negated_ratio": 0.0,
+   "scope_partial": 1,
+   "scope_full": 0,
+   "scope_unknown": 53
+  },
+  {
+   "verb": "further",
+   "docs": 44,
+   "occurrences": 46,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1304,
+   "remand_lift": 0.624,
+   "negated_ratio": 0.9783,
+   "scope_partial": 5,
+   "scope_full": 0,
+   "scope_unknown": 41
+  },
+  {
+   "verb": "deem",
+   "docs": 41,
+   "occurrences": 46,
+   "caps_ratio": 0.0217,
+   "edge_share": 0.2391,
+   "remand_lift": 2.008,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 9,
+   "scope_unknown": 37
+  },
+  {
+   "verb": "otherwise",
+   "docs": 41,
+   "occurrences": 44,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2727,
+   "remand_lift": 0.446,
+   "negated_ratio": 0.0909,
+   "scope_partial": 1,
+   "scope_full": 9,
+   "scope_unknown": 34
+  },
+  {
+   "verb": "refer",
+   "docs": 41,
+   "occurrences": 43,
+   "caps_ratio": 0.0465,
+   "edge_share": 0.4186,
+   "remand_lift": 2.677,
+   "negated_ratio": 0.0,
+   "scope_partial": 2,
+   "scope_full": 5,
+   "scope_unknown": 36
+  },
+  {
+   "verb": "enter",
+   "docs": 40,
+   "occurrences": 40,
+   "caps_ratio": 0.0,
+   "edge_share": 0.025,
+   "remand_lift": 0.229,
+   "negated_ratio": 0.95,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 40
+  },
+  {
+   "verb": "could",
+   "docs": 33,
+   "occurrences": 35,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1429,
+   "remand_lift": 1.663,
+   "negated_ratio": 0.0,
+   "scope_partial": 2,
+   "scope_full": 0,
+   "scope_unknown": 33
+  },
+  {
+   "verb": "adopt",
+   "docs": 33,
+   "occurrences": 51,
+   "caps_ratio": 0.1176,
+   "edge_share": 0.3333,
+   "remand_lift": 0.554,
+   "negated_ratio": 0.1569,
+   "scope_partial": 43,
+   "scope_full": 0,
+   "scope_unknown": 8
+  },
+  {
+   "verb": "noted",
+   "docs": 32,
+   "occurrences": 34,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2647,
+   "remand_lift": 2.001,
+   "negated_ratio": 0.0,
+   "scope_partial": 2,
+   "scope_full": 0,
+   "scope_unknown": 32
+  },
+  {
+   "verb": "need",
+   "docs": 32,
+   "occurrences": 32,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1562,
+   "remand_lift": 2.001,
+   "negated_ratio": 0.2188,
+   "scope_partial": 0,
+   "scope_full": 1,
+   "scope_unknown": 31
+  },
+  {
+   "verb": "only",
+   "docs": 31,
+   "occurrences": 33,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1818,
+   "remand_lift": 2.065,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 3,
+   "scope_unknown": 30
+  },
+  {
+   "verb": "determined",
+   "docs": 31,
+   "occurrences": 37,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1622,
+   "remand_lift": 2.655,
+   "negated_ratio": 0.027,
+   "scope_partial": 2,
+   "scope_full": 1,
+   "scope_unknown": 34
+  },
+  {
+   "verb": "again",
+   "docs": 30,
+   "occurrences": 32,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2812,
+   "remand_lift": 2.134,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 32
+  },
+  {
+   "verb": "review",
+   "docs": 30,
+   "occurrences": 30,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2667,
+   "remand_lift": 1.219,
+   "negated_ratio": 0.4,
+   "scope_partial": 4,
+   "scope_full": 2,
+   "scope_unknown": 24
+  },
+  {
+   "verb": "issued",
+   "docs": 29,
+   "occurrences": 31,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2581,
+   "remand_lift": 2.523,
+   "negated_ratio": 0.0,
+   "scope_partial": 3,
+   "scope_full": 0,
+   "scope_unknown": 28
+  },
+  {
+   "verb": "explained",
+   "docs": 29,
+   "occurrences": 31,
+   "caps_ratio": 0.0,
+   "edge_share": 0.129,
+   "remand_lift": 1.577,
+   "negated_ratio": 0.0,
+   "scope_partial": 2,
+   "scope_full": 0,
+   "scope_unknown": 29
+  },
+  {
+   "verb": "express",
+   "docs": 29,
+   "occurrences": 30,
+   "caps_ratio": 0.0,
+   "edge_share": 0.3667,
+   "remand_lift": 2.208,
+   "negated_ratio": 0.1333,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 30
+  },
+  {
+   "verb": "notify",
+   "docs": 28,
+   "occurrences": 29,
+   "caps_ratio": 0.0,
+   "edge_share": 0.7241,
+   "remand_lift": 0.0,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 1,
+   "scope_unknown": 28
+  },
+  {
+   "verb": "held",
+   "docs": 27,
+   "occurrences": 31,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1613,
+   "remand_lift": 1.694,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 31
+  },
+  {
+   "verb": "rely",
+   "docs": 27,
+   "occurrences": 27,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1852,
+   "remand_lift": 1.694,
+   "negated_ratio": 0.2963,
+   "scope_partial": 2,
+   "scope_full": 0,
+   "scope_unknown": 25
+  },
+  {
+   "verb": "cite",
+   "docs": 26,
+   "occurrences": 26,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1923,
+   "remand_lift": 1.407,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 1,
+   "scope_unknown": 25
+  },
+  {
+   "verb": "read",
+   "docs": 26,
+   "occurrences": 26,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1154,
+   "remand_lift": 1.759,
+   "negated_ratio": 0.5769,
+   "scope_partial": 1,
+   "scope_full": 0,
+   "scope_unknown": 25
+  },
+  {
+   "verb": "hold",
+   "docs": 26,
+   "occurrences": 32,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1875,
+   "remand_lift": 0.704,
+   "negated_ratio": 0.1562,
+   "scope_partial": 0,
+   "scope_full": 2,
+   "scope_unknown": 30
+  },
+  {
+   "verb": "give",
+   "docs": 25,
+   "occurrences": 27,
+   "caps_ratio": 0.0,
+   "edge_share": 0.0741,
+   "remand_lift": 0.732,
+   "negated_ratio": 0.1111,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 27
+  },
+  {
+   "verb": "look",
+   "docs": 25,
+   "occurrences": 25,
+   "caps_ratio": 0.0,
+   "edge_share": 0.08,
+   "remand_lift": 2.927,
+   "negated_ratio": 0.08,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 25
+  },
+  {
+   "verb": "know",
+   "docs": 25,
+   "occurrences": 30,
+   "caps_ratio": 0.0,
+   "edge_share": 0.2,
+   "remand_lift": 2.195,
+   "negated_ratio": 0.6,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 30
+  },
+  {
+   "verb": "provide",
+   "docs": 24,
+   "occurrences": 24,
+   "caps_ratio": 0.0,
+   "edge_share": 0.75,
+   "remand_lift": 1.905,
+   "negated_ratio": 0.0417,
+   "scope_partial": 1,
+   "scope_full": 3,
+   "scope_unknown": 20
+  },
+  {
+   "verb": "analyze",
+   "docs": 24,
+   "occurrences": 25,
+   "caps_ratio": 0.0,
+   "edge_share": 0.12,
+   "remand_lift": 2.286,
+   "negated_ratio": 0.44,
+   "scope_partial": 1,
+   "scope_full": 1,
+   "scope_unknown": 23
+  },
+  {
+   "verb": "decline",
+   "docs": 24,
+   "occurrences": 24,
+   "caps_ratio": 0.0,
+   "edge_share": 0.125,
+   "remand_lift": 0.381,
+   "negated_ratio": 0.0417,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 24
+  },
+  {
+   "verb": "bsite",
+   "docs": 23,
+   "occurrences": 23,
+   "caps_ratio": 0.0,
+   "edge_share": 0.913,
+   "remand_lift": 0.0,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 23
+  },
+  {
+   "verb": "view",
+   "docs": 23,
+   "occurrences": 23,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1304,
+   "remand_lift": 3.181,
+   "negated_ratio": 0.5652,
+   "scope_partial": 3,
+   "scope_full": 1,
+   "scope_unknown": 19
+  },
+  {
+   "verb": "think",
+   "docs": 22,
+   "occurrences": 28,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1429,
+   "remand_lift": 1.663,
+   "negated_ratio": 0.6071,
+   "scope_partial": 3,
+   "scope_full": 0,
+   "scope_unknown": 25
+  },
+  {
+   "verb": "question",
+   "docs": 22,
+   "occurrences": 22,
+   "caps_ratio": 0.0,
+   "edge_share": 0.3636,
+   "remand_lift": 2.494,
+   "negated_ratio": 0.2273,
+   "scope_partial": 1,
+   "scope_full": 0,
+   "scope_unknown": 21
+  },
+  {
+   "verb": "presume",
+   "docs": 21,
+   "occurrences": 21,
+   "caps_ratio": 0.0,
+   "edge_share": 0.0952,
+   "remand_lift": 2.613,
+   "negated_ratio": 0.0,
+   "scope_partial": 1,
+   "scope_full": 1,
+   "scope_unknown": 19
+  },
+  {
+   "verb": "emphasize",
+   "docs": 21,
+   "occurrences": 22,
+   "caps_ratio": 0.0,
+   "edge_share": 0.4091,
+   "remand_lift": 3.484,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 2,
+   "scope_unknown": 20
+  },
+  {
+   "verb": "ordered",
+   "docs": 20,
+   "occurrences": 36,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1944,
+   "remand_lift": 0.915,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 36
+  },
+  {
+   "verb": "remanded",
+   "docs": 20,
+   "occurrences": 21,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1905,
+   "remand_lift": 1.372,
+   "negated_ratio": 0.0,
+   "scope_partial": 3,
+   "scope_full": 6,
+   "scope_unknown": 12
+  },
+  {
+   "verb": "clarified",
+   "docs": 20,
+   "occurrences": 20,
+   "caps_ratio": 0.0,
+   "edge_share": 0.15,
+   "remand_lift": 4.116,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 20
+  },
+  {
+   "verb": "infer",
+   "docs": 20,
+   "occurrences": 21,
+   "caps_ratio": 0.0,
+   "edge_share": 0.0952,
+   "remand_lift": 3.201,
+   "negated_ratio": 0.4762,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 21
+  },
+  {
+   "verb": "assumed",
+   "docs": 20,
+   "occurrences": 23,
+   "caps_ratio": 0.0,
+   "edge_share": 0.1304,
+   "remand_lift": 0.457,
+   "negated_ratio": 0.0,
+   "scope_partial": 0,
+   "scope_full": 0,
+   "scope_unknown": 23
+  }
+ ],
+ "objects": [
+  {
+   "object": "the petitioner has not",
+   "docs": 5764,
+   "deny_rate": 0.9964
+  },
+  {
+   "object": "petition for review and",
+   "docs": 4594,
+   "deny_rate": 0.9898
+  },
+  {
+   "object": "following summary of available",
+   "docs": 4528,
+   "deny_rate": 0.7714
+  },
+  {
+   "object": "appellant",
+   "docs": 3021,
+   "deny_rate": 0.4796
+  },
+  {
+   "object": "with the administrative judge",
+   "docs": 2945,
+   "deny_rate": 0.8037
+  },
+  {
+   "object": "petition for review",
+   "docs": 2767,
+   "deny_rate": 0.9523
+  },
+  {
+   "object": "initial decision",
+   "docs": 1664,
+   "deny_rate": 0.9447
+  },
+  {
+   "object": "there is no new",
+   "docs": 1227,
+   "deny_rate": 0.991
+  },
+  {
+   "object": "administrative judge",
+   "docs": 1213,
+   "deny_rate": 0.7214
+  },
+  {
+   "object": "the appellant",
+   "docs": 1154,
+   "deny_rate": 0.6655
+  },
+  {
+   "object": "no reason to disturb",
+   "docs": 1146,
+   "deny_rate": 0.8473
+  },
+  {
+   "object": "that",
+   "docs": 730,
+   "deny_rate": 0.6603
+  },
+  {
+   "object": "the appellant has not",
+   "docs": 698,
+   "deny_rate": 0.7708
+  },
+  {
+   "object": "no basis to disturb",
+   "docs": 632,
+   "deny_rate": 0.7864
+  },
+  {
+   "object": "case to the regional",
+   "docs": 601,
+   "deny_rate": 0.0483
+  },
+  {
+   "object": "applied the board",
+   "docs": 583,
+   "deny_rate": 0.7187
+  },
+  {
+   "object": "considered the appellant",
+   "docs": 578,
+   "deny_rate": 0.8478
+  },
+  {
+   "object": "agency to tell the",
+   "docs": 521,
+   "deny_rate": 0.5854
+  },
+  {
+   "object": "no error in the",
+   "docs": 513,
+   "deny_rate": 0.8558
+  },
+  {
+   "object": "agency",
+   "docs": 512,
+   "deny_rate": 0.5039
+  },
+  {
+   "object": "petition under the previous",
+   "docs": 502,
+   "deny_rate": 0.7928
+  },
+  {
+   "object": "the administrative judge properly",
+   "docs": 485,
+   "deny_rate": 0.9423
+  },
+  {
+   "object": "agency to pay the",
+   "docs": 476,
+   "deny_rate": 0.5798
+  },
+  {
+   "object": "petition for review as",
+   "docs": 460,
+   "deny_rate": 0.0739
+  },
+  {
+   "object": "the appellant has failed",
+   "docs": 443,
+   "deny_rate": 0.6659
+  },
+  {
+   "object": "appellant to cooperate in",
+   "docs": 442,
+   "deny_rate": 0.5882
+  },
+  {
+   "object": "the appellant failed to",
+   "docs": 427,
+   "deny_rate": 0.7424
+  },
+  {
+   "object": "agency to cancel the",
+   "docs": 348,
+   "deny_rate": 0.6379
+  },
+  {
+   "object": "with the appellant that",
+   "docs": 272,
+   "deny_rate": 0.6213
+  },
+  {
+   "object": "the agency",
+   "docs": 272,
+   "deny_rate": 0.625
+  },
+  {
+   "object": "the appellant did not",
+   "docs": 260,
+   "deny_rate": 0.6962
+  },
+  {
+   "object": "the administrative judge did",
+   "docs": 249,
+   "deny_rate": 0.8835
+  },
+  {
+   "object": "the administrative judge correctly",
+   "docs": 246,
+   "deny_rate": 0.9268
+  },
+  {
+   "object": "settlement agreement into the",
+   "docs": 242,
+   "deny_rate": 0.0041
+  },
+  {
+   "object": "no error with the",
+   "docs": 216,
+   "deny_rate": 0.8935
+  },
+  {
+   "object": "the administrative judge",
+   "docs": 214,
+   "deny_rate": 0.6916
+  },
+  {
+   "object": "initial decision to find",
+   "docs": 212,
+   "deny_rate": 0.8821
+  },
+  {
+   "object": "the parties have entered",
+   "docs": 202,
+   "deny_rate": 0.0198
+  },
+  {
+   "object": "it",
+   "docs": 194,
+   "deny_rate": 0.7887
+  },
+  {
+   "object": "with the appellant",
+   "docs": 193,
+   "deny_rate": 0.7202
+  },
+  {
+   "object": "no basis for disturbing",
+   "docs": 191,
+   "deny_rate": 0.8691
+  },
+  {
+   "object": "1 a nonprecedential order",
+   "docs": 188,
+   "deny_rate": 0.6436
+  },
+  {
+   "object": "them",
+   "docs": 154,
+   "deny_rate": 0.7597
+  },
+  {
+   "object": "the agreement is lawful",
+   "docs": 151,
+   "deny_rate": 0.0066
+  },
+  {
+   "object": "appeal as settled",
+   "docs": 149,
+   "deny_rate": 0.0201
+  },
+  {
+   "object": "agency in compliance and",
+   "docs": 144,
+   "deny_rate": 0.0694
+  },
+  {
+   "object": "initial decision issued by",
+   "docs": 144,
+   "deny_rate": 0.9722
+  },
+  {
+   "object": "no abuse of discretion",
+   "docs": 143,
+   "deny_rate": 0.8601
+  },
+  {
+   "object": "the administrative judge erred",
+   "docs": 133,
+   "deny_rate": 0.3759
+  },
+  {
+   "object": "not persuaded",
+   "docs": 130,
+   "deny_rate": 0.7231
+  },
+  {
+   "object": "not persuaded by the",
+   "docs": 129,
+   "deny_rate": 0.7907
+  },
+  {
+   "object": "initial decision and remand",
+   "docs": 126,
+   "deny_rate": 0.0397
+  },
+  {
+   "object": "the appellant made a",
+   "docs": 123,
+   "deny_rate": 0.1382
+  },
+  {
+   "object": "initial decision as modified",
+   "docs": 123,
+   "deny_rate": 0.8862
+  },
+  {
+   "object": "the appellant has made",
+   "docs": 119,
+   "deny_rate": 0.1008
+  },
+  {
+   "object": "no reason to reweigh",
+   "docs": 115,
+   "deny_rate": 0.9565
+  },
+  {
+   "object": "here that the parties",
+   "docs": 114,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "reviewed the relevant legislation",
+   "docs": 112,
+   "deny_rate": 0.8661
+  },
+  {
+   "object": "find the agency in",
+   "docs": 110,
+   "deny_rate": 0.0727
+  },
+  {
+   "object": "issue of whether the",
+   "docs": 108,
+   "deny_rate": 0.787
+  },
+  {
+   "object": "with the agency that",
+   "docs": 104,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "opm",
+   "docs": 101,
+   "deny_rate": 0.5248
+  },
+  {
+   "object": "the appellant has established",
+   "docs": 97,
+   "deny_rate": 0.1753
+  },
+  {
+   "object": "initial decision to clarify",
+   "docs": 96,
+   "deny_rate": 0.8542
+  },
+  {
+   "object": "no merit to the",
+   "docs": 94,
+   "deny_rate": 0.7872
+  },
+  {
+   "object": "no basis upon which",
+   "docs": 93,
+   "deny_rate": 0.8602
+  },
+  {
+   "object": "reviewed the appellant",
+   "docs": 93,
+   "deny_rate": 0.8602
+  },
+  {
+   "object": "the board lacks jurisdiction",
+   "docs": 90,
+   "deny_rate": 0.7889
+  },
+  {
+   "object": "the appellant nonfrivolously alleged",
+   "docs": 90,
+   "deny_rate": 0.1111
+  },
+  {
+   "object": "case to the washington",
+   "docs": 90,
+   "deny_rate": 0.0333
+  },
+  {
+   "object": "not persuaded that the",
+   "docs": 89,
+   "deny_rate": 0.8427
+  },
+  {
+   "object": "appellant to provide all",
+   "docs": 89,
+   "deny_rate": 0.4382
+  },
+  {
+   "object": "the agency did not",
+   "docs": 86,
+   "deny_rate": 0.7093
+  },
+  {
+   "object": "opm to tell the",
+   "docs": 84,
+   "deny_rate": 0.4643
+  },
+  {
+   "object": "not considered them",
+   "docs": 82,
+   "deny_rate": 0.878
+  },
+  {
+   "object": "initial decision and dismiss",
+   "docs": 82,
+   "deny_rate": 0.3415
+  },
+  {
+   "object": "the appellant has nonfrivolously",
+   "docs": 80,
+   "deny_rate": 0.0375
+  },
+  {
+   "object": "dismissal of the petition",
+   "docs": 80,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "not considered the appellant",
+   "docs": 77,
+   "deny_rate": 0.7013
+  },
+  {
+   "object": "agree with the administrative",
+   "docs": 75,
+   "deny_rate": 0.76
+  },
+  {
+   "object": "he has failed to",
+   "docs": 74,
+   "deny_rate": 0.6216
+  },
+  {
+   "object": "case to the atlanta",
+   "docs": 73,
+   "deny_rate": 0.0411
+  },
+  {
+   "object": "unavailing the appellant",
+   "docs": 73,
+   "deny_rate": 0.8904
+  },
+  {
+   "object": "here that the agreement",
+   "docs": 72,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "appeal to the regional",
+   "docs": 71,
+   "deny_rate": 0.1972
+  },
+  {
+   "object": "dismissing the appeal with",
+   "docs": 70,
+   "deny_rate": 0.0143
+  },
+  {
+   "object": "request",
+   "docs": 69,
+   "deny_rate": 0.8841
+  },
+  {
+   "object": "also considered the appellant",
+   "docs": 68,
+   "deny_rate": 0.7206
+  },
+  {
+   "object": "neither party has established",
+   "docs": 68,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "the appellant has shown",
+   "docs": 66,
+   "deny_rate": 0.6364
+  },
+  {
+   "object": "reviewed the record and",
+   "docs": 65,
+   "deny_rate": 0.8615
+  },
+  {
+   "object": "agency in compliance with",
+   "docs": 63,
+   "deny_rate": 0.1111
+  },
+  {
+   "object": "motion",
+   "docs": 63,
+   "deny_rate": 0.8889
+  },
+  {
+   "object": "initial decision dismissing the",
+   "docs": 62,
+   "deny_rate": 0.871
+  },
+  {
+   "object": "not considered it",
+   "docs": 62,
+   "deny_rate": 0.871
+  },
+  {
+   "object": "the deciding official",
+   "docs": 62,
+   "deny_rate": 0.5968
+  },
+  {
+   "object": "the appellant was not",
+   "docs": 60,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "argument unpersuasive",
+   "docs": 59,
+   "deny_rate": 0.8305
+  },
+  {
+   "object": "to the administrative judge",
+   "docs": 59,
+   "deny_rate": 0.7966
+  },
+  {
+   "object": "unpersuasive the appellant",
+   "docs": 59,
+   "deny_rate": 0.9153
+  },
+  {
+   "object": "so here",
+   "docs": 58,
+   "deny_rate": 0.6897
+  },
+  {
+   "object": "considered the agency",
+   "docs": 58,
+   "deny_rate": 0.7241
+  },
+  {
+   "object": "initial decision to address",
+   "docs": 58,
+   "deny_rate": 0.8966
+  },
+  {
+   "object": "petitions for review and",
+   "docs": 57,
+   "deny_rate": 0.9649
+  },
+  {
+   "object": "initial decision to supplement",
+   "docs": 57,
+   "deny_rate": 0.9298
+  },
+  {
+   "object": "the board has jurisdiction",
+   "docs": 57,
+   "deny_rate": 0.2632
+  },
+  {
+   "object": "find that the appellant",
+   "docs": 57,
+   "deny_rate": 0.6316
+  },
+  {
+   "object": "finding",
+   "docs": 56,
+   "deny_rate": 0.875
+  },
+  {
+   "object": "portion of the initial",
+   "docs": 56,
+   "deny_rate": 0.5357
+  },
+  {
+   "object": "initial decision in this",
+   "docs": 55,
+   "deny_rate": 0.9273
+  },
+  {
+   "object": "the agency failed to",
+   "docs": 55,
+   "deny_rate": 0.5273
+  },
+  {
+   "object": "address the appellant",
+   "docs": 55,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "appeal for further adjudication",
+   "docs": 54,
+   "deny_rate": 0.1481
+  },
+  {
+   "object": "consider the appellant",
+   "docs": 52,
+   "deny_rate": 0.5962
+  },
+  {
+   "object": "the agency is now",
+   "docs": 52,
+   "deny_rate": 0.1154
+  },
+  {
+   "object": "reviewed the administrative judge",
+   "docs": 51,
+   "deny_rate": 0.8627
+  },
+  {
+   "object": "the agency has not",
+   "docs": 51,
+   "deny_rate": 0.6078
+  },
+  {
+   "object": "considered all of the",
+   "docs": 51,
+   "deny_rate": 0.8627
+  },
+  {
+   "object": "osc",
+   "docs": 51,
+   "deny_rate": 0.3529
+  },
+  {
+   "object": "to consider the appellant",
+   "docs": 50,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "initial decision to the",
+   "docs": 50,
+   "deny_rate": 0.56
+  },
+  {
+   "object": "the appellant is not",
+   "docs": 49,
+   "deny_rate": 0.6531
+  },
+  {
+   "object": "it appropriate to remand",
+   "docs": 49,
+   "deny_rate": 0.0408
+  },
+  {
+   "object": "initial decision accordingly",
+   "docs": 48,
+   "deny_rate": 0.8958
+  },
+  {
+   "object": "dismissing the appeal",
+   "docs": 48,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "petitions 1 a nonprecedential",
+   "docs": 47,
+   "deny_rate": 0.9574
+  },
+  {
+   "object": "here",
+   "docs": 47,
+   "deny_rate": 0.5745
+  },
+  {
+   "object": "the administrative judge should",
+   "docs": 46,
+   "deny_rate": 0.3696
+  },
+  {
+   "object": "petitions such 1 a",
+   "docs": 46,
+   "deny_rate": 0.9565
+  },
+  {
+   "object": "reviewed the record",
+   "docs": 46,
+   "deny_rate": 0.7826
+  },
+  {
+   "object": "with the agency",
+   "docs": 46,
+   "deny_rate": 0.5652
+  },
+  {
+   "object": "dismissing the petition for",
+   "docs": 45,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "case to the field",
+   "docs": 45,
+   "deny_rate": 0.0444
+  },
+  {
+   "object": "issue",
+   "docs": 43,
+   "deny_rate": 0.6977
+  },
+  {
+   "object": "she has failed to",
+   "docs": 43,
+   "deny_rate": 0.5581
+  },
+  {
+   "object": "the appellant is entitled",
+   "docs": 43,
+   "deny_rate": 0.0698
+  },
+  {
+   "object": "additional considerations regarding enforcement",
+   "docs": 43,
+   "deny_rate": 0.0698
+  },
+  {
+   "object": "the appellant has met",
+   "docs": 42,
+   "deny_rate": 0.2143
+  },
+  {
+   "object": "case to the western",
+   "docs": 42,
+   "deny_rate": 0.0238
+  },
+  {
+   "object": "appeal for the administrative",
+   "docs": 41,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "the agency met its",
+   "docs": 41,
+   "deny_rate": 0.7073
+  },
+  {
+   "object": "argument unavailing",
+   "docs": 41,
+   "deny_rate": 0.8049
+  },
+  {
+   "object": "them further",
+   "docs": 41,
+   "deny_rate": 0.7073
+  },
+  {
+   "object": "petitioner",
+   "docs": 41,
+   "deny_rate": 0.9268
+  },
+  {
+   "object": "no evidence that the",
+   "docs": 40,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "agency to submit to",
+   "docs": 40,
+   "deny_rate": 0.35
+  },
+  {
+   "object": "petition as untimely filed",
+   "docs": 39,
+   "deny_rate": 0.0769
+  },
+  {
+   "object": "findings",
+   "docs": 39,
+   "deny_rate": 0.6154
+  },
+  {
+   "object": "no error in this",
+   "docs": 39,
+   "deny_rate": 0.7692
+  },
+  {
+   "object": "aware of none",
+   "docs": 39,
+   "deny_rate": 0.7436
+  },
+  {
+   "object": "her pleadings are sufficient",
+   "docs": 38,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "appeal for lack of",
+   "docs": 38,
+   "deny_rate": 0.5526
+  },
+  {
+   "object": "above",
+   "docs": 38,
+   "deny_rate": 0.7368
+  },
+  {
+   "object": "the agency is in",
+   "docs": 37,
+   "deny_rate": 0.2162
+  },
+  {
+   "object": "it here",
+   "docs": 36,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "petitions for review",
+   "docs": 36,
+   "deny_rate": 0.9722
+  },
+  {
+   "object": "no basis to conclude",
+   "docs": 36,
+   "deny_rate": 0.6389
+  },
+  {
+   "object": "for the purposes of",
+   "docs": 36,
+   "deny_rate": 0.8333
+  },
+  {
+   "object": "the administrative judge considered",
+   "docs": 35,
+   "deny_rate": 0.9429
+  },
+  {
+   "object": "no error by the",
+   "docs": 35,
+   "deny_rate": 0.9143
+  },
+  {
+   "object": "argument",
+   "docs": 34,
+   "deny_rate": 0.7353
+  },
+  {
+   "object": "it further",
+   "docs": 34,
+   "deny_rate": 0.6471
+  },
+  {
+   "object": "the penalty of removal",
+   "docs": 34,
+   "deny_rate": 0.6471
+  },
+  {
+   "object": "found that the appellant",
+   "docs": 34,
+   "deny_rate": 0.4412
+  },
+  {
+   "object": "consider these issues with",
+   "docs": 34,
+   "deny_rate": 0.5588
+  },
+  {
+   "object": "the agency proved by",
+   "docs": 33,
+   "deny_rate": 0.4848
+  },
+  {
+   "object": "dismissal of the appeal",
+   "docs": 33,
+   "deny_rate": 0.303
+  },
+  {
+   "object": "whether the administrative judge",
+   "docs": 33,
+   "deny_rate": 0.697
+  },
+  {
+   "object": "none",
+   "docs": 32,
+   "deny_rate": 0.875
+  },
+  {
+   "object": "appeal to give the",
+   "docs": 31,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "the administrative judge abused",
+   "docs": 31,
+   "deny_rate": 0.3226
+  },
+  {
+   "object": "it on review",
+   "docs": 31,
+   "deny_rate": 0.7419
+  },
+  {
+   "object": "the appellant has provided",
+   "docs": 31,
+   "deny_rate": 0.8065
+  },
+  {
+   "object": "no error",
+   "docs": 30,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "remand initial decision",
+   "docs": 30,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "appellant and the attorney",
+   "docs": 30,
+   "deny_rate": 0.4333
+  },
+  {
+   "object": "a different outcome is",
+   "docs": 30,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "no indication that the",
+   "docs": 30,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "no finding as to",
+   "docs": 30,
+   "deny_rate": 0.6333
+  },
+  {
+   "object": "it unnecessary to address",
+   "docs": 29,
+   "deny_rate": 0.6207
+  },
+  {
+   "object": "so now",
+   "docs": 29,
+   "deny_rate": 0.7931
+  },
+  {
+   "object": "the agency has failed",
+   "docs": 29,
+   "deny_rate": 0.5517
+  },
+  {
+   "object": "to find that the",
+   "docs": 29,
+   "deny_rate": 0.7586
+  },
+  {
+   "object": "question of whether the",
+   "docs": 29,
+   "deny_rate": 0.7241
+  },
+  {
+   "object": "no error in that",
+   "docs": 28,
+   "deny_rate": 0.7143
+  },
+  {
+   "object": "initial decision to apply",
+   "docs": 28,
+   "deny_rate": 0.8571
+  },
+  {
+   "object": "compliance initial decision",
+   "docs": 28,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "not considered the agency",
+   "docs": 28,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "the deciding official considered",
+   "docs": 28,
+   "deny_rate": 0.6429
+  },
+  {
+   "object": "case to the northeastern",
+   "docs": 28,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "the petition for review",
+   "docs": 27,
+   "deny_rate": 0.4074
+  },
+  {
+   "object": "the board",
+   "docs": 27,
+   "deny_rate": 0.7407
+  },
+  {
+   "object": "petition for enforcement as",
+   "docs": 27,
+   "deny_rate": 0.0741
+  },
+  {
+   "object": "the record does not",
+   "docs": 27,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "timeliness issue",
+   "docs": 27,
+   "deny_rate": 0.8148
+  },
+  {
+   "object": "the agency proved the",
+   "docs": 27,
+   "deny_rate": 0.7037
+  },
+  {
+   "object": "they do not provide",
+   "docs": 27,
+   "deny_rate": 0.9259
+  },
+  {
+   "object": "whether the appellant",
+   "docs": 27,
+   "deny_rate": 0.5926
+  },
+  {
+   "object": "so",
+   "docs": 27,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "not considered these documents",
+   "docs": 26,
+   "deny_rate": 0.8077
+  },
+  {
+   "object": "as modified the administrative",
+   "docs": 26,
+   "deny_rate": 0.8077
+  },
+  {
+   "object": "parties",
+   "docs": 26,
+   "deny_rate": 0.4231
+  },
+  {
+   "object": "the appellant does not",
+   "docs": 26,
+   "deny_rate": 0.9231
+  },
+  {
+   "object": "the administrative judge applied",
+   "docs": 26,
+   "deny_rate": 0.7308
+  },
+  {
+   "object": "issue of the timeliness",
+   "docs": 26,
+   "deny_rate": 0.9615
+  },
+  {
+   "object": "evidence",
+   "docs": 26,
+   "deny_rate": 0.8462
+  },
+  {
+   "object": "no basis for concluding",
+   "docs": 26,
+   "deny_rate": 0.7308
+  },
+  {
+   "object": "the appellant exhausted his",
+   "docs": 26,
+   "deny_rate": 0.2692
+  },
+  {
+   "object": "the appellant proved by",
+   "docs": 26,
+   "deny_rate": 0.2308
+  },
+  {
+   "object": "it appropriate to consider",
+   "docs": 26,
+   "deny_rate": 0.4615
+  },
+  {
+   "object": "case to the central",
+   "docs": 26,
+   "deny_rate": 0.0769
+  },
+  {
+   "object": "arguments",
+   "docs": 25,
+   "deny_rate": 0.6
+  },
+  {
+   "object": "case for further adjudication",
+   "docs": 25,
+   "deny_rate": 0.12
+  },
+  {
+   "object": "the appellant has proven",
+   "docs": 25,
+   "deny_rate": 0.36
+  },
+  {
+   "object": "not persuaded by this",
+   "docs": 25,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "remand the appeal for",
+   "docs": 25,
+   "deny_rate": 0.04
+  },
+  {
+   "object": "not aware of",
+   "docs": 25,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "the petitioners have not",
+   "docs": 25,
+   "deny_rate": 0.96
+  },
+  {
+   "object": "there is no evidence",
+   "docs": 25,
+   "deny_rate": 0.88
+  },
+  {
+   "object": "the",
+   "docs": 25,
+   "deny_rate": 0.52
+  },
+  {
+   "object": "consider whether the appellant",
+   "docs": 25,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "sympathetic to the appellant",
+   "docs": 25,
+   "deny_rate": 0.76
+  },
+  {
+   "object": "nothing in the record",
+   "docs": 25,
+   "deny_rate": 0.64
+  },
+  {
+   "object": "find that the agency",
+   "docs": 24,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "the appellant has satisfied",
+   "docs": 24,
+   "deny_rate": 0.2917
+  },
+  {
+   "object": "conclude that the appellant",
+   "docs": 24,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "the appellant has presented",
+   "docs": 24,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "them here",
+   "docs": 24,
+   "deny_rate": 0.625
+  },
+  {
+   "object": "agency to restore the",
+   "docs": 24,
+   "deny_rate": 0.3333
+  },
+  {
+   "object": "the agency has proven",
+   "docs": 24,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "initial decision to consider",
+   "docs": 24,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "unpersuaded",
+   "docs": 24,
+   "deny_rate": 0.9583
+  },
+  {
+   "object": "case to the new",
+   "docs": 24,
+   "deny_rate": 0.125
+  },
+  {
+   "object": "no due process violation",
+   "docs": 23,
+   "deny_rate": 0.8696
+  },
+  {
+   "object": "at http",
+   "docs": 23,
+   "deny_rate": 0.6522
+  },
+  {
+   "object": "arguments unpersuasive",
+   "docs": 23,
+   "deny_rate": 0.8696
+  },
+  {
+   "object": "not persuaded that this",
+   "docs": 23,
+   "deny_rate": 0.7826
+  },
+  {
+   "object": "initial decision insofar as",
+   "docs": 23,
+   "deny_rate": 0.5652
+  },
+  {
+   "object": "no evidence in the",
+   "docs": 23,
+   "deny_rate": 0.7826
+  },
+  {
+   "object": "arbitrator",
+   "docs": 23,
+   "deny_rate": 0.087
+  },
+  {
+   "object": "timeliness of the appellant",
+   "docs": 23,
+   "deny_rate": 0.8696
+  },
+  {
+   "object": "opm to grant the",
+   "docs": 23,
+   "deny_rate": 0.5652
+  },
+  {
+   "object": "case to the dallas",
+   "docs": 23,
+   "deny_rate": 0.0435
+  },
+  {
+   "object": "matter to the regional",
+   "docs": 22,
+   "deny_rate": 0.6364
+  },
+  {
+   "object": "initial decision in part",
+   "docs": 22,
+   "deny_rate": 0.1364
+  },
+  {
+   "object": "remanding this appeal for",
+   "docs": 22,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "considered whether the appellant",
+   "docs": 22,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "it necessary to remand",
+   "docs": 22,
+   "deny_rate": 0.0909
+  },
+  {
+   "object": "with the deciding official",
+   "docs": 22,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "with these findings",
+   "docs": 22,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "provided the appellant the",
+   "docs": 22,
+   "deny_rate": 0.9091
+  },
+  {
+   "object": "initial decision as to",
+   "docs": 22,
+   "deny_rate": 0.6364
+  },
+  {
+   "object": "appeal to the administrative",
+   "docs": 21,
+   "deny_rate": 0.0476
+  },
+  {
+   "object": "below",
+   "docs": 21,
+   "deny_rate": 0.7619
+  },
+  {
+   "object": "no basis for reaching",
+   "docs": 21,
+   "deny_rate": 0.9524
+  },
+  {
+   "object": "the deciding official did",
+   "docs": 21,
+   "deny_rate": 0.7619
+  },
+  {
+   "object": "the appellant established that",
+   "docs": 21,
+   "deny_rate": 0.619
+  },
+  {
+   "object": "the parties do not",
+   "docs": 21,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "the appellant exhausted her",
+   "docs": 21,
+   "deny_rate": 0.4286
+  },
+  {
+   "object": "the strength of the",
+   "docs": 21,
+   "deny_rate": 0.8571
+  },
+  {
+   "object": "no reason to conclude",
+   "docs": 21,
+   "deny_rate": 0.7619
+  },
+  {
+   "object": "request for review for",
+   "docs": 21,
+   "deny_rate": 0.1905
+  },
+  {
+   "object": "it unnecessary to reach",
+   "docs": 20,
+   "deny_rate": 0.65
+  },
+  {
+   "object": "the agency has established",
+   "docs": 20,
+   "deny_rate": 0.55
+  },
+  {
+   "object": "initial decision to reflect",
+   "docs": 20,
+   "deny_rate": 0.85
+  },
+  {
+   "object": "the agency has complied",
+   "docs": 20,
+   "deny_rate": 0.45
+  },
+  {
+   "object": "it is appropriate to",
+   "docs": 20,
+   "deny_rate": 0.25
+  },
+  {
+   "object": "question of whether discrimination",
+   "docs": 20,
+   "deny_rate": 0.7
+  },
+  {
+   "object": "these appeals meet the",
+   "docs": 20,
+   "deny_rate": 0.55
+  },
+  {
+   "object": "appeal",
+   "docs": 20,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "initial decision dismissing this",
+   "docs": 20,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "not",
+   "docs": 20,
+   "deny_rate": 0.65
+  },
+  {
+   "object": "them on review",
+   "docs": 20,
+   "deny_rate": 0.65
+  },
+  {
+   "object": "no reason to re",
+   "docs": 20,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "arguments unavailing",
+   "docs": 20,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "remand this appeal for",
+   "docs": 19,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "and find that the",
+   "docs": 19,
+   "deny_rate": 0.5263
+  },
+  {
+   "object": "petition for enforcement",
+   "docs": 19,
+   "deny_rate": 0.1053
+  },
+  {
+   "object": "the agency provided the",
+   "docs": 19,
+   "deny_rate": 0.6316
+  },
+  {
+   "object": "motions",
+   "docs": 19,
+   "deny_rate": 0.8947
+  },
+  {
+   "object": "with her finding that",
+   "docs": 19,
+   "deny_rate": 0.7895
+  },
+  {
+   "object": "case to the denver",
+   "docs": 19,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "the agency proved that",
+   "docs": 18,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "the administrative judge acted",
+   "docs": 18,
+   "deny_rate": 0.8333
+  },
+  {
+   "object": "considered it",
+   "docs": 18,
+   "deny_rate": 0.6111
+  },
+  {
+   "object": "not considered the documents",
+   "docs": 18,
+   "deny_rate": 0.8333
+  },
+  {
+   "object": "the agency proved its",
+   "docs": 18,
+   "deny_rate": 0.7222
+  },
+  {
+   "object": "the agency has shown",
+   "docs": 18,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "reviewed the initial decision",
+   "docs": 18,
+   "deny_rate": 0.9444
+  },
+  {
+   "object": "board",
+   "docs": 18,
+   "deny_rate": 0.5556
+  },
+  {
+   "object": "considered",
+   "docs": 18,
+   "deny_rate": 0.8333
+  },
+  {
+   "object": "the administrative judge appropriately",
+   "docs": 18,
+   "deny_rate": 0.8333
+  },
+  {
+   "object": "find",
+   "docs": 18,
+   "deny_rate": 0.8333
+  },
+  {
+   "object": "initial decision to do",
+   "docs": 18,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "the appellant proved that",
+   "docs": 18,
+   "deny_rate": 0.4444
+  },
+  {
+   "object": "no error in her",
+   "docs": 18,
+   "deny_rate": 0.9444
+  },
+  {
+   "object": "with her conclusion that",
+   "docs": 18,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "the appellant established by",
+   "docs": 17,
+   "deny_rate": 0.1176
+  },
+  {
+   "object": "not aware of any",
+   "docs": 17,
+   "deny_rate": 0.8824
+  },
+  {
+   "object": "must remand this appeal",
+   "docs": 17,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "the administrative judge made",
+   "docs": 17,
+   "deny_rate": 0.7647
+  },
+  {
+   "object": "note that the appellant",
+   "docs": 17,
+   "deny_rate": 0.8824
+  },
+  {
+   "object": "it more likely than",
+   "docs": 17,
+   "deny_rate": 0.3529
+  },
+  {
+   "object": "the deciding official properly",
+   "docs": 17,
+   "deny_rate": 0.8235
+  },
+  {
+   "object": "he has not established",
+   "docs": 17,
+   "deny_rate": 0.8235
+  },
+  {
+   "object": "applying the analytical framework",
+   "docs": 17,
+   "deny_rate": 0.8824
+  },
+  {
+   "object": "the administrative judge found",
+   "docs": 17,
+   "deny_rate": 0.8235
+  },
+  {
+   "object": "office of personnel management",
+   "docs": 17,
+   "deny_rate": 0.7059
+  },
+  {
+   "object": "the administrative judge failed",
+   "docs": 17,
+   "deny_rate": 0.4118
+  },
+  {
+   "object": "he has not shown",
+   "docs": 17,
+   "deny_rate": 0.8235
+  },
+  {
+   "object": "no prejudice to the",
+   "docs": 16,
+   "deny_rate": 0.875
+  },
+  {
+   "object": "agency in compliance on",
+   "docs": 16,
+   "deny_rate": 0.25
+  },
+  {
+   "object": "with this finding",
+   "docs": 16,
+   "deny_rate": 0.8125
+  },
+  {
+   "object": "unable to determine whether",
+   "docs": 16,
+   "deny_rate": 0.25
+  },
+  {
+   "object": "no material error in",
+   "docs": 16,
+   "deny_rate": 0.8125
+  },
+  {
+   "object": "remand the appeal to",
+   "docs": 16,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "with his conclusion that",
+   "docs": 16,
+   "deny_rate": 0.6875
+  },
+  {
+   "object": "appeal for adjudication of",
+   "docs": 16,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "the appellant is satisfied",
+   "docs": 16,
+   "deny_rate": 0.0625
+  },
+  {
+   "object": "found the agency in",
+   "docs": 16,
+   "deny_rate": 0.25
+  },
+  {
+   "object": "no reason to revisit",
+   "docs": 16,
+   "deny_rate": 0.8125
+  },
+  {
+   "object": "the administrative judge was",
+   "docs": 16,
+   "deny_rate": 0.9375
+  },
+  {
+   "object": "a reasonable person in",
+   "docs": 16,
+   "deny_rate": 0.5625
+  },
+  {
+   "object": "no basis on which",
+   "docs": 16,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "also considered whether the",
+   "docs": 16,
+   "deny_rate": 0.625
+  },
+  {
+   "object": "the appellant made nonfrivolous",
+   "docs": 16,
+   "deny_rate": 0.0625
+  },
+  {
+   "object": "respondent",
+   "docs": 16,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "turn to the appellant",
+   "docs": 16,
+   "deny_rate": 0.4375
+  },
+  {
+   "object": "the record supports the",
+   "docs": 16,
+   "deny_rate": 0.875
+  },
+  {
+   "object": "the appellant is pro",
+   "docs": 15,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "them for the first",
+   "docs": 15,
+   "deny_rate": 0.7333
+  },
+  {
+   "object": "the fact that the",
+   "docs": 15,
+   "deny_rate": 0.7333
+  },
+  {
+   "object": "remand initial decision to",
+   "docs": 15,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "addendum initial decision",
+   "docs": 15,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "initial decision and find",
+   "docs": 15,
+   "deny_rate": 0.7333
+  },
+  {
+   "object": "considered these arguments",
+   "docs": 15,
+   "deny_rate": 0.8667
+  },
+  {
+   "object": "appellants",
+   "docs": 15,
+   "deny_rate": 0.7333
+  },
+  {
+   "object": "initial decision to discuss",
+   "docs": 15,
+   "deny_rate": 0.9333
+  },
+  {
+   "object": "the board has held",
+   "docs": 15,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "determine whether the appellant",
+   "docs": 15,
+   "deny_rate": 0.3333
+  },
+  {
+   "object": "jurisdiction over the appellant",
+   "docs": 15,
+   "deny_rate": 0.7333
+  },
+  {
+   "object": "initial decision except as",
+   "docs": 15,
+   "deny_rate": 0.9333
+  },
+  {
+   "object": "not persuaded that a",
+   "docs": 15,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "assertion unavailing",
+   "docs": 15,
+   "deny_rate": 0.7333
+  },
+  {
+   "object": "agency to rescind the",
+   "docs": 15,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "the agency has met",
+   "docs": 15,
+   "deny_rate": 0.7333
+  },
+  {
+   "object": "the appellant has raised",
+   "docs": 15,
+   "deny_rate": 0.2667
+  },
+  {
+   "object": "not considered this argument",
+   "docs": 14,
+   "deny_rate": 0.8571
+  },
+  {
+   "object": "no error with his",
+   "docs": 14,
+   "deny_rate": 0.7857
+  },
+  {
+   "object": "the appellant met his",
+   "docs": 14,
+   "deny_rate": 0.3571
+  },
+  {
+   "object": "the agency complied with",
+   "docs": 14,
+   "deny_rate": 0.6429
+  },
+  {
+   "object": "no support for the",
+   "docs": 14,
+   "deny_rate": 0.8571
+  },
+  {
+   "object": "no reason for disturbing",
+   "docs": 14,
+   "deny_rate": 0.9286
+  },
+  {
+   "object": "the appellant had a",
+   "docs": 14,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "mr",
+   "docs": 14,
+   "deny_rate": 0.6429
+  },
+  {
+   "object": "no error in his",
+   "docs": 14,
+   "deny_rate": 0.7857
+  },
+  {
+   "object": "good cause for the",
+   "docs": 14,
+   "deny_rate": 0.5714
+  },
+  {
+   "object": "initial decision sustaining the",
+   "docs": 14,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "considered this evidence",
+   "docs": 14,
+   "deny_rate": 0.8571
+  },
+  {
+   "object": "she has not established",
+   "docs": 14,
+   "deny_rate": 0.6429
+  },
+  {
+   "object": "as modified the initial",
+   "docs": 14,
+   "deny_rate": 0.7143
+  },
+  {
+   "object": "they provide no basis",
+   "docs": 14,
+   "deny_rate": 0.8571
+  },
+  {
+   "object": "initial decision to vacate",
+   "docs": 14,
+   "deny_rate": 0.9286
+  },
+  {
+   "object": "assertions unavailing",
+   "docs": 14,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "the appellant has exhausted",
+   "docs": 14,
+   "deny_rate": 0.2143
+  },
+  {
+   "object": "the record reflects that",
+   "docs": 14,
+   "deny_rate": 0.7143
+  },
+  {
+   "object": "to the appellant",
+   "docs": 14,
+   "deny_rate": 0.6429
+  },
+  {
+   "object": "the administrative judge improperly",
+   "docs": 14,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "initial decision with respect",
+   "docs": 14,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "no merit in the",
+   "docs": 14,
+   "deny_rate": 0.7857
+  },
+  {
+   "object": "no reason to doubt",
+   "docs": 14,
+   "deny_rate": 0.6429
+  },
+  {
+   "object": "the appellant in this",
+   "docs": 13,
+   "deny_rate": 0.5385
+  },
+  {
+   "object": "it for the first",
+   "docs": 13,
+   "deny_rate": 0.8462
+  },
+  {
+   "object": "no merit to these",
+   "docs": 13,
+   "deny_rate": 0.9231
+  },
+  {
+   "object": "appeal to the atlanta",
+   "docs": 13,
+   "deny_rate": 0.1538
+  },
+  {
+   "object": "no indication in the",
+   "docs": 13,
+   "deny_rate": 0.8462
+  },
+  {
+   "object": "found",
+   "docs": 13,
+   "deny_rate": 0.7692
+  },
+  {
+   "object": "conclude that the administrative",
+   "docs": 13,
+   "deny_rate": 0.6923
+  },
+  {
+   "object": "the removal penalty is",
+   "docs": 13,
+   "deny_rate": 0.8462
+  },
+  {
+   "object": "no basis in the",
+   "docs": 13,
+   "deny_rate": 0.6923
+  },
+  {
+   "object": "no merit to his",
+   "docs": 13,
+   "deny_rate": 0.6923
+  },
+  {
+   "object": "the administrative judge thoroughly",
+   "docs": 13,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "it unnecessary to resolve",
+   "docs": 13,
+   "deny_rate": 0.7692
+  },
+  {
+   "object": "he is satisfied",
+   "docs": 13,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "petition for review 2",
+   "docs": 13,
+   "deny_rate": 0.9231
+  },
+  {
+   "object": "it unnecessary to consider",
+   "docs": 13,
+   "deny_rate": 0.6923
+  },
+  {
+   "object": "find that the administrative",
+   "docs": 13,
+   "deny_rate": 0.8462
+  },
+  {
+   "object": "appeals",
+   "docs": 13,
+   "deny_rate": 0.3846
+  },
+  {
+   "object": "affirm the initial decision",
+   "docs": 13,
+   "deny_rate": 0.8462
+  },
+  {
+   "object": "the appellant met her",
+   "docs": 13,
+   "deny_rate": 0.2308
+  },
+  {
+   "object": "5 c",
+   "docs": 13,
+   "deny_rate": 0.7692
+  },
+  {
+   "object": "the third carr factor",
+   "docs": 13,
+   "deny_rate": 0.6154
+  },
+  {
+   "object": "the appellant established jurisdiction",
+   "docs": 13,
+   "deny_rate": 0.3846
+  },
+  {
+   "object": "the board does not",
+   "docs": 13,
+   "deny_rate": 0.6923
+  },
+  {
+   "object": "it appropriate to extend",
+   "docs": 13,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "appeal for further development",
+   "docs": 13,
+   "deny_rate": 0.1538
+  },
+  {
+   "object": "appeal to the washington",
+   "docs": 13,
+   "deny_rate": 0.4615
+  },
+  {
+   "object": "agency in partial compliance",
+   "docs": 12,
+   "deny_rate": 0.25
+  },
+  {
+   "object": "his pleadings are sufficient",
+   "docs": 12,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "on the appellant",
+   "docs": 12,
+   "deny_rate": 0.3333
+  },
+  {
+   "object": "still find that the",
+   "docs": 12,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "issue further",
+   "docs": 12,
+   "deny_rate": 0.5833
+  },
+  {
+   "object": "agency is in compliance",
+   "docs": 12,
+   "deny_rate": 0.3333
+  },
+  {
+   "object": "evidence on review",
+   "docs": 12,
+   "deny_rate": 0.9167
+  },
+  {
+   "object": "appeals under 5 c",
+   "docs": 12,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "the appellant filed a",
+   "docs": 12,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "the agency has provided",
+   "docs": 12,
+   "deny_rate": 0.5833
+  },
+  {
+   "object": "affirmed the administrative judge",
+   "docs": 12,
+   "deny_rate": 0.9167
+  },
+  {
+   "object": "appellant of his mixed",
+   "docs": 12,
+   "deny_rate": 0.8333
+  },
+  {
+   "object": "found that the agency",
+   "docs": 12,
+   "deny_rate": 0.5833
+  },
+  {
+   "object": "the agency violated the",
+   "docs": 12,
+   "deny_rate": 0.3333
+  },
+  {
+   "object": "consider it",
+   "docs": 12,
+   "deny_rate": 0.8333
+  },
+  {
+   "object": "it now",
+   "docs": 12,
+   "deny_rate": 0.9167
+  },
+  {
+   "object": "not considered this evidence",
+   "docs": 12,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "it appropriate to forward",
+   "docs": 12,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "dismissal of this appeal",
+   "docs": 12,
+   "deny_rate": 0.9167
+  },
+  {
+   "object": "initial decision and deny",
+   "docs": 12,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "claim",
+   "docs": 12,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "standards here to determine",
+   "docs": 12,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "these arguments do not",
+   "docs": 12,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "unpersuaded by the appellant",
+   "docs": 12,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "them unavailing",
+   "docs": 12,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "apparent untimeliness of the",
+   "docs": 12,
+   "deny_rate": 0.6667
+  },
+  {
+   "object": "initial decision to explicitly",
+   "docs": 12,
+   "deny_rate": 0.9167
+  },
+  {
+   "object": "the agency established by",
+   "docs": 12,
+   "deny_rate": 0.9167
+  },
+  {
+   "object": "to the question of",
+   "docs": 12,
+   "deny_rate": 0.1667
+  },
+  {
+   "object": "the appellant engaged in",
+   "docs": 12,
+   "deny_rate": 0.75
+  },
+  {
+   "object": "the appellant satisfied the",
+   "docs": 12,
+   "deny_rate": 0.4167
+  },
+  {
+   "object": "applied the wpea to",
+   "docs": 12,
+   "deny_rate": 0.8333
+  },
+  {
+   "object": "appellant to have received",
+   "docs": 12,
+   "deny_rate": 0.0833
+  },
+  {
+   "object": "no basis for finding",
+   "docs": 12,
+   "deny_rate": 0.9167
+  },
+  {
+   "object": "initial decisions",
+   "docs": 12,
+   "deny_rate": 0.9167
+  },
+  {
+   "object": "appellant has failed to",
+   "docs": 12,
+   "deny_rate": 0.5833
+  },
+  {
+   "object": "initial decision that dismissed",
+   "docs": 11,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "it herein",
+   "docs": 11,
+   "deny_rate": 0.9091
+  },
+  {
+   "object": "to assume that the",
+   "docs": 11,
+   "deny_rate": 0.6364
+  },
+  {
+   "object": "no merit to this",
+   "docs": 11,
+   "deny_rate": 0.8182
+  },
+  {
+   "object": "to consider this argument",
+   "docs": 11,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "case for adjudication of",
+   "docs": 11,
+   "deny_rate": 0.0909
+  },
+  {
+   "object": "agency in noncompliance with",
+   "docs": 11,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "not considered any of",
+   "docs": 11,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "the agency subjected the",
+   "docs": 11,
+   "deny_rate": 0.0909
+  },
+  {
+   "object": "court",
+   "docs": 11,
+   "deny_rate": 0.9091
+  },
+  {
+   "object": "compliance initial decision and",
+   "docs": 11,
+   "deny_rate": 0.3636
+  },
+  {
+   "object": "unable to discern any",
+   "docs": 11,
+   "deny_rate": 0.8182
+  },
+  {
+   "object": "no opinion as to",
+   "docs": 11,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "appellant has not shown",
+   "docs": 11,
+   "deny_rate": 0.5455
+  },
+  {
+   "object": "argument to be without",
+   "docs": 11,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "to see how the",
+   "docs": 11,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "removal is a reasonable",
+   "docs": 11,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "contention unavailing",
+   "docs": 11,
+   "deny_rate": 0.9091
+  },
+  {
+   "object": "he is not entitled",
+   "docs": 11,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "appeal under 5 c",
+   "docs": 11,
+   "deny_rate": 0.0909
+  },
+  {
+   "object": "it does not warrant",
+   "docs": 11,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "case to the administrative",
+   "docs": 11,
+   "deny_rate": 0.0909
+  },
+  {
+   "object": "the agency had strong",
+   "docs": 11,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "the appellant met the",
+   "docs": 11,
+   "deny_rate": 0.1818
+  },
+  {
+   "object": "request for regulation review",
+   "docs": 11,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "initial decision to incorporate",
+   "docs": 11,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "no reason to find",
+   "docs": 11,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "no reason to differ",
+   "docs": 11,
+   "deny_rate": 0.7273
+  },
+  {
+   "object": "initial decision to dismiss",
+   "docs": 10,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "he has made a",
+   "docs": 10,
+   "deny_rate": 0.1
+  },
+  {
+   "object": "it unnecessary to rule",
+   "docs": 10,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "it appropriate to dismiss",
+   "docs": 10,
+   "deny_rate": 0.2
+  },
+  {
+   "object": "the agency has submitted",
+   "docs": 10,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "opportunity to clarify the",
+   "docs": 10,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "the appellant timely filed",
+   "docs": 10,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "initial decision and do",
+   "docs": 10,
+   "deny_rate": 0.3
+  },
+  {
+   "object": "on review the appellant",
+   "docs": 10,
+   "deny_rate": 0.3
+  },
+  {
+   "object": "petition for review of",
+   "docs": 10,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "without authority to impose",
+   "docs": 10,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "compliance initial decision to",
+   "docs": 10,
+   "deny_rate": 0.6
+  },
+  {
+   "object": "the administrative judge issued",
+   "docs": 10,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "considered the remainder of",
+   "docs": 10,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "not persuaded by these",
+   "docs": 10,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "deciding official",
+   "docs": 10,
+   "deny_rate": 0.7
+  },
+  {
+   "object": "not persuaded that it",
+   "docs": 10,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "petition",
+   "docs": 10,
+   "deny_rate": 0.1
+  },
+  {
+   "object": "the instant appeal is",
+   "docs": 10,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "this argument does not",
+   "docs": 10,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "the agency established a",
+   "docs": 10,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "jurisdiction",
+   "docs": 10,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "good cause to waive",
+   "docs": 10,
+   "deny_rate": 0.3
+  },
+  {
+   "object": "no error in these",
+   "docs": 10,
+   "deny_rate": 0.7
+  },
+  {
+   "object": "find that",
+   "docs": 10,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "charge",
+   "docs": 10,
+   "deny_rate": 0.7
+  },
+  {
+   "object": "considered each of the",
+   "docs": 10,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "considered the parties",
+   "docs": 10,
+   "deny_rate": 0.6
+  },
+  {
+   "object": "unable to find any",
+   "docs": 10,
+   "deny_rate": 0.7
+  },
+  {
+   "object": "arguments on review",
+   "docs": 10,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "our discretion not to",
+   "docs": 10,
+   "deny_rate": 0.2
+  },
+  {
+   "object": "initial decision to correct",
+   "docs": 10,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "no basis to find",
+   "docs": 10,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "the appellant filed his",
+   "docs": 10,
+   "deny_rate": 0.3
+  },
+  {
+   "object": "case to opm for",
+   "docs": 10,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "documents further",
+   "docs": 10,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "the appellant has alleged",
+   "docs": 10,
+   "deny_rate": 0.2
+  },
+  {
+   "object": "thoroughly reviewed the record",
+   "docs": 10,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "no error with this",
+   "docs": 10,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "the appellant provided osc",
+   "docs": 10,
+   "deny_rate": 0.2
+  },
+  {
+   "object": "as true the appellant",
+   "docs": 10,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "noted",
+   "docs": 10,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "the appellant has been",
+   "docs": 10,
+   "deny_rate": 0.6
+  },
+  {
+   "object": "it unnecessary to determine",
+   "docs": 10,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "with the administrative law",
+   "docs": 10,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "the administrative judge gave",
+   "docs": 10,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "osc does not have",
+   "docs": 10,
+   "deny_rate": 1.0
+  },
+  {
+   "object": "a 60",
+   "docs": 10,
+   "deny_rate": 0.1
+  },
+  {
+   "object": "matter to the western",
+   "docs": 10,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "remanding the appeal for",
+   "docs": 10,
+   "deny_rate": 0.0
+  },
+  {
+   "object": "compliance initial decision as",
+   "docs": 10,
+   "deny_rate": 0.5
+  },
+  {
+   "object": "the agency established that",
+   "docs": 10,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "question of whether retaliation",
+   "docs": 10,
+   "deny_rate": 0.8
+  },
+  {
+   "object": "a disinterested observer with",
+   "docs": 10,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "vacate the administrative judge",
+   "docs": 10,
+   "deny_rate": 0.4
+  },
+  {
+   "object": "left with a firm",
+   "docs": 10,
+   "deny_rate": 0.9
+  },
+  {
+   "object": "appeal to the western",
+   "docs": 10,
+   "deny_rate": 0.1
+  }
+ ],
+ "frames": [
+  {
+   "verb": "conclude",
+   "object": "the petitioner has not",
+   "docs": 5760,
+   "scope": "unknown"
+  },
+  {
+   "verb": "deny",
+   "object": "petition for review and",
+   "docs": 4553,
+   "scope": "full"
+  },
+  {
+   "verb": "offer",
+   "object": "following summary of available",
+   "docs": 4528,
+   "scope": "unknown"
+  },
+  {
+   "verb": "agree",
+   "object": "with the administrative judge",
+   "docs": 2690,
+   "scope": "partial"
+  },
+  {
+   "verb": "deny",
+   "object": "petition for review",
+   "docs": 2639,
+   "scope": "full"
+  },
+  {
+   "verb": "affirm",
+   "object": "initial decision",
+   "docs": 1538,
+   "scope": "full"
+  },
+  {
+   "verb": "conclude",
+   "object": "there is no new",
+   "docs": 1226,
+   "scope": "unknown"
+  },
+  {
+   "verb": "grant",
+   "object": "appellant",
+   "docs": 1082,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant",
+   "docs": 913,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "no reason to disturb",
+   "docs": 626,
+   "scope": "unknown"
+  },
+  {
+   "verb": "deny",
+   "object": "appellant",
+   "docs": 616,
+   "scope": "unknown"
+  },
+  {
+   "verb": "affirm",
+   "object": "administrative judge",
+   "docs": 597,
+   "scope": "partial"
+  },
+  {
+   "verb": "remand",
+   "object": "case to the regional",
+   "docs": 585,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "applied the board",
+   "docs": 582,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "considered the appellant",
+   "docs": 576,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has not",
+   "docs": 573,
+   "scope": "unknown"
+  },
+  {
+   "verb": "order",
+   "object": "agency to tell the",
+   "docs": 521,
+   "scope": "unknown"
+  },
+  {
+   "verb": "considered",
+   "object": "petition under the previous",
+   "docs": 502,
+   "scope": "full"
+  },
+  {
+   "verb": "order",
+   "object": "agency to pay the",
+   "docs": 474,
+   "scope": "unknown"
+  },
+  {
+   "verb": "dismiss",
+   "object": "petition for review as",
+   "docs": 452,
+   "scope": "full"
+  },
+  {
+   "verb": "order",
+   "object": "appellant to cooperate in",
+   "docs": 442,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "no basis to disturb",
+   "docs": 425,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the administrative judge properly",
+   "docs": 417,
+   "scope": "partial"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has failed",
+   "docs": 387,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "that",
+   "docs": 356,
+   "scope": "unknown"
+  },
+  {
+   "verb": "order",
+   "object": "agency to cancel the",
+   "docs": 347,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant failed to",
+   "docs": 317,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "no error in the",
+   "docs": 313,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "no reason to disturb",
+   "docs": 281,
+   "scope": "unknown"
+  },
+  {
+   "verb": "agree",
+   "object": "with the appellant that",
+   "docs": 247,
+   "scope": "unknown"
+  },
+  {
+   "verb": "see",
+   "object": "no reason to disturb",
+   "docs": 236,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "appellant",
+   "docs": 234,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the administrative judge correctly",
+   "docs": 212,
+   "scope": "partial"
+  },
+  {
+   "verb": "note",
+   "object": "that",
+   "docs": 212,
+   "scope": "unknown"
+  },
+  {
+   "verb": "accept",
+   "object": "settlement agreement into the",
+   "docs": 207,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency",
+   "docs": 204,
+   "scope": "unknown"
+  },
+  {
+   "verb": "vacate",
+   "object": "administrative judge",
+   "docs": 204,
+   "scope": "partial"
+  },
+  {
+   "verb": "find",
+   "object": "the parties have entered",
+   "docs": 202,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the administrative judge did",
+   "docs": 199,
+   "scope": "partial"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision to find",
+   "docs": 194,
+   "scope": "full"
+  },
+  {
+   "verb": "discern",
+   "object": "no error with the",
+   "docs": 191,
+   "scope": "unknown"
+  },
+  {
+   "verb": "address",
+   "object": "appellant",
+   "docs": 177,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "no basis to disturb",
+   "docs": 174,
+   "scope": "unknown"
+  },
+  {
+   "verb": "disagree",
+   "object": "with the administrative judge",
+   "docs": 172,
+   "scope": "partial"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant did not",
+   "docs": 172,
+   "scope": "unknown"
+  },
+  {
+   "verb": "grant",
+   "object": "1 a nonprecedential order",
+   "docs": 172,
+   "scope": "unknown"
+  },
+  {
+   "verb": "consider",
+   "object": "appellant",
+   "docs": 168,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the administrative judge",
+   "docs": 161,
+   "scope": "partial"
+  },
+  {
+   "verb": "forward",
+   "object": "appellant",
+   "docs": 160,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "no error in the",
+   "docs": 158,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agreement is lawful",
+   "docs": 151,
+   "scope": "unknown"
+  },
+  {
+   "verb": "dismiss",
+   "object": "appeal as settled",
+   "docs": 149,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "agency in compliance and",
+   "docs": 144,
+   "scope": "unknown"
+  },
+  {
+   "verb": "affirm",
+   "object": "initial decision issued by",
+   "docs": 144,
+   "scope": "full"
+  },
+  {
+   "verb": "grant",
+   "object": "agency",
+   "docs": 142,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "no basis for disturbing",
+   "docs": 134,
+   "scope": "unknown"
+  },
+  {
+   "verb": "are",
+   "object": "not persuaded",
+   "docs": 130,
+   "scope": "unknown"
+  },
+  {
+   "verb": "are",
+   "object": "not persuaded by the",
+   "docs": 129,
+   "scope": "unknown"
+  },
+  {
+   "verb": "affirm",
+   "object": "initial decision as modified",
+   "docs": 123,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant made a",
+   "docs": 115,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "here that the parties",
+   "docs": 114,
+   "scope": "unknown"
+  },
+  {
+   "verb": "vacate",
+   "object": "initial decision and remand",
+   "docs": 113,
+   "scope": "full"
+  },
+  {
+   "verb": "have",
+   "object": "reviewed the relevant legislation",
+   "docs": 112,
+   "scope": "unknown"
+  },
+  {
+   "verb": "grant",
+   "object": "petition for review",
+   "docs": 110,
+   "scope": "full"
+  },
+  {
+   "verb": "consider",
+   "object": "it",
+   "docs": 109,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "no reason to reweigh",
+   "docs": 109,
+   "scope": "unknown"
+  },
+  {
+   "verb": "now",
+   "object": "find the agency in",
+   "docs": 108,
+   "scope": "unknown"
+  },
+  {
+   "verb": "deny",
+   "object": "agency",
+   "docs": 102,
+   "scope": "unknown"
+  },
+  {
+   "verb": "dismiss",
+   "object": "appellant",
+   "docs": 100,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has made",
+   "docs": 100,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the administrative judge erred",
+   "docs": 96,
+   "scope": "partial"
+  },
+  {
+   "verb": "agree",
+   "object": "with the agency that",
+   "docs": 95,
+   "scope": "unknown"
+  },
+  {
+   "verb": "note",
+   "object": "the appellant",
+   "docs": 95,
+   "scope": "unknown"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision to clarify",
+   "docs": 94,
+   "scope": "full"
+  },
+  {
+   "verb": "have",
+   "object": "reviewed the appellant",
+   "docs": 92,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "no merit to the",
+   "docs": 91,
+   "scope": "unknown"
+  },
+  {
+   "verb": "disagree",
+   "object": "with the appellant",
+   "docs": 91,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "the appellant has not",
+   "docs": 90,
+   "scope": "unknown"
+  },
+  {
+   "verb": "are",
+   "object": "not persuaded that the",
+   "docs": 89,
+   "scope": "unknown"
+  },
+  {
+   "verb": "order",
+   "object": "appellant to provide all",
+   "docs": 89,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has established",
+   "docs": 87,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "case to the washington",
+   "docs": 87,
+   "scope": "unknown"
+  },
+  {
+   "verb": "order",
+   "object": "opm to tell the",
+   "docs": 84,
+   "scope": "unknown"
+  },
+  {
+   "verb": "disturb",
+   "object": "administrative judge",
+   "docs": 83,
+   "scope": "partial"
+  },
+  {
+   "verb": "modify",
+   "object": "administrative judge",
+   "docs": 82,
+   "scope": "partial"
+  },
+  {
+   "verb": "have",
+   "object": "not considered them",
+   "docs": 82,
+   "scope": "unknown"
+  },
+  {
+   "verb": "agree",
+   "object": "with the appellant",
+   "docs": 81,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "dismissal of the petition",
+   "docs": 80,
+   "scope": "full"
+  },
+  {
+   "verb": "concur",
+   "object": "with the administrative judge",
+   "docs": 77,
+   "scope": "partial"
+  },
+  {
+   "verb": "have",
+   "object": "not considered the appellant",
+   "docs": 77,
+   "scope": "unknown"
+  },
+  {
+   "verb": "consider",
+   "object": "them",
+   "docs": 76,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant nonfrivolously alleged",
+   "docs": 75,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "unavailing the appellant",
+   "docs": 73,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has nonfrivolously",
+   "docs": 72,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "here that the agreement",
+   "docs": 72,
+   "scope": "unknown"
+  },
+  {
+   "verb": "vacate",
+   "object": "initial decision and dismiss",
+   "docs": 72,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "the board lacks jurisdiction",
+   "docs": 71,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "no abuse of discretion",
+   "docs": 71,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "case to the atlanta",
+   "docs": 70,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "dismissing the appeal with",
+   "docs": 70,
+   "scope": "full"
+  },
+  {
+   "verb": "reject",
+   "object": "appellant",
+   "docs": 69,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "he has failed to",
+   "docs": 69,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "no abuse of discretion",
+   "docs": 69,
+   "scope": "unknown"
+  },
+  {
+   "verb": "vacate",
+   "object": "initial decision",
+   "docs": 68,
+   "scope": "full"
+  },
+  {
+   "verb": "have",
+   "object": "also considered the appellant",
+   "docs": 68,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "neither party has established",
+   "docs": 68,
+   "scope": "unknown"
+  },
+  {
+   "verb": "reverse",
+   "object": "administrative judge",
+   "docs": 67,
+   "scope": "partial"
+  },
+  {
+   "verb": "deny",
+   "object": "request",
+   "docs": 65,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "reviewed the record and",
+   "docs": 65,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency did not",
+   "docs": 64,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "agency in compliance with",
+   "docs": 63,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "not considered it",
+   "docs": 62,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "the appellant",
+   "docs": 60,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "argument unpersuasive",
+   "docs": 59,
+   "scope": "unknown"
+  },
+  {
+   "verb": "deny",
+   "object": "motion",
+   "docs": 59,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "unpersuasive the appellant",
+   "docs": 59,
+   "scope": "unknown"
+  },
+  {
+   "verb": "do",
+   "object": "so here",
+   "docs": 58,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "considered the agency",
+   "docs": 58,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "the administrative judge properly",
+   "docs": 58,
+   "scope": "partial"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision to supplement",
+   "docs": 57,
+   "scope": "full"
+  },
+  {
+   "verb": "agree",
+   "object": "the appellant failed to",
+   "docs": 57,
+   "scope": "unknown"
+  },
+  {
+   "verb": "resolve",
+   "object": "issue of whether the",
+   "docs": 57,
+   "scope": "unknown"
+  },
+  {
+   "verb": "deny",
+   "object": "petitions for review and",
+   "docs": 56,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "appeal to the regional",
+   "docs": 55,
+   "scope": "full"
+  },
+  {
+   "verb": "defer",
+   "object": "to the administrative judge",
+   "docs": 54,
+   "scope": "partial"
+  },
+  {
+   "verb": "remand",
+   "object": "appeal for further adjudication",
+   "docs": 54,
+   "scope": "full"
+  },
+  {
+   "verb": "address",
+   "object": "agency",
+   "docs": 53,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the board has jurisdiction",
+   "docs": 53,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has shown",
+   "docs": 53,
+   "scope": "unknown"
+  },
+  {
+   "verb": "affirm",
+   "object": "initial decision dismissing the",
+   "docs": 53,
+   "scope": "full"
+  },
+  {
+   "verb": "construe",
+   "object": "appellant",
+   "docs": 52,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "reviewed the administrative judge",
+   "docs": 51,
+   "scope": "partial"
+  },
+  {
+   "verb": "find",
+   "object": "the agency is now",
+   "docs": 51,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "considered all of the",
+   "docs": 51,
+   "scope": "unknown"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision to address",
+   "docs": 50,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "the deciding official",
+   "docs": 50,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant was not",
+   "docs": 49,
+   "scope": "unknown"
+  },
+  {
+   "verb": "were",
+   "object": "to consider the appellant",
+   "docs": 49,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "no basis for disturbing",
+   "docs": 49,
+   "scope": "unknown"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision accordingly",
+   "docs": 48,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "dismissing the appeal",
+   "docs": 48,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "it appropriate to remand",
+   "docs": 48,
+   "scope": "unknown"
+  },
+  {
+   "verb": "grant",
+   "object": "petitions 1 a nonprecedential",
+   "docs": 47,
+   "scope": "unknown"
+  },
+  {
+   "verb": "reach",
+   "object": "issue of whether the",
+   "docs": 47,
+   "scope": "unknown"
+  },
+  {
+   "verb": "grant",
+   "object": "petitions such 1 a",
+   "docs": 46,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "reviewed the record",
+   "docs": 46,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "case to the field",
+   "docs": 45,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "dismissing the petition for",
+   "docs": 43,
+   "scope": "full"
+  },
+  {
+   "verb": "address",
+   "object": "additional considerations regarding enforcement",
+   "docs": 43,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "the appellant failed to",
+   "docs": 43,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "no basis upon which",
+   "docs": 42,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "the appellant has failed",
+   "docs": 42,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency failed to",
+   "docs": 42,
+   "scope": "unknown"
+  },
+  {
+   "verb": "see",
+   "object": "no error in the",
+   "docs": 42,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "case to the western",
+   "docs": 42,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "appeal for the administrative",
+   "docs": 41,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "argument unavailing",
+   "docs": 41,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "she has failed to",
+   "docs": 41,
+   "scope": "unknown"
+  },
+  {
+   "verb": "vacate",
+   "object": "portion of the initial",
+   "docs": 40,
+   "scope": "partial"
+  },
+  {
+   "verb": "dismiss",
+   "object": "petition as untimely filed",
+   "docs": 39,
+   "scope": "full"
+  },
+  {
+   "verb": "order",
+   "object": "agency to submit to",
+   "docs": 39,
+   "scope": "unknown"
+  },
+  {
+   "verb": "are",
+   "object": "aware of none",
+   "docs": 39,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant is entitled",
+   "docs": 39,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "her pleadings are sufficient",
+   "docs": 38,
+   "scope": "unknown"
+  },
+  {
+   "verb": "dismiss",
+   "object": "appeal for lack of",
+   "docs": 38,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has met",
+   "docs": 38,
+   "scope": "unknown"
+  },
+  {
+   "verb": "grant",
+   "object": "petition for review and",
+   "docs": 38,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "agency",
+   "docs": 38,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the administrative judge should",
+   "docs": 37,
+   "scope": "partial"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant is not",
+   "docs": 37,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency is in",
+   "docs": 37,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency met its",
+   "docs": 35,
+   "scope": "unknown"
+  },
+  {
+   "verb": "enter",
+   "object": "settlement agreement into the",
+   "docs": 35,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency has not",
+   "docs": 35,
+   "scope": "unknown"
+  },
+  {
+   "verb": "deny",
+   "object": "petitions for review",
+   "docs": 35,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "administrative judge",
+   "docs": 35,
+   "scope": "partial"
+  },
+  {
+   "verb": "affirm",
+   "object": "initial decision in this",
+   "docs": 35,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "opm",
+   "docs": 35,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "no basis upon which",
+   "docs": 34,
+   "scope": "unknown"
+  },
+  {
+   "verb": "must",
+   "object": "consider these issues with",
+   "docs": 34,
+   "scope": "unknown"
+  },
+  {
+   "verb": "disturb",
+   "object": "them",
+   "docs": 32,
+   "scope": "unknown"
+  },
+  {
+   "verb": "reach",
+   "object": "appellant",
+   "docs": 32,
+   "scope": "unknown"
+  },
+  {
+   "verb": "agree",
+   "object": "the appellant",
+   "docs": 32,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "found that the appellant",
+   "docs": 32,
+   "scope": "unknown"
+  },
+  {
+   "verb": "see",
+   "object": "no basis to disturb",
+   "docs": 31,
+   "scope": "unknown"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision",
+   "docs": 31,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "no evidence that the",
+   "docs": 30,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "appeal to give the",
+   "docs": 30,
+   "scope": "full"
+  },
+  {
+   "verb": "ultimately",
+   "object": "agree with the administrative",
+   "docs": 30,
+   "scope": "unknown"
+  },
+  {
+   "verb": "do",
+   "object": "here",
+   "docs": 30,
+   "scope": "unknown"
+  },
+  {
+   "verb": "order",
+   "object": "appellant and the attorney",
+   "docs": 30,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "the appellant did not",
+   "docs": 30,
+   "scope": "unknown"
+  },
+  {
+   "verb": "make",
+   "object": "no finding as to",
+   "docs": 30,
+   "scope": "partial"
+  },
+  {
+   "verb": "do",
+   "object": "so now",
+   "docs": 29,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "that",
+   "docs": 29,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "it unnecessary to address",
+   "docs": 28,
+   "scope": "unknown"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision to apply",
+   "docs": 28,
+   "scope": "full"
+  },
+  {
+   "verb": "affirm",
+   "object": "remand initial decision",
+   "docs": 28,
+   "scope": "full"
+  },
+  {
+   "verb": "have",
+   "object": "not considered the agency",
+   "docs": 28,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "no error by the",
+   "docs": 28,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "appellant",
+   "docs": 28,
+   "scope": "unknown"
+  },
+  {
+   "verb": "were",
+   "object": "to find that the",
+   "docs": 28,
+   "scope": "unknown"
+  },
+  {
+   "verb": "consider",
+   "object": "it on review",
+   "docs": 27,
+   "scope": "unknown"
+  },
+  {
+   "verb": "consider",
+   "object": "agency",
+   "docs": 27,
+   "scope": "unknown"
+  },
+  {
+   "verb": "dismiss",
+   "object": "petition for enforcement as",
+   "docs": 27,
+   "scope": "full"
+  },
+  {
+   "verb": "disturb",
+   "object": "it",
+   "docs": 27,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "they do not provide",
+   "docs": 27,
+   "scope": "unknown"
+  },
+  {
+   "verb": "reach",
+   "object": "question of whether the",
+   "docs": 27,
+   "scope": "unknown"
+  },
+  {
+   "verb": "deny",
+   "object": "petitioner",
+   "docs": 27,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "not considered these documents",
+   "docs": 26,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the administrative judge abused",
+   "docs": 26,
+   "scope": "partial"
+  },
+  {
+   "verb": "affirm",
+   "object": "as modified the administrative",
+   "docs": 26,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the penalty of removal",
+   "docs": 26,
+   "scope": "full"
+  },
+  {
+   "verb": "do",
+   "object": "so",
+   "docs": 26,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency has failed",
+   "docs": 26,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "it appropriate to consider",
+   "docs": 26,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "case to the northeastern",
+   "docs": 26,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency proved by",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "case for further adjudication",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "no error",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "are",
+   "object": "not persuaded by this",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the administrative judge considered",
+   "docs": 25,
+   "scope": "partial"
+  },
+  {
+   "verb": "are",
+   "object": "not aware of",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "discern",
+   "object": "none",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "the administrative judge correctly",
+   "docs": 25,
+   "scope": "partial"
+  },
+  {
+   "verb": "find",
+   "object": "no error with the",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "conclude",
+   "object": "the petitioners have not",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency proved the",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "are",
+   "object": "sympathetic to the appellant",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant proved by",
+   "docs": 25,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the petition for review",
+   "docs": 24,
+   "scope": "full"
+  },
+  {
+   "verb": "discern",
+   "object": "no error in that",
+   "docs": 24,
+   "scope": "unknown"
+  },
+  {
+   "verb": "order",
+   "object": "agency to restore the",
+   "docs": 24,
+   "scope": "unknown"
+  },
+  {
+   "verb": "disagree",
+   "object": "with the appellant that",
+   "docs": 24,
+   "scope": "unknown"
+  },
+  {
+   "verb": "interpret",
+   "object": "appellant",
+   "docs": 24,
+   "scope": "unknown"
+  },
+  {
+   "verb": "consider",
+   "object": "them further",
+   "docs": 24,
+   "scope": "unknown"
+  },
+  {
+   "verb": "credit",
+   "object": "appellant",
+   "docs": 24,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "case to the central",
+   "docs": 24,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "dismissal of the appeal",
+   "docs": 23,
+   "scope": "full"
+  },
+  {
+   "verb": "bsite",
+   "object": "at http",
+   "docs": 23,
+   "scope": "unknown"
+  },
+  {
+   "verb": "agree",
+   "object": "that",
+   "docs": 23,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "arguments unpersuasive",
+   "docs": 23,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the record does not",
+   "docs": 23,
+   "scope": "unknown"
+  },
+  {
+   "verb": "are",
+   "object": "not persuaded that this",
+   "docs": 23,
+   "scope": "unknown"
+  },
+  {
+   "verb": "agree",
+   "object": "with the agency",
+   "docs": 23,
+   "scope": "unknown"
+  },
+  {
+   "verb": "are",
+   "object": "unpersuaded",
+   "docs": 23,
+   "scope": "unknown"
+  },
+  {
+   "verb": "adopt",
+   "object": "administrative judge",
+   "docs": 23,
+   "scope": "partial"
+  },
+  {
+   "verb": "order",
+   "object": "opm to grant the",
+   "docs": 23,
+   "scope": "unknown"
+  },
+  {
+   "verb": "note",
+   "object": "the administrative judge did",
+   "docs": 22,
+   "scope": "partial"
+  },
+  {
+   "verb": "note",
+   "object": "the appellant did not",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "will",
+   "object": "consider the appellant",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has proven",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "are",
+   "object": "remanding this appeal for",
+   "docs": 22,
+   "scope": "full"
+  },
+  {
+   "verb": "have",
+   "object": "considered whether the appellant",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has presented",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "it necessary to remand",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "have",
+   "object": "provided the appellant the",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "supplement",
+   "object": "administrative judge",
+   "docs": 22,
+   "scope": "partial"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision to consider",
+   "docs": 22,
+   "scope": "full"
+  },
+  {
+   "verb": "affirm",
+   "object": "opm",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant exhausted his",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "case to the dallas",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "case to the new",
+   "docs": 22,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "no due process violation",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "address",
+   "object": "administrative judge",
+   "docs": 21,
+   "scope": "partial"
+  },
+  {
+   "verb": "find",
+   "object": "the parties do not",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the agency has proven",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "agree",
+   "object": "with the deciding official",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "affirm",
+   "object": "compliance initial decision",
+   "docs": 21,
+   "scope": "full"
+  },
+  {
+   "verb": "accept",
+   "object": "appellant",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "agree",
+   "object": "the appellant did not",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "consider",
+   "object": "evidence",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision to the",
+   "docs": 21,
+   "scope": "full"
+  },
+  {
+   "verb": "address",
+   "object": "timeliness of the appellant",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "note",
+   "object": "the agency",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "disagree",
+   "object": "with the agency",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "first",
+   "object": "address the appellant",
+   "docs": 21,
+   "scope": "unknown"
+  },
+  {
+   "verb": "recognize",
+   "object": "that",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "it unnecessary to reach",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "remand",
+   "object": "appeal to the administrative",
+   "docs": 20,
+   "scope": "full"
+  },
+  {
+   "verb": "modify",
+   "object": "initial decision to reflect",
+   "docs": 20,
+   "scope": "full"
+  },
+  {
+   "verb": "find",
+   "object": "the appellant has satisfied",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "reach",
+   "object": "question of whether discrimination",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "considered",
+   "object": "appellant",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "these appeals meet the",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "the deciding official considered",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "no evidence in the",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "agree",
+   "object": "with these findings",
+   "docs": 20,
+   "scope": "partial"
+  },
+  {
+   "verb": "must",
+   "object": "remand the appeal for",
+   "docs": 20,
+   "scope": "full"
+  },
+  {
+   "verb": "discern",
+   "object": "no reason to re",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "find",
+   "object": "arguments unavailing",
+   "docs": 20,
+   "scope": "unknown"
+  },
+  {
+   "verb": "grant",
+   "object": "osc",
+   "docs": 20,
+   "scope": "unknown"
+  }
+ ]
+}
