@@ -22,6 +22,7 @@ Exit code 0 = all checks pass. Non-zero = the count of failures.
 """
 
 import collections
+import glob
 import io
 import json
 import os
@@ -150,10 +151,31 @@ if os.path.exists(CSV):
                 "META_TITLE", "META_KEYWORDS", "META_AUTHOR"} & set(cols)))
 
 print("\n[10] documentation matches the code")
-# The README must not advertise labels the code can no longer emit.
+# The README must not advertise labels the code can no longer emit. But it SHOULD
+# still discuss them: the audit narrative explains that `settled` was 21.8%
+# contaminated and was therefore dropped, and deleting that history to satisfy a
+# naive substring check would remove the reason the label is gone.
+#
+# So a mention only counts as "advertising" when it is NOT accompanied by language
+# marking it as withdrawn. The earlier version of this check flagged the audit
+# paragraph itself, which is a false positive that trains you to ignore the warning.
+WITHDRAWN_CUES = ("contaminat", "removed", "deleted", "dropped", "no longer",
+                  "withdraw", "%")
+
+
+def advertises(label):
+    if label not in readme or label in seen:
+        return False
+    for m in re.finditer(re.escape(label), readme):
+        sent = readme[max(0, m.start() - 400):m.end() + 200].lower()
+        if not any(cue in sent for cue in WITHDRAWN_CUES):
+            return True          # a bare mention with no "this was dropped" nearby
+    return False
+
+
 for stale in ("mitigated", "settled"):
-    warn("README still advertises the %r outcome label" % stale,
-         stale not in readme or stale in seen)
+    warn("README still advertises the %r outcome label as emittable" % stale,
+         not advertises(stale))
 check("README documents the derived pipeline",
       "derive_dispositions" in readme,
       "README does not mention derive_dispositions.py")
@@ -165,6 +187,34 @@ check("report() restricts to appellant-petitioned",
 print("\n[11] no model calls, no network in the parse path")
 for banned in ("openai", "anthropic", "requests.post", "bedrock"):
     check("no %r anywhere" % banned, banned not in src and banned not in der)
+
+# Every cached PDF should have produced a text file. Two did not, and the pipeline
+# skipped them without saying so, which is the kind of silent shortfall that makes a
+# corpus quietly smaller than it reports.
+#
+# These two are STRUCTURALLY CORRUPT, not image-only scans: pdftotext reports
+# "xref num 2 not found but needed" and "Catalog dictionary does not contain a valid
+# /Pages entry" rather than an empty text layer.
+#
+# Re-fetching does NOT fix them, which was tested rather than assumed: both were
+# re-downloaded from mspb.gov and came back byte-identical (53,032 and 140,628 bytes),
+# so the files are corrupt on the government's own server. They are unrecoverable
+# without a repair pass (qpdf/ghostscript, neither installed here), and even then the
+# text layer may simply not be present.
+#
+# Reported as a warning, not a failure: 2 of 10,666 is 0.019% and cannot move any
+# finding. The point is that it is visible instead of invisible, and that nobody
+# wastes time re-fetching.
+print("\n[12] every cached PDF produced text")
+_pdfs = {os.path.basename(p)[:-4] for p in glob.glob(os.path.join(HERE, "cache", "*.pdf"))}
+_txts = {os.path.basename(p)[:-4]
+         for p in glob.glob(os.path.join(HERE, "cache", "text", "*.txt"))}
+_gap = sorted(_pdfs - _txts)
+warn("%d cached PDF(s) yielded no text - corrupt at SOURCE, re-fetch does not help: %s"
+     % (len(_gap), ", ".join(_gap[:3]) + (" ..." if len(_gap) > 3 else "")),
+     not _gap)
+if not _gap:
+    print("  PASS all %d cached PDFs have extracted text" % len(_pdfs))
 
 print()
 if fails:

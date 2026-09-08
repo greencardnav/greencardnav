@@ -134,8 +134,14 @@ class Site(OpinionSiteLinear):
     # matching, stripping a trailing "Z" so ISO input could never match. Combined
     # with the date-missing `continue` in _process_html that returned ZERO cases
     # with no error. Match the untruncated value first, then shorter prefixes.
-    DATE_FORMATS = ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d",
-                    "%B %d, %Y", "%b %d, %Y", "%m/%d/%Y")
+    DATE_FORMATS = (
+        "%Y-%m-%dT%H:%M:%SZ",
+        "%Y-%m-%dT%H:%M:%S",
+        "%Y-%m-%d",
+        "%B %d, %Y",
+        "%b %d, %Y",
+        "%m/%d/%Y",
+    )
 
     # The link text carries a file-size annotation -- "... - OCT302025_01B5203
     # (PDF, 3.03 MB)". That is presentation metadata, not part of a case name.
@@ -156,7 +162,9 @@ class Site(OpinionSiteLinear):
             for candidate in (value, value[:19], value[:10]):
                 for fmt in cls.DATE_FORMATS:
                     try:
-                        return datetime.strptime(candidate, fmt).strftime("%Y-%m-%d")
+                        return datetime.strptime(candidate, fmt).strftime(
+                            "%Y-%m-%d"
+                        )
                     except ValueError:
                         continue
         return None

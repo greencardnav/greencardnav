@@ -193,5 +193,18 @@ def main():
     return len(failures)
 
 
+def test_offline_checks():
+    """Entry point for pytest.
+
+    Without this, `pytest test_aao.py` COLLECTS NOTHING and reports success --
+    the checks below are a plain script (a `main()` plus an `eq()` helper), not
+    `test_*` functions, so pytest finds no tests and exits 0. A file named
+    `test_*.py` that silently runs zero tests is worse than no file: it reads as
+    a green suite. Verified by running `pytest test_aao.py` and getting
+    "no tests ran in 0.01s" while `python3 test_aao.py` ran all of them.
+    """
+    assert main() == 0, "%d offline check(s) failed -- see stdout" % len(failures)
+
+
 if __name__ == "__main__":
     sys.exit(main())
