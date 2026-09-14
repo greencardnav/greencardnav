@@ -18,30 +18,55 @@
     "pres-immigrant-visa": 0,
     "pres-nonimmigrant": 0,
     "uscis-h1b-registration-page": 0,
-    "uscis-policy-manual-vol10-partb": 1
+    "uscis-policy-manual-vol10-partb": 0
   },
-  "last_fingerprint": "9a1758be1300bee3",
-  "last_run": "2026-09-07",
+  "last_fingerprint": "afa32f3323493e72",
+  "last_run": "2026-09-14",
   "seen_findings": {
     "date|mod-f1|2026-09-03|flag": {
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-14",
       "severity": "ACTION"
     },
-    "gap|uscis-policy-manual-vol10-partb": {
-      "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
-      "severity": "GAP"
+    "docket|litigation-presidents-alliance|entry-46": {
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
+      "severity": "WATCH"
+    },
+    "fr-cfr|cfr-8-106-fees|C1-2026-17324": {
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-214-nonimmigrants|2026-18631": {
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-264-registration|2026-18345": {
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
+      "severity": "ACTION"
+    },
+    "fr|h1b-supplemental-fee|C1-2026-17324": {
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
+      "severity": "ACTION"
     },
     "watch-date|fji-fixed-admission|effective_date|2026-09-15": {
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-14",
       "severity": "SOON"
     },
     "watch-date|h1b-supplemental-fee|comments_close|2026-09-24": {
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-14",
       "severity": "SOON"
+    },
+    "wayback|uscis-h1b-registration-page|Q4HKTO5EAVCNB2MK6ZHXONRDIRKPSVQY": {
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
+      "severity": "WATCH"
     }
   }
 }
