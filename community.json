@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T17:50:12Z",
+  "generated_at": "2026-09-17T17:50:45Z",
   "schema": 2,
   "taxonomy": [
     {
@@ -148,17 +148,6 @@
       "subreddit": "USCIS",
       "categories": [
         "general",
-        "work_visas",
-        "students_opt"
-      ]
-    },
-    {
-      "title": "Forgot to update an address with my DSO during F-1. Now on H-1B, travelling in January. Should I be worried?",
-      "url": "https://old.reddit.com/r/f1visa/comments/1vyidna/forgot_to_update_an_address_with_my_dso_during_f1/",
-      "source": "r/f1visa",
-      "date": "2026-08-26",
-      "subreddit": "f1visa",
-      "categories": [
         "work_visas",
         "students_opt"
       ]
