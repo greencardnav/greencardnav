@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immigration News Digest — 2026-09-22</title>
+<style>    :root {
+      --neutral-950: #0f141a;
+      --neutral-900: #161d26;
+      --neutral-850: #232b37;
+      --neutral-650: #424650;
+      --neutral-600: #656871;
+      --neutral-500: #8c8c94;
+      --neutral-350: #c6c6cd;
+      --neutral-250: #ebebf0;
+      --neutral-150: #f6f6f9;
+      --neutral-100: #f2f3f3;
+      --white: #ffffff;
+      --primary-600: #006ce0;
+      --primary-700: #003c75;
+      --primary-50: #f0fbff;
+      --success-600: #00802f;
+      --success-50: #effff1;
+      --warning-900: #855900;
+      --warning-50: #fffef0;
+      --warning-border: #f7db8a;
+      --error-600: #db0000;
+      --error-50: #fff5f5;
+      --border: #e9ebed;
+      --shadow-sm: 0 0 1px 1px #e9ebed, 0 1px 8px 2px rgba(0,7,22,0.06);
+      --shadow-md: 0 0 1px 1px #e9ebed, 0 6px 24px 2px rgba(0,7,22,0.10);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-badge: 4px;
+      --radius-button: 20px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Helvetica Neue", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--neutral-100);
+      color: var(--neutral-950);
+      margin: 0; padding: 0;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container { max-width: 820px; margin: 0 auto; padding: 24px 20px 60px; }
+    header.hero {
+      background:
+        radial-gradient(120% 140% at 88% -10%, rgba(0,108,224,0.22) 0%, rgba(0,108,224,0) 55%),
+        linear-gradient(160deg, #16202b 0%, var(--neutral-950) 62%);
+      color: var(--neutral-250);
+      padding: 40px 34px 36px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero h1 {
+      margin: 0 0 10px; font-size: 30px; font-weight: 700;
+      letter-spacing: -0.4px; color: #ffffff; line-height: 1.18;
+    }
+    header.hero .subtitle {
+      color: #d9dde3; font-size: 15px; margin: 0; font-weight: 400;
+      line-height: 1.55;
+    }
+    .disclaimer {
+      font-style: italic; color: var(--neutral-600); font-size: 13px;
+      margin-bottom: 18px; padding: 0 4px;
+    }
+    .counts {
+      display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .count-badge {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-badge); padding: 8px 14px;
+      font-size: 13px; box-shadow: var(--shadow-sm);
+    }
+    .count-badge strong { font-size: 18px; display: block; color: var(--primary-600); }
+    .callout-warning {
+      background: var(--warning-50);
+      border: 1px solid var(--warning-border);
+      border-left: 4px solid var(--warning-900);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .callout-warning h2 {
+      margin: 0 0 10px; font-size: 16px; font-weight: 700;
+      color: var(--warning-900);
+    }
+    .callout-warning p { margin: 0 0 10px; font-size: 13px; color: #5d4503; }
+    .callout-warning ul { margin: 0; padding-left: 18px; }
+    .callout-warning li { margin-bottom: 8px; font-size: 14px; }
+    .callout-warning a { color: var(--warning-900); text-decoration: underline; }
+    .card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 20px 22px;
+      margin-bottom: 16px; box-shadow: var(--shadow-sm);
+    }
+    .card h2 {
+      margin: 0 0 14px; font-size: 18px; font-weight: 700;
+      color: var(--neutral-950); border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .item { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--neutral-100); }
+    .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .item-header { display: flex; align-items: baseline; gap: 6px; }
+    .item-num { flex-shrink: 0; font-weight: 700; color: var(--primary-600); font-size: 14px; min-width: 22px; }
+    .item-headline { flex: 1; }
+    .item-headline a {
+      color: var(--primary-600); font-weight: 600; font-size: 15px;
+      text-decoration: none; line-height: 1.4;
+    }
+    .item-headline a:hover { text-decoration: underline; }
+    .item-headline a::after {
+      content: " \2197"; font-size: 11px; opacity: 0.6;
+    }
+    .item-meta { font-size: 12px; color: var(--neutral-650); margin: 4px 0 0 28px; }
+    .item-why {
+      font-size: 13px; margin: 8px 0 0 28px; color: var(--neutral-850);
+      border-left: 3px solid var(--primary-600); padding-left: 10px;
+      font-style: italic; line-height: 1.45;
+    }
+    .item-summary { font-size: 14px; margin: 6px 0 0 28px; color: var(--neutral-950); }
+    .item-badges { margin: 8px 0 0 28px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .conf-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .conf-high { background: #dcfce7; color: #166534; }
+    .conf-medium { background: #fef3c7; color: #92400e; }
+    .conf-low { background: #f3f4f6; color: #6b7280; }
+    .affects-tag {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      background: var(--warning-50); color: var(--warning-900);
+      border: 1px solid var(--warning-border);
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .community-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      background: var(--neutral-150); color: var(--neutral-650);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .community-disclaimer {
+      font-size: 12px; color: var(--neutral-650); font-style: italic;
+      background: var(--neutral-150); border-left: 3px solid var(--neutral-350);
+      padding: 10px 12px; margin: 0 0 14px; border-radius: 4px; line-height: 1.5;
+    }
+    footer {
+      text-align: center; font-size: 12px; color: var(--neutral-600);
+      margin-top: 30px; padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .empty-msg { font-size: 14px; color: var(--neutral-650); padding: 12px 0; }
+    .archive-toggle {
+      background: none; border: 1px solid var(--border); border-radius: var(--radius-badge);
+      padding: 8px 16px; font-size: 13px; color: var(--primary-600); cursor: pointer;
+      font-weight: 600; margin-bottom: 12px;
+    }
+    .archive-toggle:hover { background: var(--primary-50); }
+    .archive-list { display: none; }
+    .archive-list.open { display: block; }
+    .archive-item {
+      display: flex; align-items: baseline; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid var(--neutral-150);
+      font-size: 13px;
+    }
+    .archive-item:last-child { border-bottom: none; }
+    .archive-date { flex-shrink: 0; color: var(--neutral-600); font-size: 12px; min-width: 80px; }
+    .archive-link { flex: 1; }
+    .archive-link a { color: var(--neutral-850); text-decoration: none; }
+    .archive-link a:hover { color: var(--primary-600); text-decoration: underline; }
+    .archive-source { flex-shrink: 0; font-size: 11px; color: var(--neutral-500); }
+    @media (max-width: 600px) {
+      header.hero { padding: 28px 20px 24px; }
+      header.hero h1 { font-size: 24px; }
+      .card { padding: 16px; }
+      .container { padding: 16px 12px 40px; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="hero">
+<h1>Immigration News Digest</h1>
+<p class="subtitle">2026-09-22</p>
+</header>
+<p class="disclaimer">Personal-learning project. NOT legal advice. NOT official guidance. Scope: EB-1, EB-2, EB-3, and H-1B only.</p>
+<div class="counts">
+<div class="count-badge"><strong>22</strong>new items</div>
+<div class="count-badge"><strong>0</strong>deduped</div>
+<div class="count-badge"><strong>0</strong>affects facts</div>
+</div>
+<div class="card">
+<h2>H-1B</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wndm5s/nebraska_center_h1b_premium_processing_delays/">Nebraska Center H-1B Premium Processing Delays</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wncgh7/h1b_premium_processing_exceeding_15_business_days/">H1B Premium Processing - exceeding 15 business days</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">3.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wmwzfe/h1b_stamping_appointments_in_india_recent_updates/">H-1B stamping appointments in India: Recent updates?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">4.</span>
+<span class="item-headline"><a href="https://www.murthy.com/2026/09/22/i-recently-attended-my-h-1b-visa-interview-at-a-u-s-consulate-abroad-the-consular-officer-mentioned-that-my-social-media-might-need-to-be-reviewed-but-did-not-clearly-explain-whether-anything-else/">I recently attended my H-1B visa interview at a U.S. consulate abroad. The consular officer mentioned that my social media might need to be reviewed, but did not clearly explain whether anything else was needed. My CEAC status now says “Refused,” even though I have received H-1B visas before. Does this mean my visa will not be issued?</a></span>
+</div>
+<div class="item-meta">Murthy Law Firm — Immigration Bulletins | 2026-09-22</div>
+<div class="item-why">I recently attended my H-1B visa interview at a U.S. consulate abroad. The consular officer mentioned that my social media might need to be reviewed, but did not clearly explain whether anything else was needed. My CEAC status now says “Refused,”...</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">5.</span>
+<span class="item-headline"><a href="https://www.murthy.com/2026/09/18/newsflash-h1b-100k-payment-back-again/">NewsFlash! H1B $100K Payment: Back Again?</a></span>
+</div>
+<div class="item-meta">Murthy Law Firm — Immigration Bulletins | 2026-09-18</div>
+<div class="item-why">NewsFlash! H1B $100K Payment: Back Again? - Murthy Law Firm | U.S Immigration Law Murthy Law Firm About Us Law Firm Attorneys Consultations Hire Us Client Service Online Services Foundation Contact Us NewsFlash! H1B $100K Payment: Back Again? 18 Sep...</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">6.</span>
+<span class="item-headline"><a href="https://www.murthy.com/2026/09/18/newsflash-h1b-update-new-executive-order-targets-employer-layoffs/">NewsFlash! H1B Update: New Executive Order Targets Employer Layoffs</a></span>
+</div>
+<div class="item-meta">Murthy Law Firm — Immigration Bulletins | 2026-09-18</div>
+<div class="item-why">NewsFlash! H1B Update: New Executive Order Targets Employer Layoffs - Murthy Law Firm | U.S Immigration Law Murthy Law Firm About Us Law Firm Attorneys Consultations Hire Us Client Service Online Services Foundation Contact Us NewsFlash! H1B Update:...</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">7.</span>
+<span class="item-headline"><a href="https://www.murthy.com/2026/09/09/h1b-cap-exempt-employment-who-qualifies-and-key-considerations-when-changing-employers/">H1B Cap-Exempt Employment: Who Qualifies and Key Considerations When Changing Employers</a></span>
+</div>
+<div class="item-meta">Murthy Law Firm — Immigration Bulletins | 2026-09-09</div>
+<div class="item-why">H1B Cap-Exempt Employment: Who Qualifies and Key Considerations When Changing Employers - Murthy Law Firm | U.S Immigration Law Murthy Law Firm About Us Law Firm Attorneys Consultations Hire Us Client Service Online Services Foundation Contact Us...</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">8.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wn9wni/any_h1b_approvals_0922_cos_center_texas_receipt/">Any H1B approvals 09/22 COS Center: Texas Receipt Date: 05/11 Still under processing, RP</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">9.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wnd77q/h1b_cos_timeline/">h1b COS timeline</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">10.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wndtn1/h1b_appointments_that_were_rescheduled_from_last/">H-1B Appointments that were rescheduled from last Dec/Jan. How are they going?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">11.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wmzmot/h1b_with_expired_stamp_flying_sfoyvr_anyone_done/">H-1B with expired stamp, flying SFO→YVR — anyone done Automatic Visa Revalidation via preclearance in 2026?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">12.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wn76u2/h1b_extension_visa_stamping_221g/">H1b extension visa stamping -221G</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">13.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wn87yh/entry_via_atlanta_atl_on_f1_stem_opt_with/">Entry via Atlanta (ATL) on F-1 STEM OPT with Approved H-1B</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">14.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wmzkqe/fy20252026_h1b_has_anyone_used_a_different/">FY2025/2026 H-1B: Has anyone used a different passport for first visa stamping than the one used for registration?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">15.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wmynrw/applying_canada_tourist_visa_with_approved_i797/">Applying Canada tourist visa with approved i797 but expired h1b stamping</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">16.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wlyt6w/h1b_extensions_will_be_impacted_with_new_eo/">H1B Extensions will be impacted with new EO!!</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-21</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">17.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wmft3h/h1b_approvals_0921/">H1B approvals 09/21</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-21</div>
+<div class="item-summary">H1B approvals 09/21 (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">18.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wmqzsk/h1b_coe_pp_nebraska_any_approvals_in_week_of_921/">H1b COE PP Nebraska - any approvals in Week of 9/21? If yes, what was your received date?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-21</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">19.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wmp8z2/h1b_stamping/">H1B Stamping</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-21</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">20.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1wnd6ja/h1b_worksite_amendment_pending_11_months_ds160/">H-1B worksite amendment pending ~11 months — DS-160 petition number question</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Cross-cutting</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://www.bal.com/perspectives/perm-processing-times-faq-for-employers/">PERM processing times FAQ for employers</a></span>
+</div>
+<div class="item-meta">Berry Appleman &amp; Leiden (BAL) — Immigration News | 2026-09-09</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://www.murthy.com/2026/09/16/cspa-protection-for-employment-based-derivative-children-with-pending-adjustment-applications/">CSPA Protection for Employment-Based Derivative Children with Pending Adjustment Applications</a></span>
+</div>
+<div class="item-meta">Murthy Law Firm — Immigration Bulletins | 2026-09-16</div>
+<div class="item-why">CSPA Protection for Employment-Based Derivative Children with Pending Adjustment Applications - Murthy Law Firm | U.S Immigration Law Murthy Law Firm About Us Law Firm Attorneys Consultations Hire Us Client Service Online Services Foundation Contact...</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+</div>
+<footer>Generated by the green card tool daily monitor. Not legal advice.</footer>
+</div></body></html>
