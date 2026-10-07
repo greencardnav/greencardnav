@@ -6,10 +6,10 @@
     "path": "direct",
     "detail": "https://flag.dol.gov/processingtimes"
   },
-  "source_note": "Source: U.S. Department of Labor, Office of Foreign Labor Certification - Processing Times (flag.dol.gov/processingtimes). PERM figures as published by DOL as of September 22, 2026; prevailing wage determination (ETA-9141) figures as published by DOL as of August 31, 2026. DOL publishes these numbers on its own schedule and its page is the authoritative record; the figures shown here are a mirror of it.",
+  "source_note": "Source: U.S. Department of Labor, Office of Foreign Labor Certification - Processing Times (flag.dol.gov/processingtimes). PERM figures as published by DOL as of October 5, 2026; prevailing wage determination (ETA-9141) figures as published by DOL as of September 30, 2026. DOL publishes these numbers on its own schedule and its page is the authoritative record; the figures shown here are a mirror of it.",
   "perm": {
-    "as_of": "2026-09-22",
-    "as_of_raw": "9/22/2026",
+    "as_of": "2026-10-05",
+    "as_of_raw": "10/05/2026",
     "stages": {
       "analyst_review": {
         "month": "2025-12",
@@ -22,9 +22,9 @@
         "raw": "December 2025"
       },
       "reconsideration": {
-        "month": "2026-04",
-        "month_label": "April 2026",
-        "raw": "April 2026"
+        "month": "2026-05",
+        "month_label": "May 2026",
+        "raw": "May 2026"
       }
     },
     "average_calendar_days": {
@@ -43,14 +43,14 @@
     }
   },
   "prevailing_wage": {
-    "as_of": "2026-08-31",
-    "as_of_raw": "8/31/2026",
+    "as_of": "2026-09-30",
+    "as_of_raw": "9/30/2026",
     "queues": {
       "CW-1": {
         "oews_receipt": {
-          "month": "2026-05",
-          "month_label": "May 2026",
-          "raw": "May 2026"
+          "month": "2026-08",
+          "month_label": "August 2026",
+          "raw": "August 2026"
         },
         "non_oews_receipt": {
           "month": null,
@@ -60,21 +60,21 @@
       },
       "H-1B": {
         "oews_receipt": {
-          "month": "2026-05",
-          "month_label": "May 2026",
-          "raw": "May 2026"
+          "month": "2026-06",
+          "month_label": "June 2026",
+          "raw": "June 2026"
         },
         "non_oews_receipt": {
-          "month": "2026-05",
-          "month_label": "May 2026",
-          "raw": "May 2026"
+          "month": "2026-06",
+          "month_label": "June 2026",
+          "raw": "June 2026"
         }
       },
       "H-2B": {
         "oews_receipt": {
-          "month": "2026-07",
-          "month_label": "July 2026",
-          "raw": "July 2026"
+          "month": "2026-08",
+          "month_label": "August 2026",
+          "raw": "August 2026"
         },
         "non_oews_receipt": {
           "month": null,
@@ -84,34 +84,34 @@
       },
       "PERM": {
         "oews_receipt": {
-          "month": "2026-05",
-          "month_label": "May 2026",
-          "raw": "May 2026"
+          "month": "2026-06",
+          "month_label": "June 2026",
+          "raw": "June 2026"
         },
         "non_oews_receipt": {
-          "month": "2026-05",
-          "month_label": "May 2026",
-          "raw": "May 2026"
+          "month": "2026-06",
+          "month_label": "June 2026",
+          "raw": "June 2026"
         }
       }
     },
     "redeterminations": {
       "H-1B": {
-        "month": "2026-06",
-        "month_label": "June 2026",
-        "raw": "June 2026"
+        "month": "2026-08",
+        "month_label": "August 2026",
+        "raw": "August 2026"
       },
       "PERM": {
-        "month": "2026-06",
-        "month_label": "June 2026",
-        "raw": "June 2026"
+        "month": "2026-07",
+        "month_label": "July 2026",
+        "raw": "July 2026"
       }
     },
     "center_director_reviews": {
       "CW-1": {
-        "month": "2026-08",
-        "month_label": "August 2026",
-        "raw": "August 2026"
+        "month": "2026-09",
+        "month_label": "September 2026",
+        "raw": "September 2026"
       },
       "H-1B": {
         "month": "2026-07",
@@ -119,36 +119,24 @@
         "raw": "July 2026"
       },
       "H-2B": {
-        "month": "2026-05",
-        "month_label": "May 2026",
-        "raw": "May 2026"
-      },
-      "PERM": {
         "month": "2026-06",
         "month_label": "June 2026",
         "raw": "June 2026"
+      },
+      "PERM": {
+        "month": "2026-07",
+        "month_label": "July 2026",
+        "raw": "July 2026"
       }
     },
     "pending_requests": {
       "CW-1": {
         "by_receipt_month": [
           {
-            "month": "2026-03",
-            "month_label": "March 2026",
-            "remaining_requests": 3,
-            "raw": "3"
-          },
-          {
-            "month": "2026-04",
-            "month_label": "April 2026",
-            "remaining_requests": 13,
-            "raw": "13"
-          },
-          {
             "month": "2026-05",
             "month_label": "May 2026",
-            "remaining_requests": 4,
-            "raw": "4"
+            "remaining_requests": 2,
+            "raw": "2"
           },
           {
             "month": "2026-06",
@@ -159,146 +147,128 @@
           {
             "month": "2026-07",
             "month_label": "July 2026",
-            "remaining_requests": 60,
-            "raw": "60"
+            "remaining_requests": 5,
+            "raw": "5"
           },
           {
             "month": "2026-08",
             "month_label": "August 2026",
-            "remaining_requests": 165,
-            "raw": "165"
+            "remaining_requests": 36,
+            "raw": "36"
+          },
+          {
+            "month": "2026-09",
+            "month_label": "September 2026",
+            "remaining_requests": 159,
+            "raw": "159"
           }
         ],
-        "total_remaining_requests": 253
+        "total_remaining_requests": 210
       },
       "H-1B": {
         "by_receipt_month": [
           {
-            "month": "2025-11",
-            "month_label": "November 2025",
-            "remaining_requests": 1,
-            "raw": "1"
-          },
-          {
-            "month": "2025-12",
-            "month_label": "December 2025",
-            "remaining_requests": 0,
-            "raw": "0"
-          },
-          {
-            "month": "2026-01",
-            "month_label": "January 2026",
-            "remaining_requests": 0,
-            "raw": "0"
-          },
-          {
-            "month": "2026-02",
-            "month_label": "February 2026",
-            "remaining_requests": 0,
-            "raw": "0"
-          },
-          {
-            "month": "2026-03",
-            "month_label": "March 2026",
-            "remaining_requests": 0,
-            "raw": "0"
-          },
-          {
             "month": "2026-04",
             "month_label": "April 2026",
-            "remaining_requests": 6,
-            "raw": "6"
+            "remaining_requests": 3,
+            "raw": "3"
           },
           {
             "month": "2026-05",
             "month_label": "May 2026",
-            "remaining_requests": 41,
-            "raw": "41"
+            "remaining_requests": 1,
+            "raw": "1"
           },
           {
             "month": "2026-06",
             "month_label": "June 2026",
-            "remaining_requests": 303,
-            "raw": "303"
+            "remaining_requests": 74,
+            "raw": "74"
           },
           {
             "month": "2026-07",
             "month_label": "July 2026",
-            "remaining_requests": 233,
-            "raw": "233"
+            "remaining_requests": 248,
+            "raw": "248"
           },
           {
             "month": "2026-08",
             "month_label": "August 2026",
-            "remaining_requests": 176,
-            "raw": "176"
+            "remaining_requests": 183,
+            "raw": "183"
+          },
+          {
+            "month": "2026-09",
+            "month_label": "September 2026",
+            "remaining_requests": 201,
+            "raw": "201"
           }
         ],
-        "total_remaining_requests": 760
+        "total_remaining_requests": 710
       },
       "H-2B": {
         "by_receipt_month": [
           {
             "month": "2026-07",
             "month_label": "July 2026",
-            "remaining_requests": 206,
-            "raw": "206"
-          },
-          {
-            "month": "2026-08",
-            "month_label": "August 2026",
-            "remaining_requests": 3671,
-            "raw": "3,671"
-          }
-        ],
-        "total_remaining_requests": 3877
-      },
-      "PERM": {
-        "by_receipt_month": [
-          {
-            "month": "2026-02",
-            "month_label": "February 2026",
             "remaining_requests": 1,
             "raw": "1"
           },
           {
-            "month": "2026-03",
-            "month_label": "March 2026",
-            "remaining_requests": 17,
-            "raw": "17"
+            "month": "2026-08",
+            "month_label": "August 2026",
+            "remaining_requests": 548,
+            "raw": "548"
           },
+          {
+            "month": "2026-09",
+            "month_label": "September 2026",
+            "remaining_requests": 3975,
+            "raw": "3,975"
+          }
+        ],
+        "total_remaining_requests": 4524
+      },
+      "PERM": {
+        "by_receipt_month": [
           {
             "month": "2026-04",
             "month_label": "April 2026",
-            "remaining_requests": 85,
-            "raw": "85"
+            "remaining_requests": 8,
+            "raw": "8"
           },
           {
             "month": "2026-05",
             "month_label": "May 2026",
-            "remaining_requests": 2683,
-            "raw": "2,683"
+            "remaining_requests": 36,
+            "raw": "36"
           },
           {
             "month": "2026-06",
             "month_label": "June 2026",
-            "remaining_requests": 15781,
-            "raw": "15,781"
+            "remaining_requests": 3532,
+            "raw": "3,532"
           },
           {
             "month": "2026-07",
             "month_label": "July 2026",
-            "remaining_requests": 15185,
-            "raw": "15,185"
+            "remaining_requests": 15959,
+            "raw": "15,959"
           },
           {
             "month": "2026-08",
             "month_label": "August 2026",
-            "remaining_requests": 14189,
-            "raw": "14,189"
+            "remaining_requests": 14980,
+            "raw": "14,980"
+          },
+          {
+            "month": "2026-09",
+            "month_label": "September 2026",
+            "remaining_requests": 14519,
+            "raw": "14,519"
           }
         ],
-        "total_remaining_requests": 47941
+        "total_remaining_requests": 49034
       }
     }
   },
@@ -308,6 +278,6 @@
     "prevailing_wage.queues.H-2B.non_oews_receipt is null: DOL published '--', which is not a 'Month YYYY' value."
   ],
   "parse_ok": true,
-  "fetched_at": "2026-09-23T17:15:49Z",
-  "content_digest": "sha256:54e5bd09db1f91ac4d61dc35ec57c9e41f7f0ad81cdae4f1ba3e9b0041fae17d"
+  "fetched_at": "2026-10-07T18:59:22Z",
+  "content_digest": "sha256:a957d74a88f2c2a6e58dca58013ae575eb086b79c9ec33c084299ae62bba0d3c"
 }
