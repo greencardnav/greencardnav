@@ -20,92 +20,102 @@
     "uscis-h1b-registration-page": 0,
     "uscis-policy-manual-vol10-partb": 0
   },
-  "last_fingerprint": "8f16a991d174fe11",
-  "last_run": "2026-10-12",
+  "last_fingerprint": "5a25d03862d74c72",
+  "last_run": "2026-10-19",
   "seen_findings": {
     "date|mod-f1|2026-09-03|flag": {
       "first_seen": "2026-09-02",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
-    "docket|litigation-presidents-alliance|entry-49": {
-      "first_seen": "2026-09-21",
-      "last_seen": "2026-10-12",
-      "severity": "WATCH"
+    "docket|litigation-presidents-alliance|entry-60": {
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
+      "severity": "ACTION"
     },
     "fr-cfr|cfr-8-106-fees|2026-20016": {
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "WATCH"
     },
     "fr-cfr|cfr-8-106-fees|C1-2026-17324": {
       "first_seen": "2026-09-14",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
     "fr-cfr|cfr-8-214-nonimmigrants|2026-18631": {
       "first_seen": "2026-09-14",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
     "fr-cfr|cfr-8-214-nonimmigrants|2026-20660": {
       "first_seen": "2026-10-12",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
+      "severity": "ACTION"
+    },
+    "fr-cfr|cfr-8-214-nonimmigrants|2026-20941": {
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
     "fr-cfr|cfr-8-264-registration|2026-18345": {
       "first_seen": "2026-09-14",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
     "fr-cfr|cfr-8-264-registration|2026-18949": {
       "first_seen": "2026-09-21",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
     "fr-pres-filtered|pres-entry-restriction|1": {
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "WATCH"
     },
     "fr-pres|pres-entry-restriction|2026-20318": {
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "WATCH"
     },
     "fr-pres|pres-nonimmigrant|2026-19554": {
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
     "fr-pres|pres-nonimmigrant|2026-19555": {
       "first_seen": "2026-09-28",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
+      "severity": "ACTION"
+    },
+    "fr|ead-auto-extension-removed|2026-20955": {
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
     "fr|h1b-supplemental-fee|C1-2026-17324": {
       "first_seen": "2026-09-14",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
     "litigation-stamp|2026-09-01": {
       "first_seen": "2026-09-21",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "ACTION"
     },
     "watch-date|h1b-supplemental-fee|comments_close|2026-09-24": {
       "first_seen": "2026-09-02",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "WATCH"
     },
-    "wayback|uscis-h1b-registration-page|SBVPDL5YCULFFDGTRIHHSET5XOA4RGLM": {
-      "first_seen": "2026-10-05",
-      "last_seen": "2026-10-12",
+    "wayback|uscis-h1b-registration-page|MDUP4QBB5UWHO3EB45ARLHYUJ2XVPNSO": {
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
       "severity": "WATCH"
     },
     "wayback|uscis-policy-manual-vol10-partb|ZWUNC5HU6E5JV7SDT6FIFUUPLZG62P6Z": {
       "first_seen": "2026-10-12",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-19",
       "severity": "WATCH"
     }
   }
