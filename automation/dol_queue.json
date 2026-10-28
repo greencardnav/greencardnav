@@ -6,15 +6,15 @@
     "path": "direct",
     "detail": "https://flag.dol.gov/processingtimes"
   },
-  "source_note": "Source: U.S. Department of Labor, Office of Foreign Labor Certification - Processing Times (flag.dol.gov/processingtimes). PERM figures as published by DOL as of October 5, 2026; prevailing wage determination (ETA-9141) figures as published by DOL as of September 30, 2026. DOL publishes these numbers on its own schedule and its page is the authoritative record; the figures shown here are a mirror of it.",
+  "source_note": "Source: U.S. Department of Labor, Office of Foreign Labor Certification - Processing Times (flag.dol.gov/processingtimes). PERM figures as published by DOL as of October 21, 2026; prevailing wage determination (ETA-9141) figures as published by DOL as of September 30, 2026. DOL publishes these numbers on its own schedule and its page is the authoritative record; the figures shown here are a mirror of it.",
   "perm": {
-    "as_of": "2026-10-05",
-    "as_of_raw": "10/05/2026",
+    "as_of": "2026-10-21",
+    "as_of_raw": "10/21/2026",
     "stages": {
       "analyst_review": {
-        "month": "2025-12",
-        "month_label": "December 2025",
-        "raw": "December 2025"
+        "month": "2026-01",
+        "month_label": "January 2026",
+        "raw": "January 2026"
       },
       "audit_review": {
         "month": "2025-12",
@@ -278,6 +278,6 @@
     "prevailing_wage.queues.H-2B.non_oews_receipt is null: DOL published '--', which is not a 'Month YYYY' value."
   ],
   "parse_ok": true,
-  "fetched_at": "2026-10-07T18:59:22Z",
-  "content_digest": "sha256:a957d74a88f2c2a6e58dca58013ae575eb086b79c9ec33c084299ae62bba0d3c"
+  "fetched_at": "2026-10-28T18:23:32Z",
+  "content_digest": "sha256:344ff9b2c347123686b2e6268d79284a83d6d74600ba6a198165ca33f0d5c3f0"
 }
