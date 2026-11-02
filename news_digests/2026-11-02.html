@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immigration News Digest — 2026-11-02</title>
+<style>    :root {
+      --neutral-950: #0f141a;
+      --neutral-900: #161d26;
+      --neutral-850: #232b37;
+      --neutral-650: #424650;
+      --neutral-600: #656871;
+      --neutral-500: #8c8c94;
+      --neutral-350: #c6c6cd;
+      --neutral-250: #ebebf0;
+      --neutral-150: #f6f6f9;
+      --neutral-100: #f2f3f3;
+      --white: #ffffff;
+      --primary-600: #006ce0;
+      --primary-700: #003c75;
+      --primary-50: #f0fbff;
+      --success-600: #00802f;
+      --success-50: #effff1;
+      --warning-900: #855900;
+      --warning-50: #fffef0;
+      --warning-border: #f7db8a;
+      --error-600: #db0000;
+      --error-50: #fff5f5;
+      --border: #e9ebed;
+      --shadow-sm: 0 0 1px 1px #e9ebed, 0 1px 8px 2px rgba(0,7,22,0.06);
+      --shadow-md: 0 0 1px 1px #e9ebed, 0 6px 24px 2px rgba(0,7,22,0.10);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-badge: 4px;
+      --radius-button: 20px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Helvetica Neue", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--neutral-100);
+      color: var(--neutral-950);
+      margin: 0; padding: 0;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container { max-width: 820px; margin: 0 auto; padding: 24px 20px 60px; }
+    header.hero {
+      background:
+        radial-gradient(120% 140% at 88% -10%, rgba(0,108,224,0.22) 0%, rgba(0,108,224,0) 55%),
+        linear-gradient(160deg, #16202b 0%, var(--neutral-950) 62%);
+      color: var(--neutral-250);
+      padding: 40px 34px 36px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero h1 {
+      margin: 0 0 10px; font-size: 30px; font-weight: 700;
+      letter-spacing: -0.4px; color: #ffffff; line-height: 1.18;
+    }
+    header.hero .subtitle {
+      color: #d9dde3; font-size: 15px; margin: 0; font-weight: 400;
+      line-height: 1.55;
+    }
+    .disclaimer {
+      font-style: italic; color: var(--neutral-600); font-size: 13px;
+      margin-bottom: 18px; padding: 0 4px;
+    }
+    .counts {
+      display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .count-badge {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-badge); padding: 8px 14px;
+      font-size: 13px; box-shadow: var(--shadow-sm);
+    }
+    .count-badge strong { font-size: 18px; display: block; color: var(--primary-600); }
+    .callout-warning {
+      background: var(--warning-50);
+      border: 1px solid var(--warning-border);
+      border-left: 4px solid var(--warning-900);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .callout-warning h2 {
+      margin: 0 0 10px; font-size: 16px; font-weight: 700;
+      color: var(--warning-900);
+    }
+    .callout-warning p { margin: 0 0 10px; font-size: 13px; color: #5d4503; }
+    .callout-warning ul { margin: 0; padding-left: 18px; }
+    .callout-warning li { margin-bottom: 8px; font-size: 14px; }
+    .callout-warning a { color: var(--warning-900); text-decoration: underline; }
+    .card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 20px 22px;
+      margin-bottom: 16px; box-shadow: var(--shadow-sm);
+    }
+    .card h2 {
+      margin: 0 0 14px; font-size: 18px; font-weight: 700;
+      color: var(--neutral-950); border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .item { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--neutral-100); }
+    .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .item-header { display: flex; align-items: baseline; gap: 6px; }
+    .item-num { flex-shrink: 0; font-weight: 700; color: var(--primary-600); font-size: 14px; min-width: 22px; }
+    .item-headline { flex: 1; }
+    .item-headline a {
+      color: var(--primary-600); font-weight: 600; font-size: 15px;
+      text-decoration: none; line-height: 1.4;
+    }
+    .item-headline a:hover { text-decoration: underline; }
+    .item-headline a::after {
+      content: " \2197"; font-size: 11px; opacity: 0.6;
+    }
+    .item-meta { font-size: 12px; color: var(--neutral-650); margin: 4px 0 0 28px; }
+    .item-why {
+      font-size: 13px; margin: 8px 0 0 28px; color: var(--neutral-850);
+      border-left: 3px solid var(--primary-600); padding-left: 10px;
+      font-style: italic; line-height: 1.45;
+    }
+    .item-summary { font-size: 14px; margin: 6px 0 0 28px; color: var(--neutral-950); }
+    .item-badges { margin: 8px 0 0 28px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .conf-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .conf-high { background: #dcfce7; color: #166534; }
+    .conf-medium { background: #fef3c7; color: #92400e; }
+    .conf-low { background: #f3f4f6; color: #6b7280; }
+    .affects-tag {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      background: var(--warning-50); color: var(--warning-900);
+      border: 1px solid var(--warning-border);
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .community-badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      background: var(--neutral-150); color: var(--neutral-650);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-badge); padding: 2px 8px;
+    }
+    .community-disclaimer {
+      font-size: 12px; color: var(--neutral-650); font-style: italic;
+      background: var(--neutral-150); border-left: 3px solid var(--neutral-350);
+      padding: 10px 12px; margin: 0 0 14px; border-radius: 4px; line-height: 1.5;
+    }
+    footer {
+      text-align: center; font-size: 12px; color: var(--neutral-600);
+      margin-top: 30px; padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .empty-msg { font-size: 14px; color: var(--neutral-650); padding: 12px 0; }
+    .archive-toggle {
+      background: none; border: 1px solid var(--border); border-radius: var(--radius-badge);
+      padding: 8px 16px; font-size: 13px; color: var(--primary-600); cursor: pointer;
+      font-weight: 600; margin-bottom: 12px;
+    }
+    .archive-toggle:hover { background: var(--primary-50); }
+    .archive-list { display: none; }
+    .archive-list.open { display: block; }
+    .archive-item {
+      display: flex; align-items: baseline; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid var(--neutral-150);
+      font-size: 13px;
+    }
+    .archive-item:last-child { border-bottom: none; }
+    .archive-date { flex-shrink: 0; color: var(--neutral-600); font-size: 12px; min-width: 80px; }
+    .archive-link { flex: 1; }
+    .archive-link a { color: var(--neutral-850); text-decoration: none; }
+    .archive-link a:hover { color: var(--primary-600); text-decoration: underline; }
+    .archive-source { flex-shrink: 0; font-size: 11px; color: var(--neutral-500); }
+    @media (max-width: 600px) {
+      header.hero { padding: 28px 20px 24px; }
+      header.hero h1 { font-size: 24px; }
+      .card { padding: 16px; }
+      .container { padding: 16px 12px 40px; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="hero">
+<h1>Immigration News Digest</h1>
+<p class="subtitle">2026-11-02</p>
+</header>
+<p class="disclaimer">Personal-learning project. NOT legal advice. NOT official guidance. Scope: EB-1, EB-2, EB-3, and H-1B only.</p>
+<div class="counts">
+<div class="count-badge"><strong>102</strong>new items</div>
+<div class="count-badge"><strong>0</strong>deduped</div>
+<div class="count-badge"><strong>0</strong>affects facts</div>
+</div>
+<div class="card">
+<h2>H-1B</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQbGh2blFlSDBXbkIyTFh6Z0tIRFJDc181dzFfX2VSVTBzaTMwV0ltMmhwTHNWUUhPWndhejI0R2w0eUFIQ3phOW5EZzktYU5vM0VQMXZUT1lJMEpMR3VGS2NUalRIMjMzcThrNi14bGlvVEIzUFhlLVNDMWZVX2tNN2h1RGJKNlpscHNabUtzb25HZlJOSFVSdF96b3pCdmh1Yzk1TlctWUdzNGlTT1pIVnRqc1R0aVRFckE?oc=5">Exclusive | Tech Industry Calls on Trump Administration to Withdraw New H-1B Visa Fee - WSJ</a></span>
+</div>
+<div class="item-meta">WSJ | 2026-09-24</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxOQVFQd1NhdHdtcGxadlJIcmlnYVRrM1JmamU3cHFMNmJvTVhYNWZac1Noc3o2U3VmbXZGaVROelhNN18tWk40WjJnbEVmejQ1emd4dklfYzRzUmlJOF93MFZUb1pFaWdVa1ppQ2k0aHpRaVlhYl9KV1daaFFQMDQxQ2lLd1B6TExyc0ROLW53MzVTSDZiYTloNnVUejdETHJCRlY5SWxzYnZSQkVia2VSWHI1NjZFVkFhYlNnbDdDWTVrRTE3Q29DQWl5eUpZbFk?oc=5">AHA asks DHS to make healthcare workers exempt from proposed H-1B visa fee subject to statutory caps - American Hospital Association</a></span>
+</div>
+<div class="item-meta">American Hospital Association | 2026-09-23</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">3.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPZmR3NTdRTUlyYzQtcXliWElMb2tLNDltR3VybnRIWkt2akdVaUhLdWhOa0U1ejg1eGJHcEl5dmJCbFYtWUlLVWtNOUx5Q2ItZjdwSWRXSEhOODYyQ29vd3hOalgxWmVWbC1qNzhreWpuXzlzZE4yeVhDb01nbEQ5dm9hWFJvdE5lRWI0Nmg5T094RlVBYktQdGZuV3BURk5MekhVQWZ1RUlVbk9EbE1sdTVCSGZ6Vlg1dUpRVmgxUdIBvwFBVV95cUxPSTc0SnRVUTU5UU95X25FLXVwd2NuMHdRelM4OTl4SHRTN21aMHE2MThKaThUN0poZjVOTWhsdFlrVHdlcGUtTVpKMkVhaGlYclpDTWNJS2lOMXl1MFRadlBjTU5lQVhyWDRsNThlTVBhLXdza0FOOFROcU90aXc3YTBreVNFU3FmQUVLeTM3YjhKeTNoa3hTZFFxT0ZKb1Fac1JqOXF1SGJacmluWkFFa05rNFRWSF9MdUg0WFltQQ?oc=5">Public comments flood US government websites over proposed H-1B, OPT fee hikes - South China Morning Post</a></span>
+</div>
+<div class="item-meta">South China Morning Post | 2026-10-14</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">4.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTFB2QW5DS0gtSUltLVJYVGw1cHpaQ1ZqV09ocDlvNmRRSTlpWXlxUTd5blNNR196NkVEaVltYm5ndnQ0Mi1lRmN4YTZaeWgxMVhGOUlLMjNVcXN0LVo2Q1JZSk15d2NGZ0p1Y3pCLWxGTHVvcmlMblVWdnFCRDZDZw?oc=5">H-1B Fees, Tightened Rules and Layoff Scrutiny Impact Employers - Legis1</a></span>
+</div>
+<div class="item-meta">Legis1 | 2026-10-19</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">5.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPcmtlLW9VeGk3M0NtdjlpcDEtMkNJWkc2UkNDeERHNEtQaTh4X1dDWmgxSHBJY0RjZGJPOGp1R3UtS3c3OTB1aWsxY25oUVRCa3AxTHBad1BfUnctcTJ5WWNZbVNXT3FoazJzNE5lSm5XOFV2NDZXRG9HT2RVVWhxa3RSOXI2dG12cFR5WnM1RW9IU3dWUHhXbTByaWxVUWk2NWZUbml1ZGFGTG13czJ6Yk1R?oc=5">Trump Appeals Court Loss That Blocked $100,000 H-1B Fee Policies - Bloomberg Law News</a></span>
+</div>
+<div class="item-meta">Bloomberg Law News | 2026-10-12</div>
+<div class="item-summary">Trump Appeals Court Loss That Blocked $100,000 H-1B Fee Policies - Bloomberg Law News (also reported by 6 other outlets)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">6.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xl6l8q/h1b_extension_pending_approval_filed_july_2026/">H1B Extension Pending Approval (filed July ~20'26) - Can I fill DS160 and Pay MRV fee with the number from USCIS receipt notice and not wait for approval notice?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">7.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOUS1md1FhWnkxelllbGJGakg3Q0x1MVhBTXZBZkdES0luVFNxNi1lZlFzUXJTQTZLSExLVXd0RGhSelcydDNRRVE3UkM4SVlrdHIxNmZmWFBxeXJBaldRR2RPdW5pdWlya1JfSlNVSDZQLUxWRnVsc0xXLWk5bGxzNlpkbmVPeS1NZ0hGbVpFZzB6QkxQM09nMUkxUllNbjFnVHlrbWttdDR0SGZOUlA3S25n0gG4AUFVX3lxTE55RHVXcGNUem4waF8zYllPVWtGdTBoNWQzMnNueFRmSjFLMkhYUU9rcDZ2NDJSaHJWUXdzZ3NWT0gyOWJxM1RrdXowSlJtZEdxWGo5bl9LLVkxZ2N4TEJ2ZUlpTWZtd3g0MWZHT2dOaHYzLW11U1dFblllNGl1MXdpNHV1R1ZzSDlGVlNwNUo2WmFhTF93RG5EdHZET3dROU8zcmhKWU5KdFVYM0VqaURVS2x0RFRVNXQ?oc=5">US midterms: How a Congress flip in the election could affect India, H-1B visas and trade - The Indian Express</a></span>
+</div>
+<div class="item-meta">The Indian Express | 2026-10-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">8.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNMERpa29iM1Utck1lcHA5WjFvWHhhQWxfamZ4XzBHNmR2R1RDTkVpelMtdUZJWUo2VUZFeXZWTVNQaHFLb0tKdUhSNlZrbkJiWVdoLVNCSFRLUVlnNFhQNWI5UUZ2S0Q0b0E3S3pDS01tMVo0Qlp3Nm5UOTNIWmM2UGdjVjZ2QjFVakJOYjhuaGhXMXljaVpSakhxQTZuOGJIdVNPcmpaQ3AxSHVfSW9CdzdBczZ6b3PSAbwBQVVfeXFMTnBTQXUwSUYyVUFiVHJpM0lwa25GdkYxd2ZXeVFaNW5zV3FFSHBpbDdFa2dLeHJESjFIZnlvYjVjaWtZSFhtVzl0S0RNZkxQN2RTT1hJQUphaldNeVpqY2hNVU1UMjhmTFVjTnc2UTdnRlE2TGE1dWFneVBCakF5Mk9pSFhING9tbjg4c0ZBS25aSDlfWjFhY0V1X0hNQy1LbmF2UkQ0TW1mX3ZMU2h5c2RUNlNYQmhIck5obkE?oc=5">New Executive Order and PERM Suspensions Tie H-1B and Green Card Sponsorship to Layoff History: What Employers Should Know - The National Law Review</a></span>
+</div>
+<div class="item-meta">The National Law Review | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">9.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxNaUprS2s5VV8ySmg0bFJiRkxfU3JjNGctWmRKX1RNMDA5WktTeEIxdEw2OTROSFV5b1FyRl93TzROZ2xLSmlFb05Zemh2RkozOVpld0kwUnZockFBc0JnRXdHdmVwTFFpSDlCbnFIWmhoQmlqcGQwNEZ3MmotajhNSXVoeXBINGUtRy15c29vUTZCMUdHcXpmby1ZeU5pSEt3cGJ6UnNuUnlKZVJ3SkpVc1cyV1F2WE5jQnB2T0hOMjVIMnFlNHMyaXJR0gHPAUFVX3lxTFBoMV83ekFIdGtUUGNCUmdNWlVBUDBsTVhBd183MmloUXI3S3ZDd2tuMHpGYjRmbXBSQ0ROaFBQN1czTjdhWE1wMlVvdElKU0x5MWJVdTNXVHN4LXRMQmpKaHBEcXVDOVpscDFLQnBFbHZfSUp3QWM0Q0xDUl9Ha3JQb2JOMm4tWGNVenM0VzA0bzVqVkdhcFMwdk9PRDlHQ3kxak9zOXZSMThHdmhFQUxNTG1lbjFEYi1oUDhLdU92SVNpUWkyZnRWajg3RHg0MA?oc=5">Targeting H-1B holders poses severe economic risks to US: Indiaspora - The Economic Times</a></span>
+</div>
+<div class="item-meta">The Economic Times | 2026-11-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">10.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxNUGZwMzNDNlRzMTRSbHhUTUZzcE5XdXppNmVSTUpWRGNuVzlUSkpwUmdCc0I0NklPN1R0bHFWajJxU0hGc0kyLUJEWkZoaVgzWWVseHVmWFdTNHFTZTBPNldpYnZ1bmZVNUdldjdkY0R3Z2h2YTNBcHc5QVVUQjBzdjVJaFE2WlhPQV9vYlAtYlh0cm9DWFZpMjFhOVVKVDBsdmZCV0RxU2pSSnVXUWtjMURJZ21XeEtnY05XUUhmbVB3YTVPSXYyYjgxOE1DaGtBVmNGbHJVcktJQ2tRYVE?oc=5">US rule on H-1B extensions would hit Indians hardest, shows USCIS data as comment window closes - New India Abroad</a></span>
+</div>
+<div class="item-meta">New India Abroad | 2026-11-02</div>
+<div class="item-summary">US rule on H-1B extensions would hit Indians hardest, shows USCIS data as comment window closes - New India Abroad (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">11.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQVjlFcHVUVTJWbFY5UjZzOC16Ql9VWXlTc21nTGZjLXlROXVBWFJRdHdvRlI0RnNHNWkzRTVwMEFYR3cyRXE5TWU4V0Nndld1QkxObVNKaWpfOWxhRHB3ckRuckRkeFRFUHF0TDhhNFVzS2xSOC03U2I0ZFlMZGlSTmxqMFYyLWZXSi1DLTAweHc4eEZqcEJvajZ6ajNqOU5YanExS2ZUSlQzU2xLaXptdUFVSE9TOW9WblZWN05Zd9IBxAFBVV95cUxQbUdfZVJVQUJEWTFTZzBLZ0ZJbVlQT3JFeS1wdGJNVmpaWHRVMTVuS0FTalRWdFRBV2dvZDQ0YzN3cVd1azRpYzJsRzBua0IzeWxrVHdSRlpvRDJpSzN2bEtVU1BJY1hQZ3VxNEp6ZHk4YUNDS29GRGg3VkNBanBkdlJ5eGRhS3pjbW5yVC1teUwwZDJmQVluZ21TUEZLSUJHMjd5RUFoeGF3TFNwVmtuOC1qVVRudmhtYkl0dExDcWdMTmtu?oc=5">H-1B Visas, Green Cards And Deportations: What US Midterms Mean For Indians - News18</a></span>
+</div>
+<div class="item-meta">News18 | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">12.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxNWTVZT1V0ZzZoaFpJNW5hR1Q3MkRtckdwSU9paU96amdxYlJmbTI0NU4yUzUtZHZUQWE1bWdiX1A5Wm95YmdaanQxRm9fYnM2bFlrTzdxRWdRaGhuNHBBTWc0cU92ODZzMnN1NjMyQ2F3RnhjVXo4UkUyYXpKT3ZtcUxoWEJNR3RMSzFFZE1ZLU5CTkhoMmFRVml0YU5PUVAwN1BHbEVtU3UzMWtVN3Y1dHh5S3ZyX2VyTXlhSk56RExjTXU5dVpld1p5MnhMaUV3cUpXX0lrd25tZUFzWFRJT2lfRUFRQ1pCMjMzRFJhX0k1TjRkY3Rz0gH8AUFVX3lxTE90MWZHZXZZTTR1dU9Ebmx2NVBWQjFrVjhSZ25KRWpiTC1leC1jZ0RpRkZ2VUJCa09qSzE2ZlpsWHdaS3ByTUd4bEhHcV90SkJNZFJrUjJkeHRCVTJHcmNWaG42cGl2LWFadUoyQ3QzdU5WT0lNTE15X1oyMTBDRE9tTERnemtoS0U3SjZRV2F1Y0FJVUZsaHZRM180RUJ0WmN3aGx1WFdTMkFKWGhBalNwSm0yS1NSUGNMdW4wVVNndm9yaURLeVpWU05FbU0tZWE1UmxkR3BEWjltOHdpYm4zUEl4MjFxcmhsZXBOT1BtSFBCSXI0VUFWQ3BOLQ?oc=5">If Trump loses control of Congress, what changes for India? The big questions on trade, tariffs and H-1B... - Moneycontrol.com</a></span>
+</div>
+<div class="item-meta">Moneycontrol.com | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">13.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOZ3FBd01OZjNHRjExQjJoZUNiSC13ZGlrdkRlakN3Z19WNThpbHVXdlRrTFItWVBTUTloZWhvdlU1Qko0LW93VGsxVDRyanp5d2ZfOFFUczhvLWY2UlEtajFrWU9hYmJKcXhWNTZaTGhOWHZ6Z0tDdlcyV09BQ1R2U1F2YVBaQWRMRU0tVW56dmJ0VjNtYkxtQVJ3eU9teFRtSTNCZVpvUzV0MlFzZWxmenR2QzhDenVzcGpLM1V1SmdvT29G?oc=5">Trump Enacts New Immigration Policies Against H-1B Visa Holders - Forbes</a></span>
+</div>
+<div class="item-meta">Forbes | 2026-09-21</div>
+<div class="item-summary">Trump Enacts New Immigration Policies Against H-1B Visa Holders - Forbes (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">14.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOVXhYYjQtaVpfOENDTzJCczh5S0JwdUtEN2dkMGNmZDlSQUVQY19HM1RmbWVtV3lsb2paU2VnbGNFQmpLVHdPMFlZM0tkTE5TYTN4eHUwSmQwaGpIR3ozLVIwMFg2MDlmaU9OenI2QlpESGJDR090NzB5bnBNdWlQenNLSWxqb1pOaFpRWTdmbm9mR3BFLVNlbkhDZzZYUWhNd2l0TDFEaw?oc=5">They planned their lives around the H-1B dream. A year of turmoil has some looking beyond America. - Business Insider</a></span>
+</div>
+<div class="item-meta">Business Insider | 2026-09-21</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">15.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQkJzRGdlN1JnRXFYREU0SnFiQU1YSTV0YUlJakliZmZ4MlljQkFFdk1vOUtqNGdGdllQakdLVjFGaGpHdTdvRzB3cXRKd0MyNENHVG1mQVBKVmlkcEJLMXlHMDEtRmN6RHA3RVJ0VnllaUxnWE5fRldYLUpOeVVoOC1vUDFjNWdLM21B?oc=5">Microsoft’s 60,000-Worker Buyout Adds to H-1B Visa Uncertainty - Newsweek</a></span>
+</div>
+<div class="item-meta">Newsweek | 2026-10-26</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">16.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQRzNtczJ1UnpmSlVOX0ZjTGpZV2Q0ZjJTNUotbWl6Wk0wU0NYZE9WSjBqZzZENnhPNkRHcGxlaktpR24yeXJCUWpPSngzVS1hNUNhU21NcThWX1JSZFhTQXFsdnhQOGxyX3FqOXYyS1E4c25jcXNjZlVVRDU2MWpiUGhlTFJuVXpIemxudXZDdF9ObTFpNm0zbHl0NGk2Mm8?oc=5">Targeting H-1B Visa Holders Poses Significant Economic Risks to America - India Currents</a></span>
+</div>
+<div class="item-meta">India Currents | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">17.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNb0dWSDZaNC1NSDBFOVQwRUJYaWRJTmctalpidXEzX0hVR0d6dUM4U0dXaWZNdlk1clBJLU9tYUV5RS1qTG9GcjU4cTloNXBtNGxKSUVWdlpQRDRxUUk2RVI3ZFNBLURfX1RMVlpockV2TWlhZVU3bnhhMEZJNFhsSi1TNHNtNi02Z0VGbDVvdmdNQUhTS3FmMXRUN19Ram5sREx4a0VzRHNMaWlNU0c0eGQ1QnRoakJpZ29MQ3lHNmQ0TExBaW03amNHcWY?oc=5">Commissioner Miller Bars TDA Grants to Businesses Employing H-1B Visa Holders - Texas Agriculture (.gov)</a></span>
+</div>
+<div class="item-meta">Texas Agriculture (.gov) | 2026-10-28</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">18.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxOTTkwcDZjU3RLRTdYTmplb0U0c1hTVmFPUXR0ZGhKWGZvRl92ZDNjRU0wQzBsYlgwbEZfV2pTSGZEcjdCcVhsZ1Y5X0xDX01tbk9aS3cwdG1saXVsTmIwY0R6VnN2NlJEbE1UWkItYTA3eGhRZG5LbGlmdGJaVHV1QXVTSEs5OUhfQnVNZFFmYkNvN3ZnM1ZieWRaQzFIbUFHdjFDZENmLUtLNmNodmVXT19VZTl5Z2R6MEdxNTVtcGtBTEE1dVBETDFZYw?oc=5">UF's Bell says H-1B job filing was made without his approval - Gainesville Sun</a></span>
+</div>
+<div class="item-meta">Gainesville Sun | 2026-10-28</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">19.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxNLTNsQ2FpajBCUURlYTRvNnN1LTFYaHdkM3ZOTXBiWmlKcmVDR1VOck5rei04YklKSFlNdjdNQ0s2YkZNRV9SaUVvRlBUQTRnLUtOcURiOF9pMGREX1JtV1RneUV1eXYxT3ZhX3hxVGZYeVJ1MjNKN2R5Mk5CeVh5TXZVOXAxTTBqSkVyY3JvWHllODl1YTJmM18yZm50bmkxNFlrRXpRNFNFZFNtUTFjRGI4cTdsbFk3X0ZleDBmellJZzVFRGE5TFc1ZUtwNWlNS3E5LVZB?oc=5">Global Mobility Lawyer: Proposed H-1B Changes Could Increase Hiring Costs for Visa-Dependent Employers - Fragomen</a></span>
+</div>
+<div class="item-meta">Fragomen | 2026-10-28</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">20.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9taG8wbGVyaTZyQ0xfUThUejM4bWJpMDZ6ZEVnTWU0YmtITkVQaGFKeHpkRVhzRFQxOW9oNEtDVnBILTFmc3VRdTd5RUpTVTBYLXk4SnpmZlFvTnJVdm5Kd3Ixc1Ziemo1Wl9fUg?oc=5">Executive Order Directs Agencies to Consider Layoffs in H-1B Adjudication - CBIA</a></span>
+</div>
+<div class="item-meta">CBIA | 2026-10-29</div>
+<div class="item-summary">Executive Order Directs Agencies to Consider Layoffs in H-1B Adjudication - CBIA (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">21.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxOdkNLMGhGOEdlLUN5VUV0eGJLdVpIZ1JyYjBTMFZueFIwM2tjT0habm9VZFBiLXRtLTVZZ192RHV1Y2lkOWR1d3p5WFZlVVFvQ1JOanpkS1JxdHAxUmNMNjZlWnFXdlVqaW0wRTJvbU52cGNVLWhrLWZwZUxQVmg3MGdOMU81aW5kZ2lhZ0NmMXpFd1VRMU5WcHpsX3ZSZWV5Vmk0?oc=5">Is the H-1B visa program taking jobs from American-born workers? - Marketplace.org</a></span>
+</div>
+<div class="item-meta">Marketplace.org | 2026-10-27</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">22.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOQ2xuTmVZMExRZF9yRHdDSDBuNnR0ck1LV1hockxhU2hQbndQay1YM2loaVVxcG84UkhCZlV4UEN1Y2p3V1c0eU1uNGx6Q1hzNTBJdm80Mm5LNUpsdzNPeU03c2hyajFhQXd1SldnWS1CQTFDa2ROcE56Q1lfN252dkpQd0VhcVBveEVKeWNraTVKTm1ZY1BHZ3VudHRzY2c?oc=5">Trump Administration’s H-1B Proposal Faces November 10 Deadline - Dallas Express</a></span>
+</div>
+<div class="item-meta">Dallas Express | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">23.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSTBhdC04a0x0a0ZDRFRYLVZ6YXl2bnlzd2ZIOHF5RF80WDZPNWJfX3VacUNmWEkyRWY3U1JacjkwekZxS3djRkNBdUxkSnNFQmpZanpjZ3hpQkVlLWdocVdfTmtoN2YybWZMUUJ1OHhBX2pXQ29GdlhPc1Zza3VfLWZhdzVoY3BPWC0wdWtYRWJaN2xmWkEwbGo4VzhhWkF5Zm1lb285MkhlU2tpX3NTT2t1dDJURk1YQ084QXBwNVdmZw?oc=5">UF President Bell reinforces H-1B law on higher education after job posting leaked - The Independent Florida Alligator</a></span>
+</div>
+<div class="item-meta">The Independent Florida Alligator | 2026-10-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">24.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQaXU2N2pjbS10SUZXWmZYSTEtaFEwWi15REFGX3RKOGpYTVpSXzNDc0Z3Z1NEMlJqZjl1cTlLUGQ2RlRSeUt2Nk9ZaF9BaWtXOUZnNk9sS0t3cUs3MWp4T2Z0WUVRWEo2dXk5djZqSFc5dFdfeW8yOUcxTmtDWWZKSGRrMkZRUzBtVGxGNHl2OG9VaTd3NHRuVmxqaHdValhtYWg2QlV4S1RvalNKclE?oc=5">Proposed US Immigration Rule Could Disproportionately Affect Indian H-1B Workers - INDIA New England News</a></span>
+</div>
+<div class="item-meta">INDIA New England News | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">25.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxPRENVNi1nWU1PRmhGN0xoS1MxNUhmcEJjNWdvSl9kdjJOQVN5V1VHMnBreXhBNVpsNk1UQk9FYUpkSEoxNjl0RUhyVjFiS1VBUTkyNkNvZmZRRFpzLXlLTDc3OHByYkJuZmtXOGNwUHhyMzJkdWRCckUtYUJZZ0x3M2o2LVRKaXdMdmpuQzdUQ3ZIMjNVaV9WdDJQem9HbHkyOFpqTUdaVUpqSGdHY2NKOUdzNXlmRldDcmlxTWhVYmZHb3JfOTNGRdIBzgFBVV95cUxNNHZ2Njg4ZHd5RDJFTjBGNTZ1b2V1eHhGY3ljWGRVd0NUcnQ1YWU2YWZtTTdqejl6Z0xQSlo4X2dHdGlVQ2tpRmdLZG4tMEhYbDZiSC1aWU1BelBTSXpUeW5sY0xTN190UlVwS0VxSWRSQnE3dmVyOFNXNVU4T2xqNFNBb21HYUx0OEpDU1hpSjVOTVdTeElxSE41S3FuYkpoUHZxSzAzQkk3TzVYc3AwWW5yY2hRek12eHQ3LW5FVVdHR1FHek14NEhKaTFDUQ?oc=5">WATCH: Vance says Microsoft is being suspended from green card program for H-1B visa workers - PBS</a></span>
+</div>
+<div class="item-meta">PBS | 2026-10-08</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">26.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBma2tSZDVCUl9RVXdMWHdLblFoY29pWVpHMVFBU09hM3Zwb0luQTk0ZjVrZ3ZIdGhYWmtzUHdvYkU3UzRsSHMxcHhUTXlRNjRKUXJDMlVxanlDSlhId1E?oc=5">Texas Isn’t Waiting for Congress on H-1B. - NumbersUSA</a></span>
+</div>
+<div class="item-meta">NumbersUSA | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">27.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxPRzRPZUJXRUlYNkFrYUJpRWZGWERJcTFacFlncTM0dnhYcEI2RElDRlV5aEVsVnpJNzNsaENNOWl0d1BZeHhMUE0wWlo5SVBsU21yNWpic0s3cDRuZFUwdWNwS3lhcDV2VmlacENxaFk2NzdLRGg1bFNsQy1EcU5LUE5vX0hnWGVqNkdia1VVcHgwbFVNTmN1X1ZqYTZFb20xWEVrSFNTc1ZKanpUaTZhRW1mUXRXdUxiS1JZRU8xeEtyN0hPQ2k4a2pMVmE4bkd1c21KY1VLa1ZaandndzByb3ZMaW1SWGhxS0hZ0gHvAUFVX3lxTE13bzF6WS1fd3l2b2taY1Yxem9WM2J6bk5Cem91WGlHS0lGZ3VGeGotSVcwU1hSV3RFMDFoWnhtVWk0TGpsaVJPdUszNmtraWhRYjNnZFA3THBxTTB2ekN3QWVJcTZzVTF1dF82MmRRcVlDNmxlR2NjUWFIUUtSS2xtRjZYai1GMG14YVFCVHVSeUpyZlNiZ01xMEttbmZfMFUyVkdMbDc3V1ZWSjFTWndHSHZsVHczV2xCWVRwUHphNUYwSERGQkNORmx5ZHJ1b2Z3WEJ4Si0xTElmSUtEckNzdElYdGVvMXgzNEtFcGlZ?oc=5">Infosys in discussions with US DOJ over H-1B visa probe, conducting own inquiry - ETLegalWorld.com</a></span>
+</div>
+<div class="item-meta">ETLegalWorld.com | 2026-10-24</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">28.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxOVkZWR3ZuUmFEZTdnSm1lWXR5MHAxUFp5aXEzY3NrcWRSVzdXMDd1Ym8tbzB5NG9tMkJLWFc3RHNnT0NScWtXYjlNcnpZZV9EUW4yTzlTcnpuOVZGQ3B6RExjYmhFVkM0QmxtV3RhTzIyQUU1X1VxUFJXbjNjTXduNkY2bHZfUmxFbEc0V0FoNGdxMWd3MlRqY3VpeGVHYjZCSDBpc0hZR3JkS1k2V2NVUGlIQWZBZ1N1S3pNRmhSSjg5VDBNdzJTVUdEc05qRnBzUzRXdHc0bUtXbjUzS0FKcHhjOWRPdHfSAewBQVVfeXFMT2VHVy1rMUZ6WkhHb3JwMWFETFlFbjZTQVZPV2RVYlgyS0JRUHgzejBxdHlhMVNoV0RDSUN0Wi00TGx2X2RGRzNKajhxQkJTR0N0TzBOd0tHYmdNYWszUDBjeEZfbWdIbWEyaWFvVEk4Ql9wT1U5NGY0VHJORXpQLTlCLUpHdUdLdmZzM2Z4WVRMV05QUzh3NzF2MkRvZ3JzbGU3Tzd3ekcxcVViOWlRZ3hDTWx2RU8yZnlTTUYzVTBCa0F1OHJFLWViUjJ0c2xQOWFqXzBCSlZucGFGTmhUUFFDQng1Y2FUUkpzYzA?oc=5">H-1B Visa: Green card freeze by Trump administration raises concerns in Bay Area, could impact thousands of tech workers, students - ABC7 Bay Area</a></span>
+</div>
+<div class="item-meta">ABC7 Bay Area | 2026-10-10</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">29.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOdC12TTRMUTkwRHdqX3lCRzJONnBNSE9icWRqc1pVZjVhRERBS01HbUdKdlYwZlY4UUZ3UGtmVGQ1SUh1QXB4WVVXM2FIbFVsSUROektwOFN0MU04MlpLbWd3VUU2QzdVZ04tRUt6QkpFUTAzcFRUMnoxcGRvS1YtZHR0RUJiMUdKdG1pY2xzYV9pU3d6aTJlWXJmSHFjal9mT1FCNTJJQXZ4NmZLT0trdV9FWkFRUQ?oc=5">White House targets tech giants with H-1B visa suspension - Washington Technology</a></span>
+</div>
+<div class="item-meta">Washington Technology | 2026-10-08</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">30.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTFBrOU5renQ5NEJHXzJEbjdNY2ZmVmxCajZvZEI5TlZ3Wjg3aTByb1M0NVlUSUdicmtjcGc0ZHU3YTE2STZNNTFOOEQyVXJGTTlQSHNCVE5iWjBvMzBNak10d1UzMEdZdWhOb2hfZ0Jaa1ZqOFMy?oc=5">H-1B visas aren't suspended. Here's what Vance is really targeting - Axios</a></span>
+</div>
+<div class="item-meta">Axios | 2026-10-08</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">31.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxObjB6TUdkcEhOU0R0cDBIb0ZRdWVUMkE4ejcxZFo4YXVyaFNSUGdsMmR4QUJybHlJeFR0RkxrX1VxaVN1cF9rWDNvZUIwQUo5djBuWF92T3BaLThTeUltN2RkcXNzNkdlSTBNSUp1cjR1ZXZNQ2E5XzI1S2U0Tkh5SXh0VnVwZHJ4ZzB4RXBIejgtQ3Z3VnV2bTU1TQ?oc=5">After 11 years on an H-1B visa, I still miss my family back home. Here’s why I stay in the US. - Business Insider</a></span>
+</div>
+<div class="item-meta">Business Insider | 2026-10-04</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">32.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPRmlCc0NnZ1U2NmVNSThiZWEzTFdEWnZDRjAwaFA1MGo5T256NlVmZXB4N1BHbkhlTHBZM3l2bTZ3em9ZT3JzYVVVYmFScFk1aVRXOWprQy1IZEtwcWo3X0lxODBBQ3poNGsxRFFxUDNjRjRMa3hpZ1dORlhkXzlDOUx3STBTS2d1VzhRczlnejI3MFlnR2JDeEJ2RENudFhDM2RXM0NzdmgyVlRfRmxVX0tR?oc=5">President Trump and Vice President Vance Tell H-1B Employers To Stop Laying Off Americans Workers - Center for Immigration Studies</a></span>
+</div>
+<div class="item-meta">Center for Immigration Studies | 2026-10-09</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">33.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxON0daMElzQ3h2N29pMF9CN19ITzhCZWZsbkJBUUdla3NOMmk5TnE5Qk1XRVJTSDNLUFo2TmFOZk9PLXp4X0N3c3JCZ0tzVGxfMmtkc0FwT1Y3eVBYZWV0aDNUbG9RX0REbnAxVE1ieDdWWFVqOE1paGhBSG1NUWRoWmE2cWcySDdYdGRUNHVnUmhMY0FfTjFKMDlzeE51bnVTOHZGak90UDA3MzB2S3Rya2NCMjZER0dzbmtKelhIcExWM3BubWZxQl8xbXhwOC1xNEdBS3BYZnlqaXFoZ0VGNEZ3VWlHZ3BuWkRaTlR4bnFSQUFDcy1N0gH8AUFVX3lxTE95UHJHX3FxV1pxUFhZU0J4MnRHZklRbExQd1p3WlBJMnVTb3dGS1BuMGZDN01sWmlWZmxmTy1wVE1ZMV83T0wtNXlCNE9tYVJBcHpKVmdPWDNETU1udnFLSXgxOUw0c1FBMTlGR0FxNklJNnNDS2V3RFo5R3F3ZnNGN1FfRDZ5M3hlLTl2aTBSQXRQbURNRWRKczVKM1YxVUpPelpmRlQzZ1JBUjlIZW5UVEtWTDR4cUlKeERKQzNaQmxSR2gycWxwYWFzVTM0ci1uSXpEWi1GZGFfOGJEWFNUNVI2UVNxRzFtU0g2RVdVYWM1VHloU0Ziazhxcg?oc=5">AI tools may flag H-1B visa filings discrepancies as US immigration checks get more stringent - The Times of India</a></span>
+</div>
+<div class="item-meta">The Times of India | 2026-10-24</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">34.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQRjQwb1VzT2tBb3hVTnpJQVVROGRQdDV3Y0toT1FCejJ2Z09nb21kNUtqWF9hLWJ0NjNjd18xMnZOb3ptY2xCM3Z1OXZCNUN1V2J0QVNYRTZWUzctbVhId3JqUnZkb1N2a2lyVU1JQk9IcDBfOWJEMXhwMDBVdXJSeDN1blRwRG0zTU5Hb2tSWkNLT1pnbmRXN2Y3RkMwNVBDT1E?oc=5">The winners and losers of the new H-1B era - Business Insider</a></span>
+</div>
+<div class="item-meta">Business Insider | 2026-10-14</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">35.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNUGY2TVd5RFM1MlBBYVdEWW44Qk5lQWZtN1laMUZ0Z2VNa2Z4eFhiMWI3c0FnbzBCWm0ySHhXYmt5VmlpQUh5b2s1dUxudzQ0Z1F4ME1wNE9yb1ZrS3NLNmt2UExWR01qUzJnVmhIZkEyT0FBTzVScGd2X2IwLS1EQzRzN0lPX2NMU1RZUkFpZU8zYkxPOGc?oc=5">H-1B Visa Salary Threshold Could Hit $140,000 Under New Bill - Newsweek</a></span>
+</div>
+<div class="item-meta">Newsweek | 2026-10-16</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">36.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdE5VQTBiVzNTdWFlUE53c2x6djl4bGJCQm5RMW40ZlI3V0xBU21iMDE2Sy1TVEthbkpGNlA0ME1EdGpvdV9OVlUxZmJPWGVXRTZMN2VabHdGN2tvamNMcHNnXy1FWV9XNXVySWV6Rkg0OS1JWnpHWGJPbHJ1WGloeEtkbnNLOG1icU5hbVlOaXpFcFpaZTVTd09lbE42WkI1TDJFTXcxOWpBbW5SZjQyWTZRenc2UDRQ?oc=5">Texas targets companies hiring H-1B workers with new grant restrictions: What to know - The American Bazaar</a></span>
+</div>
+<div class="item-meta">The American Bazaar | 2026-10-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">37.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxQRVRxdU55Y2doZHZsYkdLMGZzOVdod2VPSVRCNTZ0ZzE3M2Rkd0d4R3FXdmF5SW0weEkzSTdjQlhCTW5xVHJLSDAyU2tTSGVaZkg1c05UUnZnWUlkb3c3UGhHMHZ5TE1vQXJNaDIzTnlacGItWGdmSzY4RDA2UGNFbUJmN3h4dVRKYVpZMnFEVW5mZmtTSldCd0FsOWNWWEwwUVo0Ykt1UEpUMFBzN0wxSURWNNIBuwFBVV95cUxPcUlmZ3BVU0xBQjFSVHZxb25UMWFtR0RoQTBMWnkyRW1hMGdvcl9sdU56NGNHTEM0UGlCR21nYTJWSy1iRERwVjJWQVpfY2dEOTF2bk1tX0JZbUxHcWJ3Wl9iVXh2MmNuSXJMV3czWDhuUXdBMW05VDM2M25Lb3dqMHJPbEpyTG9KcVN0cnEzaV8yRDJZSUh3endMXzFVbHZLeHpycHV4Q1U5U0kyVU1BNnFkdGxmSXFkR0hj?oc=5">US Is &quot;Kicking The Ladder&quot; After Climbing It: Ex-Amazon H-1B Insider To NDTV - NDTV</a></span>
+</div>
+<div class="item-meta">NDTV | 2026-10-09</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">38.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxNYjdiNDVEYkNtRVpVeWtQVjVkcWJBSHFhZG0ydW56YlhUMTFvYnBvQ3pLaDVhMnZabS1HRzc5MlhtOTFWLU9YZlpKRm5xREEtWTBxSXBHcXlLb01mR25DZnhxbjg5ZUFWV2pKdEtDOTRWX2I1b040YWRTc0NrNERfeGNseEkyT3prY3BlNkdrLWFWQ19fRlM3SnVDczducFJTTm5KeGNWNGRjQ2h2RmJoQnVn?oc=5">Trump Honors Microsoft’s CEO After Vance Drops an H-1B Visa Hammer on the Company - Broadband Breakfast</a></span>
+</div>
+<div class="item-meta">Broadband Breakfast | 2026-10-12</div>
+<div class="item-summary">Trump Honors Microsoft’s CEO After Vance Drops an H-1B Visa Hammer on the Company - Broadband Breakfast (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">39.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPWDZHU2VVY1lXT21sSTJBTVpHMldhRTlORi1ZWTBxelNrZXc2SVBjY3lsRzludldONVlpWUtIQ1hZd2pPUDRRaWFlVjU0dXVpLXRNbU5aRjl5NTFLbFVUTHdMZXNHTVIwVWdjbkZqZHg5bVZsakJReWdidmUtQ0lLOW5fbnpvMjBORDVXT29JLTlCVGVNeEVlaWZmRDJ1aGtUVWxtV2NIeEIycExPYkdqQjVSMjdiWkxBRHl3cXI2Vi02UW41?oc=5">From H-1B to CEO: How Satya Nadella traveled the path the U.S. just cut off for Microsoft workers - GeekWire</a></span>
+</div>
+<div class="item-meta">GeekWire | 2026-10-09</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">40.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi8wFBVV95cUxNTWRwZTlaOXZNNXZ1QjRId2FnWmdCNm1memFUWFAxaVJJZUs2OWFMdkdoRUZDNkVTMlFvQ1NEQWUtdE85VWZ4c2F5RGtWUWhveDVMWjBkQ19MSmctRUIyRkVxZ1VvS1A0ZDUyY2ozcktNUGFDTEs2TTVUSlROSWhPcDFTQUFnNXFZSmxxZXFMTWtCNGxoTGlZemZnN3NaRkoxUHUzaU1SRklsUDVPQkJ2Z2ZUMFV6RktSNHlJY0E2a1BjcnV1VS0zbWRpT3lLVkJKdTJTbks4NlZvV3RzMEhlRVh1Y0F4SUVNU084OFNuV0FKRTQ?oc=5">Attorney General Jones Opposes Attempt by Trump Administration to Impose Unlawful Taxes on H-1B Visas - Office of the Attorney General of Virginia</a></span>
+</div>
+<div class="item-meta">Office of the Attorney General of Virginia | 2026-09-25</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">41.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPTHRCaWtFRWZLai1PcWU0ckFpVVNoeUVFby02aTRHY3pMZ1pyT3RPaHVEUGwwdDZaV2ZiS3huOElMejlJYTZkcjM4UzJjZ3dzc19HdFdQdi0xVkZnRTJpZnFaYU9BT3QtWFpXMWdYRUlZd2pMRGoyQVh5ZWNITnRfbF94bjlIeHNaaHZObFNaOVlqclRKc0ZndWVYcUI1dw?oc=5">Microsoft pushes back on Vance’s H-1B visa claims - The Seattle Times</a></span>
+</div>
+<div class="item-meta">The Seattle Times | 2026-10-08</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">42.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE0zOG4wQzhxZ2tjQldjSTdGT2Jadkx4OExycGFNVklTNXgwbEhoQmszN1FnUjRiNWtZZm9CRlYxN0dkYzhuUWpuakRFOGx5WWZ1V2VYUkF6MDc5bjd5TzRIWWdNYVVSMWMtWUFKSHZLY1NpS1pC0gF6QVVfeXFMTUhBYVZ6M2dfOWx5bm9iTXJyRGotbWJRR0RNRFBHNk5DRXg1bkNqNkxrdzlGdVA4RHZpdnoxOGlJMWU3RHVrRWtaQkdPUHRHVHJ3MWs4WXdsaGdnbzhHNHhQRFhZVmFzWnd0bnN1alpWekhsb0lEOGdsN3c?oc=5">A Modest H-1B Visa Proposal - National Review</a></span>
+</div>
+<div class="item-meta">National Review | 2026-10-15</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">43.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQMnF4MTJXQldKS0xGX0JCMUZmOEt3dE5rNGh5ZG5JZWZjVzhwN0xGb01WdUk4VTRsSjNGVnNna2dib3Z5aWN1MWZ2ZmJOdXY4Zkx6dFFFSldSLV9uU1VXV3dNemlwMWZncDBpU0NTVjdwdVd4MENMMG5Vc2Q0SzVTYXhR?oc=5">Trump's H-1B Visa Plan: Will Extensions Get Harder? - IndianEagle</a></span>
+</div>
+<div class="item-meta">IndianEagle | 2026-10-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">44.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxPSnhJNzdJWUxPV3lXaG84Wmsxc1gxVEtNUk5XM0g4aDBhb0VCUzJnWjd5TnBnQXZoeEJTd0szVWN6NVNIY0NrWVkxcVhMOV9oM2s2QWhwTFktM01NRFZjM0ZBWWR6VmkySTFJeks2QlVmREJ2NzR6OVEzR2stSUQtU3FxcUppVjNIWXhTWUs5dEpMM1JzUmtXTmhpdlpMQU9vLTJJSUpB?oc=5">Trump Order Signals Increased H-1B Enforcement Scrutiny - Clark Hill</a></span>
+</div>
+<div class="item-meta">Clark Hill | 2026-09-22</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">45.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxNV09iNktoLWhCSTdodTBOdkVuUTRtbFlEYkkwQk1KSEdKck1TTUZhU3FQaU1zTUw2dWFfM0E4TmZrdGtYUy1PTkpBNG5SdnAwNHUyLURtbHpNQkROT0VQb1FJaE5QcHVFQllaLXRxemRweTZkLVhJamxhOTdMQnpqTERadGxIakd0eHR3dDZ1czNiaWwwbENlQ3dINE40eFNoWHhwZEpMbmI2VlBUS09hX2FMMGVuSU5xRnd2bVdWNV9aUQ?oc=5">Policy Backgrounder: H-1B Restrictions and Employer Enforcement: Recent Developments - The Conference Board</a></span>
+</div>
+<div class="item-meta">The Conference Board | 2026-09-25</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">46.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxOOEhUc3RldFc1b1BLeWFuSFNpMkQtN1BQU2drMXVFcGNHQnlXbzZsRW1DcGw2dXE4b1ptenVIek5RNHRJZ3ROZzlIMU9XcGtFSzZ0eGVLMkJRMWJtZFN4NzhSOFN4NFB2VVVqeWtyMFpjc0J1YzdGcDBVczY0MjYxelhZWllaMG93RXBZ?oc=5">H-1B Visa renewals face tougher reviews under Trump proposal - Newsweek</a></span>
+</div>
+<div class="item-meta">Newsweek | 2026-10-13</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">47.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNM0pPWG9NN3BVMHhQaUN5N3c5R2FFbmdUWUZmWHFvQi1oSGpNX0Y3T1RlSHc4WVp4UzlPVjAyV21nZjdyTGlNRlpicDN5VmJwMjVacjZCREJyRl9BWVdQSnd3bkQyTjk4OHNDU1FvNmJNYWNKa3R6SWVyUDlFLUtONkYtdnN4VnNQN0hVWU1GRXRJRjFCc2UyUTR3MW13OEU2TlRTNzBjaHNTTVZQOHB0TkZTWW1oWExoU2lqeHI1OA?oc=5">Texas Agriculture Commissioner Sid Miller Moves To Cut Off Texas Grants To H-1B Employers - Dallas Express</a></span>
+</div>
+<div class="item-meta">Dallas Express | 2026-10-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">48.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOa1FyQzhaeDZodkJOeTJFby1fSkNEczlIV2YzSExmZUNkdlpwZ0ZMcFp5cnhjNkNOT1BkNlBxVU5EeWRiOHkwd1MzNmFwZ0g3bWMweXU4WFRfOEU5U0lER3NJdGdRNGQzekYyWTBVbWdoaktCLXJBSTJEZ1l2TFh6ME9SVUFJSTg4UThHek9zRkdTYURHZUZua2J3UWsyUnpzOHEwYVlXQQ?oc=5">Microsoft suspended from applying for green cards for H-1B workers, JD Vance says - The Guardian</a></span>
+</div>
+<div class="item-meta">The Guardian | 2026-10-08</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">49.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi8wFBVV95cUxNMVpES2Z2aXJqU2tMVkQyeF9KRWR5amtUTmhSYXR5cVhGb0R3OFBYemk5MDdLQUlsdVMxdzNHTEFZNzJMYld1N1BtMTNwd3lOX212UFRBcUVlVXlZaVdUNzc1V1dGYmlhQzNOdDM5MDh5OWdKclNmSEYtRERxdDJ2NzdBWV82ZFhQZkFjRzRibjhaV1lYd000ODlMSk1CUkdmeTlTQUd1aG1yQjFQdEtTbDFXSlVBblUzRndGcXdJenpYRlFGU1dfdHhlNzBsbWFtaXdSMHdhUWlHc0g3VW0wTlhDR1FPN2RCZkJiRHFQenVhRDDSAfgBQVVfeXFMTkNLcGh2NHpQbDhtdG1VTWoyei1QRlZONnduQ3NjcHpqblBZV1hIazhDM0VTM2U2Z2dweDRhVGJGMUdaUS1ybjlfbmdOSkhGeDJBdFZWNWZ2bjUyeU81cnd0NFlOOEZVdmp0d2pmT1FzcFRGeG9oSVljc3lxWE9fVlRaVHJqVHJmeFJQWk9CQ1V2cWRGZ05pb2tkV29TS0xSbTd1U2NGVmN6RF9rb1R2VExCWEJENkNRUmcyLXVjbDFmUmRtaXNCQ0g4NlJncXVBdV9QcGNhWW5GeVFPSjNGTkx4U0QzN1JjSktWNHUyY190MjFjajVBQVc?oc=5">US Midterm elections 2026: Who really controls H-1B visas, green cards and student visas for Indians? - The Economic Times</a></span>
+</div>
+<div class="item-meta">The Economic Times | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">50.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xm5o3f/h1b_coe_pp_timeline/">H1b coe PP timeline</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">51.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xm6ovm/anyone_h1b_approved_last_week_received_their/">Anyone h1b approved last week received their I-797A hard copy yet?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">52.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xmb418/h1b_transfer_ordeal/">H1B Transfer ordeal</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">53.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xma7u3/gap_between_h1b_start_date_and_official_joining/">Gap between H1b start date and official joining date</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">54.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xm1txy/companies_that_sponsor_h1b_visas_for/">Companies That Sponsor H-1B Visas for International Medical Graduates (IMGs) in the USA?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">55.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xln7wf/h1b_filed_as_full_stack_java_developer_can_i/">H1B filed as Full Stack Java Developer — can I switch to AI roles? Full-time vs contract?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">56.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xlljln/h1b_sponsorship_and_green_card_promises_for_10/">H-1B Sponsorship and Green Card Promises for 10 Months – How Can I Verify Them?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">57.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xlbaaj/regular_processing_h1b/">Regular processing H1B</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">58.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xkt5u8/h1b_approved_on_oct_29/">H1B Approved on Oct 29</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">59.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xl49j6/h1b_ds_160_help/">H1B DS 160 Help</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">60.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xlhqvv/h1b_visa_stamping/">H1B visa stamping.</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">61.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xl7q6e/opening_brokerage_account_as_a_nonresident_alien/">Opening brokerage account as a nonresident alien H-1B holder</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">62.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xly1x2/h1b_cos_not_yet_approved_and_cap_gap/">H1B cos not yet approved and cap gap</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">63.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxPZ1Z3bFV0V1YyNGxGWl83VWQ3MTZQcXhNM3FhcW4taWFPUnpVak1YMlFpaHRBV1lHY3dtQUJsVVptcUlEQmRXZmgyRU9acFkwaHVhbC1udzM3blpJYXd1RU5Hc19JYlhmU2xOdWdFTmloWWVENlNrT3pKcTEwTGgxMmliV0FJbjdZTkZuWk9ERGpjdWh4UUJCMXNSUzRzM0VkT01FNW1YT1VwZjFhVUVsejBlMDZUaUxMNWhKSVpCVUZBZ1N6NDJySUd1Q2Zia0hybm5vMndJOHhNSXhELU14cHFQMVF5M0NGdWNjRXhwYmFTVkNnSnU2ckFEVdIBgAJBVV95cUxNMTByeERvLVdNcnhyMDFIVlZLQUZDbnJzMXA4aG9ub3ZvakZZSjNIMVI2ckNLZzN4cmVNcjBaX1VhdU9xSEhqcUdMaHhFZ3J6aVpWYmVJLWZCaHVZczZkaThFTzN6MHBPYkRPYWQ1QzNnc09Xblc0RTlYZWJTT0RVX2l5YkVZTFNNeWU5QjVBc1ZrTkZtdjdrRXVSemNXMEZJQmxlbTVGS0t0clJRNmJzd0tMYk01S1VwMFF3YkFVSTZWMHBQR1pJZkN4bXhqV3dOQUUwVTlWQ1AzUmRRQ28zUllncG0weXFVZHJxQ3ZycEt0bF9ZNzFKZDhCbEFLVWZr?oc=5">Trump moves to end H-1B visa deference: What it means for Indians stuck in the Green Card backlog - The Times of India</a></span>
+</div>
+<div class="item-meta">The Times of India | 2026-10-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">64.</span>
+<span class="item-headline"><a href="https://www.reddit.com/r/h1b/comments/1xm44vs/is_employer_required_to_pay_new_lca_wage_if_h1b/">Is employer required to pay new LCA wage if H1b extension status is pending approval?</a></span>
+</div>
+<div class="item-meta">Reddit — r/immigration and r/h1b | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>EB-2</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxPSUJsUF9Xc3NWeXd4MDVVV0hVMVl0UUtJRldvVUlsNWk3NUxROG84ODIwNnNNbzl5NlhDUVk1N0ZsVExSV0RFYmJwS25oUFUxNHlPUGY4azBQZW1Ja3hFcTRqR2JyNS16czEyLTNLR21JTkpNUEthT29ISVh4TWw5UVI2aWxRYW5TamcyaWd0ckdnV1JJeG44MGZDNXJhSXdiSkQyblhkZUlHNUpXM29nOEZ4VlNqeE5wSFZWTTVn0gHEAUFVX3lxTE1ReXJWNXNRV3R0VVNUemU4SXlBZEpmbUdCaEF6ZDZfQ21RT2lPSjdPRUY2RzV6UHd1Zjl0azNfWC1yYmFGUnlMV25TdHE1dU45Zkt0cUFNNEM1YlhqeDdUSTJaMVRhcV9JQ1BaQzZRTEVMYXJYVEJvYjVIaDN6Mk9PLWFLQ0tGUHRmb25kclVJclkxOF85c2IwVnIyOGJ6Zll5ekU4SFhVS3AxSWZacnV3Tl9VWndxYVlfeXExUDJQeFJGeHA?oc=5">US Visa October Bulletin 2026: EB-2 India cutoff remains November 2013. What it means - The Indian Express</a></span>
+</div>
+<div class="item-meta">The Indian Express | 2026-10-03</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1VTDhxUkxpekFiX1haSHFDbTFOQkkzbGhlUFp1SG93elNQQjNaRk5UdEFMb1VrUWpsUTBuOUxDMm0wZFBGR2dxT3U0d1JacmxNMjBZb3h0TS1GaHJGVkFla0wzNGJ2a1huOHc?oc=5">Indians account for 91% of US EB-2 green card backlog - Daijiworld</a></span>
+</div>
+<div class="item-meta">Daijiworld | 2026-11-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">3.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOV1RNaUpNODBYTWx6eVFOSkZpX0ZUZC1xang0aGdvTWlxb3JXVVR3eHJRTUN3MU9NZUIxVDlxd21MM0Rmc09NNmtxR1VtS2Q5TXNQaFYzbDVlcUJDMkZjcG5VdThzbndtei1PLUJ1TTN0Z3lRZlEyOHBuUHoydlFibHVHdzRyWHZBX0hCQ0x0SUhaZnkxMEVBQ2ZoOA?oc=5">Indians hold 91 pc of US EB-2 green card backlog: USCIS data - IANS LIVE</a></span>
+</div>
+<div class="item-meta">IANS LIVE | 2026-11-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">4.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPLXdmcFgzTGZZSHZnX1k5ME9QdG9ucmt5SkM3R2FacnlBZVhOV0pRZXJkemhHRzBKSzFOSVR4SHROd0o2YmpUZk9TVU16aGg1czhTS1JvaWZpZ1RIVmhhbEQxQjl6dXhfX3NwYTNPYUxpc3phaDYycVljTGxoQmVJZm5RLTllY2ROQ095VjhFV3VhdnBCV1g5cmp2d1JjNGttdWc?oc=5">Indian EB-2 green card queue stays frozen in 2013 - New India Abroad</a></span>
+</div>
+<div class="item-meta">New India Abroad | 2026-10-24</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Cross-cutting</h2>
+<div class="item">
+<div class="item-header">
+<span class="item-num">1.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPSUNUNzRVb28tVGM0OGRMSUp2cnNsX3NpalBzMlFOM0hrNEh5cnkxT3gxT3l4eVQ5YURnVnJVUnFuazZvOHphX010UWticVNXUFhjTVBBaktveThLRHJMQlQtYzBSNzlZSWMyQjNodGJybHFfVjNKVjQtNEwtQTlqdWFybzdOUEp4SndJV2EzQjNnSjM5U0tmamJFbmZIaDlza3c?oc=5">Green Card Update: New Fees and Application Changes Coming in November - Newsweek</a></span>
+</div>
+<div class="item-meta">Newsweek | 2026-10-28</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">2.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPM2ZGR0VRLTMzLV9VLTI5OFV3YUdVWXFWcmFDbmVBbGFXbFlVSXJaY2FmVXRfSHBIQnhfQURZZlRoYnhDcDR2RU01eXV1OVpkSmRiLTZUbFV2MWhJQzh3QWQwVnRveDlCaTdTNGl5empXVGdwaWEtUGUwT0gtRlVUZzBtRDhkZTV6bVN0MUlTSm1mQlltUXBEV1YtcnhhNll3QllPTXdyMjNTNUU?oc=5">October 2026 Visa Bulletin: Key Employment-Based Updates - Clark Hill</a></span>
+</div>
+<div class="item-meta">Clark Hill | 2026-10-01</div>
+<div class="item-summary">October 2026 Visa Bulletin: Key Employment-Based Updates - Clark Hill (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">3.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOZk9rNFFzVTl5bHljLTdVbTNOMmFjV0lxLURqeUdSRTNsTi13M2VreGxCSlduREhOQ2VRd0paNVF4cUdCdmlPNjdyeVBKTUNVZ2FOLWwyTlB0ZFdVbHkzZmFWd3lsT2hSY3d5UUNwc0E2dzF4ZFFWZUlyLTBqTXJhZ2k2VkZSbC15WExyMDNFWmhaY09BcV9pM2dDc2huZldj0gGmAUFVX3lxTE1hdDhrbUREeEs5YXlTOWRNSGFGRExYSGE0d2w5UUNsRVRPVzZCUjhrQTY1S0JWaEthTW84VDI2YWZkV3ZBekY0U21hdEpJbnZZQUNCbU5iTWtQaUo2YWxwYkZzZkZKNHhZVERsV0ViUzhMYUx2eWQyWFVORmwzeS1QUVZWcVlfNDdJVVVzLUJ1aWM4Tmp5eVVYY19hNnZuRHEwbFpjamc?oc=5">November 2026 Visa Bulletin: Key Updates and Priority Date Movement - The National Law Review</a></span>
+</div>
+<div class="item-meta">The National Law Review | 2026-10-26</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">4.</span>
+<span class="item-headline"><a href="https://www.murthy.com/2026/10/22/november-2026-visa-bulletin/">November 2026 Visa Bulletin</a></span>
+</div>
+<div class="item-meta">Murthy Law Firm — Immigration Bulletins | 2026-10-22</div>
+<div class="item-why">November 2026 Visa Bulletin - Murthy Law Firm | U.S Immigration Law Murthy Law Firm About Us Law Firm Attorneys Consultations Hire Us Client Service Online Services Foundation Contact Us November 2026 Visa Bulletin 22 Oct 2026 Posted at 14:16h in...</div>
+<div class="item-summary">November 2026 Visa Bulletin (also reported by 2 other outlets)</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">5.</span>
+<span class="item-headline"><a href="https://www.bal.com/perspectives/the-employers-guide-to-reading-the-visa-bulletin/">The employer’s guide to reading the Visa Bulletin</a></span>
+</div>
+<div class="item-meta">Berry Appleman &amp; Leiden (BAL) — Immigration News | 2026-10-22</div>
+<div class="item-summary">The employer’s guide to reading the Visa Bulletin (also reported by 1 other outlet)</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">6.</span>
+<span class="item-headline"><a href="https://www.murthy.com/2026/10/20/i-am-in-tn-status-and-my-employer-plans-to-start-a-green-card-case-for-me-will-the-immigrant-petition-automatically-cancel-my-tn-status/">I am in TN status and my employer plans to start a green card case for me. Will the immigrant petition automatically cancel my TN status?</a></span>
+</div>
+<div class="item-meta">Murthy Law Firm — Immigration Bulletins | 2026-10-20</div>
+<div class="item-why">I am in TN status and my employer plans to start a green card case for me. Will the immigrant petition automatically cancel my TN status? - Murthy Law Firm | U.S Immigration Law Murthy Law Firm About Us Law Firm Attorneys Consultations Hire Us...</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">7.</span>
+<span class="item-headline"><a href="https://www.murthy.com/2016/11/22/requirement-to-prove-ability-to-pay-in-an-i-140-petition/">Requirement to Prove Ability to Pay in an I-140 Petition</a></span>
+</div>
+<div class="item-meta">Murthy Law Firm — Immigration Bulletins | 2026-10-14</div>
+<div class="item-why">Requirement to Prove Ability to Pay in an I-140 Petition - Murthy Law Firm | U.S Immigration Law Murthy Law Firm About Us Law Firm Attorneys Consultations Hire Us Client Service Online Services Foundation Contact Us Requirement to Prove Ability to...</div>
+<div class="item-badges">
+<span class="conf-badge conf-medium">Tier 2 · Medium confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">8.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPNmZJM1NlZk1KcFZ6T0xzc1Q4ZEU3dUFxNGlaWmgzc3dDNXlod1dMMWQxTlNYMTFmQW02cVZIYVJpMW1xajAtOU55ak1tZmQyMmdfdnFYb01GZHYyVk9CTnhXVW91UEhsQmZoQnZoVGl3aVBySldnRFlpRW9vN09DZTN3OGdQU01XUVFlcTQ4bVJISy1ZeHZ3dFZTeEpmbHZBQlE?oc=5">US Department of State Releases November 2026 Visa Bulletin - Morgan Lewis</a></span>
+</div>
+<div class="item-meta">Morgan Lewis | 2026-10-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">9.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPSG9ia2RacmtxWGJwaWRvM1MwcHJuV1NGRVRWT0ppQkFoejVRTG1iY0cxYVFZNEhsTTVnakVWdjFaZzhHc1FfdGQyTTZpcU9xU1NhZ0lvV1FNTHFvQ3ZlcWNxeFVlZUI4endRaWVha1VQY1Jzd2dsdkl5dVI4Qmg4OTFtYXpVLXYxSEJOcjlSRGx3Sy0wY19Ga1V0VEI4RElrekZCZUlGemtCSEVrbVc0YUozVHR0dXdHdXE0OGVIRHdyQQ?oc=5">October 2026 Visa Bulletin : FY 2027 Brings Employment-Based Visa Movement - Ogletree</a></span>
+</div>
+<div class="item-meta">Ogletree | 2026-10-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">10.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMilgJBVV95cUxQMlVqc3FaRmRCSDhmMWtLS0ZucWhZeWtPNW9VX3hoeXdkTVVBT2QtLUgzWEVLaFR4TllPSGRoTEZPbDJtcF9DWDNkaHhDM2xhRzZnY1pYZU16SGFESGZHVjNBSUxSNFVaT1EtaXpSZFVFUkxYWHJ2TmU5b21yV1k3cmZZcHNmekJ1V0hOWklaU1BMQ3NyYTVvMm5RdkZjY0ZZUXBKSmF0cEhRMlc3MUphREFoc3RTak5lb0xNd01oaHQzUXEtNHhnZXJkenNjUWVIOFc1R2Z4QTlKUk9LUGVxQkREQUVCWmM4YWFELUhJVUNFWS12bUs4ZkVnUDZGVXhyZWxuTFJsTEpFZEVQUDZKaHB3SENGZw?oc=5">October 2026 Visa Bulletin – Significant Advancements for China While Worldwide EB-2 and EB-3 Retrogress; USCIS to Honor Dates for Filing - Fragomen</a></span>
+</div>
+<div class="item-meta">Fragomen | 2026-09-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">11.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiuwJBVV95cUxPZ2h2R01sdXZZY2x4U3o2cm85OXhCenBrdkoxcDZvVlNKRFVRZXJRMTFyVnBMOE41UXRSYUhKdXUwN1RUQUdsaktwSDVENENOR3YwdTRxTzJVVTlXUnJtRDdOMFR3NVpBNy1JVDVjX3RJOWs1aWxuWXBiZ0lNR3NCNnhqYlZLYlJoY3NhMm9MZVM1Q3lnMXpESlNvQlRtUHJoa2lfTGp6Z2Zmb2xvelFuSDVQUURaN2xIRF9RajZVQmZUMDJUQ0VkWWZxY2VUZDAzMWNvTU1nLUhPY1BTM3VxTVYyZFd6a0Y2bkg0bGZuVlR2aDBkNTltSEV1VzJjV0VpZGd2SURpUC15Vm8yM0E1enVZVkpHTkplVlJrVlZPRWdwWllleVU0WHp4WC1XSGlVMFh4TjZWejVPMVE?oc=5">November 2026 Visa Bulletin: Continuing use of the Dates for Filing charts for adjustment of status - New India Abroad</a></span>
+</div>
+<div class="item-meta">New India Abroad | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">12.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE50NFJKTHplWWpwNTdfQnZuMzZYS2V5M0h6NWM4aEtBXy13MkZiSWdjb2g1QUQ4WEM3S3d6MXlwcU4zd3BKYzJGa0FoMjFucVVzMkd1R0Z2M0VpUWMtRnVyVTN6Z2JpYmNFLWFnaGxISjFPcWJRMWR1RENuWTc?oc=5">Chatting with Charlie | November 2026 Visa Bulletin Reaction - WR Immigration</a></span>
+</div>
+<div class="item-meta">WR Immigration | 2026-10-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">13.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxPdVF5Ujk3eGQ2N0k3RzZCVC1TVjM0NEZWbWZSUDQtTWFDdWRKemxkNVJUT1hGWmRWVjhSOWRJQjU4NzI4djR5N1VfY1JDVlJKRG1YR0RXRGdfRGxWbWdxbmoyVjN4NTRpbDJjZEM5eFpiYmxuUXFSQThZWWIzRlJOZUhqWUNYVmlWSHJmY1NhNThFLXlmS01FVkFBVnhIb2NvMlk3bEFROHZuV0huWmRweWFoN1FjbEU?oc=5">November Visa Bulletin brings new Green Card filing dates: Who can apply now? - El Cronista</a></span>
+</div>
+<div class="item-meta">El Cronista | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">14.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQVzRDcDU2VzZ6UUtwMy1RMFR1bW81ZFAzY3g0ZnFheUgyQTBVSWd4eVRscEh0RXl0c3B0dkVlZHFZTVVUc3hGeG9JdUtmREpSdVJvWGt0VUliX1duS213Y3dXZjRURjA0OGRsWkxlazliQWhxVnZuOWRpZU9HREZHTmhKRFVlWWdxTE5kWkRfN09DekFaTzBF?oc=5">Rapid-Fire Wednesdays Podcast | November 2026 Visa Bulletin &amp; More TPS Changes - WR Immigration</a></span>
+</div>
+<div class="item-meta">WR Immigration | 2026-10-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">15.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNRTNrZExjejNCajZxOE9yUWpCd2J6eHYtb2VsTlo0WVZSTElFT2xlUkM1RjFzX1ExRG5qNFZ2bE1zeTZtVlhpRjZ4WFZ5MHFHWTJMcmpiR2N5VWZqb0tNSnV6TVQ0N1ZvY01OS1pfWVEydzJ2elJfbGtuV0M5NEFJTVpGR29jcU8tY3NLYVdncHE3Tk02SjlsUERiRXlNdG13?oc=5">Green Card Update: Visa Bulletin Shows Progress for Some Applicants - Newsweek</a></span>
+</div>
+<div class="item-meta">Newsweek | 2026-10-23</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">16.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxNblZHWFZCSXB5bk1hN2JKbVZLRFdZa1FvMGlKVGZMUXFzdnZIR1pfNlpxVDRSNTJOdWdfS1FudGdRVU8tUjNIRVZoSk82WlVBM1JPRWRMNUJYcTBLRzV5Nm1lWWkyUi0yMVphMXpJN3lPTENOeUdEODFYQ1Y0cC14WHVta2VuUHhQVm5SbERIUDQ4d0FYc3NtUFJvRXV0T3VjRDlWSHJMMG0tLVNoTjdzcmEyLWs5d3ZRaDkxMlh4b0Zwd2RpNlI5OWRSZlpCemxGYnlxZ3Y3WkzSAd4BQVVfeXFMTXhUVzFVUVU4R1ZqallMb0RkdERDRkF1Qi1HajZHOVBlYUdYSE1Tc1VtajNjcVByTkxETzJQODRBYkk3ME1iWHY2UG5rM3FDNDFCZWdvWFRMZXVadWhIX0JsdHFkVXdyT3IzZXBsSGJ1eFpOYm1OOUJVTUUtbnpnb29EdURLU0d6THFLS2hQMGkxcm11WHE2Z1lhSXZmU1FfM1lELTdFU1l2R3hhdEx1UG5vMGh2a1NLbm9oYTQ3akJNZGFmT2lTNXAxR2ZqMDRLTmNqZ2U2WEgwbFdYMHJ3?oc=5">Family-Sponsored Visas Advanced by One Year, November US Visa Bulletin Shows - Deccan Chronicle</a></span>
+</div>
+<div class="item-meta">Deccan Chronicle | 2026-10-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">17.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPTlc0NUZVYkl1RE05d29XYVVPRHFyX0ZpNnp6RU5ETkQtOGJ2c1pPc2VWMUJNTTNhYkdvakRnZUFpa1YzTm9QaDVNR19hdWNjTVJaVDlnb3ZaeklYeHFVZ1pFUHNfdGs5RlU3LVhPUEpCakdTVkNQY2E2TTNTbXdWaG1oQ0RrY2pobTdvZG1fVUI4aWhE?oc=5">The FP Visa Bulletin for November 2026: Dates for Filing Chart and an Employer’s Immigration Action Plan - Fisher Phillips LLP</a></span>
+</div>
+<div class="item-meta">Fisher Phillips LLP | 2026-10-26</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">18.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNR0NUYXdNWGxaakwxOHlUTHhlOWdiVEtjZk5oMTJ6eGROUDQzUGo4WFYwWWpkWW10Y2lKMWdyZkJBX1Q0MW1wUUpWVGdsOWtLb3Jnclc4ZHdUTHpfbUZjZlVRYWE4LVNYR2VNalROcTFKQlVBcGRlWHdYeXVxT200QzRwWURnU21fM25tYjF3enVua0MwTE9BUnNJVTdGWTM2aktTdlpPcTU0OE52M3V1NE45VTBlS0gtbkZfSFZUWQ?oc=5">October 2026 Visa Bulletin Advances EB-5 Filing Date for Mainland China by 4 Years - EB-5 Insights</a></span>
+</div>
+<div class="item-meta">EB-5 Insights | 2026-10-12</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">19.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxPYWlIS1VEVWJtYUhtNUgxVWVnZEtqVlN1V004ZHBaZ3pyMHVqVVp6bWlqQldpTGFKa0ZNMmpSUE5EajFkMVI0cGczN0dqRFA2cWlzTnBkU0JQeElsMWo5SmFaWWh4SExTcjJRQ3pucnhfMXhmTjBLTDF2TUoxd0dTTHJZMnRtVG5hTTZMTmNidGwwUkQySHF2bmowVXFWNXR2em8zTFpCcWItWm5ya1Y4MW5keWpvV1hqc0Nub19tZDRWd2lXOC1CdFFONXl4azVWU2VKUGxFcXFodw?oc=5">October 2026 Visa Bulletin – Worth the Wait? Movement Is Modest, but USCIS Opens the Pipeline - Hunton Andrews Kurth LLP</a></span>
+</div>
+<div class="item-meta">Hunton Andrews Kurth LLP | 2026-09-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">20.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxNbjRyTjFnVXE2NHZDNjFqMmdiSUkwb2NOZTVLSmlkVjcxeU44bV8xSEppMlFxTF9EM2dPNkpSYktEUHNtcl9LN01qYXlLVFo2SjlRM0syRHdJcVh4d0tSdkVtcTRyS0xJYWtSUjAxalVEQVp3ejVkbkl4MTFQeU1pY3NZcVQtelFUdnRsY2FreHByTHlaQmh6SzBDOXdQN2lkSzV2Y2tKaTcwd0x3UnRWVHpxY1JydkRoYzNOVzBXdXdKS195dWVISnU4eXl4NUdyakFPcTV6TFFpMEpMRnhqWmhJb3N2d09IanpkRnFiRXRIWGM2REI4?oc=5">September 2026 Visa Bulletin: Final Action Dates Unchanged, but State Department Warns of Potential Unavailability - Ogletree</a></span>
+</div>
+<div class="item-meta">Ogletree | 2026-09-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">21.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxOLTB4V2RWbFVJZ05LMTFoMjR4WFotOWtmTHVaYXM2Qm1DSGltNHplYzlSaVJKa0tFWi1HaHoweG5aQ2hNdW1NNmVKZFo0OVFOcGFrakgwSjV3bUpIRF95Nk50Tk1SSnkxVWcwSGhDRWN0NzJDUzViN0ZaRGx0Nkt6UlpSc1RIVFBCTzVYVllRVE5GN0hBdGpCV3pmUl8zem4xcy10a1B2UHRwenhmMklOY2REOV90SEcxNjBDN3NIcHFoUi1ZalZGMTc5bmlTcENYWkd5NmVfQnNwWm1ZX3lHaG96Q3ZOMVlE?oc=5">United States | October 2026 Visa Bulletin: India and China advance in certain categories amid worldwide retrogression - BAL Immigration Law</a></span>
+</div>
+<div class="item-meta">BAL Immigration Law | 2026-09-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">22.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPMkcyY2p5cnM3SlRUSDdDU25uWGEzMjZRNkFsOGpXSkVLOXhuR05neHZoN0N0OTdySXJvSUZGdUdzSUdyWUc5Q3czY1ViUV9VV0JWNE1hVFJ5SlRjcWt6T3Yyemo1d0JaaGpTVE1YRl9zVHl5NnB1OEY1V1diTWJ3WEpieXNSZ1BUQVk4RUlpWkUwdkp3Y29jRzdfWmhFUWlwX1E?oc=5">EB1A Experts Analyzes EB-1A Visa Bulletin Trends for India - EIN News</a></span>
+</div>
+<div class="item-meta">EIN News | 2026-10-06</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">23.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOa2xDTHVoTmFXMWpLTW83c056TjVyRWV3VlBnbE5jaW1TczZ6QnpKVXR0NVJrTDNrVmdrOWJtTlJ1cFo4T1hndFpYS3VzeExfa3FMOGZhaHAySzhGVGlYdmwtLXVpS05NZWlOMnhxN3ZuVXNCNWg0eWNBb3VQREpYRU9OM2FrLVNNTmI2Z1pqVk5lX2MtTnN0Q3V0Mlc?oc=5">U.S. Expands Crackdown on Green Cards, Student Exchange Visas - Time Magazine</a></span>
+</div>
+<div class="item-meta">Time Magazine | 2026-10-08</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">24.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZ3paM3Mxdm1SQVNpNkw3MXRFTTI1MHdCcmpRQzZsNlB1S0x4NUFWMWpsdmhhTlVXUXFiSTc2dFlqSVdYVkJCUW5DM2hWdF9RSWpKNDgwQXVXa2d4RW5CdDZHMzQzTnBkUXQ2eEJmdC05b0NqeTdRNkNzVnJuek5IcmxMWVBPcnNVdTRUZDJiYk05enpGb1ZBOXBGallUMUpvSHRsdks3VzR4WWdWWUJPUS1YYUFFcVlrbGpHdkt0aGNSTDRUVklHU1Y3S0MxdmF3cUdfTmZYY2Y1Sk3SAeIBQVVfeXFMT2s3alA5cnROc3FVY2hiZFRmY2lnRDEzelVOZE1Ccmg1eDN5NlZkWWxZeTg0Y0pIOUdmYWU2WnlEZ0hJQmsyS3FVNWJjMndiU056aGtIekxwa280YUFYa2IzYkVvZExrOHZFYlFBc0t6MUtPM3A1NnA0WktWZFRNcURzVXpjQktQUW5LNEZ5WVRhTS1PUC13d3V2MU1zZFc4clZpUmxkemxDTTVjbnpFN2NCN1JZTnUxa2hKLTBfUnhvQVA3R211R2FDeWJOTFRESnVOcUtGQkpURWdxaGdaZlQ3dw?oc=5">37,328 India EB2 and EB3 Green Card cases await availability: How long is the wait? - The Financial Express</a></span>
+</div>
+<div class="item-meta">The Financial Express | 2026-10-30</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">25.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNUU9NYWxSVlE5ZHpVcXllV3lZZW4xUFBwVkx6akVndy1Cd2dkWlJGemh0bll0dGE3Zm1pa2ZCcm93ZFotWnV6SkZiSWZZSGNIVE9LSVZkcFVZalQ5aVdiX0Fpc3liQTVIQjA3Nmw4dDNRQWFvN1RRZFd6eXEweW1RSHRhblo3MTc0WVVuMXpUWXQtNUUyY2RBcWJxVmV4X1JhZml2MmNNX2t1WUN5T01udHo2YzhrY2VMTVRZVm1wUXFkd3NrdFlEd1ZZbXk?oc=5">USCIS changes where immigrants must file Form I-485: What Green Card applicants need to know - El Cronista</a></span>
+</div>
+<div class="item-meta">El Cronista | 2026-11-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">26.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxPazEzbklTMUttMmxNbXZ4dC0zNGd6ZzFGZGFzUV9aZ3FSc0dIaEhuamxNSVVRdWVlbHZqUy0zLWZVOUQyTmZQSy1Iblh6ajF3OWNHUGJwTlNQakUtZ3lDMEdmN25LX1dOcGNsVU9BS0JhdWZWd2xBN0dDOTRzMDRXNW5aYTZGb1FhRVphajl1aVNWOWZnNDBRU1plc2hCQ0lURy1yTzl2NTJBcUhnV2I4MkdEUXVkMl8yVVFEM3p1VEVQWHRrVURQZ2lmRDczU3lZazRCUm1teXhnVktpWHlNUm5uSzBJNjDSAewBQVVfeXFMTkpfeF9kWUZvYUZMUDRmdFhiVXZpeDJjQnNZUnRKdFZHeURQT0U3WkxXWTlROERNVmVRV3BFRFVEYzEyd3BmSGZNU1Y3RTcySlI5aHhmX18tVWl3bktHQWM1d2M1c09QNlNDYUMzeGpaQVNvcWtUZnp3QXMyV2NFSlZWZW5Kd2Z5bUVVQkF4c1ViYlFPTVpteVNiazUwVm50Q1ZqT01DTUMtdktSM3FkaEczdWlvZ2Eya2tDNEoxUWlFVkdVelNMZGVVejhYSDhDcWVFQ1hkM3pHYkR5TjJkdVpiUkNtYUFJdUJzcHk?oc=5">Unpaid taxes could jeopardise US green card applications, warn immigration lawyers - The Times of India</a></span>
+</div>
+<div class="item-meta">The Times of India | 2026-10-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">27.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxPT05mNzZRbXpjSWZVMmNCT29RN1o5b21hNk5GamtZWUlwdlFQdmFSU1VBRHhzTUJfNGo5X2lRbEVjbW9OY0ZFTF9hMV9UWWtsTFYtWGZnbXg2Y0RjbnNmc3NwT05ZSnVmLTItd1pOVXBfbFNhOFJsSEFjY0lfZ1JFSjlwdWlFcWpNcWxhdTBtc3hsUGhtdWo5aG5ndmtkSU9DazRISA?oc=5">Green Card: US Reveals Applicants Who Must File Before Their Next Birthdays, Deadlines - Tuko News</a></span>
+</div>
+<div class="item-meta">Tuko News | 2026-10-27</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">28.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxQOG9saGVhenktNVJKclpnM0hJQ0MwQ3RQUzFJQUhKcjQySUExRUlYM09fbUJROHFsNmtZYmkzUTh0dFUyNnRGV2hGNllfN3pzaTg1YURuajFSaXBrSHZqcnlnRXdncFNvNFBpWUtVanNjN3A2STAxd0JUWkYxMjh2cE9uZ1FxUUgtN3pPeUNjb1NZUQ?oc=5">Green card update brings gains for applicants: list of changes - Yahoo</a></span>
+</div>
+<div class="item-meta">Yahoo | 2026-09-29</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">29.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOa1MySkZPTllEdTBHLXJEUFFfRllkTEtCQlFoSGZxLWVmYnY4OVNKOHhCeEtWbEJfTVBSckRPeFByWnN3d0U3TjFydWJDTF95VWpCV3J6R3BKVVNPTGluS2ZPZmhUNlpOOS1KZkpnbUhwMEdjaURxYnNreXVFSGNESmJXM3VLZzA?oc=5">Indian Green Card Cutoffs Trail by Over 11 Years in Key US Categories - IndiaWest</a></span>
+</div>
+<div class="item-meta">IndiaWest | 2026-10-06</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">30.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMioAJBVV95cUxNQkpmMTNwUS1aOFdhb1dlUXZFLThWT3gtUmZsY0ZnWnRONU9kbG1KUXRYWkNSSGNwQlJ1eUNlUWdGdTk3NjZubHpDSnhHSlh4U0I1aUhYUVZwZzg4Y1VsZUExVHZham05M1NLc1d3NTZRTDR5MG43VldfMnNUMVVPbi1TdnVhVGk3S1R4WE9zV1NhbXo2dFUwYzdEQ2Fuc3BaazVncUdrbzdzU1cwNElxRVRvNXhuMUhvbVF2YWsyWXYwWDMzY1RUX05ZS1B2b3ZNY2tRcjMxU0FqUXlEc0pwZ1A1c3VpLWxjY1JuNXZuLUdrMlJlOGF5U1VUX08zUU85bzh4VThrdjVpV2lzRkhpOEZMVTVCaWhBVGh3QVozMmrSAaYCQVVfeXFMTm9pVi1yRHhIQXU5U0V2MUNUT2NXcmlwY0xJYVlhcFlRTGtXT3FhQzVSaTNNZURPS3o4QUcyQ2xkZ1NBa2J2dTVKUkFCVEJuT3lZdDBLblQ0VkExcEktYUdLVG90ZWhlN01mcVF4RGh0N1F1S1pfVkRfV3p5bC0xQnBFLUladmNPcjl3NDNuX1ozY3pTM0ZnQ1lUWDlxdXdXSjFQWmtmTXlyaElSRDVoc0UyVkZwZHUzOVpqX2V1cDlBZUkzMVJKdmdaYnFRLUp1ckxMX3BuM2VTQXJJS0VTeFg3bWJld3drbE9Fanlta0pURmM5dVdDdU92SjdqMTN5NjJXMU82ckxzT19ycGZaQmtjdVZ3aVQ5aTBieFZ2UGZuRmVGZHhB?oc=5">US green card backlog explained: Why Indian EB-2 and EB-3 applicants face an eight-year disadvantage over - The Economic Times</a></span>
+</div>
+<div class="item-meta">The Economic Times | 2026-10-27</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">31.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNeUdlLTgwQjRTb3dWSWJNLVgzbG1XYXVraDlVTDdKN3lZYllWYWFad21KV1AyYWxoR1dGYjZtRTZwTFZ6UmFFRFZrWDdKSTJabjBHSktzR1VyRld3YjF0ek9BcThGaW1nR1hGYU1Zem1qcVVaMmJNeWVHUk80b05wa2ljX3hQZVBIVmxoelNJSk1Ca3hkVjhENVFzTHVBaUU?oc=5">Indian Green Card backlog stretches past decade - New India Abroad</a></span>
+</div>
+<div class="item-meta">New India Abroad | 2026-10-31</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">32.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxORWdvc2pyOTBnREdLcEJjXzFVWTQ3ajJVNVdFWURhNlpBT1ZzUU93ZmxQZzJ6cEpvVGtzRlp6MlNwWGFpdjBVU1ZBdVBVdnpFQ0NfWTF5emQ2VHlVaEQ1QVd3V1RhTHAtT1lqTUx3TGgwUkxzQ2tWLUdMelpBR21YUzVDVm5UN1MtQ1ZNSUVTMWVvWlQyVFdPc1J6Wlo5MXh5RnVKdE5kNnJqVDZSRlRRUFRFX1ZUd291SFE?oc=5">USCIS Allows Employment-Based Green Card Applicants to Use Dates for Filing in October - nepyork</a></span>
+</div>
+<div class="item-meta">nepyork | 2026-10-01</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">33.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMiekFVX3lxTFBIU2xhUk5LTVhIVkU2VC1xVXNsZFJ4QUFXQk9jejVXbnU1cVVsRm9tMF9pZGpFMFNwamJuN3ZMZ2djTDlZR0s5MUF0OXpKU0lVXzJTT0g0bWlsWV9Rd0Y5VGVUZ19SdmZGLWpmVkpkMmk1cl9mWlNvV1lB?oc=5">Priority Date in Immigration - October 2026 - Lluis Law</a></span>
+</div>
+<div class="item-meta">Lluis Law | 2026-10-02</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+<div class="item">
+<div class="item-header">
+<span class="item-num">34.</span>
+<span class="item-headline"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxOSlNGOUJHbkJ0UXdETE9EUWMySjZkMWVzX3V6Ny1yNlc1Ym4ydmx5NXY2UEJyak1mNVROdkRqOTNGY2kxT1BrQUwyYVRzSmlDNlVIa0xnenNUM2cyWjg2NTd0Rl9seW1JOVFuRHczVk93M2RkOWdDOUV0Sl90WjFJeEZEeWNTUFFvNkNkRU81alBOWlltQ1VN?oc=5">The Trump administration is suspending Microsoft from a green card program, alleging fraud - AP News</a></span>
+</div>
+<div class="item-meta">AP News | 2026-10-08</div>
+<div class="item-badges">
+<span class="conf-badge conf-low">Tier 3 · Low confidence</span>
+</div>
+</div>
+</div>
+<footer>Generated by the green card tool daily monitor. Not legal advice.</footer>
+</div></body></html>
