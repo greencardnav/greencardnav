@@ -1,4 +1,4 @@
-# FAQ staleness report - 2026-11-02
+# FAQ staleness report - 2026-11-09
 
 Scanned 29 dates across 37 regions of faq.html (16 in volatility flags). Verification stamp: 2026-08-28. Network watches: 19.
 
@@ -8,19 +8,19 @@ ACTION = an answer is now wrong, a rule moved, or a check has been failing. SOON
 
 ## New or escalated since the last run
 
-### GAP
+### WATCH
 
-- **litigation-presidents-alliance: not checked (1 consecutive failure)** - [`#mod-f1`](faq.html#mod-f1)
-  HTTPError: HTTP Error 401: Unauthorized
+- **uscis-h1b-registration-page: archived page content changed (capture 20261030184757)** - [`#q-my-offer-has-stock-and-bonuses-does-that-raise-my-wa`](faq.html#q-my-offer-has-stock-and-bonuses-does-that-raise-my-wa)
+  USCIS H-1B electronic registration process page - where FY selection counts are announced. Digest BNBMGDNXJV3U -> YQRR5ALSSZS3. May be cosmetic. https://web.archive.org/web/20261030184757/uscis.gov/working-in-the-united-states/temporary-workers/h-1b-specialty-occupations/h-1b-electronic-registration-process
 
 ## Still open
 
 ### ACTION
 
-- **2026-09-03 (PASSED 60 days ago, flag)** - [`#mod-f1`](faq.html#mod-f1) (faq.html:808) _(since 2026-09-02)_
+- **2026-09-03 (PASSED 67 days ago, flag)** - [`#mod-f1`](faq.html#mod-f1) (faq.html:808) _(since 2026-09-02)_
   A hearing was noticed for September 3, 2026, but the government asked for more time to respond.
 
-- **Litigation status is 62 days old (limit 14)** - [`#mod-f1`](faq.html#mod-f1) _(since 2026-09-21)_
+- **Litigation status is 69 days old (limit 14)** - [`#mod-f1`](faq.html#mod-f1) _(since 2026-09-21)_
   faq.html says the docket was last checked on 2026-09-01. This is the fastest-moving fact on the site. Re-read the docket and update the date, even if nothing changed.
 
 - **cfr-8-106-fees: unwatched rule touching 8 CFR 106 (2026-09-10)** - [`#mod-h1b-life`](faq.html#mod-h1b-life) _(since 2026-09-14)_
@@ -58,7 +58,7 @@ ACTION = an answer is now wrong, a rule moved, or a check has been failing. SOON
 - **cfr-8-106-fees: unwatched rule touching 8 CFR 106 (2026-09-30)** - [`#mod-h1b-life`](faq.html#mod-h1b-life) _(since 2026-10-05)_
   Rule 2026-20016, RIN 1615-AC93. U.S. Citizenship and Immigration Services Employment-Based Immigrant Visa, Fifth Preference (EB-5) Fee Rule | Relevance: amends 106.2(a), which the FAQ cites, BUT the subject is citizenship, eb-5 - an adjacent program sharing the same part, most likely not about this site's readers | https://www.federalregister.gov/documents/2026/09/30/2026-20016/us-citizenship-and-immigration-services-employment-based-immigrant-visa-fifth-preference-eb-5-fee
 
-- **h1b-supplemental-fee: comment period closed 2026-09-24 (39 days ago)** _(since 2026-09-02)_
+- **h1b-supplemental-fee: comment period closed 2026-09-24 (46 days ago)** _(since 2026-09-02)_
   A final rule can issue at any time. Proposed rule only. Comments close 2026-09-24. If it finalizes, the fee becomes a live planning number rather than a proposal, and any answer that calls it proposed goes stale. Currently not cited in any FAQ answer, so this watch is forward-looking.
 
 - **pres-entry-restriction: 1 further presidential document(s) matched the term but not the title gate** - [`#q-my-visa-stamp-expired-can-i-drive-to-canada-for-the`](faq.html#q-my-visa-stamp-expired-can-i-drive-to-canada-for-the) _(since 2026-09-28)_
@@ -67,9 +67,11 @@ ACTION = an answer is now wrong, a rule moved, or a check has been failing. SOON
 - **pres-entry-restriction: new Determination (2026-10-02)** - [`#q-my-visa-stamp-expired-can-i-drive-to-canada-for-the`](faq.html#q-my-visa-stamp-expired-can-i-drive-to-canada-for-the) _(since 2026-10-05)_
   Determination no. 2026-24, doc 2026-20318. Presidential Determination on Refugee Admissions for Fiscal Year 2027 | Relevance: subject is refugee, an adjacent programme | https://www.federalregister.gov/documents/2026/10/02/2026-20318/presidential-determination-on-refugee-admissions-for-fiscal-year-2027
 
-- **uscis-h1b-registration-page: archived page content changed (capture 20261017061734)** - [`#q-my-offer-has-stock-and-bonuses-does-that-raise-my-wa`](faq.html#q-my-offer-has-stock-and-bonuses-does-that-raise-my-wa) _(since 2026-10-26)_
-  USCIS H-1B electronic registration process page - where FY selection counts are announced. Digest BNBMGDNXJV3U -> RYIJNTCXO4AA. May be cosmetic. https://web.archive.org/web/20261017061734/uscis.gov/working-in-the-united-states/temporary-workers/h-1b-specialty-occupations/h-1b-electronic-registration-process
-
 - **uscis-policy-manual-vol10-partb: archived page content changed (capture 20260927174840)** - [`#q-my-i-140-is-approved-can-i-work-now-and-does-it-give`](faq.html#q-my-i-140-is-approved-can-i-work-now-and-does-it-give) _(since 2026-10-12)_
   USCIS Policy Manual Volume 10 Part B Chapter 3 - EAD eligibility and the 204.5(p) condition. Digest 5TUHUWB2V3XV -> ZWUNC5HU6E5J. May be cosmetic. https://web.archive.org/web/20260927174840/uscis.gov/policy-manual/volume-10-part-b-chapter-3
+
+### GAP
+
+- **litigation-presidents-alliance: not checked (2 consecutive failures)** - [`#mod-f1`](faq.html#mod-f1) _(since 2026-11-02)_
+  HTTPError: HTTP Error 401: Unauthorized
 
